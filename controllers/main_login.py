@@ -12,7 +12,6 @@ from db.conexion  import Registro_datos
 from views.ui_login import Ui_login
 from views.ui_menu import Ui_sistema
 from views.ui_add_worker import Ui_Dialog_add_Trabajador
-#from views.ui_change_password import Ui_changes_password
 
 g_users=""
 g_password=""
@@ -45,7 +44,6 @@ class MiApp(QMainWindow, Ui_login):
 
 		dato1 = self.datos.busca_users(users_entry)
 		dato2 = self.datos.busca_password(password_entry)
-		#print(dato1," -> ", dato2)
 
 		fila1 = dato1
 		fila2 = dato2
@@ -92,7 +90,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.txt_users=""
 		self.txt_password=""
-		print(self.txt_users,self.txt_password)
 		# mover ventana
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		#acceder a las paginas
@@ -190,18 +187,4 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 	def retorno(self):
 		self.close()
 		self.parent().show()
-
-"""class changed_password_uad(QMainWindow,Ui_changes_password):
-	def __init__(self, parent):
-		super(changed_password_uad,self).__init__(parent)
-		self.setupUi(self)
-		#eliminar barra
-		self.setWindowFlag(Qt.FramelessWindowHint)
-		#transparente
-		# evento click para acceder al sistema
-		self.btn_aceptar.clicked.connect(self.retorno)
-		
-	def retorno(self):
-		self.close()
-		self.parent().show()"""
 
