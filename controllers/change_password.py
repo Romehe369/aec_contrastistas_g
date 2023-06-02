@@ -99,14 +99,4 @@ class changed_password_uad(QMainWindow,Ui_changes_password):
 				self.dialogo.show()
 				self.dialogo.label_mensaje.setText("Las contraseña se\ncambio correctamente")
 				self.close()
-				#self.parent().show()
-
-	"""def aceptar(self):
-		act = self.datos.actualiza_password(self.parent().txt_users,self.password_new_txt)
-		
-
-	def close_one(self):
-		self.dialogo.label_mensaje.setText(self.txt_users+ "\n"+ self.txt_password)
-		self.dialogo.pButton_alow.clicked.connect(self.dialogo.close)
-		self.dialogo.exec_()"""
 

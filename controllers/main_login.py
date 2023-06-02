@@ -6,12 +6,15 @@ from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
     QRadialGradient)
+from PySide2.QtWidgets import (QFileDialog, QLabel)
 from PySide2.QtWidgets import *
 
 from db.conexion  import Registro_datos
 from views.ui_login import Ui_login
 from views.ui_menu import Ui_sistema
-from views.ui_add_worker import Ui_Dialog_add_Trabajador
+
+from controllers.change_password import (changed_password_uad, Dialogo)
+from controllers.add_trabajador import new_trabajador
 
 g_users=""
 g_password=""
@@ -90,6 +93,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.txt_users=""
 		self.txt_password=""
+		self.datos = Registro_datos()
 		# mover ventana
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		#acceder a las paginas
@@ -120,7 +124,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		#print(self.txt_users,self.txt_password)
 
 	def cambiar_password(self):
-		from controllers.change_password import changed_password_uad
+		#from controllers.change_password import changed_password_uad
 		self.cambiar=changed_password_uad(self)
 		self.cambiar.show()
 
@@ -174,17 +178,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		else:
 			self.showNormal()
 
-class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
-	def __init__(self, parent):
-		super(new_trabajador,self).__init__(parent)
-		self.setupUi(self)
-		#eliminar barra
-		self.setWindowFlag(Qt.FramelessWindowHint)
-		#transparente
-		# evento click para acceder al sistema
-		self.btn_aceptar.clicked.connect(self.retorno)
 
-	def retorno(self):
-		self.close()
-		self.parent().show()
+
 
