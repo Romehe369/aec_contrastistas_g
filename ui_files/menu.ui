@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>926</width>
+    <width>914</width>
     <height>769</height>
    </rect>
   </property>
@@ -737,7 +737,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>7</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
@@ -820,24 +820,23 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                 <property name="lineWidth">
                  <number>1</number>
                 </property>
-                <widget class="QLabel" name="label_4">
-                 <property name="geometry">
-                  <rect>
-                   <x>340</x>
-                   <y>20</y>
-                   <width>161</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>14</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Registrar</string>
-                 </property>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <item>
+                  <widget class="QLabel" name="label_4">
+                   <property name="font">
+                    <font>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Registrar, agregar o eliminar trabajadores</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -1071,6 +1070,125 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QVBoxLayout" name="verticalLayout_17">
+                 <item>
+                  <widget class="QTableWidget" name="table_qwt_new">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
+                   </property>
+                   <property name="autoScrollMargin">
+                    <number>16</number>
+                   </property>
+                   <column>
+                    <property name="text">
+                     <string>Fecha</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="background">
+                     <color>
+                      <red>255</red>
+                      <green>255</green>
+                      <blue>255</blue>
+                     </color>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Entradas</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Salidas</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Devoluciones</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Saldo</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Tipo de trabajo</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Lote</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Responsable</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Observaciones</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Firma</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -1396,6 +1514,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
     </item>
    </layout>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <resources/>
  <connections/>

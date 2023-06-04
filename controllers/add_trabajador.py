@@ -80,19 +80,6 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 	    	binaryData = file.read()
 	    return binaryData
 
-	def get_data_photo(self):
-		foto = self.img_dni.pixmap() 
-		if foto:
-			# Convertir la foto al tipo de dato adecuado
-			bArray = QByteArray()
-			bufer = QBuffer(bArray)
-			bufer.open(QIODevice.WriteOnly)
-			bufer.close()
-			foto.save(bufer, "PNG")
-		else:
-			bArray = ""
-		return bArray
-
 	def cargar(self):
 		fileName=QFileDialog.getOpenFileName(self,"Abrir una imagen",QDir.homePath(),"Imagenes (*.png *.jpg *.jpeg)")
 		self.file_namepic=fileName[0]
@@ -111,23 +98,3 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 			self.comboBox_sexo.setCurrentIndex(posicionItem)
 		else:
 			self.comboBox_sexo.setCurrentIndex(-1)
-
-	"""def cargar(self):
-		global filename
-        filename = QFileDialog.getOpenFileName(QFileDialog(),"Open",,QDir.homePath(),"Imagenes (*.png *.jpg *.jpeg)")
-        imagen = cv2.imread(filename)
-        if(imagen==None):
-            pass
-        else:
-            self.setPhoto(imagen)
-    def setPhoto(self,image):
-        frame = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        imagen = QImage(frame, frame.shape[1], frame.shape[0], frame.strides[0], QImage.Format_RGB888)
-        imagen = imagen.scaled(350, 350, Qt.KeepAspectRatio)
-        self.img_dni.setPixmap(QtGui.QPixmap.fromImage(imagen))
-        self.label_img_ori.setText("Imagen dni")
-
-    
-       #self.label.setScaledContents(True)
-       
-       #print("Ruta de la imagen",fileName[0])"""

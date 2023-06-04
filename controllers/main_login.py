@@ -6,7 +6,6 @@ from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
     QRadialGradient)
-from PySide2.QtWidgets import (QFileDialog, QLabel)
 from PySide2.QtWidgets import *
 
 from db.conexion  import Registro_datos
@@ -34,6 +33,9 @@ class MiApp(QMainWindow, Ui_login):
      	# Realizamos una petición a la base de datos de ussers
 		self.datos = Registro_datos()
 
+	def keyPressEvent(self, event):
+		if event.key() == Qt.Key_Return:
+			self.iniciar_sesion()
 
 	def iniciar_sesion(self):
 		# Los labels de contraseña y usuario ponemos en blanco
@@ -105,7 +107,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_cinco.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_cinco))
 		self.bt_seis.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_seis))
 		self.bt_siete.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_siete))	
-
+		self.table_qwt_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
 		self.bt_restaurar.clicked.connect(self.control_bt_normal)

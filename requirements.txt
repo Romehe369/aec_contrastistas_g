@@ -1,3 +1,4 @@
 PySide2==5.15.0
 Dialog y Qwidget no se ampliar. Solo QMainlog
+realizar copias a una base de datos sqlite en caso de emergencia
 
