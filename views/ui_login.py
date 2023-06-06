@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'logindAEdWd.ui'
+## Form generated from reading UI file 'loginUcovaT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##

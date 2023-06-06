@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>914</width>
-    <height>769</height>
+    <height>789</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -142,6 +142,43 @@ font: 87 12pt &quot;Arial Black&quot;;
          </property>
          <property name="flat">
           <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_ocultar">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>200</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: rgb(117, 117, 117);
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover{
+background-color: white;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>OCULTAR 
+ ENCABEZADO</string>
          </property>
         </widget>
        </item>
@@ -367,7 +404,7 @@ background-color:red;
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item alignment="Qt::AlignLeft">
+       <item>
         <widget class="QFrame" name="frame_lateral">
          <property name="minimumSize">
           <size>
@@ -394,22 +431,15 @@ background-color:red;
           <string notr="true">QFrame{
 	background-color: rgb(185, 185, 185);
 }
-
-
-
 QPushButton{
-	background-color: rgb(185, 185, 185);
-border-top-left-radius: 20px;
-border-bottom-left-radius: 20px;
-
+background-color: rgb(185, 185, 185);
 font: 75 12pt &quot;Arial Narrow&quot;;
-	
+border-radius:10px;
 }
 
 QPushButton:hover{
 background-color: white;
-border-top-left-radius: 20px;
-border-bottom-left-radius: 20px;
+border-radius:10px;
 
 font: 75 12pt &quot;Arial Narrow&quot;;
 }</string>
@@ -440,36 +470,29 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="bt_inicio">
+           <widget class="QPushButton" name="btn_proyectos">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>40</height>
              </size>
             </property>
-            <property name="contextMenuPolicy">
-             <enum>Qt::DefaultContextMenu</enum>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
-             <string>  INICIO             </string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/inicio.png</normaloff>../assets/icons/inicio.png</iconset>
+             <string>PROYECTOS</string>
             </property>
             <property name="iconSize">
              <size>
-              <width>32</width>
-              <height>32</height>
+              <width>48</width>
+              <height>48</height>
              </size>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_uno">
+           <widget class="QPushButton" name="btn_registro">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -483,11 +506,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>     REGISTRO</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/registrar3.png</normaloff>../assets/icons/registrar3.png</iconset>
+             <string>REGISTRO</string>
             </property>
             <property name="iconSize">
              <size>
@@ -501,7 +520,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_dos">
+           <widget class="QPushButton" name="btn_asistencia">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -512,11 +531,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>   ASISTENCIA</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/asistencia.png</normaloff>../assets/icons/asistencia.png</iconset>
+             <string>ASISTENCIA</string>
             </property>
             <property name="iconSize">
              <size>
@@ -527,7 +542,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_tres">
+           <widget class="QPushButton" name="btn_trabajadores">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -540,10 +555,6 @@ font: 75 12pt &quot;Arial Narrow&quot;;
             <property name="text">
              <string>TRABAJADORES</string>
             </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/empleados.png</normaloff>../assets/icons/empleados.png</iconset>
-            </property>
             <property name="iconSize">
              <size>
               <width>32</width>
@@ -553,7 +564,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_cuatro">
+           <widget class="QPushButton" name="btn_pagos">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -566,10 +577,6 @@ font: 75 12pt &quot;Arial Narrow&quot;;
             <property name="text">
              <string>PAGOS Y OTROS</string>
             </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/pagos.png</normaloff>../assets/icons/pagos.png</iconset>
-            </property>
             <property name="iconSize">
              <size>
               <width>32</width>
@@ -579,7 +586,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_cinco">
+           <widget class="QPushButton" name="btn_reportes">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -590,11 +597,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>        REPORTES</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/reportes.png</normaloff>../assets/icons/reportes.png</iconset>
+             <string>REPORTES</string>
             </property>
             <property name="iconSize">
              <size>
@@ -605,33 +608,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="bt_seis">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string>    PROYECTOS</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/nuevo_proyecto.png</normaloff>../assets/icons/nuevo_proyecto.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>48</width>
-              <height>48</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="bt_siete">
+           <widget class="QPushButton" name="btn_admin">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -643,10 +620,6 @@ font: 75 12pt &quot;Arial Narrow&quot;;
             </property>
             <property name="text">
              <string>ADMINISTRADOR</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../assets/icons/adminitrador.png</normaloff>../assets/icons/adminitrador.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -737,38 +710,15 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>7</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_9">
-              <item>
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap>../assets/icons/AEC.png</pixmap>
-                </property>
-                <property name="scaledContents">
-                 <bool>false</bool>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-                <property name="wordWrap">
-                 <bool>false</bool>
-                </property>
-                <property name="indent">
-                 <number>0</number>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <layout class="QVBoxLayout" name="verticalLayout_9"/>
             </widget>
-            <widget class="QWidget" name="page_uno">
+            <widget class="QWidget" name="page_registro">
              <property name="styleSheet">
               <string notr="true">QFrame{
 	background-color: rgb(185, 185, 185);
@@ -810,7 +760,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_3">
+               <widget class="QFrame" name="frame_registro">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -842,24 +792,19 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               <item>
                <widget class="QFrame" name="frame_4">
                 <property name="styleSheet">
-                 <string notr="true">QFrame{
-	background-color: rgb(185, 185, 185);
+                 <string notr="true">QFrame{background-color: qlineargradient(spread:pad, x1:1, y1:0.386, x2:1, y2:0, stop:0 rgba(116, 157, 152, 255), stop:1 rgba(255, 255, 255, 255));
 }
+
 QPushButton{
-background-color: rgb(185, 185, 185);
-border-top-left-radius: 20px;
-border-bottom-left-radius: 20px;
-font: 18pt &quot;MS Shell Dlg 2&quot;;
-}
-
+border:3px solid #ffffff;
+border-radius:20px;
+	background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+font: 87 12pt &quot;Segoe UI Black&quot;}
 QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0.426, y1:0.0170455, x2:1, y2:0, stop:0 rgba(142, 144, 133, 255), stop:1 rgba(255, 255, 255, 255));
-border-top-left-radius: 20px;
-border-bottom-left-radius: 20px;
-
-font: 75 12pt &quot;Arial Narrow&quot;;
-}
-</string>
+border:4px solid #000000;
+border-radius:20px;
+background-color: rgb(255, 255, 0);
+font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -889,7 +834,9 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                     <string notr="true"/>
                    </property>
                    <property name="text">
-                    <string>Aregar un trabajador</string>
+                    <string>
+ Aregar un trabajador 
+</string>
                    </property>
                   </widget>
                  </item>
@@ -899,7 +846,9 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                     <string notr="true"/>
                    </property>
                    <property name="text">
-                    <string>Agregar materiales</string>
+                    <string>
+ Agregar materiales 
+</string>
                    </property>
                   </widget>
                  </item>
@@ -909,7 +858,9 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                     <string notr="true"/>
                    </property>
                    <property name="text">
-                    <string>Agregar Adminitrador</string>
+                    <string>
+ Agregar Adminitrador 
+</string>
                    </property>
                   </widget>
                  </item>
@@ -918,7 +869,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_dos">
+            <widget class="QWidget" name="page_asistencia">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(140, 140, 140);</string>
              </property>
@@ -939,7 +890,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_5">
+               <widget class="QFrame" name="frame_asistencia">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(191, 191, 191);</string>
                 </property>
@@ -1032,7 +983,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_tres">
+            <widget class="QWidget" name="page_trabajadores">
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
@@ -1053,7 +1004,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_7">
+               <widget class="QFrame" name="frame_trabajador">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1063,7 +1014,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_8">
+               <widget class="QFrame" name="frame_tra_contenedor">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1193,7 +1144,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_cuatro">
+            <widget class="QWidget" name="page_pagos">
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
@@ -1214,7 +1165,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_9">
+               <widget class="QFrame" name="frame_pagos">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1235,7 +1186,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_cinco">
+            <widget class="QWidget" name="page_reportes">
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
@@ -1256,7 +1207,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_11">
+               <widget class="QFrame" name="frame_reportes">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1277,7 +1228,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_seis">
+            <widget class="QWidget" name="page_proyectos">
              <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,7">
               <property name="spacing">
                <number>0</number>
@@ -1295,7 +1246,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_encabezado_pro">
+               <widget class="QFrame" name="frame_proyectos">
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
@@ -1303,7 +1254,19 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(148, 148, 148);</string>
+                 <string notr="true">QFrame{background-color: qlineargradient(spread:pad, x1:1, y1:0.386, x2:1, y2:0, stop:0 rgba(116, 157, 152, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton{
+border:3px solid #ffffff;
+border-radius:20px;
+	background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+font: 87 12pt &quot;Segoe UI Black&quot;}
+QPushButton:hover{
+border:4px solid #000000;
+border-radius:20px;
+background-color: rgb(255, 255, 0);
+font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1314,14 +1277,14 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                 <widget class="QPushButton" name="btn_Buscar_pro">
                  <property name="geometry">
                   <rect>
-                   <x>230</x>
+                   <x>390</x>
                    <y>20</y>
-                   <width>75</width>
-                   <height>23</height>
+                   <width>111</width>
+                   <height>51</height>
                   </rect>
                  </property>
                  <property name="text">
-                  <string>Buscar</string>
+                  <string>Agregar</string>
                  </property>
                 </widget>
                 <widget class="QLineEdit" name="lineEdit_buscar_pro">
@@ -1329,9 +1292,14 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                   <rect>
                    <x>20</x>
                    <y>40</y>
-                   <width>151</width>
-                   <height>21</height>
+                   <width>291</width>
+                   <height>31</height>
                   </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                  </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -1342,12 +1310,17 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                   <rect>
                    <x>20</x>
                    <y>10</y>
-                   <width>121</width>
+                   <width>181</width>
                    <height>16</height>
                   </rect>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
-                  <string>Nombre del Proyecto</string>
+                  <string>Nombre del Proyecto :</string>
                  </property>
                 </widget>
                </widget>
@@ -1367,7 +1340,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_siete">
+            <widget class="QWidget" name="page_adminstracion">
              <property name="styleSheet">
               <string notr="true">QFrame{
 	background-color: rgb(185, 185, 185);
@@ -1409,7 +1382,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame">
+               <widget class="QFrame" name="frame_administrador">
                 <property name="styleSheet">
                  <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
                 </property>

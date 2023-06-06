@@ -99,14 +99,15 @@ class control_aec(QMainWindow,Ui_sistema):
 		# mover ventana
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		#acceder a las paginas
-		self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
-		self.bt_uno.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_uno))
-		self.bt_dos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_dos))	
-		self.bt_tres.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_tres))
-		self.bt_cuatro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_cuatro))			
-		self.bt_cinco.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_cinco))
-		self.bt_seis.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_seis))
-		self.bt_siete.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_siete))	
+		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
+		self.btn_proyectos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_proyectos))
+		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
+		self.btn_asistencia.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_asistencia))
+		self.btn_trabajadores.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_trabajadores))			
+		self.btn_pagos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_pagos))
+		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
+		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))	
+		# realiza que los table view se ajusten a los datos de entrada
 		self.table_qwt_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
@@ -115,11 +116,18 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_agregar_trabajador.clicked.connect(self.agregar_trabajador)
 		self.btn_changes_password.clicked.connect(self.cambiar_password)
 		self.bt_cerrar.clicked.connect(lambda: self.close())
-
+		self.btn_ocultar.clicked.connect(self.mover_arriba)
 		self.bt_restaurar.hide()
-
-		#menu lateral
+		# menu lateral
 		self.bt_menu.clicked.connect(self.mover_menu)
+		self.oculto=False
+		# Agregamos todos los frames e control ocultar y mostrar
+		self.frame_encabezados=[self.frame_registro,self.frame_asistencia,self.frame_trabajador,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
+		# deberia cerrar la ventana
+		
+		#self.frm_superior_min.connect(self.this_double_click)
+		#self.click_count = 0
+
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
 		self.txt_password=txt2
@@ -161,6 +169,21 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.animacion.setEndValue(extender)
 			self.animacion.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
 			self.animacion.start()
+
+	def mover_arriba(self):
+		height = self.frame_trabajador.height()
+		# verifica si esta oculto
+		if(self.oculto):
+			for frame_i in self.frame_encabezados:
+				frame_i.show()
+			self.oculto=False
+			self.btn_ocultar.setText("OCULTAR \n ENCABEZADO")
+
+		else:
+			self.oculto=True
+			for frame_i in self.frame_encabezados:
+				frame_i.hide()
+			self.btn_ocultar.setText("MOSTRAR \n ENCABEZADO")
 	## SizeGrip
 	def resizeEvent(self, event):
 		rect = self.rect()
