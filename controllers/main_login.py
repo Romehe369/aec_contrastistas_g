@@ -118,7 +118,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_cerrar.clicked.connect(lambda: self.close())
 		self.btn_ocultar.clicked.connect(self.mover_arriba)
 		self.bt_restaurar.hide()
+		self.btn_Buscar_pro.clicked.connect(self.add_control_frame)
 		# menu lateral
+		self.control_proyecto=[]
 		self.bt_menu.clicked.connect(self.mover_menu)
 		self.oculto=False
 		# Agregamos todos los frames e control ocultar y mostrar
@@ -127,6 +129,51 @@ class control_aec(QMainWindow,Ui_sistema):
 		
 		#self.frm_superior_min.connect(self.this_double_click)
 		#self.click_count = 0
+		self.valor_x=0
+	def add_control_frame(self):
+		height=250
+		width=250
+		height_cont=int(self.frame_contenedor_pro.height()/270)
+		width_cont=int(self.frame_contenedor_pro.width()/270)
+		if(self.valor_x<=3):
+			self.valor_x+=1
+			if(len(self.control_proyecto)>=1):
+				frame=self.control_proyecto[-1]
+				x=frame.x()
+				y=frame.y()
+				height=frame.height()
+				width=frame.width()
+				self.control_proyecto.append(self.crear_qframe(x+width+20,y,height,width))
+			else:
+				x=10
+				y=10
+				self.control_proyecto.append(self.crear_qframe(x,y,height,width))
+		else:
+			if(len(self.control_proyecto)>=1):
+				frame=self.control_proyecto[-1]
+				x=frame.x()
+				y=frame.y()
+				height=frame.height()
+				width=frame.width()
+				self.control_proyecto.append(self.crear_qframe(x,y+height+20,height,width))
+			else:
+				x=10
+				y=10
+				self.control_proyecto.append(self.crear_qframe(x,y,height,width))
+
+	def crear_qframe(self,x,y,height,width):
+		# Crear un QFrame y establecer su geometr
+		qframe = QFrame(self.frame_contenedor_pro)
+		#qframe.setObjectName("frame_new"+str(x))
+		qframe.setGeometry(QRect(x, y, height,width))
+		qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
+		#qframe.setFrameShape(QFrame.StyledPanel)
+		#qframe.setFrameShadow(QFrame.Raised)
+		lbl_frame = QLabel(qframe)
+		lbl_frame.setText("Hola mundo")
+		lbl_frame.show()
+		qframe.show()
+		return qframe
 
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1

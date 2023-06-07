@@ -506,7 +506,8 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>REGISTRO</string>
+             <string>AGREGAR  TRABAJORES 
+ MATERIALES</string>
             </property>
             <property name="iconSize">
              <size>
@@ -710,7 +711,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>7</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
@@ -1277,14 +1278,14 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 <widget class="QPushButton" name="btn_Buscar_pro">
                  <property name="geometry">
                   <rect>
-                   <x>390</x>
+                   <x>370</x>
                    <y>20</y>
-                   <width>111</width>
+                   <width>131</width>
                    <height>51</height>
                   </rect>
                  </property>
                  <property name="text">
-                  <string>Agregar</string>
+                  <string>Buscar</string>
                  </property>
                 </widget>
                 <widget class="QLineEdit" name="lineEdit_buscar_pro">
@@ -1311,13 +1312,16 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                    <x>20</x>
                    <y>10</y>
                    <width>181</width>
-                   <height>16</height>
+                   <height>21</height>
                   </rect>
                  </property>
                  <property name="font">
                   <font>
                    <pointsize>12</pointsize>
                   </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(0,0,0,0%);</string>
                  </property>
                  <property name="text">
                   <string>Nombre del Proyecto :</string>
@@ -1365,7 +1369,7 @@ border-bottom-left-radius: 20px;
 font: 75 12pt &quot;Arial Narrow&quot;;
 }</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,9">
+             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,8">
               <property name="spacing">
                <number>0</number>
               </property>

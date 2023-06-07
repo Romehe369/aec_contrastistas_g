@@ -65,14 +65,17 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		# Obetenmos las caracteristicas de las photos
 		if(self.file_namepic!=""):
 			photo=self.convertToBinaryData()
-		elif(dni!="" and nombres!="" and apellidos!=""):
-			self.datos.insertar_trabajador(dni,nombres,apellidos,combo_sexo,fecha_inicio,combo_categoria,correo,nro_movil,photo)
-			self.dialogo.label_mensaje.setText("Se agrego existosamente")
-			self.file_namepic=""
-			self.dialogo.show()
-			self.close()
+			if(dni!="" and nombres!="" and apellidos!=""):
+				self.datos.insertar_trabajador(dni,nombres,apellidos,combo_sexo,fecha_inicio,combo_categoria,correo,nro_movil,photo)
+				self.dialogo.label_mensaje.setText("Se agrego existosamente")
+				self.file_namepic=""
+				self.dialogo.show()
+				self.close()
+			else:
+				self.dialogo.label_mensaje.setText("Hay espacios vacios \n por completar")
+				self.dialogo.show()
 		else:
-			self.dialogo.label_mensaje.setText("Hay espacios vacios \n por completar")
+			self.dialogo.label_mensaje.setText("Falta agregar \n la foto de DNI")
 			self.dialogo.show()
 
 	def convertToBinaryData(self):
