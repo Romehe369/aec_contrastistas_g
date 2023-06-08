@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menueEPYFA.ui'
+## Form generated from reading UI file 'menuJEVKcH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -618,7 +618,7 @@ class Ui_sistema(object):
         self.frame_proyectos.setFrameShadow(QFrame.Raised)
         self.btn_Buscar_pro = QPushButton(self.frame_proyectos)
         self.btn_Buscar_pro.setObjectName(u"btn_Buscar_pro")
-        self.btn_Buscar_pro.setGeometry(QRect(390, 20, 111, 51))
+        self.btn_Buscar_pro.setGeometry(QRect(370, 20, 131, 51))
         self.lineEdit_buscar_pro = QLineEdit(self.frame_proyectos)
         self.lineEdit_buscar_pro.setObjectName(u"lineEdit_buscar_pro")
         self.lineEdit_buscar_pro.setGeometry(QRect(20, 40, 291, 31))
@@ -626,8 +626,9 @@ class Ui_sistema(object):
         self.lineEdit_buscar_pro.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.label_3 = QLabel(self.frame_proyectos)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(20, 10, 181, 16))
+        self.label_3.setGeometry(QRect(20, 10, 181, 21))
         self.label_3.setFont(font3)
+        self.label_3.setStyleSheet(u"background-color:rgba(0,0,0,0%);")
 
         self.verticalLayout_10.addWidget(self.frame_proyectos)
 
@@ -767,7 +768,8 @@ class Ui_sistema(object):
         self.bt_maximizar.setText("")
         self.bt_cerrar.setText("")
         self.btn_proyectos.setText(QCoreApplication.translate("sistema", u"PROYECTOS", None))
-        self.btn_registro.setText(QCoreApplication.translate("sistema", u"REGISTRO", None))
+        self.btn_registro.setText(QCoreApplication.translate("sistema", u"AGREGAR  TRABAJORES \n"
+" MATERIALES", None))
         self.btn_asistencia.setText(QCoreApplication.translate("sistema", u"ASISTENCIA", None))
         self.btn_trabajadores.setText(QCoreApplication.translate("sistema", u"TRABAJADORES", None))
         self.btn_pagos.setText(QCoreApplication.translate("sistema", u"PAGOS Y OTROS", None))
@@ -815,7 +817,7 @@ class Ui_sistema(object):
         ___qtablewidgetitem13.setText(QCoreApplication.translate("sistema", u"Observaciones", None));
         ___qtablewidgetitem14 = self.table_qwt_new.horizontalHeaderItem(9)
         ___qtablewidgetitem14.setText(QCoreApplication.translate("sistema", u"Firma", None));
-        self.btn_Buscar_pro.setText(QCoreApplication.translate("sistema", u"Agregar", None))
+        self.btn_Buscar_pro.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_3.setText(QCoreApplication.translate("sistema", u"Nombre del Proyecto :", None))
         self.label_5.setText(QCoreApplication.translate("sistema", u"TextLabel", None))
         self.btn_changes_password.setText(QCoreApplication.translate("sistema", u"\n"

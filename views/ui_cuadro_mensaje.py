@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cuadro_mensajeuHuQyO.ui'
+## Form generated from reading UI file 'cuadro_mensajerRrjnd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -16,14 +16,14 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
 from PySide2.QtWidgets import *
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        if Form.objectName():
-            Form.setObjectName(u"Form")
-        Form.resize(412, 509)
-        self.frame = QFrame(Form)
+class Ui_add_cuadro(object):
+    def setupUi(self, add_cuadro):
+        if add_cuadro.objectName():
+            add_cuadro.setObjectName(u"add_cuadro")
+        add_cuadro.resize(360, 468)
+        self.frame = QFrame(add_cuadro)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(20, 20, 361, 441))
+        self.frame.setGeometry(QRect(0, 10, 351, 441))
         self.frame.setStyleSheet(u"QFrame{\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(117, 147, 156, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border: 3px solid rgb(0, 0, 0) ;\n"
@@ -36,59 +36,62 @@ class Ui_Form(object):
 "\n"
 "QPushButton{\n"
 "border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:10px;\n"
-"background-color:rgba(0,0,0,0%);\n"
+"border-radius:5px;\n"
+"	background-color: rgb(170, 255, 255);\n"
+"	background-color: rgb(255, 170, 0);\n"
+"font: 75 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
 "background-color: white;\n"
+"border-radius:5px;\n"
 "}")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
-        self.pushButton = QPushButton(self.frame)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(30, 160, 271, 50))
-        self.pushButton.setMinimumSize(QSize(0, 50))
-        self.pushButton.setMaximumSize(QSize(16777215, 50))
-        self.pushButton.setSizeIncrement(QSize(0, 50))
-        self.pushButton_2 = QPushButton(self.frame)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(30, 100, 291, 50))
-        self.pushButton_2.setMinimumSize(QSize(0, 50))
-        self.pushButton_2.setSizeIncrement(QSize(0, 50))
-        self.pushButton_3 = QPushButton(self.frame)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(10, 310, 340, 50))
-        self.pushButton_3.setMinimumSize(QSize(0, 50))
-        self.pushButton_3.setMaximumSize(QSize(16777215, 50))
-        self.pushButton_3.setSizeIncrement(QSize(0, 50))
-        self.pushButton_4 = QPushButton(self.frame)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(10, 240, 340, 50))
-        self.pushButton_4.setMinimumSize(QSize(0, 50))
-        self.pushButton_4.setMaximumSize(QSize(16777215, 50))
-        self.pushButton_4.setSizeIncrement(QSize(0, 50))
+        self.btn_call_list = QPushButton(self.frame)
+        self.btn_call_list.setObjectName(u"btn_call_list")
+        self.btn_call_list.setGeometry(QRect(30, 180, 290, 50))
+        self.btn_call_list.setMinimumSize(QSize(0, 50))
+        self.btn_call_list.setMaximumSize(QSize(16777215, 50))
+        self.btn_call_list.setSizeIncrement(QSize(0, 50))
+        self.btn_view_list = QPushButton(self.frame)
+        self.btn_view_list.setObjectName(u"btn_view_list")
+        self.btn_view_list.setGeometry(QRect(30, 120, 290, 50))
+        self.btn_view_list.setMinimumSize(QSize(0, 50))
+        self.btn_view_list.setSizeIncrement(QSize(0, 50))
+        self.btn_delete_project = QPushButton(self.frame)
+        self.btn_delete_project.setObjectName(u"btn_delete_project")
+        self.btn_delete_project.setGeometry(QRect(30, 310, 290, 50))
+        self.btn_delete_project.setMinimumSize(QSize(0, 50))
+        self.btn_delete_project.setMaximumSize(QSize(16777215, 50))
+        self.btn_delete_project.setSizeIncrement(QSize(0, 50))
+        self.btn_actividades = QPushButton(self.frame)
+        self.btn_actividades.setObjectName(u"btn_actividades")
+        self.btn_actividades.setGeometry(QRect(30, 250, 290, 50))
+        self.btn_actividades.setMinimumSize(QSize(0, 50))
+        self.btn_actividades.setMaximumSize(QSize(16777215, 50))
+        self.btn_actividades.setSizeIncrement(QSize(0, 50))
         self.label_title = QLabel(self.frame)
         self.label_title.setObjectName(u"label_title")
-        self.label_title.setGeometry(QRect(20, 30, 321, 41))
+        self.label_title.setGeometry(QRect(20, 20, 321, 71))
         self.label_title.setStyleSheet(u"background-color:rgba(0,0,0,0%);")
         self.label_title.setAlignment(Qt.AlignCenter)
-        self.pushButton_5 = QPushButton(self.frame)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setGeometry(QRect(100, 380, 161, 41))
+        self.btn_decline = QPushButton(self.frame)
+        self.btn_decline.setObjectName(u"btn_decline")
+        self.btn_decline.setGeometry(QRect(100, 380, 161, 41))
 
-        self.retranslateUi(Form)
+        self.retranslateUi(add_cuadro)
 
-        QMetaObject.connectSlotsByName(Form)
+        QMetaObject.connectSlotsByName(add_cuadro)
     # setupUi
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"Llamar asistencia", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Ver lista", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Form", u"Eliminar proyecto", None))
-        self.pushButton_4.setText(QCoreApplication.translate("Form", u"Actividades", None))
-        self.label_title.setText(QCoreApplication.translate("Form", u"Proyecto", None))
-        self.pushButton_5.setText(QCoreApplication.translate("Form", u"Cancelar", None))
+    def retranslateUi(self, add_cuadro):
+        add_cuadro.setWindowTitle(QCoreApplication.translate("add_cuadro", u"Form", None))
+        self.btn_call_list.setText(QCoreApplication.translate("add_cuadro", u"Llamar asistencia", None))
+        self.btn_view_list.setText(QCoreApplication.translate("add_cuadro", u"Ver lista", None))
+        self.btn_delete_project.setText(QCoreApplication.translate("add_cuadro", u"Eliminar proyecto", None))
+        self.btn_actividades.setText(QCoreApplication.translate("add_cuadro", u"Actividades", None))
+        self.label_title.setText(QCoreApplication.translate("add_cuadro", u"Proyecto", None))
+        self.btn_decline.setText(QCoreApplication.translate("add_cuadro", u"Cancelar", None))
     # retranslateUi
 

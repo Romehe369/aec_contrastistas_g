@@ -15,6 +15,7 @@ from views.ui_menu import Ui_sistema
 from controllers.change_password import (changed_password_uad, Dialogo)
 from controllers.add_trabajador import new_trabajador
 
+
 g_users=""
 g_password=""
 
@@ -130,50 +131,49 @@ class control_aec(QMainWindow,Ui_sistema):
 		#self.frm_superior_min.connect(self.this_double_click)
 		#self.click_count = 0
 		self.valor_x=0
+		self.name_proyecto=""
+		self.proyectos_cod={"PRYCT001":"Valor1","PRYCT002":"Valor2","PRYCT003":"Valor3","PRYCT004":"Valor4"}
+
 	def add_control_frame(self):
-		height=250
-		width=250
+		keys=list(self.proyectos_cod)
+		width=200	# ancho
+		height=150  # alto
 		height_cont=int(self.frame_contenedor_pro.height()/270)
 		width_cont=int(self.frame_contenedor_pro.width()/270)
 		if(self.valor_x<=3):
 			self.valor_x+=1
 			if(len(self.control_proyecto)>=1):
-				frame=self.control_proyecto[-1]
+				frame=(self.control_proyecto[-1]).get_frame()
 				x=frame.x()
 				y=frame.y()
 				height=frame.height()
 				width=frame.width()
-				self.control_proyecto.append(self.crear_qframe(x+width+20,y,height,width))
+				frame_project=control_data(self)
+				frame_project.crear_qframe(x+width+20,y,width,height)
+				self.control_proyecto.append(frame_project)
 			else:
 				x=10
 				y=10
-				self.control_proyecto.append(self.crear_qframe(x,y,height,width))
+				frame_project=control_data(self)
+				frame_project.crear_qframe(x,y,width,height)
+				self.control_proyecto.append(frame_project)
+				#self.control_proyecto.append(self.crear_qframe(x,y,width,height))
 		else:
 			if(len(self.control_proyecto)>=1):
-				frame=self.control_proyecto[-1]
+				frame=self.control_proyecto[-1].get_frame()
 				x=frame.x()
 				y=frame.y()
 				height=frame.height()
 				width=frame.width()
-				self.control_proyecto.append(self.crear_qframe(x,y+height+20,height,width))
+				frame_project=control_data(self)
+				frame_project.crear_qframe(x,y+height+20,width,height)
+				self.control_proyecto.append(frame_project)
 			else:
 				x=10
 				y=10
-				self.control_proyecto.append(self.crear_qframe(x,y,height,width))
-
-	def crear_qframe(self,x,y,height,width):
-		# Crear un QFrame y establecer su geometr
-		qframe = QFrame(self.frame_contenedor_pro)
-		#qframe.setObjectName("frame_new"+str(x))
-		qframe.setGeometry(QRect(x, y, height,width))
-		qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
-		#qframe.setFrameShape(QFrame.StyledPanel)
-		#qframe.setFrameShadow(QFrame.Raised)
-		lbl_frame = QLabel(qframe)
-		lbl_frame.setText("Hola mundo")
-		lbl_frame.show()
-		qframe.show()
-		return qframe
+				frame_project=control_data(self)
+				frame_project.crear_qframe(x,y,width,height)
+				self.control_proyecto.append(frame_project)
 
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
@@ -249,6 +249,56 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.showMaximized()
 		else:
 			self.showNormal()
+
+class control_data(QDialog):
+	def __init__(self, parent):
+		super(control_data,self).__init__(parent)
+		self.code_project=""
+		self.name=""
+		self.x=0
+		self.y=0
+		self.width=0
+		self.height=0
+		self.qframe=None
+
+	def get_frame(self):
+		return self.qframe
+
+	def crear_qframe(self,x,y,width,height):
+		# Crear un QFrame y establecer su geometr
+		self.qframe = QFrame(self.parent().frame_contenedor_pro)
+		#qframe.setObjectName("frame_new"+str(x))
+		self.qframe.setGeometry(QRect(x, y,width, height))
+		self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
+		#qframe.setFrameShape(QFrame.StyledPanel)
+		#qframe.setFrameShadow(QFrame.Raised)
+		self.lbl_frame = QLabel(self.qframe)
+		self.lbl_frame.setText("Proyecto en desarrollo \n place")
+		self.lbl_frame.setObjectName("txt")
+		self.lbl_frame.setGeometry(QRect(10, 10, 180, 90))
+		self.lbl_frame.setStyleSheet("font: 75 16pt Arial")
+		self.lbl_frame.setAlignment(Qt.AlignCenter)
+
+		self.btn_cancelar = QPushButton(self.qframe)
+		self.btn_cancelar.setObjectName("btn_cancelar")
+		self.btn_cancelar.setGeometry(QRect(10, 110, 180, 30))
+		self.btn_cancelar.setText("VER DETALLES")
+		self.btn_cancelar.setStyleSheet("QPushButton{ border: 1px solid rgb(0, 0, 127);\n"
+		"border-radius:5px;\n"
+		"background-color: rgb(255, 170, 0);\n"
+		"font: 75 12pt \"MS Shell Dlg 2\";}\n"
+		"QPushButton:hover{ background-color: white;\n"
+		"border-radius:5px;}")
+		self.btn_cancelar.clicked.connect(self.open_project)
+		self.btn_cancelar.show()
+		self.lbl_frame.show()
+		self.qframe.show()
+
+	def open_project(self):
+		from controllers.control_project import ctrl_project
+		self.ui_add=ctrl_project(self)
+		self.ui_add.show()
+
 
 
 
