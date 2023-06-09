@@ -135,45 +135,44 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.proyectos_cod={"PRYCT001":"Valor1","PRYCT002":"Valor2","PRYCT003":"Valor3","PRYCT004":"Valor4"}
 
 	def add_control_frame(self):
-		keys=list(self.proyectos_cod)
 		width=200	# ancho
 		height=150  # alto
-		height_cont=int(self.frame_contenedor_pro.height()/270)
-		width_cont=int(self.frame_contenedor_pro.width()/270)
-		if(self.valor_x<=3):
-			self.valor_x+=1
+		width_cont=int(self.frame_contenedor_pro.width()/220)
+		height_cont=int(self.frame_contenedor_pro.height()/170)
+		# Print(width_cont,"=>",height_cont)
+		# Valores de inicio de graficos
+		x=10
+		y=10
+		if(self.valor_x < width_cont):
+			print(self.valor_x)
 			if(len(self.control_proyecto)>=1):
 				frame=(self.control_proyecto[-1]).get_frame()
 				x=frame.x()
 				y=frame.y()
 				height=frame.height()
 				width=frame.width()
-				frame_project=control_data(self)
-				frame_project.crear_qframe(x+width+20,y,width,height)
+				frame_project=control_data(self,"Hola para siempre","Mundo dos",x+width+20,y,width,height)
+				frame_project.crear_qframe()
 				self.control_proyecto.append(frame_project)
 			else:
-				x=10
-				y=10
-				frame_project=control_data(self)
-				frame_project.crear_qframe(x,y,width,height)
+				frame_project=control_data(self,"Hola","Mundo",x,y,width,height)
+				#frame_project.crear_qframe(x,y,width,height)
+				frame_project.crear_qframe()
 				self.control_proyecto.append(frame_project)
 				#self.control_proyecto.append(self.crear_qframe(x,y,width,height))
-		else:
-			if(len(self.control_proyecto)>=1):
-				frame=self.control_proyecto[-1].get_frame()
-				x=frame.x()
-				y=frame.y()
-				height=frame.height()
-				width=frame.width()
-				frame_project=control_data(self)
-				frame_project.crear_qframe(x,y+height+20,width,height)
-				self.control_proyecto.append(frame_project)
-			else:
-				x=10
-				y=10
-				frame_project=control_data(self)
-				frame_project.crear_qframe(x,y,width,height)
-				self.control_proyecto.append(frame_project)
+			self.valor_x+=1
+			print("First")
+
+		elif(self.valor_x==width_cont):
+			frame=(self.control_proyecto[-1]).get_frame()
+			x=10
+			y=frame.y()
+			height=frame.height()
+			width=frame.width()
+			frame_project=control_data(self,"Hola variable","Mundo new",x,y+height+20,width,height)
+			frame_project.crear_qframe()
+			self.control_proyecto.append(frame_project)
+			self.valor_x=1
 
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
@@ -251,24 +250,31 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.showNormal()
 
 class control_data(QDialog):
-	def __init__(self, parent):
+	def __init__(self, parent,code_project,name,x,y,width,height):
 		super(control_data,self).__init__(parent)
-		self.code_project=""
-		self.name=""
-		self.x=0
-		self.y=0
-		self.width=0
-		self.height=0
+		self.code_project=code_project
+		self.name=name
+		self.x=x
+		self.y=y
+		self.width=width
+		self.height=height
 		self.qframe=None
+		from controllers.control_project import ctrl_project
+		self.ui_add=ctrl_project(self)
+		self.ui_add.btn_call_list.clicked.connect(self.cerrar_ventana)
+
+	def cerrar_ventana(self):
+		self.ui_add.close()
+		self.parent().stackedWidget.setCurrentWidget(self.parent().page_asistencia)
 
 	def get_frame(self):
 		return self.qframe
 
-	def crear_qframe(self,x,y,width,height):
+	def crear_qframe(self):
 		# Crear un QFrame y establecer su geometr
 		self.qframe = QFrame(self.parent().frame_contenedor_pro)
 		#qframe.setObjectName("frame_new"+str(x))
-		self.qframe.setGeometry(QRect(x, y,width, height))
+		self.qframe.setGeometry(QRect(self.x, self.y,self.width, self.height))
 		self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
 		#qframe.setFrameShape(QFrame.StyledPanel)
 		#qframe.setFrameShadow(QFrame.Raised)
@@ -295,8 +301,6 @@ class control_data(QDialog):
 		self.qframe.show()
 
 	def open_project(self):
-		from controllers.control_project import ctrl_project
-		self.ui_add=ctrl_project(self)
 		self.ui_add.show()
 
 
