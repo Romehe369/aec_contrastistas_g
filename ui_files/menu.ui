@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>914</width>
+    <width>1146</width>
     <height>789</height>
    </rect>
   </property>
@@ -492,35 +492,6 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btn_registro">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="toolTipDuration">
-             <number>0</number>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string>AGREGAR  TRABAJORES 
- MATERIALES</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>32</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="default">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="btn_asistencia">
             <property name="minimumSize">
              <size>
@@ -543,7 +514,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btn_trabajadores">
+           <widget class="QPushButton" name="btn_kardex">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -554,7 +525,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>TRABAJADORES</string>
+             <string>KARDEX</string>
             </property>
             <property name="iconSize">
              <size>
@@ -605,6 +576,35 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               <width>32</width>
               <height>32</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_registro">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="toolTipDuration">
+             <number>0</number>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>AGREGAR  TRABAJORES 
+ MATERIALES</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -711,7 +711,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
@@ -744,7 +744,7 @@ border-bottom-left-radius: 20px;
 font: 75 12pt &quot;Arial Narrow&quot;;
 }</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,11">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -762,6 +762,12 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               </property>
               <item>
                <widget class="QFrame" name="frame_registro">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>40</height>
+                 </size>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -772,6 +778,21 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                  <number>1</number>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QLabel" name="label_4">
                    <property name="font">
@@ -780,7 +801,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Registrar, agregar o eliminar trabajadores</string>
+                    <string>Registrar, agregar  trabajadores, materiales o requerimientos</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -793,19 +814,20 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               <item>
                <widget class="QFrame" name="frame_4">
                 <property name="styleSheet">
-                 <string notr="true">QFrame{background-color: qlineargradient(spread:pad, x1:1, y1:0.386, x2:1, y2:0, stop:0 rgba(116, 157, 152, 255), stop:1 rgba(255, 255, 255, 255));
+                 <string notr="true">QPushButton{
+border:3px solid #ffffff;
+background-color:rgba(0,0,0,0%);
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 }
 
-QPushButton{
-border:3px solid #ffffff;
-border-radius:20px;
-	background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
-font: 87 12pt &quot;Segoe UI Black&quot;}
 QPushButton:hover{
-border:4px solid #000000;
-border-radius:20px;
+border:3px solid #ffffff;
 background-color: rgb(255, 255, 0);
-font: 87 12pt &quot;Segoe UI Black&quot;}</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+}
+QLabel{
+border: none;
+}</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -813,56 +835,568 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_13" stretch="0,0,0">
+                <layout class="QVBoxLayout" name="verticalLayout_13" stretch="1,7">
                  <property name="spacing">
-                  <number>6</number>
+                  <number>0</number>
                  </property>
                  <property name="leftMargin">
-                  <number>15</number>
+                  <number>0</number>
                  </property>
                  <property name="topMargin">
-                  <number>15</number>
+                  <number>0</number>
                  </property>
                  <property name="rightMargin">
-                  <number>15</number>
+                  <number>0</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>15</number>
+                  <number>0</number>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="btn_agregar_trabajador">
+                  <widget class="QFrame" name="frame">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>60</height>
+                    </size>
+                   </property>
                    <property name="styleSheet">
-                    <string notr="true"/>
+                    <string notr="true">QFrame{
+	background-color: rgb(117, 117, 117);
+}
+QLabel{
+border: none;
+}</string>
                    </property>
-                   <property name="text">
-                    <string>
- Aregar un trabajador 
-</string>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_5">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <widget class="QPushButton" name="btn_agregar_trabajador">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Aregar un trabajador</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Requerimientos de materiales</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_2">
+                  <widget class="QFrame" name="frame_3">
                    <property name="styleSheet">
-                    <string notr="true"/>
+                    <string notr="true">background-color: rgb(117, 117, 117);</string>
                    </property>
-                   <property name="text">
-                    <string>
- Agregar materiales 
-</string>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="pushButton_3">
-                   <property name="styleSheet">
-                    <string notr="true"/>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
                    </property>
-                   <property name="text">
-                    <string>
- Agregar Adminitrador 
-</string>
-                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="2,1">
+                    <item>
+                     <widget class="QFrame" name="frame_5">
+                      <property name="styleSheet">
+                       <string notr="true">QFrame{
+border:1px solid #000000;
+}
+QLabel{
+border: none;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+}
+QLineEdit{
+background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <widget class="QLabel" name="label_7">
+                       <property name="geometry">
+                        <rect>
+                         <x>40</x>
+                         <y>20</y>
+                         <width>511</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>MS Shell Dlg 2</family>
+                         <pointsize>12</pointsize>
+                         <weight>50</weight>
+                         <italic>false</italic>
+                         <bold>false</bold>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: None;</string>
+                       </property>
+                       <property name="text">
+                        <string>Registro de ingresos y egresos</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_14">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>60</y>
+                         <width>201</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Mes</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_15">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>110</y>
+                         <width>201</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Tipo de documento</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_16">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>170</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Fecha de emision</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_17">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>220</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Girado A</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_18">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>270</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Detalle</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_19">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>310</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Monto total</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_20">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>360</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Medio de pago</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_21">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>410</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Centro de costo</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_22">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>470</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Responsable</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_23">
+                       <property name="geometry">
+                        <rect>
+                         <x>360</x>
+                         <y>60</y>
+                         <width>221</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Numero de documento</string>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_6">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>80</y>
+                         <width>201</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_7">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>140</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_8">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>190</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_9">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>240</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_10">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>290</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_11">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>330</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_12">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>390</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_13">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>440</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_14">
+                       <property name="geometry">
+                        <rect>
+                         <x>50</x>
+                         <y>490</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_15">
+                       <property name="geometry">
+                        <rect>
+                         <x>370</x>
+                         <y>90</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_24">
+                       <property name="geometry">
+                        <rect>
+                         <x>360</x>
+                         <y>130</y>
+                         <width>221</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Fecha de cancelacion</string>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_25">
+                       <property name="geometry">
+                        <rect>
+                         <x>360</x>
+                         <y>190</y>
+                         <width>221</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Tipo de egreso</string>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_26">
+                       <property name="geometry">
+                        <rect>
+                         <x>360</x>
+                         <y>240</y>
+                         <width>221</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Observacion</string>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="label_27">
+                       <property name="geometry">
+                        <rect>
+                         <x>370</x>
+                         <y>300</y>
+                         <width>211</width>
+                         <height>16</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>Codigo de documento</string>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_16">
+                       <property name="geometry">
+                        <rect>
+                         <x>360</x>
+                         <y>160</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_17">
+                       <property name="geometry">
+                        <rect>
+                         <x>370</x>
+                         <y>210</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_18">
+                       <property name="geometry">
+                        <rect>
+                         <x>370</x>
+                         <y>270</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QLineEdit" name="lineEdit_19">
+                       <property name="geometry">
+                        <rect>
+                         <x>370</x>
+                         <y>330</y>
+                         <width>211</width>
+                         <height>20</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton_3">
+                       <property name="geometry">
+                        <rect>
+                         <x>40</x>
+                         <y>530</y>
+                         <width>251</width>
+                         <height>51</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>PushButton</string>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton_12">
+                       <property name="geometry">
+                        <rect>
+                         <x>380</x>
+                         <y>380</y>
+                         <width>211</width>
+                         <height>51</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>PushButton</string>
+                       </property>
+                      </widget>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_7">
+                      <property name="styleSheet">
+                       <string notr="true">border:1px solid #000000;</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <widget class="QLabel" name="label_8">
+                       <property name="geometry">
+                        <rect>
+                         <x>30</x>
+                         <y>20</y>
+                         <width>261</width>
+                         <height>31</height>
+                        </rect>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: None;</string>
+                       </property>
+                       <property name="text">
+                        <string>Registro de materiales</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -874,7 +1408,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(140, 140, 140);</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,10">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -893,7 +1427,19 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
               <item>
                <widget class="QFrame" name="frame_asistencia">
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(191, 191, 191);</string>
+                 <string notr="true">QFrame{
+background-color: rgb(191, 191, 191);
+}
+
+QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -901,6 +1447,78 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <property name="spacing">
+                  <number>20</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>70</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>70</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Codigo o nombre 
+de Proyecto</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="sizeIncrement">
+                    <size>
+                     <width>120</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Buscar</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -984,11 +1602,11 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_trabajadores">
+            <widget class="QWidget" name="page_kardex">
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,11">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1005,17 +1623,113 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_trabajador">
+               <widget class="QFrame" name="frame_kardex">
+                <property name="styleSheet">
+                 <string notr="true">QFrame{
+background-color: rgb(191, 191, 191);
+}
+
+QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <property name="spacing">
+                  <number>20</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>70</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>70</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="minimumSize">
+                    <size>
+                     <width>160</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Codigo o nombre 
+ material</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_2">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_4">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="sizeIncrement">
+                    <size>
+                     <width>120</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(108, 241, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Buscar</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_tra_contenedor">
+               <widget class="QFrame" name="frame_kardex_contenedor">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1024,13 +1738,23 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_17">
                  <item>
-                  <widget class="QTableWidget" name="table_qwt_new">
+                  <widget class="QTableWidget" name="table_qwk_new">
                    <property name="styleSheet">
                     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
                    </property>
                    <property name="autoScrollMargin">
                     <number>16</number>
                    </property>
+                   <column>
+                    <property name="text">
+                     <string>ID_Proyecto</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                   </column>
                    <column>
                     <property name="text">
                      <string>Fecha</string>
@@ -1149,7 +1873,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,11">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1167,6 +1891,21 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
               </property>
               <item>
                <widget class="QFrame" name="frame_pagos">
+                <property name="styleSheet">
+                 <string notr="true">QFrame{
+background-color: rgb(191, 191, 191);
+}
+
+QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1191,7 +1930,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
              <property name="styleSheet">
               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,11">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1209,28 +1948,167 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
               </property>
               <item>
                <widget class="QFrame" name="frame_reportes">
+                <property name="styleSheet">
+                 <string notr="true">QFrame{
+background-color: rgb(191, 191, 191);
+}
+
+QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <widget class="QLabel" name="label_9">
+                 <property name="geometry">
+                  <rect>
+                   <x>230</x>
+                   <y>15</y>
+                   <width>331</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Obtenga los datos de trabajadores, materiales o asistencia</string>
+                 </property>
+                </widget>
                </widget>
               </item>
               <item>
                <widget class="QFrame" name="frame_12">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(117, 117, 117);</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <widget class="QLabel" name="label_10">
+                 <property name="geometry">
+                  <rect>
+                   <x>30</x>
+                   <y>210</y>
+                   <width>141</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Codigo proyecto o nombre:</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_8">
+                 <property name="geometry">
+                  <rect>
+                   <x>440</x>
+                   <y>210</y>
+                   <width>131</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Imprimir</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_10">
+                 <property name="geometry">
+                  <rect>
+                   <x>420</x>
+                   <y>110</y>
+                   <width>131</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="lineEdit_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>200</x>
+                   <y>200</y>
+                   <width>211</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="lineEdit_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>190</x>
+                   <y>40</y>
+                   <width>211</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_11">
+                 <property name="geometry">
+                  <rect>
+                   <x>430</x>
+                   <y>40</y>
+                   <width>131</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Imprimir</string>
+                 </property>
+                </widget>
+                <widget class="QLineEdit" name="lineEdit_5">
+                 <property name="geometry">
+                  <rect>
+                   <x>190</x>
+                   <y>110</y>
+                   <width>211</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_11">
+                 <property name="geometry">
+                  <rect>
+                   <x>40</x>
+                   <y>40</y>
+                   <width>141</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Nombres ol DNI:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_12">
+                 <property name="geometry">
+                  <rect>
+                   <x>30</x>
+                   <y>120</y>
+                   <width>141</width>
+                   <height>20</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Codigo material o nombre :</string>
+                 </property>
+                </widget>
                </widget>
               </item>
              </layout>
             </widget>
             <widget class="QWidget" name="page_proyectos">
-             <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,7">
+             <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,8">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1278,8 +2156,8 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                 <widget class="QPushButton" name="btn_Buscar_pro">
                  <property name="geometry">
                   <rect>
-                   <x>370</x>
-                   <y>20</y>
+                   <x>360</x>
+                   <y>10</y>
                    <width>131</width>
                    <height>51</height>
                   </rect>
@@ -1292,7 +2170,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                  <property name="geometry">
                   <rect>
                    <x>20</x>
-                   <y>40</y>
+                   <y>30</y>
                    <width>291</width>
                    <height>31</height>
                   </rect>
@@ -1310,7 +2188,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                  <property name="geometry">
                   <rect>
                    <x>20</x>
-                   <y>10</y>
+                   <y>0</y>
                    <width>181</width>
                    <height>21</height>
                   </rect>
@@ -1332,7 +2210,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
               <item>
                <widget class="QFrame" name="frame_contenedor_pro">
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(62, 62, 62);</string>
+                 <string notr="true">background-color: rgb(117, 117, 117);</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1369,7 +2247,7 @@ border-bottom-left-radius: 20px;
 font: 75 12pt &quot;Arial Narrow&quot;;
 }</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,11">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1388,7 +2266,19 @@ font: 75 12pt &quot;Arial Narrow&quot;;
               <item>
                <widget class="QFrame" name="frame_administrador">
                 <property name="styleSheet">
-                 <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
+                 <string notr="true">QFrame{
+background-color: rgb(191, 191, 191);
+}
+
+QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1399,8 +2289,16 @@ font: 75 12pt &quot;Arial Narrow&quot;;
                 <layout class="QVBoxLayout" name="verticalLayout_15">
                  <item>
                   <widget class="QLabel" name="label_5">
+                   <property name="font">
+                    <font>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
-                    <string>TextLabel</string>
+                    <string>Realiza actividades de administrador, 
+es necesario introducir contraseña</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1453,7 +2351,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                   <widget class="QPushButton" name="pushButton_5">
                    <property name="text">
                     <string>
- Cambiar Contraseña 
+ Agregar administrador 
 </string>
                    </property>
                   </widget>
@@ -1462,7 +2360,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                   <widget class="QPushButton" name="pushButton_6">
                    <property name="text">
                     <string>
- Cambiar Contraseña 
+ Eliminar administrador 
 </string>
                    </property>
                   </widget>
@@ -1471,7 +2369,7 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
                   <widget class="QPushButton" name="pushButton_7">
                    <property name="text">
                     <string>
- Cambiar Contraseña 
+ Generar una copia de seguridad 
 </string>
                    </property>
                   </widget>

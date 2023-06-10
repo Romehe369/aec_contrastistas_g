@@ -104,12 +104,12 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_proyectos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_proyectos))
 		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
 		self.btn_asistencia.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_asistencia))
-		self.btn_trabajadores.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_trabajadores))			
+		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
 		self.btn_pagos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_pagos))
 		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
 		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))	
 		# realiza que los table view se ajusten a los datos de entrada
-		self.table_qwt_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
 		self.bt_restaurar.clicked.connect(self.control_bt_normal)
@@ -125,7 +125,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_menu.clicked.connect(self.mover_menu)
 		self.oculto=False
 		# Agregamos todos los frames e control ocultar y mostrar
-		self.frame_encabezados=[self.frame_registro,self.frame_asistencia,self.frame_trabajador,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
+		self.frame_encabezados=[self.frame_registro,self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		# deberia cerrar la ventana
 		
 		#self.frm_superior_min.connect(self.this_double_click)
@@ -211,7 +211,7 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.animacion.start()
 
 	def mover_arriba(self):
-		height = self.frame_trabajador.height()
+		height = self.frame_kardex.height()
 		# verifica si esta oculto
 		if(self.oculto):
 			for frame_i in self.frame_encabezados:
@@ -290,9 +290,14 @@ class control_data(QDialog):
 		self.view_details.show()
 		self.lbl_frame.show()
 		self.qframe.show()
-
+		#http://portal.apci.gob.pe/index.php/registros-de-proyectos/item/449-departamento-provincia-distrito
 	def open_project(self):
 		self.ui_add.show()
+	# btn_kardex
+	# page_kardex
+	# frame_tra_contenedor
+	# frame_kardex
+	# table_qwk_new
 
 
 
