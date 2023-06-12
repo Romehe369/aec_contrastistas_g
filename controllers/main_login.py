@@ -293,11 +293,6 @@ class control_data(QDialog):
 		#http://portal.apci.gob.pe/index.php/registros-de-proyectos/item/449-departamento-provincia-distrito
 	def open_project(self):
 		self.ui_add.show()
-	# btn_kardex
-	# page_kardex
-	# frame_tra_contenedor
-	# frame_kardex
-	# table_qwk_new
 
 
 
