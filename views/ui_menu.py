@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuYIoxzu.ui'
+## Form generated from reading UI file 'menuHLVWej.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -1003,15 +1003,15 @@ class Ui_sistema(object):
 
         self.horizontalLayout_3.addWidget(self.lineEdit)
 
-        self.pushButton = QPushButton(self.frame_asistencia)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setEnabled(True)
-        self.pushButton.setMinimumSize(QSize(120, 50))
-        self.pushButton.setMaximumSize(QSize(120, 50))
-        self.pushButton.setSizeIncrement(QSize(120, 50))
-        self.pushButton.setFont(font4)
+        self.btn_search_call_list = QPushButton(self.frame_asistencia)
+        self.btn_search_call_list.setObjectName(u"btn_search_call_list")
+        self.btn_search_call_list.setEnabled(True)
+        self.btn_search_call_list.setMinimumSize(QSize(120, 50))
+        self.btn_search_call_list.setMaximumSize(QSize(120, 50))
+        self.btn_search_call_list.setSizeIncrement(QSize(120, 50))
+        self.btn_search_call_list.setFont(font4)
 
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        self.horizontalLayout_3.addWidget(self.btn_search_call_list)
 
 
         self.verticalLayout_5.addWidget(self.frame_asistencia)
@@ -1057,6 +1057,18 @@ class Ui_sistema(object):
 
         self.verticalLayout_12.addWidget(self.change_name_project)
 
+        self.label_37 = QLabel(self.frame_6)
+        self.label_37.setObjectName(u"label_37")
+        self.label_37.setMinimumSize(QSize(0, 30))
+
+        self.verticalLayout_12.addWidget(self.label_37)
+
+        self.change_responsible_name = QLabel(self.frame_6)
+        self.change_responsible_name.setObjectName(u"change_responsible_name")
+        self.change_responsible_name.setMinimumSize(QSize(0, 30))
+
+        self.verticalLayout_12.addWidget(self.change_responsible_name)
+
         self.label_36 = QLabel(self.frame_6)
         self.label_36.setObjectName(u"label_36")
         self.label_36.setMinimumSize(QSize(0, 30))
@@ -1072,7 +1084,7 @@ class Ui_sistema(object):
 
         self.verticalLayout_12.addWidget(self.dt_fecha_list)
 
-        self.verticalSpacer_7 = QSpacerItem(20, 180, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_7 = QSpacerItem(20, 137, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_12.addItem(self.verticalSpacer_7)
 
@@ -1086,26 +1098,22 @@ class Ui_sistema(object):
         self.verticalLayout_25 = QVBoxLayout(self.frame_19)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
         self.table_asistencia = QTableWidget(self.frame_19)
-        if (self.table_asistencia.columnCount() < 5):
-            self.table_asistencia.setColumnCount(5)
+        if (self.table_asistencia.columnCount() < 6):
+            self.table_asistencia.setColumnCount(6)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setFont(font4);
-        __qtablewidgetitem.setBackground(QColor(255, 255, 255));
         self.table_asistencia.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setFont(font4);
         self.table_asistencia.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setFont(font4);
         self.table_asistencia.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font4);
         self.table_asistencia.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font4);
         self.table_asistencia.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.table_asistencia.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         self.table_asistencia.setObjectName(u"table_asistencia")
-        self.table_asistencia.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
+        self.table_asistencia.setStyleSheet(u"")
         self.table_asistencia.setAutoScrollMargin(16)
 
         self.verticalLayout_25.addWidget(self.table_asistencia)
@@ -1185,40 +1193,40 @@ class Ui_sistema(object):
         self.table_qwk_new = QTableWidget(self.frame_kardex_contenedor)
         if (self.table_qwk_new.columnCount() < 11):
             self.table_qwk_new.setColumnCount(11)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(0, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
         __qtablewidgetitem6.setFont(font4);
-        __qtablewidgetitem6.setBackground(QColor(255, 255, 255));
-        self.table_qwk_new.setHorizontalHeaderItem(1, __qtablewidgetitem6)
+        self.table_qwk_new.setHorizontalHeaderItem(0, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
         __qtablewidgetitem7.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(2, __qtablewidgetitem7)
+        __qtablewidgetitem7.setBackground(QColor(255, 255, 255));
+        self.table_qwk_new.setHorizontalHeaderItem(1, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
         __qtablewidgetitem8.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(3, __qtablewidgetitem8)
+        self.table_qwk_new.setHorizontalHeaderItem(2, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
         __qtablewidgetitem9.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(4, __qtablewidgetitem9)
+        self.table_qwk_new.setHorizontalHeaderItem(3, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
         __qtablewidgetitem10.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(5, __qtablewidgetitem10)
+        self.table_qwk_new.setHorizontalHeaderItem(4, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
         __qtablewidgetitem11.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(6, __qtablewidgetitem11)
+        self.table_qwk_new.setHorizontalHeaderItem(5, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
         __qtablewidgetitem12.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(7, __qtablewidgetitem12)
+        self.table_qwk_new.setHorizontalHeaderItem(6, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
         __qtablewidgetitem13.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(8, __qtablewidgetitem13)
+        self.table_qwk_new.setHorizontalHeaderItem(7, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
         __qtablewidgetitem14.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(9, __qtablewidgetitem14)
+        self.table_qwk_new.setHorizontalHeaderItem(8, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
         __qtablewidgetitem15.setFont(font4);
-        self.table_qwk_new.setHorizontalHeaderItem(10, __qtablewidgetitem15)
+        self.table_qwk_new.setHorizontalHeaderItem(9, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        __qtablewidgetitem16.setFont(font4);
+        self.table_qwk_new.setHorizontalHeaderItem(10, __qtablewidgetitem16)
         self.table_qwk_new.setObjectName(u"table_qwk_new")
         self.table_qwk_new.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
         self.table_qwk_new.setAutoScrollMargin(16)
@@ -1571,47 +1579,51 @@ class Ui_sistema(object):
 " Material", None))
         self.label.setText(QCoreApplication.translate("sistema", u"Codigo o nombre \n"
 "de Proyecto", None))
-        self.pushButton.setText(QCoreApplication.translate("sistema", u"Buscar", None))
+        self.btn_search_call_list.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_13.setText(QCoreApplication.translate("sistema", u"Codigo de proyecto:", None))
         self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto..", None))
         self.label_33.setText(QCoreApplication.translate("sistema", u"Nombre del proeyecto:", None))
         self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre..", None))
+        self.label_37.setText(QCoreApplication.translate("sistema", u"Responsable:", None))
+        self.change_responsible_name.setText(QCoreApplication.translate("sistema", u"Responsable", None))
         self.label_36.setText(QCoreApplication.translate("sistema", u"Seleccione la fecha:", None))
         ___qtablewidgetitem = self.table_asistencia.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("sistema", u"Nro", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("sistema", u"Asistencia", None));
         ___qtablewidgetitem1 = self.table_asistencia.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("sistema", u"Asistencia", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("sistema", u"DNI", None));
         ___qtablewidgetitem2 = self.table_asistencia.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("sistema", u"DNI", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("sistema", u"Nombres", None));
         ___qtablewidgetitem3 = self.table_asistencia.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("sistema", u"Nombres", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("sistema", u"Apellidos", None));
         ___qtablewidgetitem4 = self.table_asistencia.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("sistema", u"Apellidos", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("sistema", u"Observaci\u00f3n", None));
+        ___qtablewidgetitem5 = self.table_asistencia.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("sistema", u"Justificaci\u00f3n", None));
         self.label_6.setText(QCoreApplication.translate("sistema", u"Codigo o nombre \n"
 " material", None))
         self.pushButton_4.setText(QCoreApplication.translate("sistema", u"Buscar", None))
-        ___qtablewidgetitem5 = self.table_qwk_new.horizontalHeaderItem(0)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("sistema", u"ID_Proyecto", None));
-        ___qtablewidgetitem6 = self.table_qwk_new.horizontalHeaderItem(1)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("sistema", u"Fecha", None));
-        ___qtablewidgetitem7 = self.table_qwk_new.horizontalHeaderItem(2)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("sistema", u"Entradas", None));
-        ___qtablewidgetitem8 = self.table_qwk_new.horizontalHeaderItem(3)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("sistema", u"Salidas", None));
-        ___qtablewidgetitem9 = self.table_qwk_new.horizontalHeaderItem(4)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("sistema", u"Devoluciones", None));
-        ___qtablewidgetitem10 = self.table_qwk_new.horizontalHeaderItem(5)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("sistema", u"Saldo", None));
-        ___qtablewidgetitem11 = self.table_qwk_new.horizontalHeaderItem(6)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("sistema", u"Tipo de trabajo", None));
-        ___qtablewidgetitem12 = self.table_qwk_new.horizontalHeaderItem(7)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("sistema", u"Lote", None));
-        ___qtablewidgetitem13 = self.table_qwk_new.horizontalHeaderItem(8)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("sistema", u"Responsable", None));
-        ___qtablewidgetitem14 = self.table_qwk_new.horizontalHeaderItem(9)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("sistema", u"Observaciones", None));
-        ___qtablewidgetitem15 = self.table_qwk_new.horizontalHeaderItem(10)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("sistema", u"Firma", None));
+        ___qtablewidgetitem6 = self.table_qwk_new.horizontalHeaderItem(0)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("sistema", u"ID_Proyecto", None));
+        ___qtablewidgetitem7 = self.table_qwk_new.horizontalHeaderItem(1)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("sistema", u"Fecha", None));
+        ___qtablewidgetitem8 = self.table_qwk_new.horizontalHeaderItem(2)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("sistema", u"Entradas", None));
+        ___qtablewidgetitem9 = self.table_qwk_new.horizontalHeaderItem(3)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("sistema", u"Salidas", None));
+        ___qtablewidgetitem10 = self.table_qwk_new.horizontalHeaderItem(4)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("sistema", u"Devoluciones", None));
+        ___qtablewidgetitem11 = self.table_qwk_new.horizontalHeaderItem(5)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("sistema", u"Saldo", None));
+        ___qtablewidgetitem12 = self.table_qwk_new.horizontalHeaderItem(6)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("sistema", u"Tipo de trabajo", None));
+        ___qtablewidgetitem13 = self.table_qwk_new.horizontalHeaderItem(7)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("sistema", u"Lote", None));
+        ___qtablewidgetitem14 = self.table_qwk_new.horizontalHeaderItem(8)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("sistema", u"Responsable", None));
+        ___qtablewidgetitem15 = self.table_qwk_new.horizontalHeaderItem(9)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("sistema", u"Observaciones", None));
+        ___qtablewidgetitem16 = self.table_qwk_new.horizontalHeaderItem(10)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("sistema", u"Firma", None));
         self.label_9.setText(QCoreApplication.translate("sistema", u"Obtenga los datos de trabajadores, materiales o asistencia", None))
         self.label_10.setText(QCoreApplication.translate("sistema", u"Codigo proyecto o nombre:", None))
         self.pushButton_8.setText(QCoreApplication.translate("sistema", u"Imprimir", None))

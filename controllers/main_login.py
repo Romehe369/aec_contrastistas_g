@@ -97,6 +97,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.txt_users=""
 		self.txt_password=""
 		self.datos = Registro_datos()
+		self.call_list_data()
 		# mover ventana
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		#acceder a las paginas
@@ -110,6 +111,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))	
 		# realiza que los table view se ajusten a los datos de entrada
 		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
 		self.bt_restaurar.clicked.connect(self.control_bt_normal)
@@ -242,11 +244,50 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.showMaximized()
 		else:
 			self.showNormal()
-			
+	def change_header(self):
+		font = QFont()
+		font.setPointSize(12);
+		# Change the size of leters about horizontal header of table assitencia
+		self.table_asistencia.horizontalHeader().setFont(font);
+		self.table_asistencia.verticalHeader().setFont(font);
+		self.table_asistencia.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
+
+	def call_list_data(self):
+		self.fonty = QFont()
+		self.fonty.setPointSize(12)
+		self.table_asistencia.setFont(self.fonty)
+		self.table_asistencia.setRowCount(100)
+		self.table_asistencia.setColumnCount(6)
+		self.change_header()
+		for row in range(100):
+			checkBoxWidget = CheckBoxWidget()
+			self.table_asistencia.setCellWidget(row, 0, checkBoxWidget)
+			item = QTableWidgetItem("7621395 {}".format(row+1))
+			self.table_asistencia.setItem(row, 1, item)
+			item = QTableWidgetItem("Nombres full {}".format(row+1))
+			self.table_asistencia.setItem(row, 2, item)
+			item = QTableWidgetItem("Apellido Paterno {}".format(row+1))
+			self.table_asistencia.setItem(row, 3, item)
+
 class CheckBoxWidget(QWidget):
     def __init__(self, parent=None):
         super(CheckBoxWidget, self).__init__(parent)
+        self.setStyleSheet("""
+        QCheckBox{
+        background-color: none;
+        }
+        QCheckBox:indicator {
+        width:40px; 
+        height:25 px;
+        background-color: white;
+        border-radius : 12px;
+    }
+    QCheckBox:indicator:checked {
+        background-color: #00ff00;
+        border-radius : 12px;
+    }""")
         self.checkbox = QCheckBox(self)
+        self.checkbox.setMinimumSize(QSize(0, 0))
         layout = QVBoxLayout(self)
         layout.addWidget(self.checkbox)
         layout.setAlignment(Qt.AlignCenter)
