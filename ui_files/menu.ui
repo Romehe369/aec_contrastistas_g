@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1273</width>
-    <height>789</height>
+    <width>1137</width>
+    <height>654</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -711,7 +711,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page">
              <property name="styleSheet">
@@ -1338,7 +1338,7 @@ border:none;
                                  <number>9</number>
                                 </property>
                                 <item>
-                                 <widget class="QLineEdit" name="lineEdit_6">
+                                 <widget class="QLineEdit" name="mes_lineEdit">
                                   <property name="minimumSize">
                                    <size>
                                     <width>0</width>
@@ -1357,7 +1357,7 @@ border:none;
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="lineEdit_7">
+                                 <widget class="QLineEdit" name="tipe_lineEdit">
                                   <property name="minimumSize">
                                    <size>
                                     <width>0</width>
@@ -2150,79 +2150,241 @@ de Proyecto</string>
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_6">
+               <widget class="QFrame" name="frm_asistencia">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_12">
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>12</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
-                  <widget class="QTableWidget" name="tableWidget">
+                  <widget class="QFrame" name="frame_6">
+                   <property name="maximumSize">
+                    <size>
+                     <width>250</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
+                    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
-                   <property name="autoScrollMargin">
-                    <number>16</number>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
-                   <column>
-                    <property name="text">
-                     <string>Nro</string>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <property name="spacing">
+                     <number>20</number>
                     </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                     </font>
+                    <item>
+                     <widget class="QLabel" name="label_13">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Codigo de proyecto:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="change_code_project">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Proyecto...</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_33">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Nombre del proeyecto:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="change_name_project">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Nombre...</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_36">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Seleccione la fecha:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDateEdit" name="dt_fecha_list">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>MS Shell Dlg 2</family>
+                        <pointsize>12</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="calendarPopup">
+                       <bool>true</bool>
+                      </property>
+                      <property name="date">
+                       <date>
+                        <year>2023</year>
+                        <month>1</month>
+                        <day>1</day>
+                       </date>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_7">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>180</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_19">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QTableWidget" name="table_asistencia">
+                    <property name="geometry">
+                     <rect>
+                      <x>20</x>
+                      <y>20</y>
+                      <width>631</width>
+                      <height>451</height>
+                     </rect>
                     </property>
-                    <property name="background">
-                     <color>
-                      <red>255</red>
-                      <green>255</green>
-                      <blue>255</blue>
-                     </color>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));</string>
                     </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>DNI</string>
+                    <property name="autoScrollMargin">
+                     <number>16</number>
                     </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                     </font>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Nombres</string>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                     </font>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Apellidos</string>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                     </font>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>Sexo</string>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>12</pointsize>
-                     </font>
-                    </property>
-                   </column>
+                    <column>
+                     <property name="text">
+                      <string>Nro</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="background">
+                      <color>
+                       <red>255</red>
+                       <green>255</green>
+                       <blue>255</blue>
+                      </color>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Asistencia</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>DNI</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Nombres</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Apellidos</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                   </widget>
                   </widget>
                  </item>
                 </layout>

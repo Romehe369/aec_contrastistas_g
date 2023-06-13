@@ -242,6 +242,16 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.showMaximized()
 		else:
 			self.showNormal()
+			
+class CheckBoxWidget(QWidget):
+    def __init__(self, parent=None):
+        super(CheckBoxWidget, self).__init__(parent)
+        self.checkbox = QCheckBox(self)
+        layout = QVBoxLayout(self)
+        layout.addWidget(self.checkbox)
+        layout.setAlignment(Qt.AlignCenter)
+        layout.setContentsMargins(0, 0, 0, 0)
+        self.setLayout(layout)
 
 class control_data(QDialog):
 	def __init__(self, parent,code_project,name,x,y,width,height):
