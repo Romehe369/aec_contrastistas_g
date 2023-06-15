@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menushMumt.ui'
+## Form generated from reading UI file 'menuwGXHni.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -20,9 +20,13 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1077, 630)
+        sistema.resize(1002, 630)
         sistema.setMinimumSize(QSize(400, 0))
-        sistema.setStyleSheet(u"background-color: rgb(117, 117, 117);")
+        sistema.setStyleSheet(u"background-color: rgb(117, 117, 117);\n"
+"\n"
+"QLineEdit{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"}")
         self.centralwidget = QWidget(sistema)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -326,12 +330,237 @@ class Ui_sistema(object):
         self.stackedWidget.setFrameShape(QFrame.NoFrame)
         self.stackedWidget.setFrameShadow(QFrame.Plain)
         self.stackedWidget.setLineWidth(0)
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.page.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
-        self.verticalLayout_9 = QVBoxLayout(self.page)
+        self.page_add_administrator = QWidget()
+        self.page_add_administrator.setObjectName(u"page_add_administrator")
+        self.page_add_administrator.setStyleSheet(u"QWidget{\n"
+"background-color: rgb(135, 135, 135);\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"font: 14pt \"MS Shell Dlg 2\";\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(170, 255, 255);\n"
+"	font: 14pt \"MS Shell Dlg 2\";\n"
+"}")
+        self.verticalLayout_9 = QVBoxLayout(self.page_add_administrator)
+        self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.stackedWidget.addWidget(self.page)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.frame_24 = QFrame(self.page_add_administrator)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setMinimumSize(QSize(0, 50))
+        self.frame_24.setMaximumSize(QSize(16777215, 50))
+        self.frame_24.setStyleSheet(u"QFrame{\n"
+"background-color: rgb(66, 66, 66);\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border: 1px solid rgb(0, 0, 127);\n"
+"	border-radius:10px;\n"
+"}")
+        self.frame_24.setFrameShape(QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_31 = QVBoxLayout(self.frame_24)
+        self.verticalLayout_31.setSpacing(0)
+        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
+        self.verticalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.label_35 = QLabel(self.frame_24)
+        self.label_35.setObjectName(u"label_35")
+        self.label_35.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 16pt \"MS Shell Dlg 2\";")
+        self.label_35.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_31.addWidget(self.label_35)
+
+
+        self.verticalLayout_9.addWidget(self.frame_24)
+
+        self.frame_23 = QFrame(self.page_add_administrator)
+        self.frame_23.setObjectName(u"frame_23")
+        self.frame_23.setStyleSheet(u"QFrame{\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
+"}\n"
+"QLineEdit{\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border: 1px solid rgb(0, 0, 127);\n"
+"	border-radius:10px;\n"
+"}")
+        self.frame_23.setFrameShape(QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_32 = QVBoxLayout(self.frame_23)
+        self.verticalLayout_32.setSpacing(0)
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.verticalLayout_32.setContentsMargins(0, 0, 0, 0)
+        self.add_admin_frame = QFrame(self.frame_23)
+        self.add_admin_frame.setObjectName(u"add_admin_frame")
+        self.add_admin_frame.setFrameShape(QFrame.StyledPanel)
+        self.add_admin_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.add_admin_frame)
+        self.horizontalLayout_14.setSpacing(0)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.frame_26 = QFrame(self.add_admin_frame)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setFrameShape(QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_34 = QVBoxLayout(self.frame_26)
+        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
+        self.label_38 = QLabel(self.frame_26)
+        self.label_38.setObjectName(u"label_38")
+        self.label_38.setMinimumSize(QSize(0, 40))
+        self.label_38.setStyleSheet(u"background-color: rgb(255, 240, 125);")
+        self.label_38.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_34.addWidget(self.label_38)
+
+        self.label_46 = QLabel(self.frame_26)
+        self.label_46.setObjectName(u"label_46")
+        self.label_46.setMinimumSize(QSize(0, 0))
+        self.label_46.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_34.addWidget(self.label_46)
+
+        self.lineEdit_7 = QLineEdit(self.frame_26)
+        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.lineEdit_7.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout_34.addWidget(self.lineEdit_7)
+
+        self.label_41 = QLabel(self.frame_26)
+        self.label_41.setObjectName(u"label_41")
+        self.label_41.setMinimumSize(QSize(0, 0))
+        self.label_41.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_34.addWidget(self.label_41)
+
+        self.lineEdit_25 = QLineEdit(self.frame_26)
+        self.lineEdit_25.setObjectName(u"lineEdit_25")
+        self.lineEdit_25.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout_34.addWidget(self.lineEdit_25)
+
+        self.btn_add_confirm_admin = QPushButton(self.frame_26)
+        self.btn_add_confirm_admin.setObjectName(u"btn_add_confirm_admin")
+        self.btn_add_confirm_admin.setMinimumSize(QSize(0, 40))
+
+        self.verticalLayout_34.addWidget(self.btn_add_confirm_admin)
+
+        self.verticalSpacer_11 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_34.addItem(self.verticalSpacer_11)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_26)
+
+        self.frame_25 = QFrame(self.add_admin_frame)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setFrameShape(QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_35 = QVBoxLayout(self.frame_25)
+        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.label_39 = QLabel(self.frame_25)
+        self.label_39.setObjectName(u"label_39")
+        self.label_39.setMinimumSize(QSize(0, 40))
+        self.label_39.setStyleSheet(u"background-color: rgb(255, 240, 125);")
+        self.label_39.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_35.addWidget(self.label_39)
+
+        self.label_42 = QLabel(self.frame_25)
+        self.label_42.setObjectName(u"label_42")
+        self.label_42.setMinimumSize(QSize(0, 0))
+        self.label_42.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_35.addWidget(self.label_42)
+
+        self.lineEdit_26 = QLineEdit(self.frame_25)
+        self.lineEdit_26.setObjectName(u"lineEdit_26")
+        self.lineEdit_26.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout_35.addWidget(self.lineEdit_26)
+
+        self.label_43 = QLabel(self.frame_25)
+        self.label_43.setObjectName(u"label_43")
+        self.label_43.setMinimumSize(QSize(0, 0))
+        self.label_43.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_35.addWidget(self.label_43)
+
+        self.lineEdit_27 = QLineEdit(self.frame_25)
+        self.lineEdit_27.setObjectName(u"lineEdit_27")
+        self.lineEdit_27.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout_35.addWidget(self.lineEdit_27)
+
+        self.add_admin_btn_ctrls = QPushButton(self.frame_25)
+        self.add_admin_btn_ctrls.setObjectName(u"add_admin_btn_ctrls")
+        self.add_admin_btn_ctrls.setMinimumSize(QSize(0, 40))
+
+        self.verticalLayout_35.addWidget(self.add_admin_btn_ctrls)
+
+        self.verticalSpacer_12 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_35.addItem(self.verticalSpacer_12)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_25)
+
+
+        self.verticalLayout_32.addWidget(self.add_admin_frame)
+
+        self.delete_admin_frame = QFrame(self.frame_23)
+        self.delete_admin_frame.setObjectName(u"delete_admin_frame")
+        self.delete_admin_frame.setMinimumSize(QSize(0, 0))
+        self.delete_admin_frame.setFrameShape(QFrame.StyledPanel)
+        self.delete_admin_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_33 = QVBoxLayout(self.delete_admin_frame)
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.label_40 = QLabel(self.delete_admin_frame)
+        self.label_40.setObjectName(u"label_40")
+        self.label_40.setMinimumSize(QSize(0, 40))
+        self.label_40.setStyleSheet(u"background-color: rgb(255, 240, 125);")
+        self.label_40.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_33.addWidget(self.label_40)
+
+        self.label_44 = QLabel(self.delete_admin_frame)
+        self.label_44.setObjectName(u"label_44")
+        self.label_44.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_33.addWidget(self.label_44)
+
+        self.lineEdit_30 = QLineEdit(self.delete_admin_frame)
+        self.lineEdit_30.setObjectName(u"lineEdit_30")
+        self.lineEdit_30.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout_33.addWidget(self.lineEdit_30)
+
+        self.delete_admin_ctrl_btn = QPushButton(self.delete_admin_frame)
+        self.delete_admin_ctrl_btn.setObjectName(u"delete_admin_ctrl_btn")
+        self.delete_admin_ctrl_btn.setMinimumSize(QSize(0, 40))
+
+        self.verticalLayout_33.addWidget(self.delete_admin_ctrl_btn)
+
+        self.verticalSpacer_13 = QSpacerItem(20, 88, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_33.addItem(self.verticalSpacer_13)
+
+
+        self.verticalLayout_32.addWidget(self.delete_admin_frame)
+
+
+        self.verticalLayout_9.addWidget(self.frame_23)
+
+        self.stackedWidget.addWidget(self.page_add_administrator)
         self.page_registro = QWidget()
         self.page_registro.setObjectName(u"page_registro")
         self.page_registro.setStyleSheet(u"QFrame{\n"
@@ -1522,35 +1751,48 @@ class Ui_sistema(object):
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.frame_proyectos = QFrame(self.page_proyectos)
         self.frame_proyectos.setObjectName(u"frame_proyectos")
-        self.frame_proyectos.setMaximumSize(QSize(16777215, 100))
-        self.frame_proyectos.setStyleSheet(u"QFrame{background-color: qlineargradient(spread:pad, x1:1, y1:0.386, x2:1, y2:0, stop:0 rgba(116, 157, 152, 255), stop:1 rgba(255, 255, 255, 255));\n"
+        self.frame_proyectos.setMaximumSize(QSize(16777215, 50))
+        self.frame_proyectos.setStyleSheet(u"QFrame{\n"
+"background-color: rgb(191, 191, 191);\n"
 "}\n"
 "\n"
 "QPushButton{\n"
-"border:3px solid #ffffff;\n"
-"border-radius:20px;\n"
-"	background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"font: 87 12pt \"Segoe UI Black\"}\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:10px;\n"
+"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"}\n"
+"\n"
 "QPushButton:hover{\n"
-"border:4px solid #000000;\n"
-"border-radius:20px;\n"
-"background-color: rgb(255, 255, 0);\n"
-"font: 87 12pt \"Segoe UI Black\"}")
+"	background-color: rgb(170, 255, 255);\n"
+"}")
         self.frame_proyectos.setFrameShape(QFrame.StyledPanel)
         self.frame_proyectos.setFrameShadow(QFrame.Raised)
-        self.btn_Buscar_pro = QPushButton(self.frame_proyectos)
-        self.btn_Buscar_pro.setObjectName(u"btn_Buscar_pro")
-        self.btn_Buscar_pro.setGeometry(QRect(360, 10, 131, 51))
-        self.lineEdit_buscar_pro = QLineEdit(self.frame_proyectos)
-        self.lineEdit_buscar_pro.setObjectName(u"lineEdit_buscar_pro")
-        self.lineEdit_buscar_pro.setGeometry(QRect(20, 30, 291, 31))
-        self.lineEdit_buscar_pro.setFont(font4)
-        self.lineEdit_buscar_pro.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_proyectos)
+        self.horizontalLayout_15.setSpacing(30)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.horizontalLayout_15.setContentsMargins(70, 0, 70, 0)
         self.label_3 = QLabel(self.frame_proyectos)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(20, 0, 181, 21))
         self.label_3.setFont(font4)
         self.label_3.setStyleSheet(u"background-color:rgba(0,0,0,0%);")
+
+        self.horizontalLayout_15.addWidget(self.label_3)
+
+        self.lineEdit_buscar_pro = QLineEdit(self.frame_proyectos)
+        self.lineEdit_buscar_pro.setObjectName(u"lineEdit_buscar_pro")
+        self.lineEdit_buscar_pro.setFont(font3)
+        self.lineEdit_buscar_pro.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"font: 12pt \"MS Shell Dlg 2\";")
+
+        self.horizontalLayout_15.addWidget(self.lineEdit_buscar_pro)
+
+        self.btn_Buscar_pro = QPushButton(self.frame_proyectos)
+        self.btn_Buscar_pro.setObjectName(u"btn_Buscar_pro")
+        self.btn_Buscar_pro.setMinimumSize(QSize(150, 40))
+        self.btn_Buscar_pro.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+
+        self.horizontalLayout_15.addWidget(self.btn_Buscar_pro)
+
 
         self.verticalLayout_10.addWidget(self.frame_proyectos)
 
@@ -1651,15 +1893,15 @@ class Ui_sistema(object):
 
         self.verticalLayout_14.addWidget(self.btn_changes_password)
 
-        self.pushButton_5 = QPushButton(self.frame_2)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.btn_add_admin_ctrl = QPushButton(self.frame_2)
+        self.btn_add_admin_ctrl.setObjectName(u"btn_add_admin_ctrl")
 
-        self.verticalLayout_14.addWidget(self.pushButton_5)
+        self.verticalLayout_14.addWidget(self.btn_add_admin_ctrl)
 
-        self.pushButton_6 = QPushButton(self.frame_2)
-        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.btn_delete_admin_ctrl = QPushButton(self.frame_2)
+        self.btn_delete_admin_ctrl.setObjectName(u"btn_delete_admin_ctrl")
 
-        self.verticalLayout_14.addWidget(self.pushButton_6)
+        self.verticalLayout_14.addWidget(self.btn_delete_admin_ctrl)
 
         self.pushButton_7 = QPushButton(self.frame_2)
         self.pushButton_7.setObjectName(u"pushButton_7")
@@ -1690,7 +1932,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -1716,6 +1958,18 @@ class Ui_sistema(object):
         self.btn_admin.setText(QCoreApplication.translate("sistema", u"ADMINISTRADOR", None))
         self.label_2.setText(QCoreApplication.translate("sistema", u"AEC CONTRATISTAS \n"
 " GENERALES", None))
+        self.label_35.setText(QCoreApplication.translate("sistema", u"Agregar un administrador", None))
+        self.label_38.setText(QCoreApplication.translate("sistema", u"Agregar un administrador del sistema:", None))
+        self.label_46.setText(QCoreApplication.translate("sistema", u"Usuario:", None))
+        self.label_41.setText(QCoreApplication.translate("sistema", u"Contrase\u00f1a:", None))
+        self.btn_add_confirm_admin.setText(QCoreApplication.translate("sistema", u"Agregar administrador", None))
+        self.label_39.setText(QCoreApplication.translate("sistema", u"Agregar un controlador de asistencia en la web:", None))
+        self.label_42.setText(QCoreApplication.translate("sistema", u"DNI:", None))
+        self.label_43.setText(QCoreApplication.translate("sistema", u"Contrase\u00f1a:", None))
+        self.add_admin_btn_ctrls.setText(QCoreApplication.translate("sistema", u"Agregar administrador de asistencia", None))
+        self.label_40.setText(QCoreApplication.translate("sistema", u"Eliminar un administrador del sistema o controlador de asistencia en la web", None))
+        self.label_44.setText(QCoreApplication.translate("sistema", u"DNI o Usuario", None))
+        self.delete_admin_ctrl_btn.setText(QCoreApplication.translate("sistema", u"Eliminar administrador", None))
         self.label_4.setText(QCoreApplication.translate("sistema", u"Registrar, agregar  trabajadores, materiales o requerimientos", None))
         self.btn_agregar_trabajador.setText(QCoreApplication.translate("sistema", u"Aregar un trabajador", None))
         self.pushButton_2.setText(QCoreApplication.translate("sistema", u"Requerimientos de materiales", None))
@@ -1828,17 +2082,17 @@ class Ui_sistema(object):
         self.pushButton_11.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_10.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_8.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
-        self.btn_Buscar_pro.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_3.setText(QCoreApplication.translate("sistema", u"Nombre del Proyecto :", None))
+        self.btn_Buscar_pro.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_5.setText(QCoreApplication.translate("sistema", u"Realiza actividades de administrador, \n"
 "es necesario introducir contrase\u00f1a", None))
         self.btn_changes_password.setText(QCoreApplication.translate("sistema", u"\n"
 " Cambiar Contrase\u00f1a \n"
 "", None))
-        self.pushButton_5.setText(QCoreApplication.translate("sistema", u"\n"
+        self.btn_add_admin_ctrl.setText(QCoreApplication.translate("sistema", u"\n"
 " Agregar administrador \n"
 "", None))
-        self.pushButton_6.setText(QCoreApplication.translate("sistema", u"\n"
+        self.btn_delete_admin_ctrl.setText(QCoreApplication.translate("sistema", u"\n"
 " Eliminar administrador \n"
 "", None))
         self.pushButton_7.setText(QCoreApplication.translate("sistema", u"\n"

@@ -110,11 +110,17 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
 		self.btn_pagos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_pagos))
 		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
-		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))	
-		# realiza que los table view se ajusten a los datos de entrada
+		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))
+		self.btn_add_admin_ctrl.clicked.connect(self.ctrl_frame_add_admin)	
+		self.btn_delete_admin_ctrl.clicked.connect(self.ctrl_frame_delete_admin)
+		# realiza que los table view se ajusten de entrada de datos
 		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		# btn controls
+		self.btn_add_confirm_admin.clicked.connect()
+		self.add_admin_btn_ctrls.clicked.connect()
+		self.delete_admin_ctrl_btn.clicked.connect()
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
 		self.bt_restaurar.clicked.connect(self.control_bt_normal)
@@ -138,6 +144,20 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.valor_x=0
 		self.name_proyecto=""
 		self.proyectos_cod={"PRYCT001":"Valor1","PRYCT002":"Valor2","PRYCT003":"Valor3","PRYCT004":"Valor4"}
+	
+	def es_null(self):
+		print("He estado aqui")
+
+
+	def ctrl_frame_delete_admin(self):
+		self.add_admin_frame.hide()
+		self.delete_admin_frame.show()
+		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
+
+	def ctrl_frame_add_admin(self):
+		self.add_admin_frame.show()
+		self.delete_admin_frame.hide()
+		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
 
 	def add_control_frame(self):
 		width=200	# ancho

@@ -17,6 +17,8 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		self.setupUi(self)
 		#eliminar barra
 		self.setWindowFlag(Qt.FramelessWindowHint)
+		# Hacer transparente
+		self.setAttribute(Qt.WA_TranslucentBackground)
 		# crear un mensaje
 		self.dialogo = Dialogo()
 		# Variables de control

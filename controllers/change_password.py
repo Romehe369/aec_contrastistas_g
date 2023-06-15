@@ -14,7 +14,7 @@ class Dialogo(QDialog):
     def __init__(self):
         QDialog.__init__(self)
         #self.resize(300, 300)
-        self.setWindowTitle("Cuadro de diálogo")
+        self.setWindowTitle(" Mensaje ")
         #self.etiqueta = QLabel(self)
         self.resize(268, 259)
         self.setStyleSheet(u"QDialog{\n"
