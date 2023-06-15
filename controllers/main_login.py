@@ -118,9 +118,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		# btn controls
-		self.btn_add_confirm_admin.clicked.connect()
-		self.add_admin_btn_ctrls.clicked.connect()
-		self.delete_admin_ctrl_btn.clicked.connect()
+		self.btn_add_confirm_admin.clicked.connect(self.es_null)
+		self.add_admin_btn_ctrls.clicked.connect(self.es_null)
+		self.delete_admin_ctrl_btn.clicked.connect(self.es_null)
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
 		self.bt_restaurar.clicked.connect(self.control_bt_normal)
@@ -146,7 +146,13 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.proyectos_cod={"PRYCT001":"Valor1","PRYCT002":"Valor2","PRYCT003":"Valor3","PRYCT004":"Valor4"}
 	
 	def es_null(self):
-		print("He estado aqui")
+		lndt_val1=self.lndt_add_password.text()
+		lndt_val2=self.lndt_add_cntrls.text()
+		lndt_val3=self.lndt_delete_id.text()
+		if(lndt_val1=="" or lndt_val1=="" or lndt_val1==""):
+			self.dialogo=Dialogo()
+			self.dialogo.show()
+			self.dialogo.label_mensaje.setText("Imposibel \n aaceder")
 
 
 	def ctrl_frame_delete_admin(self):

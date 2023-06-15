@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuwGXHni.ui'
+## Form generated from reading UI file 'menuEAjmLZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -442,11 +442,11 @@ class Ui_sistema(object):
 
         self.verticalLayout_34.addWidget(self.label_41)
 
-        self.lineEdit_25 = QLineEdit(self.frame_26)
-        self.lineEdit_25.setObjectName(u"lineEdit_25")
-        self.lineEdit_25.setMinimumSize(QSize(0, 31))
+        self.lndt_add_password = QLineEdit(self.frame_26)
+        self.lndt_add_password.setObjectName(u"lndt_add_password")
+        self.lndt_add_password.setMinimumSize(QSize(0, 31))
 
-        self.verticalLayout_34.addWidget(self.lineEdit_25)
+        self.verticalLayout_34.addWidget(self.lndt_add_password)
 
         self.btn_add_confirm_admin = QPushButton(self.frame_26)
         self.btn_add_confirm_admin.setObjectName(u"btn_add_confirm_admin")
@@ -495,11 +495,11 @@ class Ui_sistema(object):
 
         self.verticalLayout_35.addWidget(self.label_43)
 
-        self.lineEdit_27 = QLineEdit(self.frame_25)
-        self.lineEdit_27.setObjectName(u"lineEdit_27")
-        self.lineEdit_27.setMinimumSize(QSize(0, 31))
+        self.lndt_add_cntrls = QLineEdit(self.frame_25)
+        self.lndt_add_cntrls.setObjectName(u"lndt_add_cntrls")
+        self.lndt_add_cntrls.setMinimumSize(QSize(0, 31))
 
-        self.verticalLayout_35.addWidget(self.lineEdit_27)
+        self.verticalLayout_35.addWidget(self.lndt_add_cntrls)
 
         self.add_admin_btn_ctrls = QPushButton(self.frame_25)
         self.add_admin_btn_ctrls.setObjectName(u"add_admin_btn_ctrls")
@@ -538,11 +538,11 @@ class Ui_sistema(object):
 
         self.verticalLayout_33.addWidget(self.label_44)
 
-        self.lineEdit_30 = QLineEdit(self.delete_admin_frame)
-        self.lineEdit_30.setObjectName(u"lineEdit_30")
-        self.lineEdit_30.setMinimumSize(QSize(0, 31))
+        self.lndt_delete_id = QLineEdit(self.delete_admin_frame)
+        self.lndt_delete_id.setObjectName(u"lndt_delete_id")
+        self.lndt_delete_id.setMinimumSize(QSize(0, 31))
 
-        self.verticalLayout_33.addWidget(self.lineEdit_30)
+        self.verticalLayout_33.addWidget(self.lndt_delete_id)
 
         self.delete_admin_ctrl_btn = QPushButton(self.delete_admin_frame)
         self.delete_admin_ctrl_btn.setObjectName(u"delete_admin_ctrl_btn")
