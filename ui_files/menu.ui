@@ -890,14 +890,17 @@ QLineEdit{
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>0</height>
+                           <height>40</height>
                           </size>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true"/>
+                          <string notr="true">background-color: rgb(255, 240, 125);</string>
                          </property>
                          <property name="text">
                           <string>Agregar un administrador del sistema:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -918,7 +921,7 @@ QLineEdit{
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_7">
+                        <widget class="QLineEdit" name="lineEdit_add_users">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -944,7 +947,7 @@ QLineEdit{
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_25">
+                        <widget class="QLineEdit" name="lndt_add_password">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -996,14 +999,17 @@ QLineEdit{
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>0</height>
+                           <height>40</height>
                           </size>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true"/>
+                          <string notr="true">background-color: rgb(255, 240, 125);</string>
                          </property>
                          <property name="text">
                           <string>Agregar un controlador de asistencia en la web:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -1050,7 +1056,7 @@ QLineEdit{
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_27">
+                        <widget class="QLineEdit" name="lndt_add_cntrls">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -1108,6 +1114,15 @@ QLineEdit{
                    <layout class="QVBoxLayout" name="verticalLayout_33">
                     <item>
                      <widget class="QLabel" name="label_40">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 240, 125);</string>
+                      </property>
                       <property name="text">
                        <string>Eliminar un administrador del sistema o controlador de asistencia en la web</string>
                       </property>
@@ -1127,7 +1142,7 @@ QLineEdit{
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_30">
+                     <widget class="QLineEdit" name="lndt_delete_id">
                       <property name="minimumSize">
                        <size>
                         <width>0</width>

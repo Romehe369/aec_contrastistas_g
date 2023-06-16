@@ -62,11 +62,11 @@ class MiApp(QMainWindow, Ui_login):
 				if dato1 ==[]:
 					self.usuario_incorrecto.setText('Usuario incorrecto')
 				else:
-					dato1 = dato1[0][1]
+					dato1 = dato1[0][0]
 				if dato2 ==[]:
 					self.contrasena_incorrecta.setText('Contraseña incorrecta')
 				else:
-					dato2 = dato2[0][2]
+					dato2 = dato2[0][1]
 				
 
 				if dato1 != [] and dato2 != []:
@@ -118,9 +118,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		# btn controls
-		self.btn_add_confirm_admin.clicked.connect(self.es_null)
-		self.add_admin_btn_ctrls.clicked.connect(self.es_null)
-		self.delete_admin_ctrl_btn.clicked.connect(self.es_null)
+		self.btn_add_confirm_admin.clicked.connect(self.add_admin_new)
+		##self.add_admin_btn_ctrls.clicked.connect(self.es_null)
+		self.delete_admin_ctrl_btn.clicked.connect(self.delete_bd_admin)
 		#control barra de titulos
 		self.bt_minimizar.clicked.connect(self.control_bt_minimizar)		
 		self.bt_restaurar.clicked.connect(self.control_bt_normal)
@@ -130,7 +130,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_cerrar.clicked.connect(lambda: self.close())
 		self.btn_ocultar.clicked.connect(self.mover_arriba)
 		self.bt_restaurar.hide()
+		self.dialogo=Dialogo()
 		self.btn_Buscar_pro.clicked.connect(self.add_control_frame)
+		self.lndt_add_password.textChanged.connect(self.verificar_users)
 		# menu lateral
 		self.control_proyecto=[]
 		self.bt_menu.clicked.connect(self.mover_menu)
@@ -144,16 +146,44 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.valor_x=0
 		self.name_proyecto=""
 		self.proyectos_cod={"PRYCT001":"Valor1","PRYCT002":"Valor2","PRYCT003":"Valor3","PRYCT004":"Valor4"}
-	
-	def es_null(self):
-		lndt_val1=self.lndt_add_password.text()
-		lndt_val2=self.lndt_add_cntrls.text()
-		lndt_val3=self.lndt_delete_id.text()
-		if(lndt_val1=="" or lndt_val1=="" or lndt_val1==""):
-			self.dialogo=Dialogo()
-			self.dialogo.show()
-			self.dialogo.label_mensaje.setText("Imposibel \n aaceder")
 
+	# Eliminamos un administrador del sistema
+	def delete_bd_admin(self):
+		# Obtenemos el dni- o users
+		users_dni=self.lndt_delete_id.text()
+		# Verificamos que exista algun dato
+		if(users_dni==""):
+			self.dialogo.show()
+			self.dialogo.label_mensaje.setText("Completa los datos\ncorrectamente")
+		else:
+			estado=self.datos.elimina_admin(users_dni)
+			print(estado)
+			if(estado):
+				self.dialogo.show()
+				self.dialogo.label_mensaje.setText("Operacion\nExitosa")
+			else:
+				self.dialogo.show()
+				self.dialogo.label_mensaje.setText("No existe el DNI\no users en la\nbase de datos")
+
+	def add_admin_new(self):
+		# Recuperamos los datos
+		users=self.lineEdit_add_users.text()
+		password=self.lndt_add_password.text()
+		if(users=="" or password==""):
+			self.dialogo.show()
+			self.dialogo.label_mensaje.setText("Completa los datos \n correctamente")
+		else:
+			self.datos.add_admin(users, password)
+			self.dialogo.show()
+			self.dialogo.label_mensaje.setText("Se agrego\ncorrectamente")
+
+	def verificar_users(self):
+		users=self.lineEdit_add_users.text()
+		users_entry = str("'" + users + "'")
+		act = self.datos.busca_users(users_entry)
+		if act!=[]:
+			self.dialogo.label_mensaje.setText("El users ya existe")
+			self.dialogo.show()
 
 	def ctrl_frame_delete_admin(self):
 		self.add_admin_frame.hide()

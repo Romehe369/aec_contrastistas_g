@@ -8,6 +8,30 @@ class Registro_datos():
                                             database ='base_datos', 
                                             user = 'root',
                                             password ='')
+
+    def elimina_admin(self,users):
+        # Indica que se genero un error o no existe dicho ussers
+        a=0
+        try:
+            cur = self.conexion.cursor()
+            sql = "DELETE FROM login_datos WHERE users = %s"
+            cur.execute(sql,(users,))
+            a = cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            a=0
+        finally:
+            cur.close() 
+            return a
+
+    def add_admin(self,users, password):
+        cur = self.conexion.cursor()
+        sql='''INSERT INTO login_datos (USERS, PASSWORD) 
+        VALUES('{}', '{}')'''.format(users, password)
+        cur.execute(sql)
+        self.conexion.commit()    
+        cur.close()
+
     def busca_users(self, users):
         cur = self.conexion.cursor()
         sql = "SELECT * FROM login_datos WHERE Users = {}".format(users)
@@ -23,7 +47,7 @@ class Registro_datos():
         passwordx = cur.fetchall()
         cur.close()     
         return passwordx
-
+    # Se cambia la contraseña del usuario
     def actualiza_password(self, users, password):
         cur = self.conexion.cursor()
         sql ='''UPDATE login_datos SET Password = '{}'
@@ -36,7 +60,6 @@ class Registro_datos():
         return a   
 
     # Modifcar los datos de trabajador
-
     def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,foto):
         fechain=fecha_inicio.split("/")       
         fecha_inicio=datetime.date(int(fechain[2]), int(fechain[1]), int(fechain[0]))

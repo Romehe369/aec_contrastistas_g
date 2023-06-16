@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuEAjmLZ.ui'
+## Form generated from reading UI file 'menuzGiCIs.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -429,11 +429,11 @@ class Ui_sistema(object):
 
         self.verticalLayout_34.addWidget(self.label_46)
 
-        self.lineEdit_7 = QLineEdit(self.frame_26)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-        self.lineEdit_7.setMinimumSize(QSize(0, 31))
+        self.lineEdit_add_users = QLineEdit(self.frame_26)
+        self.lineEdit_add_users.setObjectName(u"lineEdit_add_users")
+        self.lineEdit_add_users.setMinimumSize(QSize(0, 31))
 
-        self.verticalLayout_34.addWidget(self.lineEdit_7)
+        self.verticalLayout_34.addWidget(self.lineEdit_add_users)
 
         self.label_41 = QLabel(self.frame_26)
         self.label_41.setObjectName(u"label_41")
