@@ -25,18 +25,24 @@ class Registro_datos():
             return a
 
     def add_admin(self,users, password):
-        cur = self.conexion.cursor()
-        sql='''INSERT INTO login_datos (USERS, PASSWORD) 
-        VALUES('{}', '{}')'''.format(users, password)
-        cur.execute(sql)
-        self.conexion.commit()    
-        cur.close()
+        mensaje=""
+        try:
+            cur = self.conexion.cursor()
+            sql='''INSERT INTO login_datos (USERS, PASSWORD) 
+            VALUES('{}', '{}')'''.format(users, password)
+            cur.execute(sql)
+            self.conexion.commit() 
+        except Exception as e:
+            mensaje=e
+        finally:
+            cur.close()
+            return mensaje
 
     def busca_users(self, users):
         cur = self.conexion.cursor()
         sql = "SELECT * FROM login_datos WHERE Users = {}".format(users)
         cur.execute(sql)
-        usersx = cur.fetchall()
+        usersx = cur.fetchone()
         cur.close()     
         return usersx 
 

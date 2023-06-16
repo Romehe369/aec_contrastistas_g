@@ -45,43 +45,28 @@ class MiApp(QMainWindow, Ui_login):
 		users_entry = self.users.text()
 		password_entry = self.password.text()
 
-		users_entry = str("'" + users_entry + "'")
-		password_entry = str("'" + password_entry + "'")
+		users_entry_consul = str("'" + users_entry + "'")
 
-		dato1 = self.datos.busca_users(users_entry)
-		dato2 = self.datos.busca_password(password_entry)
-
-		fila1 = dato1
-		fila2 = dato2
-
-		if fila1 == fila2:	
-			if dato1 == [] and dato2 ==[]:
-				self.contrasena_incorrecta.setText('Contraseña incorrecta')
-				self.usuario_incorrecto.setText('Usuario incorrecto')
-			else:
-				if dato1 ==[]:
-					self.usuario_incorrecto.setText('Usuario incorrecto')
-				else:
-					dato1 = dato1[0][0]
-				if dato2 ==[]:
-					self.contrasena_incorrecta.setText('Contraseña incorrecta')
-				else:
-					dato2 = dato2[0][1]
-				
-
-				if dato1 != [] and dato2 != []:
-					for i in range(0,99):
-						time.sleep(0.02)
-						self.progressBar.setValue(i)
-						self.cargando.setText('Cargando...')
-
-					self.hide()
-					self.ventana = control_aec()
-					self.ventana.set_pass(dato1,dato2)
-					self.ventana.show()
+		users_all_information = self.datos.busca_users(users_entry_consul)
+		print(users_all_information)
+		if(len(users_all_information)==0):
+			self.usuario_incorrecto.setText('Usuario incorrecto')
 		else:
-			self.contrasena_incorrecta.setText(' Error ')
-			self.usuario_incorrecto.setText(' Error ')
+			users=users_all_information[0]
+			password=users_all_information[1]
+			print(users, password)
+			if(password_entry==password and users_entry==users):
+				for i in range(0,99):
+					time.sleep(0.02)
+					self.progressBar.setValue(i)
+					self.cargando.setText('Cargando...')
+
+				self.ventana = control_aec()
+				self.ventana.set_pass(users,password)
+				self.ventana.show()
+				self.close()
+			else:
+				self.contrasena_incorrecta.setText('Contraseña incorrecta')
 			
 class control_aec(QMainWindow,Ui_sistema):
 	def __init__(self):
@@ -157,7 +142,6 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.dialogo.label_mensaje.setText("Completa los datos\ncorrectamente")
 		else:
 			estado=self.datos.elimina_admin(users_dni)
-			print(estado)
 			if(estado):
 				self.dialogo.show()
 				self.dialogo.label_mensaje.setText("Operacion\nExitosa")
@@ -181,6 +165,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		users=self.lineEdit_add_users.text()
 		users_entry = str("'" + users + "'")
 		act = self.datos.busca_users(users_entry)
+		# Verifica si existe el users en la base de datos
 		if act!=[]:
 			self.dialogo.label_mensaje.setText("El users ya existe")
 			self.dialogo.show()
