@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuzGiCIs.ui'
+## Form generated from reading UI file 'menuCsxqKw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -20,7 +20,7 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1002, 630)
+        sistema.resize(1322, 630)
         sistema.setMinimumSize(QSize(400, 0))
         sistema.setStyleSheet(u"background-color: rgb(117, 117, 117);\n"
 "\n"
@@ -432,6 +432,7 @@ class Ui_sistema(object):
         self.lineEdit_add_users = QLineEdit(self.frame_26)
         self.lineEdit_add_users.setObjectName(u"lineEdit_add_users")
         self.lineEdit_add_users.setMinimumSize(QSize(0, 31))
+        self.lineEdit_add_users.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.lineEdit_add_users)
 
@@ -445,6 +446,7 @@ class Ui_sistema(object):
         self.lndt_add_password = QLineEdit(self.frame_26)
         self.lndt_add_password.setObjectName(u"lndt_add_password")
         self.lndt_add_password.setMinimumSize(QSize(0, 31))
+        self.lndt_add_password.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.lndt_add_password)
 
@@ -485,6 +487,7 @@ class Ui_sistema(object):
         self.lineEdit_26 = QLineEdit(self.frame_25)
         self.lineEdit_26.setObjectName(u"lineEdit_26")
         self.lineEdit_26.setMinimumSize(QSize(0, 31))
+        self.lineEdit_26.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_35.addWidget(self.lineEdit_26)
 
@@ -498,6 +501,7 @@ class Ui_sistema(object):
         self.lndt_add_cntrls = QLineEdit(self.frame_25)
         self.lndt_add_cntrls.setObjectName(u"lndt_add_cntrls")
         self.lndt_add_cntrls.setMinimumSize(QSize(0, 31))
+        self.lndt_add_cntrls.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_35.addWidget(self.lndt_add_cntrls)
 
@@ -541,6 +545,7 @@ class Ui_sistema(object):
         self.lndt_delete_id = QLineEdit(self.delete_admin_frame)
         self.lndt_delete_id.setObjectName(u"lndt_delete_id")
         self.lndt_delete_id.setMinimumSize(QSize(0, 31))
+        self.lndt_delete_id.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_33.addWidget(self.lndt_delete_id)
 
@@ -864,12 +869,13 @@ class Ui_sistema(object):
 
         self.verticalLayout_23.addWidget(self.tipe_lineEdit)
 
-        self.lineEdit_8 = QLineEdit(self.frame_15)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-        self.lineEdit_8.setMinimumSize(QSize(0, 31))
-        self.lineEdit_8.setFont(font4)
+        self.dateEdit = QDateEdit(self.frame_15)
+        self.dateEdit.setObjectName(u"dateEdit")
+        self.dateEdit.setMinimumSize(QSize(0, 31))
+        self.dateEdit.setFont(font3)
+        self.dateEdit.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
 
-        self.verticalLayout_23.addWidget(self.lineEdit_8)
+        self.verticalLayout_23.addWidget(self.dateEdit)
 
         self.lineEdit_9 = QLineEdit(self.frame_15)
         self.lineEdit_9.setObjectName(u"lineEdit_9")
@@ -1005,12 +1011,12 @@ class Ui_sistema(object):
 
         self.verticalLayout_21.addWidget(self.lineEdit_23)
 
-        self.lineEdit_21 = QLineEdit(self.frame_17)
-        self.lineEdit_21.setObjectName(u"lineEdit_21")
-        self.lineEdit_21.setMinimumSize(QSize(0, 31))
-        self.lineEdit_21.setFont(font4)
+        self.dateEdit_2 = QDateEdit(self.frame_17)
+        self.dateEdit_2.setObjectName(u"dateEdit_2")
+        self.dateEdit_2.setMinimumSize(QSize(0, 31))
+        self.dateEdit_2.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
 
-        self.verticalLayout_21.addWidget(self.lineEdit_21)
+        self.verticalLayout_21.addWidget(self.dateEdit_2)
 
         self.lineEdit_22 = QLineEdit(self.frame_17)
         self.lineEdit_22.setObjectName(u"lineEdit_22")
@@ -1932,7 +1938,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(sistema)

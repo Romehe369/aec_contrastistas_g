@@ -48,13 +48,11 @@ class MiApp(QMainWindow, Ui_login):
 		users_entry_consul = str("'" + users_entry + "'")
 
 		users_all_information = self.datos.busca_users(users_entry_consul)
-		print(users_all_information)
 		if(len(users_all_information)==0):
 			self.usuario_incorrecto.setText('Usuario incorrecto')
 		else:
 			users=users_all_information[0]
 			password=users_all_information[1]
-			print(users, password)
 			if(password_entry==password and users_entry==users):
 				for i in range(0,99):
 					time.sleep(0.02)
