@@ -715,7 +715,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="page_add_administrator">
              <property name="styleSheet">
@@ -3747,6 +3747,7 @@ background-color: rgb(191, 191, 191);
 }
 
 QPushButton{
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 border: 1px solid rgb(0, 0, 127);
 border-radius:10px;
 background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
@@ -3764,7 +3765,7 @@ QPushButton:hover{
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_15">
                  <property name="spacing">
-                  <number>30</number>
+                  <number>9</number>
                  </property>
                  <property name="leftMargin">
                   <number>70</number>
@@ -3789,7 +3790,7 @@ QPushButton:hover{
                     <string notr="true">background-color:rgba(0,0,0,0%);</string>
                    </property>
                    <property name="text">
-                    <string>Nombre del Proyecto :</string>
+                    <string>Código o nombre del Proyecto :</string>
                    </property>
                   </widget>
                  </item>
@@ -3811,6 +3812,22 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                   </widget>
                  </item>
                  <item>
+                  <widget class="QPushButton" name="btn_agregar_pro">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="text">
+                    <string>Agregar</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QPushButton" name="btn_Buscar_pro">
                    <property name="minimumSize">
                     <size>
@@ -3819,7 +3836,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Buscar</string>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuCsxqKw.ui'
+## Form generated from reading UI file 'menuuTMssI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -1763,6 +1763,7 @@ class Ui_sistema(object):
 "}\n"
 "\n"
 "QPushButton{\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
 "border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:10px;\n"
 "background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
@@ -1774,7 +1775,7 @@ class Ui_sistema(object):
         self.frame_proyectos.setFrameShape(QFrame.StyledPanel)
         self.frame_proyectos.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_15 = QHBoxLayout(self.frame_proyectos)
-        self.horizontalLayout_15.setSpacing(30)
+        self.horizontalLayout_15.setSpacing(9)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.horizontalLayout_15.setContentsMargins(70, 0, 70, 0)
         self.label_3 = QLabel(self.frame_proyectos)
@@ -1792,10 +1793,17 @@ class Ui_sistema(object):
 
         self.horizontalLayout_15.addWidget(self.lineEdit_buscar_pro)
 
+        self.btn_agregar_pro = QPushButton(self.frame_proyectos)
+        self.btn_agregar_pro.setObjectName(u"btn_agregar_pro")
+        self.btn_agregar_pro.setMinimumSize(QSize(150, 40))
+        self.btn_agregar_pro.setStyleSheet(u"")
+
+        self.horizontalLayout_15.addWidget(self.btn_agregar_pro)
+
         self.btn_Buscar_pro = QPushButton(self.frame_proyectos)
         self.btn_Buscar_pro.setObjectName(u"btn_Buscar_pro")
         self.btn_Buscar_pro.setMinimumSize(QSize(150, 40))
-        self.btn_Buscar_pro.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+        self.btn_Buscar_pro.setStyleSheet(u"")
 
         self.horizontalLayout_15.addWidget(self.btn_Buscar_pro)
 
@@ -1938,7 +1946,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -2088,7 +2096,8 @@ class Ui_sistema(object):
         self.pushButton_11.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_10.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_8.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
-        self.label_3.setText(QCoreApplication.translate("sistema", u"Nombre del Proyecto :", None))
+        self.label_3.setText(QCoreApplication.translate("sistema", u"C\u00f3digo o nombre del Proyecto :", None))
+        self.btn_agregar_pro.setText(QCoreApplication.translate("sistema", u"Agregar", None))
         self.btn_Buscar_pro.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_5.setText(QCoreApplication.translate("sistema", u"Realiza actividades de administrador, \n"
 "es necesario introducir contrase\u00f1a", None))

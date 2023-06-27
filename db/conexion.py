@@ -119,3 +119,13 @@ class Registro_datos():
         self.conexion.commit()    
         cur.close()
         return a  
+
+    def insertar_project(self,code, name, responsible, region, province,district,start_peoject,end_project,reference):
+        cur = self.conexion.cursor()
+        sql= '''INSERT INTO ttrabajador (code, name, responsible, region, province,district,start_peoject,end_project,reference) 
+        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
+        # Convert data into tuple format
+        insert_blob_tuple = (code, name, responsible, region, province,district,start_peoject,end_project,reference)
+        cur.execute(sql,insert_blob_tuple)
+        self.conexion.commit()    
+        cur.close()

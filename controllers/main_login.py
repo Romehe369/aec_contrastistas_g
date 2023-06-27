@@ -114,7 +114,8 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_ocultar.clicked.connect(self.mover_arriba)
 		self.bt_restaurar.hide()
 		self.dialogo=Dialogo()
-		self.btn_Buscar_pro.clicked.connect(self.add_control_frame)
+		self.btn_agregar_pro.clicked.connect(self.add_control_frame)
+		self.btn_Buscar_pro.clicked.connect(self.search_project)
 		self.lndt_add_password.textChanged.connect(self.verificar_users)
 		# menu lateral
 		self.control_proyecto=[]
@@ -164,8 +165,11 @@ class control_aec(QMainWindow,Ui_sistema):
 		users_entry = str("'" + users + "'")
 		act = self.datos.busca_users(users_entry)
 		# Verifica si existe el users en la base de datos
-		if act!=[]:
+		if act is not None:
 			self.dialogo.label_mensaje.setText("El users ya existe")
+			# Mostramos los mensajes y ponemos en blanco los datos
+			self.lineEdit_add_users.setText("")
+			self.lndt_add_password.setText("")
 			self.dialogo.show()
 
 	def ctrl_frame_delete_admin(self):
@@ -177,6 +181,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.add_admin_frame.show()
 		self.delete_admin_frame.hide()
 		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
+
+	def search_project(self):
+		print("No existe projectos en este sistema")
 
 	def add_control_frame(self):
 		width=200	# ancho
