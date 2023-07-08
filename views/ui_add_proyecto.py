@@ -1,31 +1,28 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectoHzToHh.ui'
+## Form generated from reading UI file 'add_proyectoXfgJws.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(684, 627)
-        self.verticalLayout_2 = QVBoxLayout(Dialog)
+class Ui_add_project_new(object):
+    def setupUi(self, add_project_new):
+        if not add_project_new.objectName():
+            add_project_new.setObjectName(u"add_project_new")
+        add_project_new.resize(684, 627)
+        self.verticalLayout_2 = QVBoxLayout(add_project_new)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.frame_2 = QFrame(Dialog)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setStyleSheet(u"QFrame{\n"
+        self.frame_contenedor = QFrame(add_project_new)
+        self.frame_contenedor.setObjectName(u"frame_contenedor")
+        self.frame_contenedor.setStyleSheet(u"QFrame{\n"
 "	font: 12pt \"MS Shell Dlg 2\";\n"
 "	border: 5px solid rgb(0, 0, 127);\n"
 "	border-radius:10px;\n"
@@ -55,74 +52,51 @@ class Ui_Dialog(object):
 "QLabel{\n"
 "border:none;\n"
 "}")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.frame = QFrame(self.frame_2)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(10, 10, 631, 51))
-        self.frame.setStyleSheet(u"border:none;")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout = QVBoxLayout(self.frame)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.label = QLabel(self.frame)
-        self.label.setObjectName(u"label")
-        font = QFont()
-        font.setFamily(u"Times New Roman")
-        font.setPointSize(24)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(9)
-        self.label.setFont(font)
-        self.label.setStyleSheet(u"color: rgb(255, 255, 255);\n"
-"font: 75 24pt \"Times New Roman\";")
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout.addWidget(self.label)
-
-        self.label_2 = QLabel(self.frame_2)
+        self.frame_contenedor.setFrameShape(QFrame.StyledPanel)
+        self.frame_contenedor.setFrameShadow(QFrame.Raised)
+        self.label_2 = QLabel(self.frame_contenedor)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(30, 80, 131, 31))
-        self.label_3 = QLabel(self.frame_2)
+        self.label_3 = QLabel(self.frame_contenedor)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(30, 150, 251, 16))
-        self.label_4 = QLabel(self.frame_2)
+        self.label_3.setGeometry(QRect(30, 146, 251, 20))
+        self.label_4 = QLabel(self.frame_contenedor)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(30, 210, 151, 16))
-        self.Name_project_lineEdit = QLineEdit(self.frame_2)
+        self.Name_project_lineEdit = QLineEdit(self.frame_contenedor)
         self.Name_project_lineEdit.setObjectName(u"Name_project_lineEdit")
         self.Name_project_lineEdit.setGeometry(QRect(30, 170, 611, 31))
         self.Name_project_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.id_res_linetext = QLineEdit(self.frame_2)
+        self.id_res_linetext = QLineEdit(self.frame_contenedor)
         self.id_res_linetext.setObjectName(u"id_res_linetext")
         self.id_res_linetext.setGeometry(QRect(30, 240, 211, 31))
         self.id_res_linetext.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.pushButton = QPushButton(self.frame_2)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(260, 240, 161, 31))
-        self.pushButton_2 = QPushButton(self.frame_2)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(130, 550, 180, 41))
-        self.pushButton_3 = QPushButton(self.frame_2)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(350, 550, 180, 41))
-        self.label_9 = QLabel(self.frame_2)
+        self.search_name_db = QPushButton(self.frame_contenedor)
+        self.search_name_db.setObjectName(u"search_name_db")
+        self.search_name_db.setGeometry(QRect(260, 240, 161, 31))
+        self.allow_btn = QPushButton(self.frame_contenedor)
+        self.allow_btn.setObjectName(u"allow_btn")
+        self.allow_btn.setGeometry(QRect(130, 550, 180, 41))
+        self.decline_btn = QPushButton(self.frame_contenedor)
+        self.decline_btn.setObjectName(u"decline_btn")
+        self.decline_btn.setGeometry(QRect(350, 550, 180, 41))
+        self.label_9 = QLabel(self.frame_contenedor)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setGeometry(QRect(30, 360, 181, 16))
         self.label_9.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.label_10 = QLabel(self.frame_2)
+        self.label_10 = QLabel(self.frame_contenedor)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(300, 360, 151, 16))
+        self.label_10.setGeometry(QRect(245, 360, 191, 16))
         self.label_10.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.label_11 = QLabel(self.frame_2)
+        self.label_11 = QLabel(self.frame_contenedor)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(30, 430, 151, 16))
-        self.plainTextEdit = QPlainTextEdit(self.frame_2)
-        self.plainTextEdit.setObjectName(u"plainTextEdit")
-        self.plainTextEdit.setGeometry(QRect(30, 450, 621, 81))
-        self.plainTextEdit.setStyleSheet(u"border: none;\n"
+        self.references_plainTextEdit = QPlainTextEdit(self.frame_contenedor)
+        self.references_plainTextEdit.setObjectName(u"references_plainTextEdit")
+        self.references_plainTextEdit.setGeometry(QRect(30, 450, 621, 81))
+        self.references_plainTextEdit.setStyleSheet(u"border: none;\n"
 "background-color: rgb(255, 255, 255);")
-        self.frame_3 = QFrame(self.frame_2)
+        self.frame_3 = QFrame(self.frame_contenedor)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setGeometry(QRect(30, 290, 621, 61))
         self.frame_3.setStyleSheet(u"QFrame{\n"
@@ -203,53 +177,68 @@ class Ui_Dialog(object):
 
         self.verticalLayout_5.addWidget(self.district_lineEdit)
 
+        self.district_lineEdit.raise_()
+        self.label_8.raise_()
 
         self.horizontalLayout.addWidget(self.frame_6)
 
-        self.dateEdit = QDateEdit(self.frame_2)
-        self.dateEdit.setObjectName(u"dateEdit")
-        self.dateEdit.setGeometry(QRect(30, 390, 171, 31))
-        self.dateEdit_2 = QDateEdit(self.frame_2)
-        self.dateEdit_2.setObjectName(u"dateEdit_2")
-        self.dateEdit_2.setGeometry(QRect(300, 390, 151, 31))
-        self.label_6 = QLabel(self.frame_2)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(250, 90, 381, 61))
-        self.label_6.setStyleSheet(u"QLabel{\n"
+        self.start_dateEdit = QDateEdit(self.frame_contenedor)
+        self.start_dateEdit.setObjectName(u"start_dateEdit")
+        self.start_dateEdit.setGeometry(QRect(30, 390, 191, 31))
+        self.end_dateEdit = QDateEdit(self.frame_contenedor)
+        self.end_dateEdit.setObjectName(u"end_dateEdit")
+        self.end_dateEdit.setGeometry(QRect(245, 390, 191, 31))
+        self.info_txt_lbl = QLabel(self.frame_contenedor)
+        self.info_txt_lbl.setObjectName(u"info_txt_lbl")
+        self.info_txt_lbl.setGeometry(QRect(250, 90, 381, 61))
+        self.info_txt_lbl.setStyleSheet(u"QLabel{\n"
 "	border: 2px solid red;\n"
 "	border-radius:10px;\n"
 "}")
-        self.label_6.setAlignment(Qt.AlignCenter)
-        self.lbl_code_pro_random = QLabel(self.frame_2)
+        self.info_txt_lbl.setAlignment(Qt.AlignCenter)
+        self.lbl_code_pro_random = QLabel(self.frame_contenedor)
         self.lbl_code_pro_random.setObjectName(u"lbl_code_pro_random")
         self.lbl_code_pro_random.setGeometry(QRect(30, 110, 171, 31))
+        self.name_project_label = QLabel(self.frame_contenedor)
+        self.name_project_label.setObjectName(u"name_project_label")
+        self.name_project_label.setGeometry(QRect(20, 20, 613, 33))
+        font = QFont()
+        font.setFamily(u"Times New Roman")
+        font.setPointSize(24)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.name_project_label.setFont(font)
+        self.name_project_label.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 75 24pt \"Times New Roman\";")
+        self.name_project_label.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_2.addWidget(self.frame_2)
+        self.verticalLayout_2.addWidget(self.frame_contenedor)
 
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi(add_project_new)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        QMetaObject.connectSlotsByName(add_project_new)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"Agregar un proyecto", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog", u"Codigo proyecto:", None))
-        self.label_3.setText(QCoreApplication.translate("Dialog", u"Nombre del proyecto:", None))
-        self.label_4.setText(QCoreApplication.translate("Dialog", u"DNI Responsable:", None))
-        self.pushButton.setText(QCoreApplication.translate("Dialog", u"Buscar por nombre", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Aceptar", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
-        self.label_9.setText(QCoreApplication.translate("Dialog", u"Fecha inicio:", None))
-        self.label_10.setText(QCoreApplication.translate("Dialog", u"Fecha fin:", None))
-        self.label_11.setText(QCoreApplication.translate("Dialog", u"Referencias:", None))
-        self.plainTextEdit.setPlainText("")
-        self.label_5.setText(QCoreApplication.translate("Dialog", u"Region", None))
-        self.label_7.setText(QCoreApplication.translate("Dialog", u"Provincia", None))
-        self.label_8.setText(QCoreApplication.translate("Dialog", u"Distrito", None))
-        self.label_6.setText(QCoreApplication.translate("Dialog", u"El c\u00f3digo del proyecto se genera \n"
+    def retranslateUi(self, add_project_new):
+        add_project_new.setWindowTitle(QCoreApplication.translate("add_project_new", u"Dialog", None))
+        self.label_2.setText(QCoreApplication.translate("add_project_new", u"Codigo proyecto:", None))
+        self.label_3.setText(QCoreApplication.translate("add_project_new", u"Nombre del proyecto:", None))
+        self.label_4.setText(QCoreApplication.translate("add_project_new", u"DNI Responsable:", None))
+        self.search_name_db.setText(QCoreApplication.translate("add_project_new", u"Buscar por nombre", None))
+        self.allow_btn.setText(QCoreApplication.translate("add_project_new", u"Aceptar", None))
+        self.decline_btn.setText(QCoreApplication.translate("add_project_new", u"Cancelar", None))
+        self.label_9.setText(QCoreApplication.translate("add_project_new", u"Fecha inicio:", None))
+        self.label_10.setText(QCoreApplication.translate("add_project_new", u"Fecha fin:", None))
+        self.label_11.setText(QCoreApplication.translate("add_project_new", u"Referencias:", None))
+        self.references_plainTextEdit.setPlainText("")
+        self.label_5.setText(QCoreApplication.translate("add_project_new", u"Region", None))
+        self.label_7.setText(QCoreApplication.translate("add_project_new", u"Provincia", None))
+        self.label_8.setText(QCoreApplication.translate("add_project_new", u"Distrito", None))
+        self.info_txt_lbl.setText(QCoreApplication.translate("add_project_new", u"El c\u00f3digo del proyecto se genera \n"
 " automaticamente, no es editable, ni modificable.", None))
-        self.lbl_code_pro_random.setText(QCoreApplication.translate("Dialog", u"Codigo aleatorio", None))
+        self.lbl_code_pro_random.setText(QCoreApplication.translate("add_project_new", u"Codigo aleatorio", None))
+        self.name_project_label.setText(QCoreApplication.translate("add_project_new", u"Agregar un proyecto", None))
     # retranslateUi
 

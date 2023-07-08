@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>add_project_new</class>
+ <widget class="QDialog" name="add_project_new">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QFrame" name="frame_2">
+    <widget class="QFrame" name="frame_contenedor">
      <property name="styleSheet">
       <string notr="true">QFrame{
 	font: 12pt &quot;MS Shell Dlg 2&quot;;
@@ -54,50 +54,6 @@ border:none;
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QFrame" name="frame">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>631</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border:none;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="font">
-          <font>
-           <family>Times New Roman</family>
-           <pointsize>24</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);
-font: 75 24pt &quot;Times New Roman&quot;;</string>
-         </property>
-         <property name="text">
-          <string>Agregar un proyecto</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
@@ -115,9 +71,9 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>150</y>
+        <y>146</y>
         <width>251</width>
-        <height>16</height>
+        <height>20</height>
        </rect>
       </property>
       <property name="text">
@@ -163,7 +119,7 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="search_name_db">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -176,7 +132,7 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
        <string>Buscar por nombre</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="allow_btn">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -189,7 +145,7 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
        <string>Aceptar</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="decline_btn">
       <property name="geometry">
        <rect>
         <x>350</x>
@@ -221,9 +177,9 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>245</x>
         <y>360</y>
-        <width>151</width>
+        <width>191</width>
         <height>16</height>
        </rect>
       </property>
@@ -247,7 +203,7 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
        <string>Referencias:</string>
       </property>
      </widget>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QPlainTextEdit" name="references_plainTextEdit">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -448,31 +404,33 @@ border:none;
            </widget>
           </item>
          </layout>
+         <zorder>district_lineEdit</zorder>
+         <zorder>label_8</zorder>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QDateEdit" name="dateEdit">
+     <widget class="QDateEdit" name="start_dateEdit">
       <property name="geometry">
        <rect>
         <x>30</x>
         <y>390</y>
-        <width>171</width>
+        <width>191</width>
         <height>31</height>
        </rect>
       </property>
      </widget>
-     <widget class="QDateEdit" name="dateEdit_2">
+     <widget class="QDateEdit" name="end_dateEdit">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>245</x>
         <y>390</y>
-        <width>151</width>
+        <width>191</width>
         <height>31</height>
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="info_txt_lbl">
       <property name="geometry">
        <rect>
         <x>250</x>
@@ -506,6 +464,35 @@ border:none;
       </property>
       <property name="text">
        <string>Codigo aleatorio</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="name_project_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>613</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>24</pointsize>
+        <weight>9</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 75 24pt &quot;Times New Roman&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Agregar un proyecto</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
