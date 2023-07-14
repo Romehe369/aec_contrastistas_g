@@ -33,9 +33,9 @@
    <property name="styleSheet">
     <string notr="true">QFrame{
 	font: 12pt &quot;MS Shell Dlg 2&quot;;
+	background-color: rgb(144, 144, 144);
 	border: 5px solid rgb(0, 0, 127);
 	border-radius:10px;
-	background-color: rgb(144, 144, 144);
 }
 QPushButton{
 border: 1px solid rgb(0, 0, 127);
@@ -48,9 +48,10 @@ background-color: white;
 }
 QLineEdit{
 background-color: white;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 }
 QComboBox{
-background-color: white;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 }
 QDateEdit{
 background-color: white;
@@ -195,7 +196,11 @@ border:none;
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="maxLength">
@@ -291,7 +296,11 @@ border:none;
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="maxLength">
@@ -398,6 +407,10 @@ border:none;
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
+    </property>
     <property name="calendarPopup">
      <bool>true</bool>
     </property>
@@ -420,8 +433,16 @@ border:none;
     </property>
     <property name="font">
      <font>
+      <family>MS Shell Dlg 2</family>
       <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
     </property>
     <item>
      <property name="text">
@@ -460,8 +481,16 @@ border:none;
     </property>
     <property name="font">
      <font>
+      <family>MS Shell Dlg 2</family>
       <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
     </property>
     <item>
      <property name="text">
@@ -485,7 +514,11 @@ border:none;
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
    </widget>
@@ -591,7 +624,11 @@ border:none;
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
    </widget>
@@ -628,7 +665,11 @@ border:none;
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
    </widget>

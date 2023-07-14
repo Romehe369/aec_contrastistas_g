@@ -68,7 +68,7 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		if(self.file_namepic!=""):
 			photo=self.convertToBinaryData()
 			if(dni!="" and nombres!="" and apellidos!=""):
-				self.datos.insertar_trabajador(dni,nombres,apellidos,combo_sexo,fecha_inicio,combo_categoria,correo,nro_movil,photo)
+				self.datos.insertar_trabajador(dni,nombres,apellidos,combo_sexo,fecha_inicio,correo,nro_movil,combo_categoria,photo)
 				self.dialogo.label_mensaje.setText("Se agrego existosamente")
 				self.file_namepic=""
 				self.dialogo.show()

@@ -1,24 +1,21 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_workerTULHjk.ui'
+## Form generated from reading UI file 'add_workerZOFFxN.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt,QDate)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
 class Ui_Dialog_add_Trabajador(object):
     def setupUi(self, Dialog_add_Trabajador):
-        if Dialog_add_Trabajador.objectName():
+        if not Dialog_add_Trabajador.objectName():
             Dialog_add_Trabajador.setObjectName(u"Dialog_add_Trabajador")
         Dialog_add_Trabajador.resize(644, 542)
         font = QFont()
@@ -30,9 +27,9 @@ class Ui_Dialog_add_Trabajador(object):
         self.frame_3.setGeometry(QRect(0, 0, 641, 531))
         self.frame_3.setStyleSheet(u"QFrame{\n"
 "	font: 12pt \"MS Shell Dlg 2\";\n"
+"	background-color: rgb(144, 144, 144);\n"
 "	border: 5px solid rgb(0, 0, 127);\n"
 "	border-radius:10px;\n"
-"	background-color: rgb(144, 144, 144);\n"
 "}\n"
 "QPushButton{\n"
 "border: 1px solid rgb(0, 0, 127);\n"
@@ -45,9 +42,10 @@ class Ui_Dialog_add_Trabajador(object):
 "}\n"
 "QLineEdit{\n"
 "background-color: white;\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "QComboBox{\n"
-"background-color: white;\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "QDateEdit{\n"
 "background-color: white;\n"
@@ -87,7 +85,7 @@ class Ui_Dialog_add_Trabajador(object):
 "border:none;\n"
 "}")
         icon = QIcon()
-        icon.addFile(u"./assets/icons/add-icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"../assets/icons/add-icon.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_agregar_categoria.setIcon(icon)
         self.btn_agregar_categoria.setIconSize(QSize(32, 32))
         self.lblCategoria = QLabel(self.frame_3)
@@ -97,9 +95,7 @@ class Ui_Dialog_add_Trabajador(object):
         self.lineEdit_celular = QLineEdit(self.frame_3)
         self.lineEdit_celular.setObjectName(u"lineEdit_celular")
         self.lineEdit_celular.setGeometry(QRect(330, 430, 281, 31))
-        font2 = QFont()
-        font2.setPointSize(10)
-        self.lineEdit_celular.setFont(font2)
+        self.lineEdit_celular.setFont(font1)
         self.lineEdit_celular.setMaxLength(9)
         self.frame_2 = QFrame(self.frame_3)
         self.frame_2.setObjectName(u"frame_2")
@@ -112,28 +108,30 @@ class Ui_Dialog_add_Trabajador(object):
         self.pushButton_cargar = QPushButton(self.frame_2)
         self.pushButton_cargar.setObjectName(u"pushButton_cargar")
         self.pushButton_cargar.setMinimumSize(QSize(0, 31))
-        font3 = QFont()
-        font3.setPointSize(12)
-        self.pushButton_cargar.setFont(font3)
+        font2 = QFont()
+        font2.setPointSize(12)
+        self.pushButton_cargar.setFont(font2)
 
         self.horizontalLayout.addWidget(self.pushButton_cargar)
 
         self.pushButton_delete = QPushButton(self.frame_2)
         self.pushButton_delete.setObjectName(u"pushButton_delete")
         self.pushButton_delete.setMinimumSize(QSize(0, 31))
-        self.pushButton_delete.setFont(font3)
+        self.pushButton_delete.setFont(font2)
 
         self.horizontalLayout.addWidget(self.pushButton_delete)
 
         self.btn_aceptar = QPushButton(self.frame_3)
         self.btn_aceptar.setObjectName(u"btn_aceptar")
         self.btn_aceptar.setGeometry(QRect(150, 480, 141, 31))
-        self.btn_aceptar.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(10)
+        self.btn_aceptar.setFont(font3)
         self.btn_aceptar.setAutoFillBackground(False)
         self.lineEditDNI = QLineEdit(self.frame_3)
         self.lineEditDNI.setObjectName(u"lineEditDNI")
         self.lineEditDNI.setGeometry(QRect(30, 80, 251, 31))
-        self.lineEditDNI.setFont(font2)
+        self.lineEditDNI.setFont(font1)
         self.lineEditDNI.setMaxLength(8)
         self.label_fecha_inicio = QLabel(self.frame_3)
         self.label_fecha_inicio.setObjectName(u"label_fecha_inicio")
@@ -172,7 +170,9 @@ class Ui_Dialog_add_Trabajador(object):
         self.dateEdit_fecha_init = QDateEdit(self.frame_3)
         self.dateEdit_fecha_init.setObjectName(u"dateEdit_fecha_init")
         self.dateEdit_fecha_init.setGeometry(QRect(30, 330, 181, 31))
-        self.dateEdit_fecha_init.setFont(font3)
+        self.dateEdit_fecha_init.setFont(font2)
+        self.dateEdit_fecha_init.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
         self.dateEdit_fecha_init.setCalendarPopup(True)
         self.dateEdit_fecha_init.setDate(QDate(2023, 1, 1))
         self.comboBox_categoria = QComboBox(self.frame_3)
@@ -183,17 +183,21 @@ class Ui_Dialog_add_Trabajador(object):
         self.comboBox_categoria.addItem("")
         self.comboBox_categoria.setObjectName(u"comboBox_categoria")
         self.comboBox_categoria.setGeometry(QRect(30, 400, 181, 31))
-        self.comboBox_categoria.setFont(font3)
+        self.comboBox_categoria.setFont(font1)
+        self.comboBox_categoria.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
         self.comboBox_sexo = QComboBox(self.frame_3)
         self.comboBox_sexo.addItem("")
         self.comboBox_sexo.addItem("")
         self.comboBox_sexo.setObjectName(u"comboBox_sexo")
         self.comboBox_sexo.setGeometry(QRect(30, 260, 181, 31))
-        self.comboBox_sexo.setFont(font3)
+        self.comboBox_sexo.setFont(font1)
+        self.comboBox_sexo.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
         self.lineEdit_Correo = QLineEdit(self.frame_3)
         self.lineEdit_Correo.setObjectName(u"lineEdit_Correo")
         self.lineEdit_Correo.setGeometry(QRect(330, 370, 281, 31))
-        self.lineEdit_Correo.setFont(font2)
+        self.lineEdit_Correo.setFont(font1)
         self.label_sexo = QLabel(self.frame_3)
         self.label_sexo.setObjectName(u"label_sexo")
         self.label_sexo.setGeometry(QRect(30, 240, 47, 13))
@@ -214,7 +218,7 @@ class Ui_Dialog_add_Trabajador(object):
         self.lineEditSurname = QLineEdit(self.frame_3)
         self.lineEditSurname.setObjectName(u"lineEditSurname")
         self.lineEditSurname.setGeometry(QRect(30, 200, 251, 31))
-        self.lineEditSurname.setFont(font2)
+        self.lineEditSurname.setFont(font1)
         self.label_correo = QLabel(self.frame_3)
         self.label_correo.setObjectName(u"label_correo")
         self.label_correo.setGeometry(QRect(330, 350, 61, 16))
@@ -222,11 +226,11 @@ class Ui_Dialog_add_Trabajador(object):
         self.lineEditName = QLineEdit(self.frame_3)
         self.lineEditName.setObjectName(u"lineEditName")
         self.lineEditName.setGeometry(QRect(30, 140, 251, 31))
-        self.lineEditName.setFont(font2)
+        self.lineEditName.setFont(font1)
         self.btn_cancelar = QPushButton(self.frame_3)
         self.btn_cancelar.setObjectName(u"btn_cancelar")
         self.btn_cancelar.setGeometry(QRect(310, 480, 161, 31))
-        self.btn_cancelar.setFont(font2)
+        self.btn_cancelar.setFont(font3)
 
         self.retranslateUi(Dialog_add_Trabajador)
 

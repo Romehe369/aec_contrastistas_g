@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectoXfgJws.ui'
+## Form generated from reading UI file 'add_proyectoAeuMDS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,10 +18,9 @@ class Ui_add_project_new(object):
         if not add_project_new.objectName():
             add_project_new.setObjectName(u"add_project_new")
         add_project_new.resize(684, 627)
-        self.verticalLayout_2 = QVBoxLayout(add_project_new)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.frame_contenedor = QFrame(add_project_new)
         self.frame_contenedor.setObjectName(u"frame_contenedor")
+        self.frame_contenedor.setGeometry(QRect(9, 9, 666, 609))
         self.frame_contenedor.setStyleSheet(u"QFrame{\n"
 "	font: 12pt \"MS Shell Dlg 2\";\n"
 "	border: 5px solid rgb(0, 0, 127);\n"
@@ -63,10 +62,10 @@ class Ui_add_project_new(object):
         self.label_4 = QLabel(self.frame_contenedor)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(30, 210, 151, 16))
-        self.Name_project_lineEdit = QLineEdit(self.frame_contenedor)
-        self.Name_project_lineEdit.setObjectName(u"Name_project_lineEdit")
-        self.Name_project_lineEdit.setGeometry(QRect(30, 170, 611, 31))
-        self.Name_project_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.name_project_lineEdit = QLineEdit(self.frame_contenedor)
+        self.name_project_lineEdit.setObjectName(u"name_project_lineEdit")
+        self.name_project_lineEdit.setGeometry(QRect(30, 170, 611, 31))
+        self.name_project_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.id_res_linetext = QLineEdit(self.frame_contenedor)
         self.id_res_linetext.setObjectName(u"id_res_linetext")
         self.id_res_linetext.setGeometry(QRect(30, 240, 211, 31))
@@ -190,7 +189,7 @@ class Ui_add_project_new(object):
         self.end_dateEdit.setGeometry(QRect(245, 390, 191, 31))
         self.info_txt_lbl = QLabel(self.frame_contenedor)
         self.info_txt_lbl.setObjectName(u"info_txt_lbl")
-        self.info_txt_lbl.setGeometry(QRect(250, 90, 381, 61))
+        self.info_txt_lbl.setGeometry(QRect(260, 80, 371, 61))
         self.info_txt_lbl.setStyleSheet(u"QLabel{\n"
 "	border: 2px solid red;\n"
 "	border-radius:10px;\n"
@@ -198,7 +197,9 @@ class Ui_add_project_new(object):
         self.info_txt_lbl.setAlignment(Qt.AlignCenter)
         self.lbl_code_pro_random = QLabel(self.frame_contenedor)
         self.lbl_code_pro_random.setObjectName(u"lbl_code_pro_random")
-        self.lbl_code_pro_random.setGeometry(QRect(30, 110, 171, 31))
+        self.lbl_code_pro_random.setGeometry(QRect(30, 110, 181, 31))
+        self.lbl_code_pro_random.setStyleSheet(u"font: 75 18pt \"MS Shell Dlg 2\";\n"
+"color:rgb(0, 0, 255);")
         self.name_project_label = QLabel(self.frame_contenedor)
         self.name_project_label.setObjectName(u"name_project_label")
         self.name_project_label.setGeometry(QRect(20, 20, 613, 33))
@@ -212,9 +213,6 @@ class Ui_add_project_new(object):
         self.name_project_label.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "font: 75 24pt \"Times New Roman\";")
         self.name_project_label.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_2.addWidget(self.frame_contenedor)
-
 
         self.retranslateUi(add_project_new)
 

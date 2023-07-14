@@ -1,28 +1,25 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuuTMssI.ui'
+## Form generated from reading UI file 'menuTQikbn.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt,QDate)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
 class Ui_sistema(object):
     def setupUi(self, sistema):
-        if sistema.objectName():
+        if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1322, 630)
+        sistema.resize(1010, 630)
         sistema.setMinimumSize(QSize(400, 0))
-        sistema.setStyleSheet(u"background-color: rgb(117, 117, 117);\n"
+        sistema.setStyleSheet(u"background-color: rgb(108, 211, 213);\n"
 "\n"
 "QLineEdit{\n"
 "	background-color: rgb(255, 255, 255);\n"
@@ -38,6 +35,9 @@ class Ui_sistema(object):
         self.frame_superior.setMinimumSize(QSize(0, 50))
         self.frame_superior.setMaximumSize(QSize(16777215, 50))
         self.frame_superior.setStyleSheet(u"QFrame{\n"
+"background-color: rgb(117, 117, 117);\n"
+"}\n"
+"QPushButton{\n"
 "background-color: rgb(117, 117, 117);\n"
 "}\n"
 "")
@@ -126,7 +126,6 @@ class Ui_sistema(object):
 "QPushButton:hover{\n"
 "border:5px solid #aa00ff;\n"
 "background-color:#ffff00;\n"
-"\n"
 "}\n"
 "")
         icon1 = QIcon()
@@ -184,7 +183,6 @@ class Ui_sistema(object):
         self.bt_cerrar.setMaximumSize(QSize(35, 16777215))
         self.bt_cerrar.setStyleSheet(u"QPushButton{\n"
 "border:0px;\n"
-"\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -1946,7 +1944,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(sistema)

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1322</width>
+    <width>1010</width>
     <height>630</height>
    </rect>
   </property>
@@ -20,14 +20,14 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(117, 117, 117);
+   <string notr="true">background-color: rgb(108, 211, 213);
 
 QLineEdit{
 	background-color: rgb(255, 255, 255);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -61,6 +61,9 @@ QLineEdit{
        <string notr="true">QFrame{
 background-color: rgb(117, 117, 117);
 }
+QPushButton{
+background-color: rgb(117, 117, 117);
+}
 </string>
       </property>
       <property name="frameShape">
@@ -72,7 +75,7 @@ background-color: rgb(117, 117, 117);
       <property name="lineWidth">
        <number>0</number>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,0,0,0,0,0,0">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -245,7 +248,6 @@ border:0px;
 QPushButton:hover{
 border:5px solid #aa00ff;
 background-color:#ffff00;
-
 }
 </string>
          </property>
@@ -350,7 +352,6 @@ background-color:#55ff00;
          <property name="styleSheet">
           <string notr="true">QPushButton{
 border:0px;
-
 }
 
 QPushButton:hover{
@@ -392,7 +393,7 @@ background-color:red;
       <property name="lineWidth">
        <number>0</number>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -715,7 +716,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>6</number>
+             <number>7</number>
             </property>
             <widget class="QWidget" name="page_add_administrator">
              <property name="styleSheet">

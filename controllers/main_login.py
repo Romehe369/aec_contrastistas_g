@@ -183,7 +183,10 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
 
 	def search_project(self):
-		print("No existe projectos en este sistema")
+		from controllers.control_project import add_project
+		ui_add=add_project(self)
+		ui_add.show()
+
 
 	def add_control_frame(self):
 		width=200	# ancho
@@ -314,7 +317,7 @@ class control_aec(QMainWindow,Ui_sistema):
 				item = QTableWidgetItem("Nombres full {}".format(row+1))
 				self.table_qwk_new.setItem(row, column, item)
 
-
+	# Genera tabla de pagos
 	def payments_table_data(self):
 		self.change_header(self.table_payments)
 		# Create a table by 6 column and 100 row

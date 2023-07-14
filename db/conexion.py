@@ -8,7 +8,7 @@ class Registro_datos():
                                             database ='base_datos', 
                                             user = 'root',
                                             password ='')
-
+    ################### login data ########################
     def elimina_admin(self,users):
         # Indica que se genero un error o no existe dicho ussers
         a=0
@@ -64,11 +64,14 @@ class Registro_datos():
         self.conexion.commit()    
         cur.close()
         return a   
-
+    ################################### date ######################
+    def convert_date(self,date_str):
+        date_str= date_str.split("/")       
+        date_str=datetime.date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
+        return date_str
     # Modifcar los datos de trabajador
-    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,foto):
-        fechain=fecha_inicio.split("/")       
-        fecha_inicio=datetime.date(int(fechain[2]), int(fechain[1]), int(fechain[0]))
+    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,foto):    
+        fecha_inicio=self.convert_date(fecha_inicio)
         cur = self.conexion.cursor()
         sql= '''INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,FOTO) 
         VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
@@ -120,12 +123,22 @@ class Registro_datos():
         cur.close()
         return a  
 
-    def insertar_project(self,code, name, responsible, region, province,district,start_peoject,end_project,reference):
+    ########################## insert project ###################
+    def insertar_project(self,code, name, responsible, region, province,district,start_project,end_project,reference):
+        start_project=self.convert_date(start_project)
+        end_project=self.convert_date(end_project)
         cur = self.conexion.cursor()
-        sql= '''INSERT INTO ttrabajador (code, name, responsible, region, province,district,start_peoject,end_project,reference) 
+        sql= '''INSERT INTO tproject (code, name, responsible, region, province,district,start_project,end_project,reference) 
         VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
         # Convert data into tuple format
-        insert_blob_tuple = (code, name, responsible, region, province,district,start_peoject,end_project,reference)
+        insert_blob_tuple = (code, name, responsible, region, province,district,start_project,end_project,reference)
         cur.execute(sql,insert_blob_tuple)
         self.conexion.commit()    
         cur.close()
+
+    def show_tproject(self):
+        cursor = self.conexion.cursor()
+        sql = "SELECT * FROM tproject" 
+        cursor.execute(sql)
+        registro = cursor.fetchall()
+        return registro
