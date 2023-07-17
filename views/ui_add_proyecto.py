@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectoAeuMDS.ui'
+## Form generated from reading UI file 'add_proyectooeKNDq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -65,14 +65,17 @@ class Ui_add_project_new(object):
         self.name_project_lineEdit = QLineEdit(self.frame_contenedor)
         self.name_project_lineEdit.setObjectName(u"name_project_lineEdit")
         self.name_project_lineEdit.setGeometry(QRect(30, 170, 611, 31))
-        self.name_project_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.name_project_lineEdit.setStyleSheet(u"")
         self.id_res_linetext = QLineEdit(self.frame_contenedor)
         self.id_res_linetext.setObjectName(u"id_res_linetext")
-        self.id_res_linetext.setGeometry(QRect(30, 240, 211, 31))
-        self.id_res_linetext.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.id_res_linetext.setGeometry(QRect(30, 240, 241, 31))
+        self.id_res_linetext.setStyleSheet(u"")
+        self.id_res_linetext.setMaxLength(8)
         self.search_name_db = QPushButton(self.frame_contenedor)
         self.search_name_db.setObjectName(u"search_name_db")
-        self.search_name_db.setGeometry(QRect(260, 240, 161, 31))
+        self.search_name_db.setGeometry(QRect(280, 240, 181, 31))
+        self.search_name_db.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
         self.allow_btn = QPushButton(self.frame_contenedor)
         self.allow_btn.setObjectName(u"allow_btn")
         self.allow_btn.setGeometry(QRect(130, 550, 180, 41))
@@ -124,7 +127,7 @@ class Ui_add_project_new(object):
         self.region_lineEdit = QLineEdit(self.frame_4)
         self.region_lineEdit.setObjectName(u"region_lineEdit")
         self.region_lineEdit.setMinimumSize(QSize(0, 31))
-        self.region_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.region_lineEdit.setStyleSheet(u"")
 
         self.verticalLayout_3.addWidget(self.region_lineEdit)
 
@@ -148,7 +151,7 @@ class Ui_add_project_new(object):
         self.province_lineEdit = QLineEdit(self.frame_5)
         self.province_lineEdit.setObjectName(u"province_lineEdit")
         self.province_lineEdit.setMinimumSize(QSize(0, 31))
-        self.province_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.province_lineEdit.setStyleSheet(u"")
 
         self.verticalLayout_4.addWidget(self.province_lineEdit)
 
@@ -172,7 +175,7 @@ class Ui_add_project_new(object):
         self.district_lineEdit = QLineEdit(self.frame_6)
         self.district_lineEdit.setObjectName(u"district_lineEdit")
         self.district_lineEdit.setMinimumSize(QSize(0, 31))
-        self.district_lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.district_lineEdit.setStyleSheet(u"")
 
         self.verticalLayout_5.addWidget(self.district_lineEdit)
 
@@ -184,12 +187,19 @@ class Ui_add_project_new(object):
         self.start_dateEdit = QDateEdit(self.frame_contenedor)
         self.start_dateEdit.setObjectName(u"start_dateEdit")
         self.start_dateEdit.setGeometry(QRect(30, 390, 191, 31))
+        self.start_dateEdit.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
+        self.start_dateEdit.setProperty("showGroupSeparator", False)
+        self.start_dateEdit.setCalendarPopup(True)
         self.end_dateEdit = QDateEdit(self.frame_contenedor)
         self.end_dateEdit.setObjectName(u"end_dateEdit")
         self.end_dateEdit.setGeometry(QRect(245, 390, 191, 31))
+        self.end_dateEdit.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
+        self.end_dateEdit.setCalendarPopup(True)
         self.info_txt_lbl = QLabel(self.frame_contenedor)
         self.info_txt_lbl.setObjectName(u"info_txt_lbl")
-        self.info_txt_lbl.setGeometry(QRect(260, 80, 371, 61))
+        self.info_txt_lbl.setGeometry(QRect(280, 70, 371, 91))
         self.info_txt_lbl.setStyleSheet(u"QLabel{\n"
 "	border: 2px solid red;\n"
 "	border-radius:10px;\n"
@@ -213,6 +223,16 @@ class Ui_add_project_new(object):
         self.name_project_label.setStyleSheet(u"color: rgb(255, 255, 255);\n"
 "font: 75 24pt \"Times New Roman\";")
         self.name_project_label.setAlignment(Qt.AlignCenter)
+        self.checkBox_numbers_of_days = QCheckBox(self.frame_contenedor)
+        self.checkBox_numbers_of_days.setObjectName(u"checkBox_numbers_of_days")
+        self.checkBox_numbers_of_days.setGeometry(QRect(460, 360, 191, 21))
+        self.checkBox_numbers_of_days.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(0, 255, 255);")
+        self.number_of_days = QLineEdit(self.frame_contenedor)
+        self.number_of_days.setObjectName(u"number_of_days")
+        self.number_of_days.setGeometry(QRect(460, 390, 194, 31))
+        self.number_of_days.setMinimumSize(QSize(0, 31))
+        self.number_of_days.setStyleSheet(u"background-color: rgb(0, 255, 255);")
 
         self.retranslateUi(add_project_new)
 
@@ -224,6 +244,8 @@ class Ui_add_project_new(object):
         self.label_2.setText(QCoreApplication.translate("add_project_new", u"Codigo proyecto:", None))
         self.label_3.setText(QCoreApplication.translate("add_project_new", u"Nombre del proyecto:", None))
         self.label_4.setText(QCoreApplication.translate("add_project_new", u"DNI Responsable:", None))
+        self.name_project_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese el nombre del proyecto", None))
+        self.id_res_linetext.setPlaceholderText(QCoreApplication.translate("add_project_new", u"DNI del responsable de la obra", None))
         self.search_name_db.setText(QCoreApplication.translate("add_project_new", u"Buscar por nombre", None))
         self.allow_btn.setText(QCoreApplication.translate("add_project_new", u"Aceptar", None))
         self.decline_btn.setText(QCoreApplication.translate("add_project_new", u"Cancelar", None))
@@ -231,12 +253,20 @@ class Ui_add_project_new(object):
         self.label_10.setText(QCoreApplication.translate("add_project_new", u"Fecha fin:", None))
         self.label_11.setText(QCoreApplication.translate("add_project_new", u"Referencias:", None))
         self.references_plainTextEdit.setPlainText("")
+        self.references_plainTextEdit.setPlaceholderText("")
         self.label_5.setText(QCoreApplication.translate("add_project_new", u"Region", None))
+        self.region_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese region", None))
         self.label_7.setText(QCoreApplication.translate("add_project_new", u"Provincia", None))
+        self.province_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese provincia", None))
         self.label_8.setText(QCoreApplication.translate("add_project_new", u"Distrito", None))
-        self.info_txt_lbl.setText(QCoreApplication.translate("add_project_new", u"El c\u00f3digo del proyecto se genera \n"
-" automaticamente, no es editable, ni modificable.", None))
+        self.district_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese el distrito", None))
+        self.info_txt_lbl.setText(QCoreApplication.translate("add_project_new", u"El c\u00f3digo del proyecto se genera\n"
+"automaticamente, no es editable, ni modificable.\n"
+" La cantidad de d\u00edas calcula la \"Fecha Fin\" \n"
+" durante ese periodo de d\u00edas.", None))
         self.lbl_code_pro_random.setText(QCoreApplication.translate("add_project_new", u"Codigo aleatorio", None))
         self.name_project_label.setText(QCoreApplication.translate("add_project_new", u"Agregar un proyecto", None))
+        self.checkBox_numbers_of_days.setText(QCoreApplication.translate("add_project_new", u"Cantidad de d\u00edas", None))
+        self.number_of_days.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Active \"Cantidad de d\u00edas\"", None))
     # retranslateUi
 

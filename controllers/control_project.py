@@ -1,5 +1,6 @@
 import random
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
+from datetime import datetime, timedelta
+from PySide2.QtCore import (QDate,QCoreApplication, QMetaObject, QObject, QPoint,
     QRect, QSize, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
@@ -34,10 +35,56 @@ class add_project(QMainWindow,Ui_add_project_new):
         # Cerrar la ventana principal
         self.code_project=self.random_value()
         self.dialogo=Dialogo()
+        self.date_now()
         self.datos = Registro_datos()
         self.allow_btn.clicked.connect(self.get_all_data)
         self.search_name_db.clicked.connect(self.search_db)
         self.decline_btn.clicked.connect(self.close)
+        self.number_of_days.textChanged.connect(self.validator_check)
+        self.checkBox_numbers_of_days.stateChanged.connect(self.activate_num_days)
+        self.region_lineEdit.textChanged.connect(self.set_upper)
+        self.province_lineEdit.textChanged.connect(self.set_upper)
+        self.district_lineEdit.textChanged.connect(self.set_upper)
+
+    def set_upper(self):
+        self.region_lineEdit.setText(self.region_lineEdit.text().upper())
+        self.province_lineEdit.setText(self.province_lineEdit.text().upper())
+        self.district_lineEdit.setText(self.district_lineEdit.text().upper())
+
+    def activate_num_days(self):
+        if(self.checkBox_numbers_of_days.isChecked()):
+            self.number_of_days.setEnabled(True)
+            self.number_of_days.setStyleSheet("background-color: rgb(255, 255, 255);")
+            self.number_of_days.setPlaceholderText("Ingrese el número de días")
+        else:
+            self.number_of_days.clear()
+            self.number_of_days.setStyleSheet("background-color: rgb(0, 255, 255);")
+            self.number_of_days.setPlaceholderText("Active cantidad de días")
+            self.number_of_days.setEnabled(False)
+
+    def date_now(self):
+        now = datetime.now()
+        d = QDate(now.year, now.month, now.day)
+        self.start_dateEdit.setDate(d)
+        self.end_dateEdit.setDate(d)
+
+    def addition_days(self):
+        if(len(self.number_of_days.text())>=1):
+            try:
+                number_of_days=int(self.number_of_days.text())
+            except Exception as e:
+                self.dialogo.label_mensaje.setText("Dígite un número válido")
+                self.dialogo.show()
+            else:
+                now = datetime.now()
+                time_future = now + timedelta(days=number_of_days)
+                d = QDate(time_future.year, time_future.month, time_future.day)
+                self.end_dateEdit.setDate(d)
+
+    def validator_check(self):
+        if(self.checkBox_numbers_of_days.isChecked()):
+            self.addition_days()
+
     # Search of base data about information of key code_project
     def search_db(self):
         print("No se encontro")

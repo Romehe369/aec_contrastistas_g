@@ -66,6 +66,8 @@ class Registro_datos():
         return a   
     ################################### date ######################
     def convert_date(self,date_str):
+        # Falta modificar para no presentar errores, con la funcion datetime
+        print(date_str)
         date_str= date_str.split("/")       
         date_str=datetime.date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
         return date_str

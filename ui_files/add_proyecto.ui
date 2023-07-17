@@ -109,7 +109,10 @@ border:none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
+    </property>
+    <property name="placeholderText">
+     <string>Ingrese el nombre del proyecto</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="id_res_linetext">
@@ -117,22 +120,32 @@ border:none;
      <rect>
       <x>30</x>
       <y>240</y>
-      <width>211</width>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
+    </property>
+    <property name="maxLength">
+     <number>8</number>
+    </property>
+    <property name="placeholderText">
+     <string>DNI del responsable de la obra</string>
     </property>
    </widget>
    <widget class="QPushButton" name="search_name_db">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>280</x>
       <y>240</y>
-      <width>161</width>
+      <width>181</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
     </property>
     <property name="text">
      <string>Buscar por nombre</string>
@@ -225,6 +238,9 @@ background-color: rgb(255, 255, 255);</string>
     <property name="plainText">
      <string/>
     </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
    </widget>
    <widget class="QFrame" name="frame_3">
     <property name="geometry">
@@ -305,7 +321,10 @@ border:none;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true"/>
+          </property>
+          <property name="placeholderText">
+           <string>Ingrese region</string>
           </property>
          </widget>
         </item>
@@ -355,7 +374,10 @@ border:none;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true"/>
+          </property>
+          <property name="placeholderText">
+           <string>Ingrese provincia</string>
           </property>
          </widget>
         </item>
@@ -405,7 +427,10 @@ border:none;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true"/>
+          </property>
+          <property name="placeholderText">
+           <string>Ingrese el distrito</string>
           </property>
          </widget>
         </item>
@@ -425,6 +450,16 @@ border:none;
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
+    </property>
+    <property name="showGroupSeparator" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="calendarPopup">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QDateEdit" name="end_dateEdit">
     <property name="geometry">
@@ -435,14 +470,21 @@ border:none;
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
+    </property>
+    <property name="calendarPopup">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="info_txt_lbl">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>80</y>
+      <x>280</x>
+      <y>70</y>
       <width>371</width>
-      <height>61</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -452,8 +494,10 @@ border:none;
 }</string>
     </property>
     <property name="text">
-     <string>El código del proyecto se genera 
- automaticamente, no es editable, ni modificable.</string>
+     <string>El código del proyecto se genera
+automaticamente, no es editable, ni modificable.
+ La cantidad de días calcula la &quot;Fecha Fin&quot; 
+ durante ese periodo de días.</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -503,6 +547,45 @@ font: 75 24pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_numbers_of_days">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>360</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(0, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Cantidad de días</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="number_of_days">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>390</y>
+      <width>194</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Active &quot;Cantidad de días&quot;</string>
     </property>
    </widget>
   </widget>
