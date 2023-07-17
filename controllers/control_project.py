@@ -20,7 +20,9 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         self.setAttribute(Qt.WA_TranslucentBackground)
         # Cerrar la ventana principal
         self.btn_decline.clicked.connect(self.close)
-        
+        self.label_title.setText(self.parent().name_project)
+        self.label_code_project.setText(self.parent().code_project)
+
 
 class add_project(QMainWindow,Ui_add_project_new):
     def __init__(self, parent):

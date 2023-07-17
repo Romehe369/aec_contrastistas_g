@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuTQikbn.ui'
+## Form generated from reading UI file 'menuVvlggN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1010, 630)
+        sistema.resize(1064, 630)
         sistema.setMinimumSize(QSize(400, 0))
         sistema.setStyleSheet(u"background-color: rgb(108, 211, 213);\n"
 "\n"
@@ -1808,17 +1808,38 @@ class Ui_sistema(object):
 
         self.verticalLayout_10.addWidget(self.frame_proyectos)
 
-        self.frame_contenedor_pro = QFrame(self.page_proyectos)
+        self.frame_contenedor_data = QFrame(self.page_proyectos)
+        self.frame_contenedor_data.setObjectName(u"frame_contenedor_data")
+        self.frame_contenedor_data.setMinimumSize(QSize(0, 0))
+        self.frame_contenedor_data.setStyleSheet(u"background-color: rgb(117, 117, 117);")
+        self.frame_contenedor_data.setFrameShape(QFrame.StyledPanel)
+        self.frame_contenedor_data.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.frame_contenedor_data)
+        self.horizontalLayout_16.setSpacing(0)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.frame_contenedor_pro = QFrame(self.frame_contenedor_data)
         self.frame_contenedor_pro.setObjectName(u"frame_contenedor_pro")
-        self.frame_contenedor_pro.setStyleSheet(u"background-color: rgb(117, 117, 117);")
+        self.frame_contenedor_pro.setMinimumSize(QSize(0, 0))
         self.frame_contenedor_pro.setFrameShape(QFrame.StyledPanel)
         self.frame_contenedor_pro.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_10.addWidget(self.frame_contenedor_pro)
+        self.horizontalLayout_16.addWidget(self.frame_contenedor_pro)
+
+        self.v_ScrollBar_project = QScrollBar(self.frame_contenedor_data)
+        self.v_ScrollBar_project.setObjectName(u"v_ScrollBar_project")
+        self.v_ScrollBar_project.setMaximumSize(QSize(16777215, 16777215))
+        self.v_ScrollBar_project.setOrientation(Qt.Vertical)
+
+        self.horizontalLayout_16.addWidget(self.v_ScrollBar_project)
+
+
+        self.verticalLayout_10.addWidget(self.frame_contenedor_data)
 
         self.verticalLayout_10.setStretch(0, 1)
-        self.verticalLayout_10.setStretch(1, 8)
         self.stackedWidget.addWidget(self.page_proyectos)
+        self.frame_contenedor_data.raise_()
+        self.frame_proyectos.raise_()
         self.page_adminstracion = QWidget()
         self.page_adminstracion.setObjectName(u"page_adminstracion")
         self.page_adminstracion.setStyleSheet(u"QFrame{\n"
@@ -1944,7 +1965,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(sistema)

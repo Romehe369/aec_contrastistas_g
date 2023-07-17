@@ -124,14 +124,14 @@ class Registro_datos():
         return a  
 
     ########################## insert project ###################
-    def insertar_project(self,code, name, responsible, region, province,district,start_project,end_project,reference):
+    def insertar_project(self,code_project, name, responsible, region, province,district,start_project,end_project,reference):
         start_project=self.convert_date(start_project)
         end_project=self.convert_date(end_project)
         cur = self.conexion.cursor()
-        sql= '''INSERT INTO tproject (code, name, responsible, region, province,district,start_project,end_project,reference) 
+        sql= '''INSERT INTO tproject (code_project, name, responsible, region, province,district,start_project,end_project,reference) 
         VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
         # Convert data into tuple format
-        insert_blob_tuple = (code, name, responsible, region, province,district,start_project,end_project,reference)
+        insert_blob_tuple = (code_project, name, responsible, region, province,district,start_project,end_project,reference)
         cur.execute(sql,insert_blob_tuple)
         self.conexion.commit()    
         cur.close()

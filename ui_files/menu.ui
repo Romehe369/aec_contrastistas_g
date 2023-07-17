@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1010</width>
+    <width>1064</width>
     <height>630</height>
    </rect>
   </property>
@@ -716,7 +716,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>7</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="page_add_administrator">
              <property name="styleSheet">
@@ -3718,7 +3718,7 @@ QPushButton:hover{
              </layout>
             </widget>
             <widget class="QWidget" name="page_proyectos">
-             <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,8">
+             <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,0">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -3848,7 +3848,13 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_contenedor_pro">
+               <widget class="QFrame" name="frame_contenedor_data">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(117, 117, 117);</string>
                 </property>
@@ -3858,9 +3864,57 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_16">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame_contenedor_pro">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QScrollBar" name="v_ScrollBar_project">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
+             <zorder>frame_contenedor_data</zorder>
+             <zorder>frame_proyectos</zorder>
             </widget>
             <widget class="QWidget" name="page_adminstracion">
              <property name="styleSheet">

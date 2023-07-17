@@ -1,24 +1,21 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginUcovaT.ui'
+## Form generated from reading UI file 'loginbxdvOR.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
 class Ui_login(object):
     def setupUi(self, login):
-        if login.objectName():
+        if not login.objectName():
             login.setObjectName(u"login")
         login.resize(448, 523)
         self.centralwidget = QWidget(login)
@@ -61,6 +58,7 @@ class Ui_login(object):
 "font: 75 12pt \"Arial\";\n"
 "background-color: rgb(255, 255, 255);\n"
 "border:0px;")
+        self.password.setEchoMode(QLineEdit.Password)
         self.password.setAlignment(Qt.AlignCenter)
         self.bt_ingresar = QPushButton(self.frame)
         self.bt_ingresar.setObjectName(u"bt_ingresar")

@@ -79,6 +79,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.txt_users=""
 		self.txt_password=""
+		self.alto_qfadd_project=0
 		self.datos = Registro_datos()
 		self.call_list_data()
 		self.payments_table_data()
@@ -87,7 +88,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		#acceder a las paginas
 		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
-		self.btn_proyectos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_proyectos))
+		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
 		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
 		self.btn_asistencia.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_asistencia))
 		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
@@ -110,13 +111,13 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_maximizar.clicked.connect(self.control_bt_maximizar)
 		self.btn_agregar_trabajador.clicked.connect(self.agregar_trabajador)
 		self.btn_changes_password.clicked.connect(self.cambiar_password)
-		self.bt_cerrar.clicked.connect(lambda: self.close())
 		self.btn_ocultar.clicked.connect(self.mover_arriba)
 		self.bt_restaurar.hide()
 		self.dialogo=Dialogo()
-		self.btn_agregar_pro.clicked.connect(self.add_control_frame)
-		self.btn_Buscar_pro.clicked.connect(self.search_project)
+		self.btn_agregar_pro.clicked.connect(self.add_new_project)
+		#self.btn_Buscar_pro.clicked.connect()
 		self.lndt_add_password.textChanged.connect(self.verificar_users)
+		self.v_ScrollBar_project.valueChanged.connect(self.scroll_frame)
 		# menu lateral
 		self.control_proyecto=[]
 		self.bt_menu.clicked.connect(self.mover_menu)
@@ -124,13 +125,22 @@ class control_aec(QMainWindow,Ui_sistema):
 		# Agregamos todos los frames e control ocultar y mostrar
 		self.frame_encabezados=[self.frame_registro,self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		# deberia cerrar la ventana
-		
 		#self.frm_superior_min.connect(self.this_double_click)
 		#self.click_count = 0
 		self.valor_x=0
-		self.name_proyecto=""
-		self.proyectos_cod={"PRYCT001":"Valor1","PRYCT002":"Valor2","PRYCT003":"Valor3","PRYCT004":"Valor4"}
+		self.bt_cerrar.clicked.connect(lambda: self.close())
 
+	def click_btn_proyectos(self):
+		self.stackedWidget.setCurrentWidget(self.page_proyectos)
+		self.add_control_frame()
+
+	def scroll_frame(self):
+		self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*170)
+		# Actualizar la posición vertical del QFrame según el valor de la QScrollBar
+		value = self.v_ScrollBar_project.value()
+		height_cont=int(self.frame_contenedor_pro.height()/100)-4
+		self.frame_contenedor_pro.move(self.frame_contenedor_pro.x(), -value*height_cont)
+	
 	# Eliminamos un administrador del sistema
 	def delete_bd_admin(self):
 		# Obtenemos el dni- o users
@@ -182,18 +192,23 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.delete_admin_frame.hide()
 		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
 
-	def search_project(self):
+	def add_new_project(self):
 		from controllers.control_project import add_project
 		ui_add=add_project(self)
 		ui_add.show()
 
-
 	def add_control_frame(self):
+		valor=self.datos.show_tproject() 
+		for i in valor:
+			self.add_control_frame_data_all(i[0],i[1])
+
+	def add_control_frame_data_all(self,code_project,name_project):
+		# Aqui se define el ancho y alto de nuestro objeto
 		width=200	# ancho
 		height=150  # alto
 		width_cont=int(self.frame_contenedor_pro.width()/220)
 		height_cont=int(self.frame_contenedor_pro.height()/170)
-		# Valores de inicio de graficos
+		# Valores de inicio de graficos para que no esten pegados a los lados
 		x=10
 		y=10
 		if(self.valor_x < width_cont):
@@ -203,26 +218,28 @@ class control_aec(QMainWindow,Ui_sistema):
 				y=frame.y()
 				height=frame.height()
 				width=frame.width()
-				frame_project=control_data(self,"Hola para siempre","Mundo dos",x+width+20,y,width,height)
+				frame_project=control_data(self,code_project,name_project,x+width+20,y,width,height)
 				frame_project.crear_qframe()
 				self.control_proyecto.append(frame_project)
 			else:
-				frame_project=control_data(self,"Hola","Mundo",x,y,width,height)
+				frame_project=control_data(self,code_project,name_project,x,y,width,height)
 				frame_project.crear_qframe()
 				self.control_proyecto.append(frame_project)
 			self.valor_x+=1
 
 		elif(self.valor_x==width_cont):
+			self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.frame_contenedor_pro.height()+170)
 			frame=(self.control_proyecto[-1]).get_frame()
+			self.alto_qfadd_project+=1
 			x=10
 			y=frame.y()
 			height=frame.height()
 			width=frame.width()
-			frame_project=control_data(self,"Hola variable","Mundo new",x,y+height+20,width,height)
+			frame_project=control_data(self,code_project,name_project,x,y+height+20,width,height)
 			frame_project.crear_qframe()
 			self.control_proyecto.append(frame_project)
 			self.valor_x=1
-
+	
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
 		self.txt_password=txt2
@@ -250,7 +267,8 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_restaurar.show()
 
 	def mover_menu(self):
-		if True:			
+		# Volvemos los objetos a su posicion
+		if True:	
 			width = self.frame_lateral.width()
 			normal = 0
 			if width==0:
@@ -285,6 +303,7 @@ class control_aec(QMainWindow,Ui_sistema):
 	## mover ventana
 	def mousePressEvent(self, event):
 		self.clickPosition = event.globalPos()
+
 	def mover_ventana(self, event):
 		if self.isMaximized() == False:			
 			if event.buttons() == QtCore.Qt.LeftButton:
@@ -371,10 +390,10 @@ class CheckBoxWidget(QWidget):
         self.setLayout(layout)
 
 class control_data(QDialog):
-	def __init__(self, parent,code_project,name,x,y,width,height):
+	def __init__(self, parent,code_project,name_project,x,y,width,height):
 		super(control_data,self).__init__(parent)
 		self.code_project=code_project
-		self.name=name
+		self.name_project=name_project
 		self.x=x
 		self.y=y
 		self.width=width
@@ -383,6 +402,7 @@ class control_data(QDialog):
 		from controllers.control_project import ctrl_project
 		self.ui_add=ctrl_project(self)
 		self.ui_add.btn_call_list.clicked.connect(self.call_list)
+		#self.ui_add.assign(self.name)
 
 	def call_list(self):
 		self.ui_add.close()
@@ -397,7 +417,7 @@ class control_data(QDialog):
 		self.qframe.setGeometry(QRect(self.x, self.y,self.width, self.height))
 		self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
 		self.lbl_frame = QLabel(self.qframe)
-		self.lbl_frame.setText("Proyecto en \n desarrollo \n place")
+		self.lbl_frame.setText("PROYECTO NRO:\n"+self.code_project)
 		self.lbl_frame.setObjectName("txt")
 		self.lbl_frame.setGeometry(QRect(10, 10, 180, 90))
 		self.lbl_frame.setStyleSheet("font: 75 16pt Arial")

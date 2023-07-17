@@ -1,29 +1,26 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cuadro_mensajerRrjnd.ui'
+## Form generated from reading UI file 'cuadro_mensajelrRGxR.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
 class Ui_add_cuadro(object):
     def setupUi(self, add_cuadro):
-        if add_cuadro.objectName():
+        if not add_cuadro.objectName():
             add_cuadro.setObjectName(u"add_cuadro")
-        add_cuadro.resize(360, 468)
+        add_cuadro.resize(406, 532)
         self.frame = QFrame(add_cuadro)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(0, 10, 351, 441))
+        self.frame.setGeometry(QRect(0, 10, 401, 511))
         self.frame.setStyleSheet(u"QFrame{\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(117, 147, 156, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border: 3px solid rgb(0, 0, 0) ;\n"
@@ -50,35 +47,47 @@ class Ui_add_cuadro(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.btn_call_list = QPushButton(self.frame)
         self.btn_call_list.setObjectName(u"btn_call_list")
-        self.btn_call_list.setGeometry(QRect(30, 180, 290, 50))
+        self.btn_call_list.setGeometry(QRect(30, 250, 341, 50))
         self.btn_call_list.setMinimumSize(QSize(0, 50))
         self.btn_call_list.setMaximumSize(QSize(16777215, 50))
         self.btn_call_list.setSizeIncrement(QSize(0, 50))
         self.btn_view_list = QPushButton(self.frame)
         self.btn_view_list.setObjectName(u"btn_view_list")
-        self.btn_view_list.setGeometry(QRect(30, 120, 290, 50))
+        self.btn_view_list.setGeometry(QRect(30, 190, 341, 50))
         self.btn_view_list.setMinimumSize(QSize(0, 50))
         self.btn_view_list.setSizeIncrement(QSize(0, 50))
         self.btn_delete_project = QPushButton(self.frame)
         self.btn_delete_project.setObjectName(u"btn_delete_project")
-        self.btn_delete_project.setGeometry(QRect(30, 310, 290, 50))
+        self.btn_delete_project.setGeometry(QRect(30, 380, 341, 50))
         self.btn_delete_project.setMinimumSize(QSize(0, 50))
         self.btn_delete_project.setMaximumSize(QSize(16777215, 50))
         self.btn_delete_project.setSizeIncrement(QSize(0, 50))
         self.btn_actividades = QPushButton(self.frame)
         self.btn_actividades.setObjectName(u"btn_actividades")
-        self.btn_actividades.setGeometry(QRect(30, 250, 290, 50))
+        self.btn_actividades.setGeometry(QRect(30, 320, 341, 50))
         self.btn_actividades.setMinimumSize(QSize(0, 50))
         self.btn_actividades.setMaximumSize(QSize(16777215, 50))
         self.btn_actividades.setSizeIncrement(QSize(0, 50))
         self.label_title = QLabel(self.frame)
         self.label_title.setObjectName(u"label_title")
-        self.label_title.setGeometry(QRect(20, 20, 321, 71))
+        self.label_title.setGeometry(QRect(20, 60, 361, 121))
+        font = QFont()
+        font.setPointSize(12)
+        self.label_title.setFont(font)
         self.label_title.setStyleSheet(u"background-color:rgba(0,0,0,0%);")
         self.label_title.setAlignment(Qt.AlignCenter)
         self.btn_decline = QPushButton(self.frame)
         self.btn_decline.setObjectName(u"btn_decline")
-        self.btn_decline.setGeometry(QRect(100, 380, 161, 41))
+        self.btn_decline.setGeometry(QRect(120, 450, 161, 41))
+        self.label_code_project = QLabel(self.frame)
+        self.label_code_project.setObjectName(u"label_code_project")
+        self.label_code_project.setGeometry(QRect(70, 20, 271, 31))
+        font1 = QFont()
+        font1.setPointSize(14)
+        font1.setBold(True)
+        font1.setWeight(75)
+        self.label_code_project.setFont(font1)
+        self.label_code_project.setAlignment(Qt.AlignCenter)
 
         self.retranslateUi(add_cuadro)
 
@@ -91,7 +100,9 @@ class Ui_add_cuadro(object):
         self.btn_view_list.setText(QCoreApplication.translate("add_cuadro", u"Ver lista", None))
         self.btn_delete_project.setText(QCoreApplication.translate("add_cuadro", u"Eliminar proyecto", None))
         self.btn_actividades.setText(QCoreApplication.translate("add_cuadro", u"Actividades", None))
-        self.label_title.setText(QCoreApplication.translate("add_cuadro", u"Proyecto", None))
+        self.label_title.setText(QCoreApplication.translate("add_cuadro", u"el desarrollo de una persona\n"
+" normal en tiempor de covid", None))
         self.btn_decline.setText(QCoreApplication.translate("add_cuadro", u"Cancelar", None))
+        self.label_code_project.setText(QCoreApplication.translate("add_cuadro", u"TextLabel", None))
     # retranslateUi
 
