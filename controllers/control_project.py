@@ -24,6 +24,9 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         self.label_title.setText(self.parent().name_project)
         self.label_code_project.setText(self.parent().code_project)
 
+    def Adjust(self):
+        midle=35
+        str_new=
 
 class add_project(QMainWindow,Ui_add_project_new):
     def __init__(self, parent):
@@ -36,6 +39,7 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.code_project=self.random_value()
         self.dialogo=Dialogo()
         self.date_now()
+        self.number_of_days.setEnabled(False)
         self.datos = Registro_datos()
         self.allow_btn.clicked.connect(self.get_all_data)
         self.search_name_db.clicked.connect(self.search_db)

@@ -1,5 +1,7 @@
 import sys
 import time 
+import random
+from datetime import datetime, timedelta
 from PySide2 import QtCore
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
     QRect, QSize, QUrl, Qt, QPropertyAnimation)
@@ -14,10 +16,6 @@ from views.ui_menu import Ui_sistema
 
 from controllers.change_password import (changed_password_uad, Dialogo)
 from controllers.add_trabajador import new_trabajador
-
-
-g_users=""
-g_password=""
 
 class MiApp(QMainWindow, Ui_login):
 	def __init__(self):
@@ -438,6 +436,7 @@ class control_data(QDialog):
 		self.lbl_frame.show()
 		self.qframe.show()
 		#http://portal.apci.gob.pe/index.php/registros-de-proyectos/item/449-departamento-provincia-distrito
+	
 	def open_project(self):
 		self.ui_add.show()
 
