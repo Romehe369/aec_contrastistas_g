@@ -3,7 +3,7 @@ import time
 import random
 from datetime import datetime, timedelta
 from PySide2 import QtCore
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
+from PySide2.QtCore import (QDate,QCoreApplication, QMetaObject, QObject, QPoint,
     QRect, QSize, QUrl, Qt, QPropertyAnimation)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
@@ -121,12 +121,19 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_menu.clicked.connect(self.mover_menu)
 		self.oculto=False
 		# Agregamos todos los frames e control ocultar y mostrar
-		self.frame_encabezados=[self.frame_registro,self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
+		self.frame_encabezados=[self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		# deberia cerrar la ventana
 		#self.frm_superior_min.connect(self.this_double_click)
 		#self.click_count = 0
 		self.valor_x=0
+		self.update_date_now()
 		self.bt_cerrar.clicked.connect(lambda: self.close())
+
+	def update_date_now(self):
+		now = datetime.now()
+		d = QDate(now.year, now.month, now.day)
+		self.date_emision.setDate(d)
+		self.datetime_decline.setDate(d)
 
 	def click_btn_proyectos(self):
 		self.stackedWidget.setCurrentWidget(self.page_proyectos)

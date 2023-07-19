@@ -21,12 +21,16 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         self.setAttribute(Qt.WA_TranslucentBackground)
         # Cerrar la ventana principal
         self.btn_decline.clicked.connect(self.close)
-        self.label_title.setText(self.parent().name_project)
         self.label_code_project.setText(self.parent().code_project)
+        self.line_break()
 
-    def Adjust(self):
-        midle=35
-        str_new=
+    def line_break(self):
+        name_project=self.parent().name_project
+        split_text=name_project.split(" ")
+        len_text=int(len(split_text)/2)+1
+        split_text.insert(len_text,"\n")
+        text_formal=" ".join(split_text)
+        self.label_title.setText(text_formal)
 
 class add_project(QMainWindow,Ui_add_project_new):
     def __init__(self, parent):

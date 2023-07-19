@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cuadro_mensajelrRGxR.ui'
+## Form generated from reading UI file 'cuadro_mensajeKDGYrM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,10 +17,10 @@ class Ui_add_cuadro(object):
     def setupUi(self, add_cuadro):
         if not add_cuadro.objectName():
             add_cuadro.setObjectName(u"add_cuadro")
-        add_cuadro.resize(406, 532)
+        add_cuadro.resize(406, 494)
         self.frame = QFrame(add_cuadro)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(0, 10, 401, 511))
+        self.frame.setGeometry(QRect(0, 10, 401, 471))
         self.frame.setStyleSheet(u"QFrame{\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(117, 147, 156, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "border: 3px solid rgb(0, 0, 0) ;\n"
@@ -47,30 +47,30 @@ class Ui_add_cuadro(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.btn_call_list = QPushButton(self.frame)
         self.btn_call_list.setObjectName(u"btn_call_list")
-        self.btn_call_list.setGeometry(QRect(30, 250, 341, 50))
+        self.btn_call_list.setGeometry(QRect(30, 210, 341, 50))
         self.btn_call_list.setMinimumSize(QSize(0, 50))
         self.btn_call_list.setMaximumSize(QSize(16777215, 50))
         self.btn_call_list.setSizeIncrement(QSize(0, 50))
         self.btn_view_list = QPushButton(self.frame)
         self.btn_view_list.setObjectName(u"btn_view_list")
-        self.btn_view_list.setGeometry(QRect(30, 190, 341, 50))
+        self.btn_view_list.setGeometry(QRect(30, 150, 341, 50))
         self.btn_view_list.setMinimumSize(QSize(0, 50))
         self.btn_view_list.setSizeIncrement(QSize(0, 50))
         self.btn_delete_project = QPushButton(self.frame)
         self.btn_delete_project.setObjectName(u"btn_delete_project")
-        self.btn_delete_project.setGeometry(QRect(30, 380, 341, 50))
+        self.btn_delete_project.setGeometry(QRect(30, 340, 341, 50))
         self.btn_delete_project.setMinimumSize(QSize(0, 50))
         self.btn_delete_project.setMaximumSize(QSize(16777215, 50))
         self.btn_delete_project.setSizeIncrement(QSize(0, 50))
         self.btn_actividades = QPushButton(self.frame)
         self.btn_actividades.setObjectName(u"btn_actividades")
-        self.btn_actividades.setGeometry(QRect(30, 320, 341, 50))
+        self.btn_actividades.setGeometry(QRect(30, 280, 341, 50))
         self.btn_actividades.setMinimumSize(QSize(0, 50))
         self.btn_actividades.setMaximumSize(QSize(16777215, 50))
         self.btn_actividades.setSizeIncrement(QSize(0, 50))
         self.label_title = QLabel(self.frame)
         self.label_title.setObjectName(u"label_title")
-        self.label_title.setGeometry(QRect(20, 60, 361, 121))
+        self.label_title.setGeometry(QRect(20, 60, 361, 71))
         font = QFont()
         font.setPointSize(12)
         self.label_title.setFont(font)
@@ -78,7 +78,7 @@ class Ui_add_cuadro(object):
         self.label_title.setAlignment(Qt.AlignCenter)
         self.btn_decline = QPushButton(self.frame)
         self.btn_decline.setObjectName(u"btn_decline")
-        self.btn_decline.setGeometry(QRect(120, 450, 161, 41))
+        self.btn_decline.setGeometry(QRect(120, 410, 161, 41))
         self.label_code_project = QLabel(self.frame)
         self.label_code_project.setObjectName(u"label_code_project")
         self.label_code_project.setGeometry(QRect(70, 20, 271, 31))

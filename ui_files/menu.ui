@@ -1237,9 +1237,6 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;
 QLabel{
 border: none;
 }
-QFrame{
-border:1px solid #000000;
-}
 QLabel{
 border: none;
 font: 12pt &quot;MS Shell Dlg 2&quot;;
@@ -1249,9 +1246,21 @@ background-color: rgb(255, 255, 255);
 }
 QComboBox{
 font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}
+QComboBox.showPopup{
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}
+QDateEdit{
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
 }</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,11">
+             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="11">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1268,61 +1277,6 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;
                <number>0</number>
               </property>
               <item>
-               <widget class="QFrame" name="frame_registro">
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>40</height>
-                 </size>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <property name="lineWidth">
-                 <number>1</number>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_16">
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <item>
-                  <widget class="QLabel" name="label_4">
-                   <property name="font">
-                    <font>
-                     <family>MS Shell Dlg 2</family>
-                     <pointsize>12</pointsize>
-                     <weight>50</weight>
-                     <italic>false</italic>
-                     <bold>false</bold>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Registrar, agregar  trabajadores, materiales o requerimientos</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
                <widget class="QFrame" name="frame_4">
                 <property name="styleSheet">
                  <string notr="true"/>
@@ -1332,6 +1286,9 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>0</number>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_13" stretch="1,7">
                  <property name="spacing">
@@ -1361,9 +1318,15 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;
                     <string notr="true">QFrame{
 	background-color: rgb(117, 117, 117);
 }
-QLabel{
-border: none;
-}</string>
+QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}
+QPushButton:hover{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}
+</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1372,6 +1335,21 @@ border: none;
                     <enum>QFrame::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                    <property name="spacing">
+                     <number>9</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
                     <item>
                      <widget class="QPushButton" name="btn_agregar_trabajador">
                       <property name="minimumSize">
@@ -1444,7 +1422,10 @@ border: none;
                  <item>
                   <widget class="QFrame" name="frame_3">
                    <property name="styleSheet">
-                    <string notr="true"/>
+                    <string notr="true">QFrame{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1822,6 +1803,9 @@ border:none;
                                     <height>31</height>
                                    </size>
                                   </property>
+                                  <property name="styleSheet">
+                                   <string notr="true"/>
+                                  </property>
                                   <item>
                                    <property name="text">
                                     <string>ENERO</string>
@@ -1830,6 +1814,56 @@ border:none;
                                   <item>
                                    <property name="text">
                                     <string>FEBRERO</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>MARZO</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>ABRIL</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>MAYO</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>JUNIO</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>JULIO</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>AGOSTO</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>SETIEMBRE</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>OCTUBRE</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>NOVIEMBRE</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>DICIEMBRE</string>
                                    </property>
                                   </item>
                                  </widget>
@@ -1856,13 +1890,13 @@ border:none;
                                    <font>
                                     <family>MS Shell Dlg 2</family>
                                     <pointsize>12</pointsize>
-                                    <weight>50</weight>
+                                    <weight>9</weight>
                                     <italic>false</italic>
                                     <bold>false</bold>
                                    </font>
                                   </property>
                                   <property name="styleSheet">
-                                   <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                                   <string notr="true"/>
                                   </property>
                                   <property name="calendarPopup">
                                    <bool>true</bool>
@@ -2149,7 +2183,7 @@ border:none;
                                    </size>
                                   </property>
                                   <property name="styleSheet">
-                                   <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                                   <string notr="true"/>
                                   </property>
                                   <property name="calendarPopup">
                                    <bool>true</bool>
@@ -2249,7 +2283,9 @@ border:none;
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true"/>
+                       <string notr="true">QLabel{
+border: 0px;
+}</string>
                       </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
