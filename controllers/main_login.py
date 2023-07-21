@@ -138,7 +138,6 @@ class control_aec(QMainWindow,Ui_sistema):
 
 	def click_btn_proyectos(self):
 		self.borrar_elementos()
-		print("se ha ejecutado")
 		self.add_control_frame()
 
 	def borrar_elementos(self):
@@ -219,61 +218,22 @@ class control_aec(QMainWindow,Ui_sistema):
 		height_cont=int(self.frame_contenedor_pro.height()/170)
 		# obtenemos los datos
 		valor=self.datos.show_tproject() 
-		print("Ancho : ",width_cont)
 		# Contador para detener el bucle while
 		contador_bucle=0
 		contar_next_line=0
 		# Crear la cantidad de elementos necesarios
 		while(len(valor)>contador_bucle):
 			for j in range(0,width_cont):
-				print(contar_next_line," : ",j)
-				frame = QFrame(self.frame_contenedor_pro)
-				frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
-				self.gridLayout_add_frame.addWidget(frame,contar_next_line,j,1,1)
+				#frame = QFrame(self.frame_contenedor_pro)
+				#frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
+				frame_project=control_data(self,"Hello world","Por siempre")
+				frame_project.crear_qframe()
+				self.gridLayout_add_frame.addWidget(frame_project.get_frame(),contar_next_line,j,1,1)
 				#incrementar en cada creacion
 				contador_bucle+=1
 			contar_next_line+=1
 		#self.gridLayout_add_frame.show()
 
-	def add_control_frame_data_all(self,code_project,name_project):
-		# Aqui se define el ancho y alto de nuestro objeto
-		width=200	# ancho del frame a crear
-		height=150  # alto del frame a crear
-		# Tamanio del conetenedor
-		width_cont=int(self.frame_contenedor_pro.width()/220)
-		height_cont=int(self.frame_contenedor_pro.height()/170)
-		# Valores de inicio de graficos para que no esten pegados a los lados
-		x=10
-		y=10
-		if(self.valor_x < width_cont):
-			if(len(self.control_proyecto)>=1):
-				frame=(self.control_proyecto[-1]).get_frame()
-				x=frame.x()
-				y=frame.y()
-				height=frame.height()
-				width=frame.width()
-				frame_project=control_data(self,code_project,name_project,x+width+20,y,width,height)
-				frame_project.crear_qframe()
-				self.control_proyecto.append(frame_project)
-			else:
-				frame_project=control_data(self,code_project,name_project,x,y,width,height)
-				frame_project.crear_qframe()
-				self.control_proyecto.append(frame_project)
-			self.valor_x+=1
-
-		elif(self.valor_x==width_cont):
-			self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.frame_contenedor_pro.height()+170)
-			frame=(self.control_proyecto[-1]).get_frame()
-			self.alto_qfadd_project+=1
-			x=10
-			y=frame.y()
-			height=frame.height()
-			width=frame.width()
-			frame_project=control_data(self,code_project,name_project,x,y+height+20,width,height)
-			frame_project.crear_qframe()
-			self.control_proyecto.append(frame_project)
-			self.valor_x=1
-	
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
 		self.txt_password=txt2
@@ -425,19 +385,14 @@ class CheckBoxWidget(QWidget):
 
 # Se crea un control de la tabla
 class control_data(QDialog):
-	def __init__(self, parent,code_project,name_project,x,y,width,height):
+	def __init__(self, parent,code_project,name_project):
 		super(control_data,self).__init__(parent)
 		self.code_project=code_project
 		self.name_project=name_project
-		self.x=x
-		self.y=y
-		self.width=width
-		self.height=height
-		self.qframe=None
+		self.qframe=QFrame()
 		from controllers.control_project import ctrl_project
 		self.ui_add=ctrl_project(self)
 		self.ui_add.btn_call_list.clicked.connect(self.call_list)
-		#self.ui_add.assign(self.name)
 
 	def call_list(self):
 		self.ui_add.close()
@@ -449,18 +404,19 @@ class control_data(QDialog):
 	def crear_qframe(self):
 		# Crear un QFrame y establecer su geometr
 		self.qframe = QFrame(self.parent().frame_contenedor_pro)
-		self.qframe.setGeometry(QRect(self.x, self.y,self.width, self.height))
+		#self.qframe.setMaximumSize(QSize(250, 200))
+		self.v_layout_frame = QVBoxLayout(self.qframe)
 		self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
 		self.lbl_frame = QLabel(self.qframe)
 		self.lbl_frame.setText("PROYECTO NRO:\n"+self.code_project)
-		self.lbl_frame.setObjectName("txt")
 		self.lbl_frame.setGeometry(QRect(10, 10, 180, 90))
 		self.lbl_frame.setStyleSheet("font: 75 16pt Arial")
 		self.lbl_frame.setAlignment(Qt.AlignCenter)
+		self.v_layout_frame.addWidget(self.lbl_frame)
 
 		self.view_details = QPushButton(self.qframe)
-		self.view_details.setObjectName("view_details")
 		self.view_details.setGeometry(QRect(10, 110, 180, 30))
+		self.view_details.setMinimumSize(QSize(0, 40))
 		self.view_details.setText("VER DETALLES")
 		self.view_details.setStyleSheet("QPushButton{ border: 1px solid rgb(0, 0, 127);\n"
 		"border-radius:5px;\n"
@@ -468,11 +424,11 @@ class control_data(QDialog):
 		"font: 75 12pt \"MS Shell Dlg 2\";}\n"
 		"QPushButton:hover{ background-color: white;\n"
 		"border-radius:5px;}")
+		self.v_layout_frame.addWidget(self.view_details)
 		self.view_details.clicked.connect(self.open_project)
 		self.view_details.show()
 		self.lbl_frame.show()
 		self.qframe.show()
-		#http://portal.apci.gob.pe/index.php/registros-de-proyectos/item/449-departamento-provincia-distrito
 	
 	def open_project(self):
 		self.ui_add.show()
