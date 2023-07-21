@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuWwHODV.ui'
+## Form generated from reading UI file 'menuPIXnVU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,10 +17,9 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1320, 665)
+        sistema.resize(956, 896)
         sistema.setMinimumSize(QSize(400, 0))
-        sistema.setStyleSheet(u"background-color: rgb(108, 211, 213);\n"
-"\n"
+        sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "QLineEdit{\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}")
@@ -139,7 +138,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u"assets/icons/minimizar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"./assets/icons/minimizar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_minimizar.setIcon(icon1)
         self.bt_minimizar.setIconSize(QSize(32, 32))
         self.bt_minimizar.setFlat(False)
@@ -161,7 +160,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u"assets/icons/restaurar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"./assets/icons/restaurar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_restaurar.setIcon(icon2)
         self.bt_restaurar.setIconSize(QSize(30, 30))
 
@@ -182,7 +181,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"assets/icons/maximizar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"./assets/icons/maximizar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_maximizar.setIcon(icon3)
         self.bt_maximizar.setIconSize(QSize(32, 32))
 
@@ -202,7 +201,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"assets/icons/cerrar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"./assets/icons/cerrar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_cerrar.setIcon(icon4)
         self.bt_cerrar.setIconSize(QSize(32, 32))
 
@@ -338,6 +337,75 @@ class Ui_sistema(object):
         self.stackedWidget.setFrameShape(QFrame.NoFrame)
         self.stackedWidget.setFrameShadow(QFrame.Plain)
         self.stackedWidget.setLineWidth(0)
+        self.page_inicio = QWidget()
+        self.page_inicio.setObjectName(u"page_inicio")
+        self.page_inicio.setStyleSheet(u"background-color: rgb(29, 151, 202);")
+        self.verticalLayout_16 = QVBoxLayout(self.page_inicio)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.frame_28 = QFrame(self.page_inicio)
+        self.frame_28.setObjectName(u"frame_28")
+        self.frame_28.setStyleSheet(u"background-color: rgba(0,0,0,0%);")
+        self.frame_28.setFrameShape(QFrame.StyledPanel)
+        self.frame_28.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_36 = QVBoxLayout(self.frame_28)
+        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.label_4 = QLabel(self.frame_28)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMaximumSize(QSize(16777215, 100))
+        font3 = QFont()
+        font3.setPointSize(36)
+        font3.setBold(True)
+        font3.setWeight(75)
+        self.label_4.setFont(font3)
+        self.label_4.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"color: rgb(255, 255, 255);")
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_36.addWidget(self.label_4)
+
+        self.label_50 = QLabel(self.frame_28)
+        self.label_50.setObjectName(u"label_50")
+        self.label_50.setMaximumSize(QSize(16777215, 100))
+        font4 = QFont()
+        font4.setPointSize(28)
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.label_50.setFont(font4)
+        self.label_50.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"color: rgb(255, 255, 255);")
+        self.label_50.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_36.addWidget(self.label_50)
+
+        self.frame_29 = QFrame(self.frame_28)
+        self.frame_29.setObjectName(u"frame_29")
+        self.frame_29.setFrameShape(QFrame.StyledPanel)
+        self.frame_29.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frame_29)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.horizontalLayout_17.setContentsMargins(50, 10, 50, 10)
+        self.horizontalSpacer_3 = QSpacerItem(6, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_17.addItem(self.horizontalSpacer_3)
+
+        self.label_49 = QLabel(self.frame_29)
+        self.label_49.setObjectName(u"label_49")
+        self.label_49.setPixmap(QPixmap(u"./assets/icons/icono.png"))
+
+        self.horizontalLayout_17.addWidget(self.label_49)
+
+        self.horizontalSpacer_4 = QSpacerItem(7, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_17.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout_36.addWidget(self.frame_29)
+
+
+        self.verticalLayout_16.addWidget(self.frame_28)
+
+        self.stackedWidget.addWidget(self.page_inicio)
         self.page_add_administrator = QWidget()
         self.page_add_administrator.setObjectName(u"page_add_administrator")
         self.page_add_administrator.setStyleSheet(u"QWidget{\n"
@@ -710,13 +778,13 @@ class Ui_sistema(object):
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_7 = QLabel(self.frame_9)
         self.label_7.setObjectName(u"label_7")
-        font3 = QFont()
-        font3.setFamily(u"MS Shell Dlg 2")
-        font3.setPointSize(12)
-        font3.setBold(False)
-        font3.setItalic(False)
-        font3.setWeight(50)
-        self.label_7.setFont(font3)
+        font5 = QFont()
+        font5.setFamily(u"MS Shell Dlg 2")
+        font5.setPointSize(12)
+        font5.setBold(False)
+        font5.setItalic(False)
+        font5.setWeight(50)
+        self.label_7.setFont(font5)
         self.label_7.setStyleSheet(u"")
         self.label_7.setAlignment(Qt.AlignCenter)
 
@@ -757,7 +825,7 @@ class Ui_sistema(object):
         self.label_14 = QLabel(self.frame_16)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setMinimumSize(QSize(0, 31))
-        self.label_14.setFont(font3)
+        self.label_14.setFont(font5)
         self.label_14.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_22.addWidget(self.label_14)
@@ -861,13 +929,13 @@ class Ui_sistema(object):
         self.date_emision = QDateEdit(self.frame_15)
         self.date_emision.setObjectName(u"date_emision")
         self.date_emision.setMinimumSize(QSize(0, 31))
-        font4 = QFont()
-        font4.setFamily(u"MS Shell Dlg 2")
-        font4.setPointSize(12)
-        font4.setBold(False)
-        font4.setItalic(False)
-        font4.setWeight(9)
-        self.date_emision.setFont(font4)
+        font6 = QFont()
+        font6.setFamily(u"MS Shell Dlg 2")
+        font6.setPointSize(12)
+        font6.setBold(False)
+        font6.setItalic(False)
+        font6.setWeight(9)
+        self.date_emision.setFont(font6)
         self.date_emision.setStyleSheet(u"")
         self.date_emision.setCalendarPopup(True)
 
@@ -888,9 +956,9 @@ class Ui_sistema(object):
         self.lineEdit_11 = QLineEdit(self.frame_15)
         self.lineEdit_11.setObjectName(u"lineEdit_11")
         self.lineEdit_11.setMinimumSize(QSize(0, 31))
-        font5 = QFont()
-        font5.setPointSize(12)
-        self.lineEdit_11.setFont(font5)
+        font7 = QFont()
+        font7.setPointSize(12)
+        self.lineEdit_11.setFont(font7)
         self.lineEdit_11.setStyleSheet(u"background-color: rgb(170, 255, 255);")
 
         self.verticalLayout_23.addWidget(self.lineEdit_11)
@@ -998,7 +1066,7 @@ class Ui_sistema(object):
         self.lineEdit_23 = QLineEdit(self.frame_17)
         self.lineEdit_23.setObjectName(u"lineEdit_23")
         self.lineEdit_23.setMinimumSize(QSize(0, 31))
-        self.lineEdit_23.setFont(font5)
+        self.lineEdit_23.setFont(font7)
 
         self.verticalLayout_21.addWidget(self.lineEdit_23)
 
@@ -1019,14 +1087,14 @@ class Ui_sistema(object):
         self.lineEdit_20 = QLineEdit(self.frame_17)
         self.lineEdit_20.setObjectName(u"lineEdit_20")
         self.lineEdit_20.setMinimumSize(QSize(0, 31))
-        self.lineEdit_20.setFont(font5)
+        self.lineEdit_20.setFont(font7)
 
         self.verticalLayout_21.addWidget(self.lineEdit_20)
 
         self.lineEdit_24 = QLineEdit(self.frame_17)
         self.lineEdit_24.setObjectName(u"lineEdit_24")
         self.lineEdit_24.setMinimumSize(QSize(0, 31))
-        self.lineEdit_24.setFont(font5)
+        self.lineEdit_24.setFont(font7)
 
         self.verticalLayout_21.addWidget(self.lineEdit_24)
 
@@ -1080,7 +1148,7 @@ class Ui_sistema(object):
         self.lineEdit_21 = QLineEdit(self.frame_7)
         self.lineEdit_21.setObjectName(u"lineEdit_21")
         self.lineEdit_21.setMinimumSize(QSize(0, 31))
-        self.lineEdit_21.setFont(font5)
+        self.lineEdit_21.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_21)
 
@@ -1093,7 +1161,7 @@ class Ui_sistema(object):
         self.lineEdit_15 = QLineEdit(self.frame_7)
         self.lineEdit_15.setObjectName(u"lineEdit_15")
         self.lineEdit_15.setMinimumSize(QSize(0, 31))
-        self.lineEdit_15.setFont(font5)
+        self.lineEdit_15.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_15)
 
@@ -1106,7 +1174,7 @@ class Ui_sistema(object):
         self.lineEdit_16 = QLineEdit(self.frame_7)
         self.lineEdit_16.setObjectName(u"lineEdit_16")
         self.lineEdit_16.setMinimumSize(QSize(0, 31))
-        self.lineEdit_16.setFont(font5)
+        self.lineEdit_16.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_16)
 
@@ -1119,7 +1187,7 @@ class Ui_sistema(object):
         self.lineEdit_17 = QLineEdit(self.frame_7)
         self.lineEdit_17.setObjectName(u"lineEdit_17")
         self.lineEdit_17.setMinimumSize(QSize(0, 31))
-        self.lineEdit_17.setFont(font5)
+        self.lineEdit_17.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_17)
 
@@ -1132,7 +1200,7 @@ class Ui_sistema(object):
         self.lineEdit_18 = QLineEdit(self.frame_7)
         self.lineEdit_18.setObjectName(u"lineEdit_18")
         self.lineEdit_18.setMinimumSize(QSize(0, 31))
-        self.lineEdit_18.setFont(font5)
+        self.lineEdit_18.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_18)
 
@@ -1145,7 +1213,7 @@ class Ui_sistema(object):
         self.lineEdit_19 = QLineEdit(self.frame_7)
         self.lineEdit_19.setObjectName(u"lineEdit_19")
         self.lineEdit_19.setMinimumSize(QSize(0, 31))
-        self.lineEdit_19.setFont(font5)
+        self.lineEdit_19.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_19)
 
@@ -1222,14 +1290,14 @@ class Ui_sistema(object):
         self.horizontalLayout_3.setContentsMargins(70, -1, 70, -1)
         self.label = QLabel(self.frame_asistencia)
         self.label.setObjectName(u"label")
-        self.label.setFont(font5)
+        self.label.setFont(font7)
         self.label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_3.addWidget(self.label)
 
         self.lineEdit = QLineEdit(self.frame_asistencia)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setFont(font5)
+        self.lineEdit.setFont(font7)
         self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
         self.horizontalLayout_3.addWidget(self.lineEdit)
@@ -1240,7 +1308,7 @@ class Ui_sistema(object):
         self.btn_search_call_list.setMinimumSize(QSize(120, 50))
         self.btn_search_call_list.setMaximumSize(QSize(120, 50))
         self.btn_search_call_list.setSizeIncrement(QSize(120, 50))
-        self.btn_search_call_list.setFont(font5)
+        self.btn_search_call_list.setFont(font7)
 
         self.horizontalLayout_3.addWidget(self.btn_search_call_list)
 
@@ -1309,7 +1377,7 @@ class Ui_sistema(object):
         self.dt_fecha_list = QDateEdit(self.frame_6)
         self.dt_fecha_list.setObjectName(u"dt_fecha_list")
         self.dt_fecha_list.setMinimumSize(QSize(0, 35))
-        self.dt_fecha_list.setFont(font3)
+        self.dt_fecha_list.setFont(font5)
         self.dt_fecha_list.setCalendarPopup(True)
         self.dt_fecha_list.setDate(QDate(2023, 1, 1))
 
@@ -1391,14 +1459,14 @@ class Ui_sistema(object):
         self.label_6 = QLabel(self.frame_kardex)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setMinimumSize(QSize(160, 50))
-        self.label_6.setFont(font5)
+        self.label_6.setFont(font7)
         self.label_6.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_4.addWidget(self.label_6)
 
         self.lineEdit_2 = QLineEdit(self.frame_kardex)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setFont(font5)
+        self.lineEdit_2.setFont(font7)
         self.lineEdit_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
         self.horizontalLayout_4.addWidget(self.lineEdit_2)
@@ -1409,7 +1477,7 @@ class Ui_sistema(object):
         self.pushButton_4.setMinimumSize(QSize(120, 50))
         self.pushButton_4.setMaximumSize(QSize(120, 50))
         self.pushButton_4.setSizeIncrement(QSize(120, 50))
-        self.pushButton_4.setFont(font5)
+        self.pushButton_4.setFont(font7)
         self.pushButton_4.setStyleSheet(u"background-color: rgb(108, 241, 255);")
 
         self.horizontalLayout_4.addWidget(self.pushButton_4)
@@ -1427,38 +1495,38 @@ class Ui_sistema(object):
         if (self.table_qwk_new.columnCount() < 11):
             self.table_qwk_new.setColumnCount(11)
         __qtablewidgetitem6 = QTableWidgetItem()
-        __qtablewidgetitem6.setFont(font5);
+        __qtablewidgetitem6.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(0, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        __qtablewidgetitem7.setFont(font5);
+        __qtablewidgetitem7.setFont(font7);
         __qtablewidgetitem7.setBackground(QColor(255, 255, 255));
         self.table_qwk_new.setHorizontalHeaderItem(1, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setFont(font5);
+        __qtablewidgetitem8.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(2, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        __qtablewidgetitem9.setFont(font5);
+        __qtablewidgetitem9.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(3, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        __qtablewidgetitem10.setFont(font5);
+        __qtablewidgetitem10.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(4, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
-        __qtablewidgetitem11.setFont(font5);
+        __qtablewidgetitem11.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(5, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
-        __qtablewidgetitem12.setFont(font5);
+        __qtablewidgetitem12.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(6, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
-        __qtablewidgetitem13.setFont(font5);
+        __qtablewidgetitem13.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(7, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
-        __qtablewidgetitem14.setFont(font5);
+        __qtablewidgetitem14.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(8, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
-        __qtablewidgetitem15.setFont(font5);
+        __qtablewidgetitem15.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(9, __qtablewidgetitem15)
         __qtablewidgetitem16 = QTableWidgetItem()
-        __qtablewidgetitem16.setFont(font5);
+        __qtablewidgetitem16.setFont(font7);
         self.table_qwk_new.setHorizontalHeaderItem(10, __qtablewidgetitem16)
         self.table_qwk_new.setObjectName(u"table_qwk_new")
         self.table_qwk_new.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
@@ -1540,14 +1608,14 @@ class Ui_sistema(object):
         self.label_34.setObjectName(u"label_34")
         self.label_34.setMinimumSize(QSize(160, 25))
         self.label_34.setMaximumSize(QSize(16777215, 35))
-        self.label_34.setFont(font4)
+        self.label_34.setFont(font6)
         self.label_34.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_12.addWidget(self.label_34)
 
         self.lineEdit_6 = QLineEdit(self.frame_pagos)
         self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setFont(font4)
+        self.lineEdit_6.setFont(font6)
         self.lineEdit_6.setStyleSheet(u"")
 
         self.horizontalLayout_12.addWidget(self.lineEdit_6)
@@ -1558,7 +1626,7 @@ class Ui_sistema(object):
         self.pushButton_15.setMinimumSize(QSize(120, 40))
         self.pushButton_15.setMaximumSize(QSize(120, 40))
         self.pushButton_15.setSizeIncrement(QSize(120, 40))
-        self.pushButton_15.setFont(font5)
+        self.pushButton_15.setFont(font7)
         self.pushButton_15.setStyleSheet(u"QPushButton{\n"
 "border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:10px;\n"
@@ -1720,21 +1788,21 @@ class Ui_sistema(object):
         self.lineEdit_4 = QLineEdit(self.frame_21)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
         self.lineEdit_4.setMinimumSize(QSize(0, 31))
-        self.lineEdit_4.setFont(font5)
+        self.lineEdit_4.setFont(font7)
 
         self.verticalLayout_30.addWidget(self.lineEdit_4)
 
         self.lineEdit_5 = QLineEdit(self.frame_21)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
         self.lineEdit_5.setMinimumSize(QSize(0, 31))
-        self.lineEdit_5.setFont(font5)
+        self.lineEdit_5.setFont(font7)
 
         self.verticalLayout_30.addWidget(self.lineEdit_5)
 
         self.lineEdit_3 = QLineEdit(self.frame_21)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
         self.lineEdit_3.setMinimumSize(QSize(0, 31))
-        self.lineEdit_3.setFont(font5)
+        self.lineEdit_3.setFont(font7)
 
         self.verticalLayout_30.addWidget(self.lineEdit_3)
 
@@ -1756,21 +1824,21 @@ class Ui_sistema(object):
         self.pushButton_11 = QPushButton(self.frame_22)
         self.pushButton_11.setObjectName(u"pushButton_11")
         self.pushButton_11.setMinimumSize(QSize(0, 35))
-        self.pushButton_11.setFont(font5)
+        self.pushButton_11.setFont(font7)
 
         self.verticalLayout_28.addWidget(self.pushButton_11)
 
         self.pushButton_10 = QPushButton(self.frame_22)
         self.pushButton_10.setObjectName(u"pushButton_10")
         self.pushButton_10.setMinimumSize(QSize(0, 35))
-        self.pushButton_10.setFont(font5)
+        self.pushButton_10.setFont(font7)
 
         self.verticalLayout_28.addWidget(self.pushButton_10)
 
         self.pushButton_8 = QPushButton(self.frame_22)
         self.pushButton_8.setObjectName(u"pushButton_8")
         self.pushButton_8.setMinimumSize(QSize(0, 35))
-        self.pushButton_8.setFont(font5)
+        self.pushButton_8.setFont(font7)
 
         self.verticalLayout_28.addWidget(self.pushButton_8)
 
@@ -1817,14 +1885,14 @@ class Ui_sistema(object):
         self.horizontalLayout_15.setContentsMargins(70, 0, 70, 0)
         self.label_3 = QLabel(self.frame_proyectos)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font5)
+        self.label_3.setFont(font7)
         self.label_3.setStyleSheet(u"background-color:rgba(0,0,0,0%);")
 
         self.horizontalLayout_15.addWidget(self.label_3)
 
         self.lineEdit_buscar_pro = QLineEdit(self.frame_proyectos)
         self.lineEdit_buscar_pro.setObjectName(u"lineEdit_buscar_pro")
-        self.lineEdit_buscar_pro.setFont(font3)
+        self.lineEdit_buscar_pro.setFont(font5)
         self.lineEdit_buscar_pro.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
 
@@ -1938,11 +2006,11 @@ class Ui_sistema(object):
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.label_5 = QLabel(self.frame_administrador)
         self.label_5.setObjectName(u"label_5")
-        font6 = QFont()
-        font6.setPointSize(14)
-        font6.setBold(True)
-        font6.setWeight(75)
-        self.label_5.setFont(font6)
+        font8 = QFont()
+        font8.setPointSize(14)
+        font8.setBold(True)
+        font8.setWeight(75)
+        self.label_5.setFont(font8)
         self.label_5.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_15.addWidget(self.label_5)
@@ -2014,7 +2082,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -2040,6 +2108,9 @@ class Ui_sistema(object):
         self.btn_admin.setText(QCoreApplication.translate("sistema", u"ADMINISTRADOR", None))
         self.label_2.setText(QCoreApplication.translate("sistema", u"AEC CONTRATISTAS \n"
 " GENERALES", None))
+        self.label_4.setText(QCoreApplication.translate("sistema", u"BIENVENIDO", None))
+        self.label_50.setText(QCoreApplication.translate("sistema", u"AEC CONTRATISTAS GENERALES", None))
+        self.label_49.setText("")
         self.label_35.setText(QCoreApplication.translate("sistema", u"Agregar un administrador", None))
         self.label_38.setText(QCoreApplication.translate("sistema", u"Agregar un administrador del sistema:", None))
         self.label_46.setText(QCoreApplication.translate("sistema", u"Usuario:", None))
@@ -2099,9 +2170,9 @@ class Ui_sistema(object):
 "de Proyecto", None))
         self.btn_search_call_list.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_13.setText(QCoreApplication.translate("sistema", u"Codigo de proyecto:", None))
-        self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto...", None))
+        self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto..", None))
         self.label_33.setText(QCoreApplication.translate("sistema", u"Nombre del proeyecto:", None))
-        self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre...", None))
+        self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre..", None))
         self.label_37.setText(QCoreApplication.translate("sistema", u"Responsable:", None))
         self.change_responsible_name.setText(QCoreApplication.translate("sistema", u"Responsable", None))
         self.label_36.setText(QCoreApplication.translate("sistema", u"Seleccione la fecha:", None))

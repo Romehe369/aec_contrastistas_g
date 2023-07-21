@@ -84,9 +84,10 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.table_qwk_new_data()
 		# mover ventana
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
+		self.page_inicio_new()
 		#acceder a las paginas
 		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
-		self.btn_proyectos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_proyectos))
+		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
 		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
 		self.btn_asistencia.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_asistencia))
 		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
@@ -117,18 +118,19 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.lndt_add_password.textChanged.connect(self.verificar_users)
 		self.v_ScrollBar_project.valueChanged.connect(self.scroll_frame)
 		# menu lateral
-		self.control_proyecto=[]
+		self.borrar_elementos()
 		self.bt_menu.clicked.connect(self.mover_menu)
 		self.oculto=False
 		# Agregamos todos los frames e control ocultar y mostrar
 		self.frame_encabezados=[self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		# deberia cerrar la ventana
-		self.btn_Buscar_pro.clicked.connect(self.click_btn_proyectos)
-		#self.frm_superior_min.connect(self.this_double_click)
+		#self.btn_Buscar_pro.clicked.connect(self.click_btn_proyectos)
 		#self.click_count = 0
 		self.valor_x=0
 		self.update_date_now()
-		self.bt_cerrar.clicked.connect(lambda: self.close())
+		self.bt_cerrar.clicked.connect(self.close)
+	def page_inicio_new(self):
+		self.stackedWidget.setCurrentWidget(self.page_inicio)
 
 	def update_date_now(self):
 		now = datetime.now()
@@ -137,6 +139,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.datetime_decline.setDate(d)
 
 	def click_btn_proyectos(self):
+		self.stackedWidget.setCurrentWidget(self.page_proyectos)
 		self.borrar_elementos()
 		self.add_control_frame()
 
@@ -220,19 +223,21 @@ class control_aec(QMainWindow,Ui_sistema):
 		valor=self.datos.show_tproject() 
 		# Contador para detener el bucle while
 		contador_bucle=0
-		contar_next_line=0
+		count_next_line=0
+		print(len(valor),width_cont)
 		# Crear la cantidad de elementos necesarios
-		while(len(valor)>contador_bucle):
-			for j in range(0,width_cont):
+		while(contador_bucle<len(valor)):
+			count_column=0
+			while(count_column<width_cont and contador_bucle<len(valor)):
 				#frame = QFrame(self.frame_contenedor_pro)
 				#frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
 				frame_project=control_data(self,"Hello world","Por siempre")
 				frame_project.crear_qframe()
-				self.gridLayout_add_frame.addWidget(frame_project.get_frame(),contar_next_line,j,1,1)
-				#incrementar en cada creacion
+				self.gridLayout_add_frame.addWidget(frame_project.get_frame(),count_next_line,count_column,1,1)
+				#increment in each iter
 				contador_bucle+=1
-			contar_next_line+=1
-		#self.gridLayout_add_frame.show()
+				count_column+=1
+			count_next_line+=1
 
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
@@ -321,6 +326,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		table_properties.horizontalHeader().setFont(font);
 		table_properties.verticalHeader().setFont(font);
 		table_properties.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
+
 	def table_qwk_new_data(self):
 		self.change_header(self.table_qwk_new)
 		self.table_qwk_new.setRowCount(20)
@@ -416,7 +422,7 @@ class control_data(QDialog):
 
 		self.view_details = QPushButton(self.qframe)
 		self.view_details.setGeometry(QRect(10, 110, 180, 30))
-		self.view_details.setMinimumSize(QSize(0, 40))
+		self.view_details.setMinimumSize(QSize(0, 31))
 		self.view_details.setText("VER DETALLES")
 		self.view_details.setStyleSheet("QPushButton{ border: 1px solid rgb(0, 0, 127);\n"
 		"border-radius:5px;\n"
