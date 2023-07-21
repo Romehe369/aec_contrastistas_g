@@ -1,10 +1,5 @@
-import sys
-from os import getcwd
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt, QDate,QDir,QByteArray, QIODevice, QBuffer)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import Qt, QDir
+from PySide2.QtGui import  QPixmap
 from PySide2.QtWidgets import *
 
 from controllers.change_password import Dialogo
@@ -30,14 +25,14 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		self.pushButton_cargar.clicked.connect(self.cargar)
 		# Cuando hacemos click en el boton de eleminar una imagen
 		self.pushButton_delete.clicked.connect(self.limpiar)
-		self.lineEditName.textChanged.connect(self.verificar_dni)
+		self.lineEditDNI.textChanged.connect(self.verificar_dni)
 		self.datos = Registro_datos()
 
 	def verificar_dni(self):
 		# Recuperamos los valores de lineeditdni
 		dni=self.lineEditDNI.text()
-		# verificamos el tamanio sea de 8
-		if(len(dni)==8):
+		# verificamos que sea todo nuemrico
+		if(dni.isdecimal()):
 			# Buscamos en nuestra base de datos
 			act = self.datos.buscar_trabajador(dni)
 			# Si el dni  existe nos devuelve un valor diferente de none
@@ -45,12 +40,10 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 				# Si el ya existe le mostramos un mensaje de que ya existe dicho dni
 				self.dialogo.label_mensaje.setText("El nro dni ya existe")
 				self.dialogo.show()
-
-		else:
+		elif(len(dni)>=1):
 			# Si el valor ingresado no se asemeja a un dni le mostramos que el valro es invalido
 			self.dialogo.label_mensaje.setText("El nro dni es invalido \n verifique por favor")
 			self.dialogo.show()
-			self.lineEditName.clear()
 
 	def get_data_frame(self):
 		dni=self.lineEditDNI.text()
