@@ -45,6 +45,7 @@ background-color: white;
 }
 QComboBox{
 background-color: white;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 }
 QDateEdit{
 background-color: white;
@@ -313,7 +314,7 @@ border:none;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="region_lineEdit">
+         <widget class="QComboBox" name="comboBox_region">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -321,10 +322,8 @@ border:none;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="placeholderText">
-           <string>Ingrese region</string>
+           <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
           </property>
          </widget>
         </item>
@@ -366,7 +365,7 @@ border:none;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="province_lineEdit">
+         <widget class="QComboBox" name="comboBox_province">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -374,10 +373,8 @@ border:none;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="placeholderText">
-           <string>Ingrese provincia</string>
+           <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
           </property>
          </widget>
         </item>
@@ -419,7 +416,7 @@ border:none;
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="district_lineEdit">
+         <widget class="QComboBox" name="comboBox_district">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -427,16 +424,12 @@ border:none;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="placeholderText">
-           <string>Ingrese el distrito</string>
+           <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
           </property>
          </widget>
         </item>
        </layout>
-       <zorder>district_lineEdit</zorder>
-       <zorder>label_8</zorder>
       </widget>
      </item>
     </layout>

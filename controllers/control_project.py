@@ -50,14 +50,41 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.decline_btn.clicked.connect(self.close)
         self.number_of_days.textChanged.connect(self.validator_check)
         self.checkBox_numbers_of_days.stateChanged.connect(self.activate_num_days)
-        self.region_lineEdit.textChanged.connect(self.set_upper)
-        self.province_lineEdit.textChanged.connect(self.set_upper)
-        self.district_lineEdit.textChanged.connect(self.set_upper)
+        self.agregar_datos()
+        self.id_region=0
+        self.comboBox_region.currentIndexChanged.connect(self.agregar_province)
+        self.comboBox_province.currentIndexChanged.connect(self.agregar_distritos)
+        #self.region_lineEdit.textChanged.connect(self.set_upper)
+        #self.province_lineEdit.textChanged.connect(self.set_upper)
+        #self.district_lineEdit.textChanged.connect(self.set_upper)
 
-    def set_upper(self):
-        self.region_lineEdit.setText(self.region_lineEdit.text().upper())
-        self.province_lineEdit.setText(self.province_lineEdit.text().upper())
-        self.district_lineEdit.setText(self.district_lineEdit.text().upper())
+    def agregar_datos(self):
+        act = self.datos.get_region()
+        list_new=["-Seleccione-"]+[n[1] for n in act]
+        self.comboBox_region.addItems(list_new)
+        #self.region_lineEdit.setText(self.region_lineEdit.text().upper())
+        #self.province_lineEdit.setText(self.province_lineEdit.text().upper())
+        #self.district_lineEdit.setText(self.district_lineEdit.text().upper())
+        
+    def agregar_province(self):
+        self.comboBox_province.clear()
+        region = self.datos.get_region()
+        index=self.comboBox_region.currentIndex()-1
+        id_region=(region[index])[0]
+        self.id_region=id_region
+        act = self.datos.get_provinces(id_region)
+        list_new=["-Seleccione-"]+[n[1] for n in act]
+        self.comboBox_province.addItems(list_new)
+        
+    def agregar_distritos(self):
+        self.comboBox_district.clear()
+        provinces=self.datos.get_provinces(self.id_region)
+        index=self.comboBox_province.currentIndex()-1
+        id_province=(provinces[index])[0]
+        act = self.datos.get_districts(id_province)
+        list_new=["-Seleccione-"]+[n[1] for n in act]
+        self.comboBox_district.addItems(list_new)
+        
 
     def activate_num_days(self):
         if(self.checkBox_numbers_of_days.isChecked()):

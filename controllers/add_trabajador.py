@@ -33,9 +33,6 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		self.lineEditName.textChanged.connect(self.verificar_dni)
 		self.datos = Registro_datos()
 
-	def agregar(self):
-		valor=get_data_frame()
-
 	def verificar_dni(self):
 		# Recuperamos los valores de lineeditdni
 		dni=self.lineEditDNI.text()
@@ -96,11 +93,3 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 
 	def limpiar(self):
 		self.img_dni.clear()
-
-	def combo_box_cargar(self, valor):
-		items_ComboBox = [self.comboBox_sexo.itemText(i) for i in range(self.comboBox_sexo.count())]
-		if valor in items_ComboBox:
-			posicionItem = items_ComboBox.index(valor)
-			self.comboBox_sexo.setCurrentIndex(posicionItem)
-		else:
-			self.comboBox_sexo.setCurrentIndex(-1)

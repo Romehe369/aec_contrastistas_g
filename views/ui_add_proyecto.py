@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectooeKNDq.ui'
+## Form generated from reading UI file 'add_proyectonhMOfX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -43,6 +43,7 @@ class Ui_add_project_new(object):
 "}\n"
 "QComboBox{\n"
 "background-color: white;\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "QDateEdit{\n"
 "background-color: white;\n"
@@ -124,12 +125,13 @@ class Ui_add_project_new(object):
 
         self.verticalLayout_3.addWidget(self.label_5)
 
-        self.region_lineEdit = QLineEdit(self.frame_4)
-        self.region_lineEdit.setObjectName(u"region_lineEdit")
-        self.region_lineEdit.setMinimumSize(QSize(0, 31))
-        self.region_lineEdit.setStyleSheet(u"")
+        self.comboBox_region = QComboBox(self.frame_4)
+        self.comboBox_region.setObjectName(u"comboBox_region")
+        self.comboBox_region.setMinimumSize(QSize(0, 31))
+        self.comboBox_region.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
 
-        self.verticalLayout_3.addWidget(self.region_lineEdit)
+        self.verticalLayout_3.addWidget(self.comboBox_region)
 
 
         self.horizontalLayout.addWidget(self.frame_4)
@@ -148,12 +150,13 @@ class Ui_add_project_new(object):
 
         self.verticalLayout_4.addWidget(self.label_7)
 
-        self.province_lineEdit = QLineEdit(self.frame_5)
-        self.province_lineEdit.setObjectName(u"province_lineEdit")
-        self.province_lineEdit.setMinimumSize(QSize(0, 31))
-        self.province_lineEdit.setStyleSheet(u"")
+        self.comboBox_province = QComboBox(self.frame_5)
+        self.comboBox_province.setObjectName(u"comboBox_province")
+        self.comboBox_province.setMinimumSize(QSize(0, 31))
+        self.comboBox_province.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
 
-        self.verticalLayout_4.addWidget(self.province_lineEdit)
+        self.verticalLayout_4.addWidget(self.comboBox_province)
 
 
         self.horizontalLayout.addWidget(self.frame_5)
@@ -172,15 +175,14 @@ class Ui_add_project_new(object):
 
         self.verticalLayout_5.addWidget(self.label_8)
 
-        self.district_lineEdit = QLineEdit(self.frame_6)
-        self.district_lineEdit.setObjectName(u"district_lineEdit")
-        self.district_lineEdit.setMinimumSize(QSize(0, 31))
-        self.district_lineEdit.setStyleSheet(u"")
+        self.comboBox_district = QComboBox(self.frame_6)
+        self.comboBox_district.setObjectName(u"comboBox_district")
+        self.comboBox_district.setMinimumSize(QSize(0, 31))
+        self.comboBox_district.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
 
-        self.verticalLayout_5.addWidget(self.district_lineEdit)
+        self.verticalLayout_5.addWidget(self.comboBox_district)
 
-        self.district_lineEdit.raise_()
-        self.label_8.raise_()
 
         self.horizontalLayout.addWidget(self.frame_6)
 
@@ -255,11 +257,8 @@ class Ui_add_project_new(object):
         self.references_plainTextEdit.setPlainText("")
         self.references_plainTextEdit.setPlaceholderText("")
         self.label_5.setText(QCoreApplication.translate("add_project_new", u"Region", None))
-        self.region_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese region", None))
         self.label_7.setText(QCoreApplication.translate("add_project_new", u"Provincia", None))
-        self.province_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese provincia", None))
         self.label_8.setText(QCoreApplication.translate("add_project_new", u"Distrito", None))
-        self.district_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese el distrito", None))
         self.info_txt_lbl.setText(QCoreApplication.translate("add_project_new", u"El c\u00f3digo del proyecto se genera\n"
 "automaticamente, no es editable, ni modificable.\n"
 " La cantidad de d\u00edas calcula la \"Fecha Fin\" \n"

@@ -53,6 +53,7 @@ class Registro_datos():
         passwordx = cur.fetchall()
         cur.close()     
         return passwordx
+    
     # Se cambia la contraseña del usuario
     def actualiza_password(self, users, password):
         cur = self.conexion.cursor()
@@ -144,3 +145,28 @@ class Registro_datos():
         cursor.execute(sql)
         registro = cursor.fetchall()
         return registro
+
+    # Manejar datos of region
+    
+    def get_region(self):
+        cursor = self.conexion.cursor()
+        sql = "SELECT * FROM ubigeo_peru_departments" 
+        cursor.execute(sql)
+        name_region = cursor.fetchall()
+        return name_region
+    
+    def get_provinces(self,department_id):
+        cur = self.conexion.cursor()
+        sql = "SELECT * FROM ubigeo_peru_provinces WHERE department_id = {}".format(department_id)
+        cur.execute(sql)
+        name_provinces = cur.fetchall()
+        cur.close()     
+        return name_provinces
+    
+    def get_districts(self,province_id):
+        cur = self.conexion.cursor()
+        sql = "SELECT * FROM ubigeo_peru_districts WHERE province_id = {}".format(province_id)
+        cur.execute(sql)
+        name_districts = cur.fetchall()
+        cur.close()     
+        return name_districts
