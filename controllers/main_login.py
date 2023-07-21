@@ -86,7 +86,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		#acceder a las paginas
 		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
-		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
+		self.btn_proyectos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_proyectos))
 		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
 		self.btn_asistencia.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_asistencia))
 		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
@@ -123,6 +123,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		# Agregamos todos los frames e control ocultar y mostrar
 		self.frame_encabezados=[self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		# deberia cerrar la ventana
+		self.btn_Buscar_pro.clicked.connect(self.click_btn_proyectos)
 		#self.frm_superior_min.connect(self.this_double_click)
 		#self.click_count = 0
 		self.valor_x=0
@@ -136,8 +137,15 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.datetime_decline.setDate(d)
 
 	def click_btn_proyectos(self):
-		self.stackedWidget.setCurrentWidget(self.page_proyectos)
+		self.borrar_elementos()
+		print("se ha ejecutado")
 		self.add_control_frame()
+
+	def borrar_elementos(self):
+		while self.gridLayout_add_frame.count() > 0:
+			child = self.gridLayout_add_frame.takeAt(0)
+			if child.widget():
+				child.widget().deleteLater()
 
 	def scroll_frame(self):
 		self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*170)
@@ -203,14 +211,35 @@ class control_aec(QMainWindow,Ui_sistema):
 		ui_add.show()
 
 	def add_control_frame(self):
+		# Aqui se define el ancho y alto de nuestro objeto
+		width=200	# ancho del frame a crear
+		height=150  # alto del frame a crear
+		# Tamanio del conetenedor
+		width_cont=int(self.frame_contenedor_pro.width()/220)
+		height_cont=int(self.frame_contenedor_pro.height()/170)
+		# obtenemos los datos
 		valor=self.datos.show_tproject() 
-		for i in valor:
-			self.add_control_frame_data_all(i[0],i[1])
+		print("Ancho : ",width_cont)
+		# Contador para detener el bucle while
+		contador_bucle=0
+		contar_next_line=0
+		# Crear la cantidad de elementos necesarios
+		while(len(valor)>contador_bucle):
+			for j in range(0,width_cont):
+				print(contar_next_line," : ",j)
+				frame = QFrame(self.frame_contenedor_pro)
+				frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
+				self.gridLayout_add_frame.addWidget(frame,contar_next_line,j,1,1)
+				#incrementar en cada creacion
+				contador_bucle+=1
+			contar_next_line+=1
+		#self.gridLayout_add_frame.show()
 
 	def add_control_frame_data_all(self,code_project,name_project):
 		# Aqui se define el ancho y alto de nuestro objeto
-		width=200	# ancho
-		height=150  # alto
+		width=200	# ancho del frame a crear
+		height=150  # alto del frame a crear
+		# Tamanio del conetenedor
 		width_cont=int(self.frame_contenedor_pro.width()/220)
 		height_cont=int(self.frame_contenedor_pro.height()/170)
 		# Valores de inicio de graficos para que no esten pegados a los lados
@@ -394,6 +423,7 @@ class CheckBoxWidget(QWidget):
         layout.setContentsMargins(0, 0, 0, 0)
         self.setLayout(layout)
 
+# Se crea un control de la tabla
 class control_data(QDialog):
 	def __init__(self, parent,code_project,name_project,x,y,width,height):
 		super(control_data,self).__init__(parent)

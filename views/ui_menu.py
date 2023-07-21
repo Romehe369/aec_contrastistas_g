@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuIimBpz.ui'
+## Form generated from reading UI file 'menuWwHODV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -72,7 +72,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"./assets/icons/configuracion.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"assets/icons/configuracion.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_menu.setIcon(icon)
         self.bt_menu.setIconSize(QSize(32, 32))
         self.bt_menu.setAutoDefault(False)
@@ -139,7 +139,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u"./assets/icons/minimizar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"assets/icons/minimizar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_minimizar.setIcon(icon1)
         self.bt_minimizar.setIconSize(QSize(32, 32))
         self.bt_minimizar.setFlat(False)
@@ -161,7 +161,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u"./assets/icons/restaurar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"assets/icons/restaurar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_restaurar.setIcon(icon2)
         self.bt_restaurar.setIconSize(QSize(30, 30))
 
@@ -182,7 +182,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"./assets/icons/maximizar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"assets/icons/maximizar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_maximizar.setIcon(icon3)
         self.bt_maximizar.setIconSize(QSize(32, 32))
 
@@ -202,7 +202,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"./assets/icons/cerrar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"assets/icons/cerrar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_cerrar.setIcon(icon4)
         self.bt_cerrar.setIconSize(QSize(32, 32))
 
@@ -1862,6 +1862,16 @@ class Ui_sistema(object):
         self.frame_contenedor_pro.setMinimumSize(QSize(0, 0))
         self.frame_contenedor_pro.setFrameShape(QFrame.StyledPanel)
         self.frame_contenedor_pro.setFrameShadow(QFrame.Raised)
+        self.gridLayout_add_frame = QGridLayout(self.frame_contenedor_pro)
+        self.gridLayout_add_frame.setObjectName(u"gridLayout_add_frame")
+        self.frame_27 = QFrame(self.frame_contenedor_pro)
+        self.frame_27.setObjectName(u"frame_27")
+        self.frame_27.setStyleSheet(u"background-color: rgb(30, 146, 255);")
+        self.frame_27.setFrameShape(QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout_add_frame.addWidget(self.frame_27, 0, 0, 1, 1)
+
 
         self.horizontalLayout_16.addWidget(self.frame_contenedor_pro)
 
@@ -2004,7 +2014,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -2089,9 +2099,9 @@ class Ui_sistema(object):
 "de Proyecto", None))
         self.btn_search_call_list.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_13.setText(QCoreApplication.translate("sistema", u"Codigo de proyecto:", None))
-        self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto..", None))
+        self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto...", None))
         self.label_33.setText(QCoreApplication.translate("sistema", u"Nombre del proeyecto:", None))
-        self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre..", None))
+        self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre...", None))
         self.label_37.setText(QCoreApplication.translate("sistema", u"Responsable:", None))
         self.change_responsible_name.setText(QCoreApplication.translate("sistema", u"Responsable", None))
         self.label_36.setText(QCoreApplication.translate("sistema", u"Seleccione la fecha:", None))
