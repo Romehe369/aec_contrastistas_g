@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog_delete</class>
+ <widget class="QDialog" name="Dialog_delete">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>268</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+background-color: rgb(138, 138, 138);
+border: 2px solid rgb(0, 0, 0) ;
+}
+QLabel{
+color: rgb(255, 255, 255);
+}
+
+QPushButton{
+background-color: rgb(83, 152, 255);
+border-radius:10px;
+border:1px solid rgb(0, 0, 0) ;
+font: 87 10pt &quot;Segoe UI Black&quot;}
+QPushButton:hover{
+border-radius:10px;
+border:1px solid rgb(0, 0, 0) ;
+background-color:white;
+font: 87 10pt &quot;Segoe UI Black&quot;}</string>
+  </property>
+  <widget class="QPushButton" name="btn_alow">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>210</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SI</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_decline">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>210</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>NO</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_mensaje">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>321</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Una vez eliminado se perdera
+toda la informacion de este proyecto 
+ ¿Desea eliminar?</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -9,6 +9,15 @@ from PySide2.QtWidgets import *
 
 from db.conexion  import Registro_datos
 from views.ui_change_password import Ui_changes_password
+from views.ui_dialogo_delete import Ui_Dialog_delete
+
+class dialogo_delete(QDialog,Ui_Dialog_delete):
+	def __init__(self,parent):
+		super(dialogo_delete,self).__init__(parent)
+		self.setupUi(self)
+		self.setWindowFlag(Qt.FramelessWindowHint)
+		self.estado=False
+		self.btn_decline.clicked.connect(self.close)
 
 class Dialogo(QDialog):
     def __init__(self):

@@ -145,8 +145,23 @@ class Registro_datos():
         registro = cursor.fetchall()
         return registro
 
+    def delete_project_bcode(self,code_project):
+        # inidca si se ha elimiando empieza en verdadero
+        eliminado=True
+        try:
+            cur = self.conexion.cursor()
+            sql = "DELETE FROM tproject WHERE code_project = %s"
+            cur.execute(sql,(code_project,))
+            cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            # Si no se logro elimianar
+            eliminado=False
+        finally:
+            cur.close() 
+            return eliminado
+
     # Manejar datos of region
-    
     def get_region(self):
         cursor = self.conexion.cursor()
         sql = "SELECT * FROM ubigeo_peru_departments" 

@@ -400,21 +400,31 @@ class control_data(QDialog):
 		self.row=row
 		self.column=column
 		self.qframe=QFrame()
+		self.dialogo=Dialogo()
 		from controllers.control_project import ctrl_project
 		self.ui_add=ctrl_project(self)
+		from controllers.change_password import dialogo_delete
+		self.view_delete=dialogo_delete(self)
 		self.ui_add.btn_call_list.clicked.connect(self.call_list)
 		self.ui_add.btn_delete_project.clicked.connect(self.delete_project)
 
 	def delete_project(self):
-		item = self.parent().gridLayout_add_frame.itemAtPosition(self.row, self.column)
-		item.widget().deleteLater()
+		self.view_delete.show()
+		self.view_delete.btn_alow.clicked.connect(self.delete_frame)
 
-	def get_item(self):
-		index = 1
-		position = self.parent().gridLayout_add_frame.getItemPosition(index)
-		row = position[0] #Obtengo la posición de la fila
-		column = self.parent().gridLayout_add_frame.columnCount() #Obtiene el número de columnas actuales en el grid
-		print(row,column)
+	def delete_frame(self):
+		self.view_delete.close()
+		item = self.parent().gridLayout_add_frame.itemAtPosition(self.row, self.column)
+		datos = Registro_datos()
+		item.widget().deleteLater()
+		if(datos.delete_project_bcode(self.code_project)):
+			self.parent().add_control_frame()
+			self.dialogo.show()
+			self.ui_add.close()
+			self.dialogo.label_mensaje.setText("Se elimino \n correctamente")
+		else:
+			self.dialogo.show()
+			self.dialogo.label_mensaje.setText("No se pudo realizar\nla operacion")
 
 	def call_list(self):
 		self.ui_add.close()
