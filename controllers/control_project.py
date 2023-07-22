@@ -54,18 +54,12 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.id_region=0
         self.comboBox_region.currentIndexChanged.connect(self.agregar_province)
         self.comboBox_province.currentIndexChanged.connect(self.agregar_distritos)
-        #self.region_lineEdit.textChanged.connect(self.set_upper)
-        #self.province_lineEdit.textChanged.connect(self.set_upper)
-        #self.district_lineEdit.textChanged.connect(self.set_upper)
 
     def agregar_datos(self):
         act = self.datos.get_region()
         list_new=["-Seleccione-"]+[n[1] for n in act]
         self.comboBox_region.addItems(list_new)
-        #self.region_lineEdit.setText(self.region_lineEdit.text().upper())
-        #self.province_lineEdit.setText(self.province_lineEdit.text().upper())
-        #self.district_lineEdit.setText(self.district_lineEdit.text().upper())
-        
+
     def agregar_province(self):
         self.comboBox_province.clear()
         region = self.datos.get_region()
@@ -160,5 +154,6 @@ class add_project(QMainWindow,Ui_add_project_new):
         else:
             self.dialogo.label_mensaje.setText("Hay espacios vacios \n por completar")
             self.dialogo.show()
+
 
 

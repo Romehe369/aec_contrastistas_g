@@ -224,7 +224,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		# obtenemos los datos
 		valor=self.datos.show_tproject() 
 		# Contador para detener el bucle while
-		print(len(valor))
 		contador_bucle=0
 		count_next_line=0
 		# Crear la cantidad de elementos necesarios
@@ -234,7 +233,7 @@ class control_aec(QMainWindow,Ui_sistema):
 				#frame = QFrame(self.frame_contenedor_pro)
 				valor_add=valor[contador_bucle]
 				#frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
-				frame_project=control_data(self,valor_add[0],valor_add[1])
+				frame_project=control_data(self,valor_add[0],valor_add[1],count_next_line,count_column)
 				frame_project.crear_qframe()
 				self.gridLayout_add_frame.addWidget(frame_project.get_frame(),count_next_line,count_column,1,1)
 				#increment in each iter
@@ -394,14 +393,28 @@ class CheckBoxWidget(QWidget):
 
 # Se crea un control de la tabla
 class control_data(QDialog):
-	def __init__(self, parent,code_project,name_project):
+	def __init__(self, parent,code_project,name_project,row,column):
 		super(control_data,self).__init__(parent)
 		self.code_project=code_project
 		self.name_project=name_project
+		self.row=row
+		self.column=column
 		self.qframe=QFrame()
 		from controllers.control_project import ctrl_project
 		self.ui_add=ctrl_project(self)
 		self.ui_add.btn_call_list.clicked.connect(self.call_list)
+		self.ui_add.btn_delete_project.clicked.connect(self.delete_project)
+
+	def delete_project(self):
+		item = self.parent().gridLayout_add_frame.itemAtPosition(self.row, self.column)
+		item.widget().deleteLater()
+
+	def get_item(self):
+		index = 1
+		position = self.parent().gridLayout_add_frame.getItemPosition(index)
+		row = position[0] #Obtengo la posición de la fila
+		column = self.parent().gridLayout_add_frame.columnCount() #Obtiene el número de columnas actuales en el grid
+		print(row,column)
 
 	def call_list(self):
 		self.ui_add.close()
