@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuPIXnVU.ui'
+## Form generated from reading UI file 'menuvZtKRU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -71,7 +71,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"assets/icons/configuracion.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./assets/icons/menu.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_menu.setIcon(icon)
         self.bt_menu.setIconSize(QSize(32, 32))
         self.bt_menu.setAutoDefault(False)
@@ -168,7 +168,9 @@ class Ui_sistema(object):
 
         self.bt_maximizar = QPushButton(self.frame_superior)
         self.bt_maximizar.setObjectName(u"bt_maximizar")
+        self.bt_maximizar.setEnabled(True)
         self.bt_maximizar.setMaximumSize(QSize(35, 16777215))
+        self.bt_maximizar.setAutoFillBackground(False)
         self.bt_maximizar.setStyleSheet(u"QPushButton{\n"
 "border:0px;\n"
 "\n"

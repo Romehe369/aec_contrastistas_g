@@ -129,6 +129,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
+
 	def page_inicio_new(self):
 		self.stackedWidget.setCurrentWidget(self.page_inicio)
 
@@ -140,10 +141,10 @@ class control_aec(QMainWindow,Ui_sistema):
 
 	def click_btn_proyectos(self):
 		self.stackedWidget.setCurrentWidget(self.page_proyectos)
-		self.borrar_elementos()
 		self.add_control_frame()
 
 	def borrar_elementos(self):
+		self.datos = Registro_datos()
 		while self.gridLayout_add_frame.count() > 0:
 			child = self.gridLayout_add_frame.takeAt(0)
 			if child.widget():
@@ -211,8 +212,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		from controllers.control_project import add_project
 		ui_add=add_project(self)
 		ui_add.show()
-
+		
 	def add_control_frame(self):
+		self.borrar_elementos()
 		# Aqui se define el ancho y alto de nuestro objeto
 		width=200	# ancho del frame a crear
 		height=150  # alto del frame a crear
@@ -222,16 +224,17 @@ class control_aec(QMainWindow,Ui_sistema):
 		# obtenemos los datos
 		valor=self.datos.show_tproject() 
 		# Contador para detener el bucle while
+		print(len(valor))
 		contador_bucle=0
 		count_next_line=0
-		print(len(valor),width_cont)
 		# Crear la cantidad de elementos necesarios
 		while(contador_bucle<len(valor)):
 			count_column=0
 			while(count_column<width_cont and contador_bucle<len(valor)):
 				#frame = QFrame(self.frame_contenedor_pro)
+				valor_add=valor[contador_bucle]
 				#frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
-				frame_project=control_data(self,"Hello world","Por siempre")
+				frame_project=control_data(self,valor_add[0],valor_add[1])
 				frame_project.crear_qframe()
 				self.gridLayout_add_frame.addWidget(frame_project.get_frame(),count_next_line,count_column,1,1)
 				#increment in each iter

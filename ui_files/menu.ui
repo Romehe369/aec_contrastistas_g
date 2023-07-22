@@ -132,7 +132,7 @@ font: 87 12pt &quot;Arial Black&quot;;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>assets/icons/configuracion.png</normaloff>assets/icons/configuracion.png</iconset>
+           <normaloff>../assets/icons/menu.png</normaloff>../assets/icons/menu.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -323,11 +323,17 @@ background-color:#55ff00;
        </item>
        <item>
         <widget class="QPushButton" name="bt_maximizar">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="maximumSize">
           <size>
            <width>35</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{

@@ -154,6 +154,7 @@ class add_project(QMainWindow,Ui_add_project_new):
         if(self.no_exist_null_value(values)):
             self.datos.insertar_project(code_project,name_project,dni_responsible,region,province,district,date_start,date_end,references)
             self.dialogo.label_mensaje.setText("Se agrego existosamente")
+            self.parent().add_control_frame()
             self.dialogo.show()
             self.close()
         else:
