@@ -4,25 +4,28 @@ import datetime
 class Registro_datos():
 
     def __init__(self):
-        self.conexion = mysql.connector.connect( host='localhost',
-                                            database ='base_datos', 
+        try:
+            self.conexion = mysql.connector.connect( host='localhost',database ='base_datos', 
                                             user = 'root',
                                             password ='')
+        except Exception as e:
+            return None
+        
     ################### login data ########################
     def elimina_admin(self,users):
         # Indica que se genero un error o no existe dicho ussers
-        a=0
+        eliminado=True
         try:
             cur = self.conexion.cursor()
             sql = "DELETE FROM login_datos WHERE users = %s"
             cur.execute(sql,(users,))
-            a = cur.rowcount
+            cur.rowcount
             self.conexion.commit()    
         except Exception as e:
-            a=0
+            eliminado=False
         finally:
             cur.close() 
-            return a
+            return eliminado
 
     def add_admin(self,users, password):
         mensaje=""
@@ -88,6 +91,7 @@ class Registro_datos():
         sql = "SELECT * FROM ttrabajador" 
         cursor.execute(sql)
         registro = cursor.fetchall()
+        cursor.close()
         return registro
 
     # 60 seconds or more 2 minutes
@@ -143,6 +147,7 @@ class Registro_datos():
         sql = "SELECT * FROM tproject" 
         cursor.execute(sql)
         registro = cursor.fetchall()
+        cursor.close()
         return registro
 
     def delete_project_bcode(self,code_project):
@@ -167,6 +172,7 @@ class Registro_datos():
         sql = "SELECT * FROM ubigeo_peru_departments" 
         cursor.execute(sql)
         name_region = cursor.fetchall()
+        cursor.close()
         return name_region
     
     def get_provinces(self,department_id):

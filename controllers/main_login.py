@@ -89,7 +89,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
 		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
 		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
-		self.btn_asistencia.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_asistencia))
+		self.btn_asistencia.clicked.connect(self.open_attendance)
 		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
 		self.btn_pagos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_pagos))
 		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
@@ -130,6 +130,10 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
 
+	def open_attendance(self):
+		self.mover_menu()
+		self.stackedWidget.setCurrentWidget(self.page_asistencia)
+
 	def page_inicio_new(self):
 		self.stackedWidget.setCurrentWidget(self.page_inicio)
 
@@ -138,6 +142,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		d = QDate(now.year, now.month, now.day)
 		self.date_emision.setDate(d)
 		self.datetime_decline.setDate(d)
+		self.dt_fecha_list.setDate(d)
 
 	def click_btn_proyectos(self):
 		self.stackedWidget.setCurrentWidget(self.page_proyectos)
@@ -413,11 +418,14 @@ class control_data(QDialog):
 		self.view_delete.btn_alow.clicked.connect(self.delete_frame)
 
 	def delete_frame(self):
+		# se cierra el menu de opciones
 		self.view_delete.close()
 		item = self.parent().gridLayout_add_frame.itemAtPosition(self.row, self.column)
 		datos = Registro_datos()
+		# elimina el objeto seleccionado
 		item.widget().deleteLater()
 		if(datos.delete_project_bcode(self.code_project)):
+			# Actualiza los datos visibles
 			self.parent().add_control_frame()
 			self.dialogo.show()
 			self.ui_add.close()
@@ -428,7 +436,10 @@ class control_data(QDialog):
 
 	def call_list(self):
 		self.ui_add.close()
-		self.parent().stackedWidget.setCurrentWidget(self.parent().page_asistencia)
+		self.parent().update_date_now()
+		self.parent().change_code_project.setText(self.code_project)
+		self.parent().change_name_project.setText(self.name_project)
+		self.parent().open_attendance()
 
 	def get_frame(self):
 		return self.qframe

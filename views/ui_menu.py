@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuvZtKRU.ui'
+## Form generated from reading UI file 'menuiJyeQz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(956, 896)
+        sistema.resize(956, 916)
         sistema.setMinimumSize(QSize(400, 0))
         sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "QLineEdit{\n"
@@ -1324,16 +1324,18 @@ class Ui_sistema(object):
         self.horizontalLayout_11 = QHBoxLayout(self.frm_asistencia)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(12, 0, 0, 0)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame_6 = QFrame(self.frm_asistencia)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setMaximumSize(QSize(250, 16777215))
-        self.frame_6.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
+        self.frame_6.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(0, 255, 127);")
         self.frame_6.setFrameShape(QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QFrame.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.frame_6)
         self.verticalLayout_12.setSpacing(20)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(20, -1, 9, -1)
         self.label_13 = QLabel(self.frame_6)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setMinimumSize(QSize(0, 30))
@@ -1343,6 +1345,8 @@ class Ui_sistema(object):
         self.change_code_project = QLabel(self.frame_6)
         self.change_code_project.setObjectName(u"change_code_project")
         self.change_code_project.setMinimumSize(QSize(0, 30))
+        self.change_code_project.setStyleSheet(u"color:rgb(255, 255, 255);\n"
+"font: 75 16pt \"MS Shell Dlg 2\";")
 
         self.verticalLayout_12.addWidget(self.change_code_project)
 
@@ -1355,6 +1359,8 @@ class Ui_sistema(object):
         self.change_name_project = QLabel(self.frame_6)
         self.change_name_project.setObjectName(u"change_name_project")
         self.change_name_project.setMinimumSize(QSize(0, 30))
+        self.change_name_project.setStyleSheet(u"color:rgb(255, 255, 255);\n"
+"font: 75 16pt \"MS Shell Dlg 2\";")
 
         self.verticalLayout_12.addWidget(self.change_name_project)
 
@@ -1367,6 +1373,8 @@ class Ui_sistema(object):
         self.change_responsible_name = QLabel(self.frame_6)
         self.change_responsible_name.setObjectName(u"change_responsible_name")
         self.change_responsible_name.setMinimumSize(QSize(0, 30))
+        self.change_responsible_name.setStyleSheet(u"color:rgb(255, 255, 255);\n"
+"font: 75 16pt \"MS Shell Dlg 2\";")
 
         self.verticalLayout_12.addWidget(self.change_responsible_name)
 
@@ -1907,13 +1915,6 @@ class Ui_sistema(object):
 
         self.horizontalLayout_15.addWidget(self.btn_agregar_pro)
 
-        self.btn_Buscar_pro = QPushButton(self.frame_proyectos)
-        self.btn_Buscar_pro.setObjectName(u"btn_Buscar_pro")
-        self.btn_Buscar_pro.setMinimumSize(QSize(150, 40))
-        self.btn_Buscar_pro.setStyleSheet(u"")
-
-        self.horizontalLayout_15.addWidget(self.btn_Buscar_pro)
-
 
         self.verticalLayout_10.addWidget(self.frame_proyectos)
 
@@ -2084,7 +2085,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(7)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -2172,9 +2173,9 @@ class Ui_sistema(object):
 "de Proyecto", None))
         self.btn_search_call_list.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_13.setText(QCoreApplication.translate("sistema", u"Codigo de proyecto:", None))
-        self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto..", None))
+        self.change_code_project.setText(QCoreApplication.translate("sistema", u"Proyecto", None))
         self.label_33.setText(QCoreApplication.translate("sistema", u"Nombre del proeyecto:", None))
-        self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre..", None))
+        self.change_name_project.setText(QCoreApplication.translate("sistema", u"Nombre", None))
         self.label_37.setText(QCoreApplication.translate("sistema", u"Responsable:", None))
         self.change_responsible_name.setText(QCoreApplication.translate("sistema", u"Responsable", None))
         self.label_36.setText(QCoreApplication.translate("sistema", u"Seleccione la fecha:", None))
@@ -2264,8 +2265,8 @@ class Ui_sistema(object):
         self.pushButton_10.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_8.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.label_3.setText(QCoreApplication.translate("sistema", u"C\u00f3digo o nombre del Proyecto :", None))
+        self.lineEdit_buscar_pro.setPlaceholderText(QCoreApplication.translate("sistema", u"Escriba el codigo o nombre proyecto", None))
         self.btn_agregar_pro.setText(QCoreApplication.translate("sistema", u"Agregar", None))
-        self.btn_Buscar_pro.setText(QCoreApplication.translate("sistema", u"Buscar", None))
         self.label_5.setText(QCoreApplication.translate("sistema", u"Realiza actividades de administrador, \n"
 "es necesario introducir contrase\u00f1a", None))
         self.btn_changes_password.setText(QCoreApplication.translate("sistema", u"\n"

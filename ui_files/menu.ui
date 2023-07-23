@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>956</width>
-    <height>896</height>
+    <height>916</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -738,7 +738,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -2811,7 +2811,7 @@ de Proyecto</string>
                   <number>0</number>
                  </property>
                  <property name="leftMargin">
-                  <number>12</number>
+                  <number>0</number>
                  </property>
                  <property name="topMargin">
                   <number>0</number>
@@ -2831,7 +2831,8 @@ de Proyecto</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(0, 255, 127);</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -2842,6 +2843,12 @@ de Proyecto</string>
                    <layout class="QVBoxLayout" name="verticalLayout_12">
                     <property name="spacing">
                      <number>20</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>9</number>
                     </property>
                     <item>
                      <widget class="QLabel" name="label_13">
@@ -2864,8 +2871,12 @@ de Proyecto</string>
                         <height>30</height>
                        </size>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:rgb(255, 255, 255);
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+                      </property>
                       <property name="text">
-                       <string>Proyecto...</string>
+                       <string>Proyecto</string>
                       </property>
                      </widget>
                     </item>
@@ -2890,8 +2901,12 @@ de Proyecto</string>
                         <height>30</height>
                        </size>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:rgb(255, 255, 255);
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+                      </property>
                       <property name="text">
-                       <string>Nombre...</string>
+                       <string>Nombre</string>
                       </property>
                      </widget>
                     </item>
@@ -2915,6 +2930,10 @@ de Proyecto</string>
                         <width>0</width>
                         <height>30</height>
                        </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:rgb(255, 255, 255);
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Responsable</string>
@@ -4084,6 +4103,9 @@ QPushButton:hover{
                     <string notr="true">background-color: rgb(255, 255, 255);
 font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
+                   <property name="placeholderText">
+                    <string>Escriba el codigo o nombre proyecto</string>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -4099,22 +4121,6 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                    <property name="text">
                     <string>Agregar</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btn_Buscar_pro">
-                   <property name="minimumSize">
-                    <size>
-                     <width>150</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
-                   <property name="text">
-                    <string>Buscar</string>
                    </property>
                   </widget>
                  </item>
