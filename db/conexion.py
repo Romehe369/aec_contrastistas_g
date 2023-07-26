@@ -5,7 +5,7 @@ class Registro_datos():
 
     def __init__(self):
         try:
-            self.conexion = mysql.connector.connect( host='localhost',database ='base_datos', 
+            self.conexion = mysql.connector.connect( host='localhost',database ='db_aeccontratistas', 
                                             user = 'root',
                                             password ='')
         except Exception as e:
@@ -17,7 +17,7 @@ class Registro_datos():
         eliminado=True
         try:
             cur = self.conexion.cursor()
-            sql = "DELETE FROM login_datos WHERE users = %s"
+            sql = "DELETE FROM tlogin_data WHERE users = %s"
             cur.execute(sql,(users,))
             cur.rowcount
             self.conexion.commit()    
@@ -31,7 +31,7 @@ class Registro_datos():
         mensaje=""
         try:
             cur = self.conexion.cursor()
-            sql='''INSERT INTO login_datos (USERS, PASSWORD) 
+            sql='''INSERT INTO tlogin_data (users, password) 
             VALUES('{}', '{}')'''.format(users, password)
             cur.execute(sql)
             self.conexion.commit() 
@@ -43,7 +43,7 @@ class Registro_datos():
 
     def busca_users(self, users):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM login_datos WHERE Users = {}".format(users)
+        sql = "SELECT * FROM tlogin_data WHERE users = '{}'".format(users)
         cur.execute(sql)
         usersx = cur.fetchone()
         cur.close()     
@@ -51,7 +51,7 @@ class Registro_datos():
 
     def busca_password(self, password):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM login_datos WHERE Password = {}".format(password)
+        sql = "SELECT * FROM tlogin_data WHERE password = {}".format(password)
         cur.execute(sql)
         passwordx = cur.fetchall()
         cur.close()     
@@ -60,8 +60,8 @@ class Registro_datos():
     # Se cambia la contraseña del usuario
     def actualiza_password(self, users, password):
         cur = self.conexion.cursor()
-        sql ='''UPDATE login_datos SET Password = '{}'
-        WHERE USERS = '{}' '''.format(password,users)
+        sql ='''UPDATE tlogin_data SET password = '{}'
+        WHERE users = '{}' '''.format(password,users)
         cur.execute(sql)
         a = cur.rowcount
         # Se guarde y persista simpre
@@ -130,14 +130,14 @@ class Registro_datos():
         return a  
 
     ########################## insert project ###################
-    def insertar_project(self,code_project, name, responsible, region, province,district,start_project,end_project,reference):
+    def insertar_project(self,code_project, name, dni_responsable, region, province,district,start_project,end_project,reference):
         start_project=self.convert_date(start_project)
         end_project=self.convert_date(end_project)
         cur = self.conexion.cursor()
-        sql= '''INSERT INTO tproject (code_project, name, responsible, region, province,district,start_project,end_project,reference) 
+        sql= '''INSERT INTO tproject (code_project, name, dni_responsable, region, province,district,start_project,end_project,reference) 
         VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
         # Convert data into tuple format
-        insert_blob_tuple = (code_project, name, responsible, region, province,district,start_project,end_project,reference)
+        insert_blob_tuple = (code_project, name, dni_responsable, region, province,district,start_project,end_project,reference)
         cur.execute(sql,insert_blob_tuple)
         self.conexion.commit()    
         cur.close()
@@ -169,7 +169,7 @@ class Registro_datos():
     # Manejar datos of region
     def get_region(self):
         cursor = self.conexion.cursor()
-        sql = "SELECT * FROM ubigeo_peru_departments" 
+        sql = "SELECT * FROM tdepartments" 
         cursor.execute(sql)
         name_region = cursor.fetchall()
         cursor.close()
@@ -177,7 +177,7 @@ class Registro_datos():
     
     def get_provinces(self,department_id):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM ubigeo_peru_provinces WHERE department_id = {}".format(department_id)
+        sql = "SELECT * FROM tprovinces WHERE department_id = {}".format(department_id)
         cur.execute(sql)
         name_provinces = cur.fetchall()
         cur.close()     
@@ -185,7 +185,7 @@ class Registro_datos():
     
     def get_districts(self,province_id):
         cur = self.conexion.cursor()
-        sql = "SELECT * FROM ubigeo_peru_districts WHERE province_id = {}".format(province_id)
+        sql = "SELECT * FROM tdistricts WHERE province_id = {}".format(province_id)
         cur.execute(sql)
         name_districts = cur.fetchall()
         cur.close()     

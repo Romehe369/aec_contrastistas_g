@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectonhMOfX.ui'
+## Form generated from reading UI file 'add_proyectoTHnegY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -209,7 +209,7 @@ class Ui_add_project_new(object):
         self.info_txt_lbl.setAlignment(Qt.AlignCenter)
         self.lbl_code_pro_random = QLabel(self.frame_contenedor)
         self.lbl_code_pro_random.setObjectName(u"lbl_code_pro_random")
-        self.lbl_code_pro_random.setGeometry(QRect(30, 110, 181, 31))
+        self.lbl_code_pro_random.setGeometry(QRect(30, 110, 211, 31))
         self.lbl_code_pro_random.setStyleSheet(u"font: 75 18pt \"MS Shell Dlg 2\";\n"
 "color:rgb(0, 0, 255);")
         self.name_project_label = QLabel(self.frame_contenedor)

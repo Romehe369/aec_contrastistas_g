@@ -22,7 +22,7 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         # Cerrar la ventana principal
         self.btn_decline.clicked.connect(self.close)
         self.label_code_project.setText(self.parent().code_project)
-        self.line_break()
+        self.label_title.setText(self.line_break())
 
     def line_break(self):
         name_project=self.parent().name_project
@@ -30,7 +30,7 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         len_text=int(len(split_text)/2)+1
         split_text.insert(len_text,"\n")
         text_formal=" ".join(split_text)
-        self.label_title.setText(text_formal)
+        return text_formal
 
 class add_project(QMainWindow,Ui_add_project_new):
     def __init__(self, parent):
@@ -40,7 +40,6 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.setWindowFlag(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         # Cerrar la ventana principal
-        self.code_project=self.random_value()
         self.dialogo=Dialogo()
         self.date_now()
         self.number_of_days.setEnabled(False)
@@ -54,6 +53,8 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.id_region=0
         self.comboBox_region.currentIndexChanged.connect(self.agregar_province)
         self.comboBox_province.currentIndexChanged.connect(self.agregar_distritos)
+        self.code_project=self.random_value()
+        self.start_dateEdit.dateChanged.connect(self.random_value)
 
     def agregar_datos(self):
         act = self.datos.get_region()
@@ -97,6 +98,21 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.start_dateEdit.setDate(d)
         self.end_dateEdit.setDate(d)
 
+    def random_value(self):
+        self.lbl_code_pro_random.clear()
+        values_random=self.random_generate()
+        self.lbl_code_pro_random.setText(values_random)
+
+    def random_generate(self):
+        date=self.start_dateEdit.date()
+        year = date.year()
+        fecha=[date.month(),date.day()]
+        A=[str(0)+str(n) if len(str(n)) == 1 else n for n in fecha]
+        value="PRO"+str(year)+str(A[0])+str(A[1])
+        for i in range(3):
+            value+=str(random.randint(0, 9))
+        return value
+
     def addition_days(self):
         if(len(self.number_of_days.text())>=1):
             try:
@@ -105,7 +121,8 @@ class add_project(QMainWindow,Ui_add_project_new):
                 self.dialogo.label_mensaje.setText("Dígite un número válido")
                 self.dialogo.show()
             else:
-                now = datetime.now()
+                date=self.start_dateEdit.date()
+                now = datetime(date.year(), date.month(), date.day())
                 time_future = now + timedelta(days=number_of_days)
                 d = QDate(time_future.year, time_future.month, time_future.day)
                 self.end_dateEdit.setDate(d)
@@ -118,15 +135,8 @@ class add_project(QMainWindow,Ui_add_project_new):
     def search_db(self):
         print("No se encontro")
     # generate a random value about existing repetiton
-    def random_value(self):
-        values_random=self.random_generate()
-        self.lbl_code_pro_random.setText(values_random)
+    
 
-    def random_generate(self):
-        value=""
-        for i in range(8):
-            value+=str(random.randint(0, 9))
-        return "PRO"+value
     # Check the exist value of null
     def no_exist_null_value(self,list_value):
         for i in list_value:

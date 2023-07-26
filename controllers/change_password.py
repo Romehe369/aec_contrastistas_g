@@ -105,6 +105,7 @@ class changed_password_uad(QMainWindow,Ui_changes_password):
 		else:
 			if(self.is_true_change()):
 				act = self.datos.actualiza_password(self.parent().txt_users,self.change_new_password)
+				self.parent().txt_password=self.change_new_password
 				self.dialogo.show()
 				self.dialogo.label_mensaje.setText("Las contraseña se\ncambio correctamente")
 				self.close()

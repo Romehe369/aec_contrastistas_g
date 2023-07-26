@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>542</height>
+    <width>720</width>
+    <height>601</height>
    </rect>
   </property>
   <property name="font">
@@ -24,10 +24,10 @@
   <widget class="QFrame" name="frame_3">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>641</width>
-     <height>531</height>
+     <x>10</x>
+     <y>10</y>
+     <width>701</width>
+     <height>581</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -40,11 +40,13 @@
 QPushButton{
 border: 1px solid rgb(0, 0, 127);
 border-radius:10px;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
 QPushButton:hover{
 background-color: white;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 }
 QLineEdit{
 background-color: white;
@@ -58,6 +60,7 @@ background-color: white;
 }
 QLabel{
 border:none;
+background-color:rgba(0,0,0,0%);
 }</string>
    </property>
    <property name="frameShape">
@@ -69,11 +72,17 @@ border:none;
    <widget class="QLabel" name="lblCelular">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>400</y>
+      <x>360</x>
+      <y>420</y>
       <width>151</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -91,10 +100,10 @@ border:none;
    <widget class="QLabel" name="img_dni">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>370</x>
       <y>90</y>
-      <width>281</width>
-      <height>191</height>
+      <width>311</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -105,11 +114,14 @@ background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y
     <property name="text">
      <string/>
     </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>440</x>
       <y>60</y>
       <width>111</width>
       <height>21</height>
@@ -134,43 +146,20 @@ background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_agregar_categoria">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>400</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color:rgba(0,0,0,0%);
-border:none;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../assets/icons/add-icon.png</normaloff>../assets/icons/add-icon.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QLabel" name="lblCategoria">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>370</y>
+      <y>360</y>
       <width>111</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -182,17 +171,23 @@ border:none;
      </font>
     </property>
     <property name="text">
-     <string>Categoria</string>
+     <string>Categoria:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_celular">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>430</y>
-      <width>281</width>
+      <x>360</x>
+      <y>450</y>
+      <width>311</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -206,18 +201,24 @@ border:none;
     <property name="maxLength">
      <number>9</number>
     </property>
+    <property name="placeholderText">
+     <string>Ingrese número celular o telef.</string>
+    </property>
    </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>290</y>
-      <width>261</width>
+      <x>360</x>
+      <y>300</y>
+      <width>331</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border:none;</string>
+     <string notr="true">QFrame{
+border:none;
+background-color:rgba(0,0,0,0%);
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -236,7 +237,11 @@ border:none;
        </property>
        <property name="font">
         <font>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -254,7 +259,11 @@ border:none;
        </property>
        <property name="font">
         <font>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -267,15 +276,19 @@ border:none;
    <widget class="QPushButton" name="btn_aceptar">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>480</y>
-      <width>141</width>
-      <height>31</height>
+      <x>160</x>
+      <y>510</y>
+      <width>171</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="autoFillBackground">
@@ -289,10 +302,16 @@ border:none;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>80</y>
-      <width>251</width>
+      <y>90</y>
+      <width>281</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -306,6 +325,9 @@ border:none;
     <property name="maxLength">
      <number>8</number>
     </property>
+    <property name="placeholderText">
+     <string>Ingrese DNI</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_fecha_inicio">
     <property name="geometry">
@@ -313,8 +335,14 @@ border:none;
       <x>30</x>
       <y>300</y>
       <width>111</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -332,16 +360,14 @@ border:none;
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>10</y>
-      <width>521</width>
+      <width>641</width>
       <height>45</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QFrame{
-font: 18pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(255, 255, 255);
 border:none;
 }
 
@@ -375,16 +401,17 @@ border:none;
         <font>
          <family>MS Shell Dlg 2</family>
          <pointsize>18</pointsize>
-         <weight>50</weight>
+         <weight>9</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 255, 0);</string>
        </property>
        <property name="text">
-        <string>Agregar un trabajador</string>
+        <string>AGREGAR UN PERSONAL</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -398,9 +425,15 @@ border:none;
      <rect>
       <x>30</x>
       <y>330</y>
-      <width>181</width>
+      <width>211</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -426,10 +459,16 @@ border-radius:0px;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>400</y>
-      <width>181</width>
+      <y>390</y>
+      <width>211</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -474,10 +513,16 @@ border-radius:0px;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>260</y>
-      <width>181</width>
+      <y>270</y>
+      <width>211</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -506,11 +551,17 @@ border-radius:0px;</string>
    <widget class="QLineEdit" name="lineEdit_Correo">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>370</y>
-      <width>281</width>
+      <x>360</x>
+      <y>380</y>
+      <width>311</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -521,6 +572,9 @@ border-radius:0px;</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="placeholderText">
+     <string>Ingrese correo electronico</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_sexo">
     <property name="geometry">
@@ -528,8 +582,14 @@ border-radius:0px;</string>
       <x>30</x>
       <y>240</y>
       <width>47</width>
-      <height>13</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -550,8 +610,14 @@ border-radius:0px;</string>
       <x>30</x>
       <y>60</y>
       <width>47</width>
-      <height>13</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -575,8 +641,14 @@ border-radius:0px;</string>
       <x>30</x>
       <y>120</y>
       <width>81</width>
-      <height>16</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -597,8 +669,14 @@ border-radius:0px;</string>
       <x>30</x>
       <y>180</y>
       <width>81</width>
-      <height>16</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -617,10 +695,16 @@ border-radius:0px;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>200</y>
-      <width>251</width>
+      <y>210</y>
+      <width>281</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -631,15 +715,27 @@ border-radius:0px;</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="placeholderText">
+     <string>Ingrese apellidos</string>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::LogicalMoveStyle</enum>
+    </property>
    </widget>
    <widget class="QLabel" name="label_correo">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>360</x>
       <y>350</y>
-      <width>61</width>
-      <height>16</height>
+      <width>161</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -651,16 +747,44 @@ border-radius:0px;</string>
      </font>
     </property>
     <property name="text">
-     <string>Correo:</string>
+     <string>Correo electronico:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditName">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>140</y>
-      <width>251</width>
+      <y>150</y>
+      <width>281</width>
       <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="placeholderText">
+     <string>Ingrese los nombres</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_cancelar">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>510</y>
+      <width>191</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -672,23 +796,61 @@ border-radius:0px;</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="text">
+     <string>Cancelar</string>
+    </property>
    </widget>
-   <widget class="QPushButton" name="btn_cancelar">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>480</y>
-      <width>161</width>
+      <x>30</x>
+      <y>420</y>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
     </property>
     <property name="text">
-     <string>Cancelar</string>
+     <string>Salario</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_salario">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>450</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="placeholderText">
+     <string>Ingrese salario</string>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::LogicalMoveStyle</enum>
     </property>
    </widget>
   </widget>

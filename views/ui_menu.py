@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuiJyeQz.ui'
+## Form generated from reading UI file 'menupLozDU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(956, 916)
+        sistema.resize(1200, 1006)
         sistema.setMinimumSize(QSize(400, 0))
         sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "QLineEdit{\n"
@@ -1030,6 +1030,13 @@ class Ui_sistema(object):
 
         self.verticalLayout_24.addWidget(self.label_32)
 
+        self.label_51 = QLabel(self.frame_18)
+        self.label_51.setObjectName(u"label_51")
+        self.label_51.setMinimumSize(QSize(0, 31))
+        self.label_51.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.verticalLayout_24.addWidget(self.label_51)
+
         self.label_29 = QLabel(self.frame_18)
         self.label_29.setObjectName(u"label_29")
         self.label_29.setMinimumSize(QSize(0, 31))
@@ -1079,6 +1086,13 @@ class Ui_sistema(object):
         self.datetime_decline.setCalendarPopup(True)
 
         self.verticalLayout_21.addWidget(self.datetime_decline)
+
+        self.lineEdit_25 = QLineEdit(self.frame_17)
+        self.lineEdit_25.setObjectName(u"lineEdit_25")
+        self.lineEdit_25.setMinimumSize(QSize(0, 31))
+        self.lineEdit_25.setFont(font7)
+
+        self.verticalLayout_21.addWidget(self.lineEdit_25)
 
         self.comboBox_8 = QComboBox(self.frame_17)
         self.comboBox_8.setObjectName(u"comboBox_8")
@@ -1192,6 +1206,19 @@ class Ui_sistema(object):
         self.lineEdit_17.setFont(font7)
 
         self.verticalLayout_18.addWidget(self.lineEdit_17)
+
+        self.label_52 = QLabel(self.frame_7)
+        self.label_52.setObjectName(u"label_52")
+        self.label_52.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_18.addWidget(self.label_52)
+
+        self.lineEdit_22 = QLineEdit(self.frame_7)
+        self.lineEdit_22.setObjectName(u"lineEdit_22")
+        self.lineEdit_22.setMinimumSize(QSize(0, 31))
+        self.lineEdit_22.setFont(font7)
+
+        self.verticalLayout_18.addWidget(self.lineEdit_22)
 
         self.label_26 = QLabel(self.frame_7)
         self.label_26.setObjectName(u"label_26")
@@ -2085,7 +2112,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -2155,6 +2182,7 @@ class Ui_sistema(object):
         self.pushButton_3.setText(QCoreApplication.translate("sistema", u"Ingresar nuevo gasto", None))
         self.label_31.setText(QCoreApplication.translate("sistema", u"Nro de documento :", None))
         self.label_32.setText(QCoreApplication.translate("sistema", u"Fecha de cancelacion :", None))
+        self.label_51.setText(QCoreApplication.translate("sistema", u"IGV(%)", None))
         self.label_29.setText(QCoreApplication.translate("sistema", u"Tipo de egreso :", None))
         self.label_30.setText(QCoreApplication.translate("sistema", u"Observacion :", None))
         self.label_28.setText(QCoreApplication.translate("sistema", u"Codigo de documento :", None))
@@ -2164,8 +2192,9 @@ class Ui_sistema(object):
         self.label_23.setText(QCoreApplication.translate("sistema", u"Nombre material :", None))
         self.label_24.setText(QCoreApplication.translate("sistema", u"Cantidad:", None))
         self.label_25.setText(QCoreApplication.translate("sistema", u"Costo Unitario :", None))
+        self.label_52.setText(QCoreApplication.translate("sistema", u"TOTAL :", None))
         self.label_26.setText(QCoreApplication.translate("sistema", u"Guia de remision :", None))
-        self.label_27.setText(QCoreApplication.translate("sistema", u"Codigo financiero", None))
+        self.label_27.setText(QCoreApplication.translate("sistema", u"Codigo financiero:", None))
         self.pushButton_12.setText(QCoreApplication.translate("sistema", u"Nuevo", None))
         self.pushButton_14.setText(QCoreApplication.translate("sistema", u"Actualizar \n"
 " Material", None))

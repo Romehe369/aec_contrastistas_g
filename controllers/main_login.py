@@ -38,19 +38,17 @@ class MiApp(QMainWindow, Ui_login):
 
 	def iniciar_sesion(self):
 		# Los labels de contraseña y usuario ponemos en blanco
-		self.contrasena_incorrecta.setText('')
-		self.usuario_incorrecto.setText('')
+		self.contrasena_incorrecta.clear()
+		self.usuario_incorrecto.clear()
 		users_entry = self.users.text()
 		password_entry = self.password.text()
 
-		users_entry_consul = str("'" + users_entry + "'")
-
-		users_all_information = self.datos.busca_users(users_entry_consul)
+		users_all_information = self.datos.busca_users(users_entry)
 		if(len(users_all_information)==0):
 			self.usuario_incorrecto.setText('Usuario incorrecto')
 		else:
-			users=users_all_information[0]
-			password=users_all_information[1]
+			users=users_all_information[1]
+			password=users_all_information[2]
 			if(password_entry==password and users_entry==users):
 				for i in range(0,99):
 					time.sleep(0.02)
@@ -131,7 +129,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.bt_cerrar.clicked.connect(self.close)
 
 	def open_attendance(self):
-		self.mover_menu()
 		self.stackedWidget.setCurrentWidget(self.page_asistencia)
 
 	def page_inicio_new(self):
@@ -447,18 +444,25 @@ class control_data(QDialog):
 	def crear_qframe(self):
 		# Crear un QFrame y establecer su geometr
 		self.qframe = QFrame(self.parent().frame_contenedor_pro)
-		#self.qframe.setMaximumSize(QSize(250, 200))
+		#self.qframe.setMaximumSize(QSize(200, 150))
 		self.v_layout_frame = QVBoxLayout(self.qframe)
 		self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
 		self.lbl_frame = QLabel(self.qframe)
-		self.lbl_frame.setText("PROYECTO NRO:\n"+self.code_project)
-		self.lbl_frame.setGeometry(QRect(10, 10, 180, 90))
+		self.lbl_frame.setText("Cod. proyecto:\n"+self.code_project)
+		#self.lbl_frame.setGeometry(QRect(10, 10, 180, 90))
 		self.lbl_frame.setStyleSheet("font: 75 16pt Arial")
 		self.lbl_frame.setAlignment(Qt.AlignCenter)
 		self.v_layout_frame.addWidget(self.lbl_frame)
+		self.lbl_fr_name = QLabel(self.qframe)
+		self.lbl_fr_name.setText("Nombre :\n"+self.ui_add.line_break())
+		#self.lbl_fr_name.setGeometry(QRect(10, 10, 180, 90))
+		self.lbl_fr_name.setStyleSheet("font: 75 16pt Arial")
+		self.lbl_fr_name.setAlignment(Qt.AlignCenter)
+		self.v_layout_frame.addWidget(self.lbl_fr_name)
+
 
 		self.view_details = QPushButton(self.qframe)
-		self.view_details.setGeometry(QRect(10, 110, 180, 30))
+		#self.view_details.setGeometry(QRect(10, 110, 180, 30))
 		self.view_details.setMinimumSize(QSize(0, 31))
 		self.view_details.setText("VER DETALLES")
 		self.view_details.setStyleSheet("QPushButton{ border: 1px solid rgb(0, 0, 127);\n"
