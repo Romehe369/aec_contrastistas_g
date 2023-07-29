@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>1006</height>
+    <width>1017</width>
+    <height>918</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -26,6 +26,12 @@ QLineEdit{
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
     <property name="spacing">
      <number>0</number>
@@ -738,7 +744,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>9</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -1031,7 +1037,7 @@ QLineEdit{
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0,0">
+                   <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0">
                     <property name="spacing">
                      <number>0</number>
                     </property>
@@ -1056,6 +1062,12 @@ QLineEdit{
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_34">
+                       <property name="leftMargin">
+                        <number>70</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>70</number>
+                       </property>
                        <item>
                         <widget class="QLabel" name="label_38">
                          <property name="minimumSize">
@@ -1076,6 +1088,94 @@ QLineEdit{
                         </widget>
                        </item>
                        <item>
+                        <widget class="QLabel" name="label_42">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>DNI</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_25">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>32</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:3px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_18">
+                          <property name="spacing">
+                           <number>10</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QLineEdit" name="lineEdit_dni_admin">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>31</height>
+                             </size>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                            <property name="placeholderText">
+                             <string>Ingrese DNI</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_search_iddni">
+                            <property name="minimumSize">
+                             <size>
+                              <width>200</width>
+                              <height>31</height>
+                             </size>
+                            </property>
+                            <property name="text">
+                             <string>Buscar por nombre</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
                         <widget class="QLabel" name="label_46">
                          <property name="minimumSize">
                           <size>
@@ -1084,7 +1184,7 @@ QLineEdit{
                           </size>
                          </property>
                          <property name="text">
-                          <string>Usuario:</string>
+                          <string>Usuario</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -1102,6 +1202,9 @@ QLineEdit{
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
+                         <property name="placeholderText">
+                          <string>Ingrese usuario</string>
+                         </property>
                         </widget>
                        </item>
                        <item>
@@ -1113,7 +1216,7 @@ QLineEdit{
                           </size>
                          </property>
                          <property name="text">
-                          <string>Contraseña:</string>
+                          <string>Contraseña</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -1127,6 +1230,61 @@ QLineEdit{
                            <width>0</width>
                            <height>31</height>
                           </size>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Ingrese contraseña</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_validate">
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_43">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Confirmar contraseña</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="lndt_confirm_password_new">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>31</height>
+                          </size>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Confirmar contraseña</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_confirmation">
+                         <property name="text">
+                          <string/>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -1148,121 +1306,6 @@ QLineEdit{
                        </item>
                        <item>
                         <spacer name="verticalSpacer_11">
-                         <property name="orientation">
-                          <enum>Qt::Vertical</enum>
-                         </property>
-                         <property name="sizeHint" stdset="0">
-                          <size>
-                           <width>20</width>
-                           <height>40</height>
-                          </size>
-                         </property>
-                        </spacer>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_25">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_35">
-                       <item>
-                        <widget class="QLabel" name="label_39">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>40</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(255, 240, 125);</string>
-                         </property>
-                         <property name="text">
-                          <string>Agregar un controlador de asistencia en la web:</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_42">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>DNI:</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="lineEdit_26">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>31</height>
-                          </size>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_43">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>Contraseña:</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="lndt_add_cntrls">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>31</height>
-                          </size>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="add_admin_btn_ctrls">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>40</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>Agregar administrador de asistencia</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <spacer name="verticalSpacer_12">
                          <property name="orientation">
                           <enum>Qt::Vertical</enum>
                          </property>
@@ -1335,6 +1378,62 @@ QLineEdit{
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
                       </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btn_show_admin">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Ver lista de administradores</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTableWidget" name="tableWidget_admin">
+                      <property name="textElideMode">
+                       <enum>Qt::ElideRight</enum>
+                      </property>
+                      <property name="rowCount">
+                       <number>5</number>
+                      </property>
+                      <attribute name="horizontalHeaderCascadingSectionResizes">
+                       <bool>false</bool>
+                      </attribute>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <row/>
+                      <column>
+                       <property name="text">
+                        <string>DNI</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Nombre</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Apellidos</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Usuario</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Contraseña</string>
+                       </property>
+                      </column>
                      </widget>
                     </item>
                     <item>
@@ -3026,6 +3125,11 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
                         <bold>false</bold>
                        </font>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 135, 203);
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
+                      </property>
                       <property name="calendarPopup">
                        <bool>true</bool>
                       </property>
@@ -3035,6 +3139,54 @@ font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
                         <month>1</month>
                         <day>1</day>
                        </date>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btn_add_new">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>31</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:1px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Agregar nuevo</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="btn_guardar_asistencia">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>31</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:1px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Guardar lista</string>
                       </property>
                      </widget>
                     </item>
@@ -4418,6 +4570,199 @@ font: 87 12pt &quot;Segoe UI Black&quot;}</string>
 </string>
                    </property>
                   </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="search_dni_t">
+             <layout class="QVBoxLayout" name="verticalLayout_35">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_30">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(117, 117, 117);
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_37">
+                 <item>
+                  <widget class="QFrame" name="frame_31">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_19">
+                    <property name="spacing">
+                     <number>15</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>9</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QComboBox" name="comboBox_name_s">
+                      <property name="minimumSize">
+                       <size>
+                        <width>200</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Nombres</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Apellidos</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Nro celular</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_data_search">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_5">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_54">
+                   <property name="styleSheet">
+                    <string notr="true">
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Liste de nombres o apellidos que coinciden</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QListWidget" name="listWidget_show_s">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:1px;
+background-color: rgb(255, 255, 255);</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Hello world</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Never mind</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_get_dni">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>31</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:10px;
+background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+QPushButton:hover{
+	background-color: rgb(170, 255, 255);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Obtener el DNI</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_12">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
                  </item>
                 </layout>
                </widget>

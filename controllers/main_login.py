@@ -40,16 +40,16 @@ class MiApp(QMainWindow, Ui_login):
 		# Los labels de contraseña y usuario ponemos en blanco
 		self.contrasena_incorrecta.clear()
 		self.usuario_incorrecto.clear()
-		users_entry = self.users.text()
+		users = self.users.text()
 		password_entry = self.password.text()
-
+		users_entry = users
 		users_all_information = self.datos.busca_users(users_entry)
 		if(len(users_all_information)==0):
 			self.usuario_incorrecto.setText('Usuario incorrecto')
 		else:
-			users=users_all_information[1]
-			password=users_all_information[2]
-			if(password_entry==password and users_entry==users):
+			users1=users_all_information[2]
+			password=users_all_information[3]
+			if(password_entry==password and users==users_entry):
 				for i in range(0,99):
 					time.sleep(0.02)
 					self.progressBar.setValue(i)
@@ -77,7 +77,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.txt_password=""
 		self.alto_qfadd_project=0
 		self.datos = Registro_datos()
-		self.call_list_data()
 		self.payments_table_data()
 		self.table_qwk_new_data()
 		# mover ventana
@@ -121,14 +120,12 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.oculto=False
 		# Agregamos todos los frames e control ocultar y mostrar
 		self.frame_encabezados=[self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
-		# deberia cerrar la ventana
-		#self.btn_Buscar_pro.clicked.connect(self.click_btn_proyectos)
-		#self.click_count = 0
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
 
 	def open_attendance(self):
+		self.call_list_data()
 		self.stackedWidget.setCurrentWidget(self.page_asistencia)
 
 	def page_inicio_new(self):
@@ -153,10 +150,10 @@ class control_aec(QMainWindow,Ui_sistema):
 				child.widget().deleteLater()
 
 	def scroll_frame(self):
-		self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*170)
+		self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*190)
 		# Actualizar la posición vertical del QFrame según el valor de la QScrollBar
 		value = self.v_ScrollBar_project.value()
-		height_cont=int(self.frame_contenedor_pro.height()/100)-4
+		height_cont=int(self.frame_contenedor_pro.height()/100)
 		self.frame_contenedor_pro.move(self.frame_contenedor_pro.x(), -value*height_cont)
 	
 	# Eliminamos un administrador del sistema
@@ -190,8 +187,7 @@ class control_aec(QMainWindow,Ui_sistema):
 
 	def verificar_users(self):
 		users=self.lineEdit_add_users.text()
-		users_entry = str("'" + users + "'")
-		act = self.datos.busca_users(users_entry)
+		act = self.datos.busca_users(users)
 		# Verifica si existe el users en la base de datos
 		if act is not None:
 			self.dialogo.label_mensaje.setText("El users ya existe")
@@ -232,9 +228,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		while(contador_bucle<len(valor)):
 			count_column=0
 			while(count_column<width_cont and contador_bucle<len(valor)):
-				#frame = QFrame(self.frame_contenedor_pro)
 				valor_add=valor[contador_bucle]
-				#frame.setStyleSheet("border: 1px solid rgb(0, 0, 127)")
 				frame_project=control_data(self,valor_add[0],valor_add[1],count_next_line,count_column)
 				frame_project.crear_qframe()
 				self.gridLayout_add_frame.addWidget(frame_project.get_frame(),count_next_line,count_column,1,1)
@@ -242,6 +236,7 @@ class control_aec(QMainWindow,Ui_sistema):
 				contador_bucle+=1
 				count_column+=1
 			count_next_line+=1
+		self.alto_qfadd_project=count_next_line
 
 	def set_pass(self,txt1,txt2):
 		self.txt_users=txt1
@@ -353,17 +348,28 @@ class control_aec(QMainWindow,Ui_sistema):
 				self.table_payments.setItem(row, column, item)
 
 	def call_list_data(self):
+		code_project=self.change_code_project.text()
+		datos=self.datos.list_tasistencia(code_project)
+		info_dni=[]
+		if(len(datos)==0):
+			print("No existe dicho codigo")
+		else:
+			for i in datos:
+				act = self.datos.buscar_trabajador(i[3])
+				if act!=[]:
+					info_dni.append([i[4],i[3],act[1],act[2],i[5],i[6]])
 		# Create a table by 6 column and 100 row
-		self.table_asistencia.setRowCount(100)
+		self.table_asistencia.setRowCount(len(info_dni))
 		self.table_asistencia.setColumnCount(6)
 		self.change_header(self.table_asistencia)
 		# We go through the array or matrix
-		for row in range(100):
+		for row in range(0,len(info_dni)):
 			# Create a checkbox and add the table
 			checkBoxWidget = CheckBoxWidget()
 			self.table_asistencia.setCellWidget(row, 0, checkBoxWidget)
-			for column in range(1,6):
-				item = QTableWidgetItem("Nombres full {}".format(row+1))
+			datos_fila=info_dni[row]
+			for column in range(1,len(datos_fila)):
+				item = QTableWidgetItem(datos_fila[column])
 				self.table_asistencia.setItem(row, column, item)
 				
 class CheckBoxWidget(QWidget):
@@ -444,7 +450,7 @@ class control_data(QDialog):
 	def crear_qframe(self):
 		# Crear un QFrame y establecer su geometr
 		self.qframe = QFrame(self.parent().frame_contenedor_pro)
-		#self.qframe.setMaximumSize(QSize(200, 150))
+		self.qframe.setMinimumSize(QSize(200, 170))
 		self.v_layout_frame = QVBoxLayout(self.qframe)
 		self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
 		self.lbl_frame = QLabel(self.qframe)

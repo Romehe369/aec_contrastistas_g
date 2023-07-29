@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_workerhSrJRi.ui'
+## Form generated from reading UI file 'add_workerIfJiLb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -243,7 +243,7 @@ class Ui_Dialog_add_Trabajador(object):
         self.btn_cancelar.setFont(font1)
         self.label_2 = QLabel(self.frame_3)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(30, 420, 81, 31))
+        self.label_2.setGeometry(QRect(30, 420, 111, 31))
         self.label_2.setMinimumSize(QSize(0, 31))
         self.label_2.setStyleSheet(u"border:none;")
         self.lineEdit_salario = QLineEdit(self.frame_3)
@@ -289,7 +289,7 @@ class Ui_Dialog_add_Trabajador(object):
         self.label_correo.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Correo electronico:", None))
         self.lineEditName.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese los nombres", None))
         self.btn_cancelar.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Cancelar", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Salario", None))
-        self.lineEdit_salario.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese salario", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Salario diario", None))
+        self.lineEdit_salario.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese salario por dia", None))
     # retranslateUi
 

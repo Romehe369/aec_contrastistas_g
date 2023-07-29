@@ -1,5 +1,9 @@
 import mysql.connector
 import datetime
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+#from controllers.change_password import Dialogo
 
 class Registro_datos():
 
@@ -8,6 +12,7 @@ class Registro_datos():
             self.conexion = mysql.connector.connect( host='localhost',database ='db_aeccontratistas', 
                                             user = 'root',
                                             password ='')
+            self.mensaje=Dialogo()
         except Exception as e:
             return None
         
@@ -28,46 +33,47 @@ class Registro_datos():
             return eliminado
 
     def add_admin(self,users, password):
-        mensaje=""
+        agregado=True
         try:
             cur = self.conexion.cursor()
-            sql='''INSERT INTO tlogin_data (users, password) 
-            VALUES('{}', '{}')'''.format(users, password)
+            sql='''INSERT INTO tlogin_data (id,users, password) 
+            VALUES(DEFAULT,'{}', '{}')'''.format(users, password)
             cur.execute(sql)
             self.conexion.commit() 
         except Exception as e:
-            mensaje=e
+            agregado=False
         finally:
             cur.close()
-            return mensaje
+            return agregado
 
     def busca_users(self, users):
-        cur = self.conexion.cursor()
-        sql = "SELECT * FROM tlogin_data WHERE users = '{}'".format(users)
-        cur.execute(sql)
-        usersx = cur.fetchone()
-        cur.close()     
-        return usersx 
-
-    def busca_password(self, password):
-        cur = self.conexion.cursor()
-        sql = "SELECT * FROM tlogin_data WHERE password = {}".format(password)
-        cur.execute(sql)
-        passwordx = cur.fetchall()
-        cur.close()     
-        return passwordx
+        try:
+            cur = self.conexion.cursor()
+            sql = "SELECT * FROM tlogin_data WHERE users = '{}'".format(users)
+            cur.execute(sql)
+            encontrado = cur.fetchone()
+            cur.close()    
+        except Exception as e:
+            encontrado=[]
+        finally:
+            return encontrado 
     
     # Se cambia la contraseña del usuario
     def actualiza_password(self, users, password):
-        cur = self.conexion.cursor()
-        sql ='''UPDATE tlogin_data SET password = '{}'
-        WHERE users = '{}' '''.format(password,users)
-        cur.execute(sql)
-        a = cur.rowcount
-        # Se guarde y persista simpre
-        self.conexion.commit()    
-        cur.close()
-        return a   
+        update=True
+        try:
+            cur = self.conexion.cursor()
+            sql ='''UPDATE tlogin_data SET id=DEFAULT password = '{}'
+            WHERE users = '{}' '''.format(password,users)
+            cur.execute(sql)
+            a = cur.rowcount
+            # Se guarde y persista simpre
+            self.conexion.commit()    
+            cur.close()
+        except Exception as e:
+            update=False
+        finally:
+            return update
     ################################### date ######################
     def convert_date(self,date_str):
         # Falta modificar para no presentar errores, con la funcion datetime
@@ -75,40 +81,39 @@ class Registro_datos():
         date_str=datetime.date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
         return date_str
     # Modifcar los datos de trabajador
-    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,foto):    
+    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto):    
         fecha_inicio=self.convert_date(fecha_inicio)
         cur = self.conexion.cursor()
-        sql= '''INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,FOTO) 
-        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
+        sql= '''INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,SUELDO_DIARIO,FOTO) 
+        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
         # Convert data into tuple format
-        insert_blob_tuple = (dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,foto)
+        insert_blob_tuple = (dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto)
         cur.execute(sql,insert_blob_tuple)
         self.conexion.commit()    
         cur.close()
 
     def mostrar_trabajador(self):
-        cursor = self.conexion.cursor()
+        cur = self.conexion.cursor()
         sql = "SELECT * FROM ttrabajador" 
-        cursor.execute(sql)
-        registro = cursor.fetchall()
-        cursor.close()
+        cur.execute(sql)
+        registro = cur.fetchall()
+        cur.close()
         return registro
 
     # 60 seconds or more 2 minutes
     def buscar_trabajador(self, dni):
-        dnix=0
         try:
             cur = self.conexion.cursor()
             sql = "SELECT * FROM ttrabajador WHERE DNI = {}".format(dni)
             cur.execute(sql)
             # Solo obtiene un solo registro
-            dnix = cur.fetchone()
+            trabajador = cur.fetchone()
             cur.close()
-        # Se ejecuta cuando se comete un error     
+        # Se ejecuta cuando se comete un error o no existe dicho valor     
         except Exception as e:
-            dnix=-1
-        return dnix # siempre se ejecuta
-        
+            trabajador=None
+        finally:
+            return trabajador # siempre se ejecuta
 
     def elimina_trabajador(self,dni):
         cur = self.conexion.cursor()
@@ -143,11 +148,11 @@ class Registro_datos():
         cur.close()
 
     def show_tproject(self):
-        cursor = self.conexion.cursor()
+        cur = self.conexion.cursor()
         sql = "SELECT * FROM tproject" 
-        cursor.execute(sql)
-        registro = cursor.fetchall()
-        cursor.close()
+        cur.execute(sql)
+        registro = cur.fetchall()
+        cur.close()
         return registro
 
     def delete_project_bcode(self,code_project):
@@ -165,14 +170,37 @@ class Registro_datos():
         finally:
             cur.close() 
             return eliminado
-
+    ###################################### ASISTENCIA ################################
+    def list_tasistencia(self, code_project):
+        try:
+            cur = self.conexion.cursor()
+            sql = "SELECT * FROM tasistencia WHERE code_project = '{}'".format(code_project)
+            cur.execute(sql)
+            # Se obtiene todos los relacionados
+            registro = cur.fetchall()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            registro=[]
+        finally:
+            return registro
+    def add_presence(self,date_month,code_project, dni, asistencia, observacion, justificacion):
+        date_month=self.convert_date(date_month)
+        cur = self.conexion.cursor()
+        sql= '''INSERT INTO tasistencia(id,date_month,code_project, dni, asistencia, observacion, justificacion) 
+        VALUES(DEFAULT,%s,%s,%s,%s,%s,%s)'''
+        # Convert data into tuple format
+        insert_blob_tuple = (id,date_month,code_project, dni, asistencia, observacion, justificacion)
+        cur.execute(sql,insert_blob_tuple)
+        self.conexion.commit()    
+        cur.close()
+    ###################################### UBICACION #################################
     # Manejar datos of region
     def get_region(self):
-        cursor = self.conexion.cursor()
+        cur = self.conexion.cursor()
         sql = "SELECT * FROM tdepartments" 
-        cursor.execute(sql)
-        name_region = cursor.fetchall()
-        cursor.close()
+        cur.execute(sql)
+        name_region = cur.fetchall()
+        cur.close()
         return name_region
     
     def get_provinces(self,department_id):
