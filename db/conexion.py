@@ -91,6 +91,17 @@ class Registro_datos():
         cur.execute(sql,insert_blob_tuple)
         self.conexion.commit()    
         cur.close()
+    def phrases_similares(self,sql,param):
+        try:
+            cur = self.conexion.cursor()
+            cur.execute(sql,("%" + param + "%",))
+            results = cur.fetchall()
+            cur.close()
+        except Exception as e:
+            results=None
+        finally:
+            return results
+        
 
     def mostrar_trabajador(self):
         cur = self.conexion.cursor()
@@ -174,7 +185,7 @@ class Registro_datos():
     def list_tasistencia(self, code_project):
         try:
             cur = self.conexion.cursor()
-            sql = "SELECT * FROM tasistencia WHERE code_project = '{}'".format(code_project)
+            sql = "SELECT * FROM ttrabajador_distribucion WHERE code_project = '{}'".format(code_project)
             cur.execute(sql)
             # Se obtiene todos los relacionados
             registro = cur.fetchall()
@@ -218,3 +229,6 @@ class Registro_datos():
         name_districts = cur.fetchall()
         cur.close()     
         return name_districts
+
+#variable=Registro_datos()
+#variable.phrases_similares()

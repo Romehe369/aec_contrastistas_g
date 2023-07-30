@@ -16,6 +16,7 @@ from views.ui_menu import Ui_sistema
 
 from controllers.change_password import (changed_password_uad, Dialogo)
 from controllers.add_trabajador import new_trabajador
+from controllers.control_project import add_project
 
 class MiApp(QMainWindow, Ui_login):
 	def __init__(self):
@@ -51,7 +52,7 @@ class MiApp(QMainWindow, Ui_login):
 			password=users_all_information[3]
 			if(password_entry==password and users==users_entry):
 				for i in range(0,99):
-					time.sleep(0.02)
+					time.sleep(0.000)
 					self.progressBar.setValue(i)
 					self.cargando.setText('Cargando...')
 
@@ -76,6 +77,8 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.txt_users=""
 		self.txt_password=""
 		self.alto_qfadd_project=0
+		self.code_project=""
+		self.name_project=""
 		self.datos = Registro_datos()
 		self.payments_table_data()
 		self.table_qwk_new_data()
@@ -91,11 +94,11 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_pagos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_pagos))
 		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
 		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))
+		#self.pushButton_get_dni.clicked.connect(self.retornar_origen)
 		self.btn_add_admin_ctrl.clicked.connect(self.ctrl_frame_add_admin)	
 		self.btn_delete_admin_ctrl.clicked.connect(self.ctrl_frame_delete_admin)
 		# realiza que los table view se ajusten de entrada de datos
 		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
-		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		# btn controls
 		self.btn_add_confirm_admin.clicked.connect(self.add_admin_new)
@@ -114,19 +117,34 @@ class control_aec(QMainWindow,Ui_sistema):
 		#self.btn_Buscar_pro.clicked.connect()
 		self.lndt_add_password.textChanged.connect(self.verificar_users)
 		self.v_ScrollBar_project.valueChanged.connect(self.scroll_frame)
+		self.btn_search_iddni.clicked.connect(self.show_search_data)
 		# menu lateral
 		self.borrar_elementos()
 		self.bt_menu.clicked.connect(self.mover_menu)
 		self.oculto=False
+		self.add_busqueda_dni=None
 		# Agregamos todos los frames e control ocultar y mostrar
-		self.frame_encabezados=[self.frame_asistencia,self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
+		self.frame_encabezados=[self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
 
+	def show_search_data(self):
+		from controllers.tsearch_dni import tsearch_dni
+		self.add_busqueda_dni=tsearch_dni(self)
+		self.add_busqueda_dni.show()
+	def asignar(self):
+		self.lineEdit_dni_admin.setText("Se agrego")
+		self.add_busqueda_dni.close()
+	# Retorna al anterior punto de llamada
+	def retornar_origen(self):
+		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
 	def open_attendance(self):
-		self.call_list_data()
-		self.stackedWidget.setCurrentWidget(self.page_asistencia)
+		from controllers.tcall_list import tasistencia
+		self.table_attendece=tasistencia(self)
+		self.table_attendece.show()
+		self.table_attendece.call_list_data()
+		#self.stackedWidget.setCurrentWidget(self.page_asistencia)
 
 	def page_inicio_new(self):
 		self.stackedWidget.setCurrentWidget(self.page_inicio)
@@ -136,7 +154,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		d = QDate(now.year, now.month, now.day)
 		self.date_emision.setDate(d)
 		self.datetime_decline.setDate(d)
-		self.dt_fecha_list.setDate(d)
 
 	def click_btn_proyectos(self):
 		self.stackedWidget.setCurrentWidget(self.page_proyectos)
@@ -207,9 +224,8 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
 
 	def add_new_project(self):
-		from controllers.control_project import add_project
-		ui_add=add_project(self)
-		ui_add.show()
+		self.ui_add_project=add_project(self)
+		self.ui_add_project.show()
 		
 	def add_control_frame(self):
 		self.borrar_elementos()
@@ -347,58 +363,7 @@ class control_aec(QMainWindow,Ui_sistema):
 				item = QTableWidgetItem("Nombres full {}".format(row+1))
 				self.table_payments.setItem(row, column, item)
 
-	def call_list_data(self):
-		code_project=self.change_code_project.text()
-		datos=self.datos.list_tasistencia(code_project)
-		info_dni=[]
-		if(len(datos)==0):
-			print("No existe dicho codigo")
-		else:
-			for i in datos:
-				act = self.datos.buscar_trabajador(i[3])
-				if act!=[]:
-					info_dni.append([i[4],i[3],act[1],act[2],i[5],i[6]])
-		# Create a table by 6 column and 100 row
-		self.table_asistencia.setRowCount(len(info_dni))
-		self.table_asistencia.setColumnCount(6)
-		self.change_header(self.table_asistencia)
-		# We go through the array or matrix
-		for row in range(0,len(info_dni)):
-			# Create a checkbox and add the table
-			checkBoxWidget = CheckBoxWidget()
-			self.table_asistencia.setCellWidget(row, 0, checkBoxWidget)
-			datos_fila=info_dni[row]
-			for column in range(1,len(datos_fila)):
-				item = QTableWidgetItem(datos_fila[column])
-				self.table_asistencia.setItem(row, column, item)
 				
-class CheckBoxWidget(QWidget):
-    def __init__(self, parent=None):
-        super(CheckBoxWidget, self).__init__(parent)
-        # We give it a style of greater size of Qcheckbox
-        self.setStyleSheet("""
-        QCheckBox{
-        background-color: none;
-        }
-        QCheckBox:indicator {
-        width:40px; 
-        height:25 px;
-        background-color: white;
-        border-radius : 12px;
-	    }
-	    QCheckBox:indicator:checked {
-	        background-color: #00ff00;
-	        border-radius : 12px;
-	    }""")
-        self.checkbox = QCheckBox(self)
-        self.checkbox.setMinimumSize(QSize(0, 0))
-        layout = QVBoxLayout(self)
-        layout.addWidget(self.checkbox)
-        # This is necesary about center the object checkbox
-        layout.setAlignment(Qt.AlignCenter)
-        layout.setContentsMargins(0, 0, 0, 0)
-        self.setLayout(layout)
-
 # Se crea un control de la tabla
 class control_data(QDialog):
 	def __init__(self, parent,code_project,name_project,row,column):
@@ -439,10 +404,10 @@ class control_data(QDialog):
 
 	def call_list(self):
 		self.ui_add.close()
-		self.parent().update_date_now()
-		self.parent().change_code_project.setText(self.code_project)
-		self.parent().change_name_project.setText(self.name_project)
+		self.parent().code_project=self.code_project
+		self.parent().name_project=self.name_project
 		self.parent().open_attendance()
+		self.close()
 
 	def get_frame(self):
 		return self.qframe

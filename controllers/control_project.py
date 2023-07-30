@@ -55,6 +55,8 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.comboBox_province.currentIndexChanged.connect(self.agregar_distritos)
         self.code_project=self.random_value()
         self.start_dateEdit.dateChanged.connect(self.random_value)
+        #self.search_name_db.clicked.connect(self.hide_frame)
+        
 
     def agregar_datos(self):
         act = self.datos.get_region()
@@ -158,6 +160,7 @@ class add_project(QMainWindow,Ui_add_project_new):
         if(self.no_exist_null_value(values)):
             self.datos.insertar_project(code_project,name_project,dni_responsible,region,province,district,date_start,date_end,references)
             self.dialogo.label_mensaje.setText("Se agrego existosamente")
+            self.parent().ui_add_project=None
             self.parent().add_control_frame()
             self.dialogo.show()
             self.close()
