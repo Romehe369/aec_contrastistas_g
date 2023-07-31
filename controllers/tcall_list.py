@@ -4,6 +4,7 @@ from PySide2.QtWidgets import *
 from datetime import datetime, timedelta
 import random
 from db.conexion  import Registro_datos
+from controllers.change_password import Dialogo
 from views.ui_table_asistencia import Ui_tasistencia
 
 class tasistencia(QMainWindow, Ui_tasistencia):
@@ -18,6 +19,7 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 		self.grip = QSizeGrip(self)
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.start_value()
+		self.dialogo = Dialogo()
 		self.lista_table=[]
 		self.list_id_distribution=[]
 		self.datos=Registro_datos()
@@ -25,16 +27,44 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.btn_guardar_asistencia.clicked.connect(self.save_list)
 		self.btn_add_new.clicked.connect(self.add_newdistribucion)
+		self.btn_search_dni.clicked.connect(self.get_dni)
+
+	def get_dni(self):
+		from controllers.tsearch_dni import tsearch_dni
+		add_busqueda_dni=tsearch_dni(self)
+		add_busqueda_dni.show()
 
 	def add_newdistribucion(self):
 		id_distribucion=self.random_generate()
 		code_project=self.parent().code_project
 		status=1
-		dni=self.lineEdit_dni_add.text()
+		dni=self.lineEdit_dni_admin.text()
 		# Verificar que exista en la base de datos de trabajador
 		if(len(dni)==8):
-			act=self.datos.add_distribution_presence(id_distribucion,code_project,dni,status)
-			self.call_list_data()
+			datos=self.datos.list_tasistencia(code_project)
+			exists=False
+			for i in datos:
+				dni_distribution=i[2]
+				if(dni_distribution==dni):
+					exists=True
+					break
+			if exists:
+				# Si el ya existe le mostramos un mensaje de que ya existe dicho dni
+				self.dialogo.label_mensaje.setText("El nro dni ya existe")
+				self.dialogo.show()
+				#self.lineEdit_dni_admin.setText("")
+			else:
+				act = self.datos.buscar_trabajador(dni)
+				# Si el dni  existe nos devuelve un valor diferente de []
+				if act is not None:
+					act=self.datos.add_distribution_presence(id_distribucion,code_project,dni,status)
+					#self.dialogo.label_mensaje.setText("Operacion Exitosa")
+					#self.dialogo.show()
+					self.call_list_data()
+				else:
+					self.dialogo.label_mensaje.setText("El DNI no esta registrado,\nregistre por favor")
+					self.dialogo.show()
+				
 	def random_generate(self):
 		value=""
 		for i in range(11):
@@ -62,8 +92,15 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 				columna.append(0)
 			columna.append(None)
 			columna.append(None)
-			print(columna)
 			act=self.datos.add_presence(date,columna[0],columna[1],columna[2],columna[5],columna[6],columna[7])
+			if(act):
+				self.dialogo.label_mensaje.setText("Se guardo la lista")
+				self.close()
+				self.dialogo.show()
+			else:
+				self.dialogo.label_mensaje.setText("No se pudo guardar la lista")
+				self.dialogo.show()
+
 
 	def resizeEvent(self, event):
 		rect = self.rect()

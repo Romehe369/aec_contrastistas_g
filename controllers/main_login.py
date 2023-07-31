@@ -133,9 +133,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		from controllers.tsearch_dni import tsearch_dni
 		self.add_busqueda_dni=tsearch_dni(self)
 		self.add_busqueda_dni.show()
-	def asignar(self):
-		self.lineEdit_dni_admin.setText("Se agrego")
-		self.add_busqueda_dni.close()
 	# Retorna al anterior punto de llamada
 	def retornar_origen(self):
 		self.stackedWidget.setCurrentWidget(self.page_add_administrator)

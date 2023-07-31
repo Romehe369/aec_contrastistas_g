@@ -49,8 +49,8 @@ class tsearch_dni(QMainWindow, Ui_tsearch_dni):
 	def asignar_dni(self):
 		if(self.validate):
 			self.parent().lineEdit_dni_admin.setText(self.dni_admin)
-			self.close()
 			self.dni_admin=""
+			self.close()
 		else:
 			self.lbl_seleccionado_dni.setText("SELECCIONE UN ELEMENTO")
 

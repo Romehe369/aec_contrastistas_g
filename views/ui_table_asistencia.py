@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'table_asistenciajwZaOh.ui'
+## Form generated from reading UI file 'table_asistenciaBeezqe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -117,32 +117,6 @@ class Ui_tasistencia(object):
         self.verticalLayout_3.setContentsMargins(15, -1, 15, -1)
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.btn_delete = QPushButton(self.frame)
-        self.btn_delete.setObjectName(u"btn_delete")
-        self.btn_delete.setMinimumSize(QSize(0, 31))
-        self.btn_delete.setStyleSheet(u"QPushButton{\n"
-"border:none;\n"
-"border-radius:0px;\n"
-"}")
-
-        self.gridLayout.addWidget(self.btn_delete, 4, 3, 1, 1)
-
-        self.change_code_project = QLabel(self.frame)
-        self.change_code_project.setObjectName(u"change_code_project")
-        self.change_code_project.setMinimumSize(QSize(0, 30))
-        self.change_code_project.setStyleSheet(u"color: rgb(85, 0, 0);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout.addWidget(self.change_code_project, 0, 1, 1, 1)
-
-        self.change_name_project = QLabel(self.frame)
-        self.change_name_project.setObjectName(u"change_name_project")
-        self.change_name_project.setMinimumSize(QSize(0, 30))
-        self.change_name_project.setStyleSheet(u"color: rgb(85, 0, 0);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout.addWidget(self.change_name_project, 3, 1, 1, 1)
-
         self.dt_fecha_list = QDateEdit(self.frame)
         self.dt_fecha_list.setObjectName(u"dt_fecha_list")
         self.dt_fecha_list.setMinimumSize(QSize(0, 35))
@@ -168,27 +142,23 @@ class Ui_tasistencia(object):
 
         self.gridLayout.addWidget(self.label_37, 4, 0, 1, 1)
 
-        self.label_33 = QLabel(self.frame)
-        self.label_33.setObjectName(u"label_33")
-        self.label_33.setMinimumSize(QSize(0, 30))
-        self.label_33.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.change_code_project = QLabel(self.frame)
+        self.change_code_project.setObjectName(u"change_code_project")
+        self.change_code_project.setMinimumSize(QSize(0, 30))
+        self.change_code_project.setStyleSheet(u"color: rgb(85, 0, 0);\n"
+"font: 75 12pt \"MS Shell Dlg 2\";")
 
-        self.gridLayout.addWidget(self.label_33, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.change_code_project, 0, 1, 1, 1)
 
-        self.lineEdit_delete_dni = QLineEdit(self.frame)
-        self.lineEdit_delete_dni.setObjectName(u"lineEdit_delete_dni")
-        self.lineEdit_delete_dni.setMinimumSize(QSize(0, 31))
-        self.lineEdit_delete_dni.setMaximumSize(QSize(300, 16777215))
-        self.lineEdit_delete_dni.setMaxLength(8)
+        self.btn_delete = QPushButton(self.frame)
+        self.btn_delete.setObjectName(u"btn_delete")
+        self.btn_delete.setMinimumSize(QSize(0, 31))
+        self.btn_delete.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"border-radius:0px;\n"
+"}")
 
-        self.gridLayout.addWidget(self.lineEdit_delete_dni, 4, 2, 1, 1)
-
-        self.label_13 = QLabel(self.frame)
-        self.label_13.setObjectName(u"label_13")
-        self.label_13.setMinimumSize(QSize(0, 30))
-        self.label_13.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout.addWidget(self.label_13, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.btn_delete, 4, 3, 1, 1)
 
         self.change_responsible_name = QLabel(self.frame)
         self.change_responsible_name.setObjectName(u"change_responsible_name")
@@ -198,12 +168,42 @@ class Ui_tasistencia(object):
 
         self.gridLayout.addWidget(self.change_responsible_name, 4, 1, 1, 1)
 
+        self.change_name_project = QLabel(self.frame)
+        self.change_name_project.setObjectName(u"change_name_project")
+        self.change_name_project.setMinimumSize(QSize(0, 30))
+        self.change_name_project.setStyleSheet(u"color: rgb(85, 0, 0);\n"
+"font: 75 12pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout.addWidget(self.change_name_project, 3, 1, 1, 1)
+
         self.label_36 = QLabel(self.frame)
         self.label_36.setObjectName(u"label_36")
         self.label_36.setMinimumSize(QSize(0, 30))
         self.label_36.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.label_36, 0, 2, 1, 1)
+
+        self.lineEdit_dni_admin = QLineEdit(self.frame)
+        self.lineEdit_dni_admin.setObjectName(u"lineEdit_dni_admin")
+        self.lineEdit_dni_admin.setMinimumSize(QSize(0, 31))
+        self.lineEdit_dni_admin.setMaximumSize(QSize(300, 16777215))
+        self.lineEdit_dni_admin.setMaxLength(8)
+
+        self.gridLayout.addWidget(self.lineEdit_dni_admin, 3, 2, 1, 1)
+
+        self.label_13 = QLabel(self.frame)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setMinimumSize(QSize(0, 30))
+        self.label_13.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_13, 0, 0, 1, 1)
+
+        self.label_33 = QLabel(self.frame)
+        self.label_33.setObjectName(u"label_33")
+        self.label_33.setMinimumSize(QSize(0, 30))
+        self.label_33.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_33, 3, 0, 1, 1)
 
         self.btn_add_new = QPushButton(self.frame)
         self.btn_add_new.setObjectName(u"btn_add_new")
@@ -213,15 +213,17 @@ class Ui_tasistencia(object):
 "border-radius:0px;\n"
 "}")
 
-        self.gridLayout.addWidget(self.btn_add_new, 3, 3, 1, 1)
+        self.gridLayout.addWidget(self.btn_add_new, 4, 2, 1, 1)
 
-        self.lineEdit_dni_add = QLineEdit(self.frame)
-        self.lineEdit_dni_add.setObjectName(u"lineEdit_dni_add")
-        self.lineEdit_dni_add.setMinimumSize(QSize(0, 31))
-        self.lineEdit_dni_add.setMaximumSize(QSize(300, 16777215))
-        self.lineEdit_dni_add.setMaxLength(8)
+        self.btn_search_dni = QPushButton(self.frame)
+        self.btn_search_dni.setObjectName(u"btn_search_dni")
+        self.btn_search_dni.setMinimumSize(QSize(0, 31))
+        self.btn_search_dni.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"border-radius:0px;\n"
+"}")
 
-        self.gridLayout.addWidget(self.lineEdit_dni_add, 3, 2, 1, 1)
+        self.gridLayout.addWidget(self.btn_search_dni, 3, 3, 1, 1)
 
 
         self.verticalLayout_3.addLayout(self.gridLayout)
@@ -288,17 +290,17 @@ class Ui_tasistencia(object):
         self.lbl_title.setText(QCoreApplication.translate("tasistencia", u"LLAMAR ASISTENCIA", None))
         self.btn_ampliar.setText(QCoreApplication.translate("tasistencia", u"\u25a0", None))
         self.btn_close.setText(QCoreApplication.translate("tasistencia", u"X", None))
-        self.btn_delete.setText(QCoreApplication.translate("tasistencia", u"Eliminar", None))
-        self.change_code_project.setText(QCoreApplication.translate("tasistencia", u"Hello", None))
-        self.change_name_project.setText("")
         self.label_37.setText(QCoreApplication.translate("tasistencia", u"Responsable:", None))
-        self.label_33.setText(QCoreApplication.translate("tasistencia", u"Nombre del proyecto:", None))
-        self.lineEdit_delete_dni.setPlaceholderText(QCoreApplication.translate("tasistencia", u"Ingrese el DNI", None))
-        self.label_13.setText(QCoreApplication.translate("tasistencia", u"Codigo de proyecto:", None))
+        self.change_code_project.setText(QCoreApplication.translate("tasistencia", u"Hello", None))
+        self.btn_delete.setText(QCoreApplication.translate("tasistencia", u"Eliminar", None))
         self.change_responsible_name.setText("")
+        self.change_name_project.setText("")
         self.label_36.setText(QCoreApplication.translate("tasistencia", u"Fecha:", None))
+        self.lineEdit_dni_admin.setPlaceholderText(QCoreApplication.translate("tasistencia", u"Ingrese el DNI", None))
+        self.label_13.setText(QCoreApplication.translate("tasistencia", u"Codigo de proyecto:", None))
+        self.label_33.setText(QCoreApplication.translate("tasistencia", u"Nombre del proyecto:", None))
         self.btn_add_new.setText(QCoreApplication.translate("tasistencia", u"Agregar nuevo", None))
-        self.lineEdit_dni_add.setPlaceholderText(QCoreApplication.translate("tasistencia", u"Ingrese el DNI", None))
+        self.btn_search_dni.setText(QCoreApplication.translate("tasistencia", u"Buscar DNI", None))
         ___qtablewidgetitem = self.table_asistencia.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("tasistencia", u"Asistencia", None));
         ___qtablewidgetitem1 = self.table_asistencia.horizontalHeaderItem(1)
