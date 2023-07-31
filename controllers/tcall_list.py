@@ -2,7 +2,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from datetime import datetime, timedelta
-
+import random
 from db.conexion  import Registro_datos
 from views.ui_table_asistencia import Ui_tasistencia
 
@@ -18,9 +18,53 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 		self.grip = QSizeGrip(self)
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.start_value()
+		self.lista_table=[]
+		self.list_id_distribution=[]
+		self.datos=Registro_datos()
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		self.table_asistencia.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
-	## SizeGrip
+		self.btn_guardar_asistencia.clicked.connect(self.save_list)
+		self.btn_add_new.clicked.connect(self.add_newdistribucion)
+
+	def add_newdistribucion(self):
+		id_distribucion=self.random_generate()
+		code_project=self.parent().code_project
+		status=1
+		dni=self.lineEdit_dni_add.text()
+		# Verificar que exista en la base de datos de trabajador
+		if(len(dni)==8):
+			act=self.datos.add_distribution_presence(id_distribucion,code_project,dni,status)
+			self.call_list_data()
+	def random_generate(self):
+		value=""
+		for i in range(11):
+			value+=str(random.randint(0, 9))
+		return value
+
+	def save_list(self):
+		i=self.table_asistencia.rowCount()
+		j=self.table_asistencia.columnCount()
+		date=self.dt_fecha_list.text()
+		code_project=self.parent().code_project
+		table=[]
+		for row in range(i):
+			id_distribucion=self.list_id_distribution[row]
+			k=self.lista_table[row]
+			columna=[id_distribucion,code_project]
+			for col in range(j):
+				item = self.table_asistencia.item(row, col)
+				# get data only that value is different of None
+				if(item is not None):
+					columna.append(item.text())
+			if(k.status):
+				columna.append(1)
+			else:
+				columna.append(0)
+			columna.append(None)
+			columna.append(None)
+			print(columna)
+			act=self.datos.add_presence(date,columna[0],columna[1],columna[2],columna[5],columna[6],columna[7])
+
 	def resizeEvent(self, event):
 		rect = self.rect()
 		self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
@@ -67,11 +111,14 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 				item.setFlags(item.flags() & ~Qt.ItemIsEditable)
 
 	def call_list_data(self):
+		self.lista_table=[]
+		self.list_id_distribution=[]
 		code_project=self.parent().code_project
 		datos=self.datos.list_tasistencia(code_project)
 		info_dni=[]
 		if(len(datos)>0):
 			for i in datos:
+				self.list_id_distribution.append(i[0])
 				act = self.datos.buscar_trabajador(i[2])
 				if act!=[]:
 					info_dni.append(["",i[2],act[1],act[2]])
@@ -83,6 +130,7 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 		for row in range(0,len(info_dni)):
 			# Create a checkbox and add the table
 			checkBoxWidget = CheckBoxWidget()
+			self.lista_table.append(checkBoxWidget)
 			self.table_asistencia.setCellWidget(row, 0, checkBoxWidget)
 			datos_fila=info_dni[row]
 			for column in range(1,len(datos_fila)):
@@ -113,12 +161,12 @@ class CheckBoxWidget(QWidget):
 	    }""")
         self.checkbox.setMinimumSize(QSize(0, 0))
         self.checkbox.stateChanged.connect(self.btnstate)
-        layout = QVBoxLayout(self)
-        layout.addWidget(self.checkbox)
+        self.layout = QVBoxLayout(self)
+        self.layout.addWidget(self.checkbox)
         # This is necesary about center the object checkbox
-        layout.setAlignment(Qt.AlignCenter)
-        layout.setContentsMargins(0, 0, 0, 0)
-        self.setLayout(layout)
+        self.layout.setAlignment(Qt.AlignCenter)
+        self.layout.setContentsMargins(0, 0, 0, 0)
+        #self.setLayout(layout)
     def btnstate(self):
     	if self.checkbox.isChecked() == True:
     		self.status=True

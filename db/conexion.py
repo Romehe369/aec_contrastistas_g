@@ -181,6 +181,21 @@ class Registro_datos():
         finally:
             cur.close() 
             return eliminado
+    ###################################### DISTRIBUCION ##########################
+    def add_distribution_presence(self, id_distribucion,code_project,dni,estado):
+        agregado=False
+        try:
+            cur = self.conexion.cursor()
+            sql='''INSERT INTO ttrabajador_distribucion (id_distribucion,code_project,dni,estado) 
+            VALUES('{}', '{}','{}', '{}')'''.format(id_distribucion,code_project,dni,estado)
+            cur.execute(sql)
+            agregado=True
+            self.conexion.commit() 
+            cur.close()
+        except Exception as e:
+            agregado=False
+        finally:
+            return agregado
     ###################################### ASISTENCIA ################################
     def list_tasistencia(self, code_project):
         try:
@@ -189,21 +204,29 @@ class Registro_datos():
             cur.execute(sql)
             # Se obtiene todos los relacionados
             registro = cur.fetchall()
+            cur.close() 
         # Se ejecuta cuando se comete un error     
         except Exception as e:
             registro=[]
         finally:
             return registro
-    def add_presence(self,date_month,code_project, dni, asistencia, observacion, justificacion):
+    def add_presence(self,date_month,id_distribucion,code_project, dni, asistencia, observacion, justificacion):
         date_month=self.convert_date(date_month)
-        cur = self.conexion.cursor()
-        sql= '''INSERT INTO tasistencia(id,date_month,code_project, dni, asistencia, observacion, justificacion) 
-        VALUES(DEFAULT,%s,%s,%s,%s,%s,%s)'''
-        # Convert data into tuple format
-        insert_blob_tuple = (id,date_month,code_project, dni, asistencia, observacion, justificacion)
-        cur.execute(sql,insert_blob_tuple)
-        self.conexion.commit()    
-        cur.close()
+        agregado=False
+        try:
+            cur = self.conexion.cursor()
+            sql='''INSERT INTO tasistencia (id,date_month, id_distribucion,code_project, dni, asistencia, observacion, justificacion) 
+            VALUES(DEFAULT,'{}', '{}','{}', '{}','{}', '{}','{}')'''.format(date_month, id_distribucion,code_project, dni, asistencia, observacion, justificacion)
+            cur.execute(sql)
+            agregado=True
+            self.conexion.commit() 
+            cur.close()
+        except Exception as e:
+            print(e)
+            agregado=False
+        finally:
+            return agregado
+        
     ###################################### UBICACION #################################
     # Manejar datos of region
     def get_region(self):
