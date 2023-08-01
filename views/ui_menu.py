@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuJGvNPd.ui'
+## Form generated from reading UI file 'menuZlIhup.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,8 +17,9 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1017, 918)
-        sistema.setMinimumSize(QSize(400, 0))
+        sistema.resize(1276, 955)
+        sistema.setMinimumSize(QSize(0, 0))
+        sistema.setMaximumSize(QSize(16777215, 16777215))
         sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
 "QLineEdit{\n"
 "	background-color: rgb(255, 255, 255);\n"
@@ -249,9 +250,7 @@ class Ui_sistema(object):
         self.frame_lateral.setFrameShadow(QFrame.Plain)
         self.frame_lateral.setLineWidth(0)
         self.verticalLayout_2 = QVBoxLayout(self.frame_lateral)
-        self.verticalLayout_2.setSpacing(20)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.btn_proyectos = QPushButton(self.frame_lateral)
         self.btn_proyectos.setObjectName(u"btn_proyectos")
         self.btn_proyectos.setMinimumSize(QSize(0, 40))
@@ -348,24 +347,25 @@ class Ui_sistema(object):
         self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.frame_28 = QFrame(self.page_inicio)
         self.frame_28.setObjectName(u"frame_28")
-        self.frame_28.setStyleSheet(u"background-color: rgba(0,0,0,0%);")
+        self.frame_28.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"")
         self.frame_28.setFrameShape(QFrame.StyledPanel)
         self.frame_28.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_36 = QVBoxLayout(self.frame_28)
-        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.label_4 = QLabel(self.frame_28)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMaximumSize(QSize(16777215, 100))
+        self.verticalLayout_6 = QVBoxLayout(self.frame_28)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.lbl_name_welcome = QLabel(self.frame_28)
+        self.lbl_name_welcome.setObjectName(u"lbl_name_welcome")
+        self.lbl_name_welcome.setMaximumSize(QSize(16777215, 100))
         font3 = QFont()
         font3.setPointSize(36)
         font3.setBold(True)
         font3.setWeight(75)
-        self.label_4.setFont(font3)
-        self.label_4.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+        self.lbl_name_welcome.setFont(font3)
+        self.lbl_name_welcome.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
 "color: rgb(255, 255, 255);")
-        self.label_4.setAlignment(Qt.AlignCenter)
+        self.lbl_name_welcome.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_36.addWidget(self.label_4)
+        self.verticalLayout_6.addWidget(self.lbl_name_welcome)
 
         self.label_50 = QLabel(self.frame_28)
         self.label_50.setObjectName(u"label_50")
@@ -379,31 +379,44 @@ class Ui_sistema(object):
 "color: rgb(255, 255, 255);")
         self.label_50.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_36.addWidget(self.label_50)
+        self.verticalLayout_6.addWidget(self.label_50)
 
         self.frame_29 = QFrame(self.frame_28)
         self.frame_29.setObjectName(u"frame_29")
         self.frame_29.setFrameShape(QFrame.StyledPanel)
         self.frame_29.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_17 = QHBoxLayout(self.frame_29)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.horizontalLayout_17.setContentsMargins(50, 10, 50, 10)
-        self.horizontalSpacer_3 = QSpacerItem(6, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_17.addItem(self.horizontalSpacer_3)
-
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_29)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.label_49 = QLabel(self.frame_29)
         self.label_49.setObjectName(u"label_49")
         self.label_49.setPixmap(QPixmap(u"./assets/icons/icono.png"))
+        self.label_49.setAlignment(Qt.AlignCenter)
+        self.label_49.setIndent(-1)
 
-        self.horizontalLayout_17.addWidget(self.label_49)
-
-        self.horizontalSpacer_4 = QSpacerItem(7, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_17.addItem(self.horizontalSpacer_4)
+        self.horizontalLayout_3.addWidget(self.label_49)
 
 
-        self.verticalLayout_36.addWidget(self.frame_29)
+        self.verticalLayout_6.addWidget(self.frame_29)
+
+        self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.lbl_mensaje_show = QLabel(self.frame_28)
+        self.lbl_mensaje_show.setObjectName(u"lbl_mensaje_show")
+        self.lbl_mensaje_show.setMaximumSize(QSize(16777215, 100))
+        font5 = QFont()
+        font5.setPointSize(20)
+        font5.setBold(True)
+        font5.setWeight(75)
+        self.lbl_mensaje_show.setFont(font5)
+        self.lbl_mensaje_show.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"color: rgb(255, 255, 0);")
+        self.lbl_mensaje_show.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.lbl_mensaje_show)
+
+
+        self.verticalLayout_6.addLayout(self.verticalLayout_5)
 
 
         self.verticalLayout_16.addWidget(self.frame_28)
@@ -822,13 +835,13 @@ class Ui_sistema(object):
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_7 = QLabel(self.frame_9)
         self.label_7.setObjectName(u"label_7")
-        font5 = QFont()
-        font5.setFamily(u"MS Shell Dlg 2")
-        font5.setPointSize(12)
-        font5.setBold(False)
-        font5.setItalic(False)
-        font5.setWeight(50)
-        self.label_7.setFont(font5)
+        font6 = QFont()
+        font6.setFamily(u"MS Shell Dlg 2")
+        font6.setPointSize(12)
+        font6.setBold(False)
+        font6.setItalic(False)
+        font6.setWeight(50)
+        self.label_7.setFont(font6)
         self.label_7.setStyleSheet(u"")
         self.label_7.setAlignment(Qt.AlignCenter)
 
@@ -869,7 +882,7 @@ class Ui_sistema(object):
         self.label_14 = QLabel(self.frame_16)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setMinimumSize(QSize(0, 31))
-        self.label_14.setFont(font5)
+        self.label_14.setFont(font6)
         self.label_14.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_22.addWidget(self.label_14)
@@ -973,13 +986,13 @@ class Ui_sistema(object):
         self.date_emision = QDateEdit(self.frame_15)
         self.date_emision.setObjectName(u"date_emision")
         self.date_emision.setMinimumSize(QSize(0, 31))
-        font6 = QFont()
-        font6.setFamily(u"MS Shell Dlg 2")
-        font6.setPointSize(12)
-        font6.setBold(False)
-        font6.setItalic(False)
-        font6.setWeight(9)
-        self.date_emision.setFont(font6)
+        font7 = QFont()
+        font7.setFamily(u"MS Shell Dlg 2")
+        font7.setPointSize(12)
+        font7.setBold(False)
+        font7.setItalic(False)
+        font7.setWeight(9)
+        self.date_emision.setFont(font7)
         self.date_emision.setStyleSheet(u"")
         self.date_emision.setCalendarPopup(True)
 
@@ -1000,9 +1013,9 @@ class Ui_sistema(object):
         self.lineEdit_11 = QLineEdit(self.frame_15)
         self.lineEdit_11.setObjectName(u"lineEdit_11")
         self.lineEdit_11.setMinimumSize(QSize(0, 31))
-        font7 = QFont()
-        font7.setPointSize(12)
-        self.lineEdit_11.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(12)
+        self.lineEdit_11.setFont(font8)
         self.lineEdit_11.setStyleSheet(u"background-color: rgb(170, 255, 255);")
 
         self.verticalLayout_23.addWidget(self.lineEdit_11)
@@ -1117,7 +1130,7 @@ class Ui_sistema(object):
         self.lineEdit_23 = QLineEdit(self.frame_17)
         self.lineEdit_23.setObjectName(u"lineEdit_23")
         self.lineEdit_23.setMinimumSize(QSize(0, 31))
-        self.lineEdit_23.setFont(font7)
+        self.lineEdit_23.setFont(font8)
 
         self.verticalLayout_21.addWidget(self.lineEdit_23)
 
@@ -1132,7 +1145,7 @@ class Ui_sistema(object):
         self.lineEdit_25 = QLineEdit(self.frame_17)
         self.lineEdit_25.setObjectName(u"lineEdit_25")
         self.lineEdit_25.setMinimumSize(QSize(0, 31))
-        self.lineEdit_25.setFont(font7)
+        self.lineEdit_25.setFont(font8)
 
         self.verticalLayout_21.addWidget(self.lineEdit_25)
 
@@ -1145,14 +1158,14 @@ class Ui_sistema(object):
         self.lineEdit_20 = QLineEdit(self.frame_17)
         self.lineEdit_20.setObjectName(u"lineEdit_20")
         self.lineEdit_20.setMinimumSize(QSize(0, 31))
-        self.lineEdit_20.setFont(font7)
+        self.lineEdit_20.setFont(font8)
 
         self.verticalLayout_21.addWidget(self.lineEdit_20)
 
         self.lineEdit_24 = QLineEdit(self.frame_17)
         self.lineEdit_24.setObjectName(u"lineEdit_24")
         self.lineEdit_24.setMinimumSize(QSize(0, 31))
-        self.lineEdit_24.setFont(font7)
+        self.lineEdit_24.setFont(font8)
 
         self.verticalLayout_21.addWidget(self.lineEdit_24)
 
@@ -1206,7 +1219,7 @@ class Ui_sistema(object):
         self.lineEdit_21 = QLineEdit(self.frame_7)
         self.lineEdit_21.setObjectName(u"lineEdit_21")
         self.lineEdit_21.setMinimumSize(QSize(0, 31))
-        self.lineEdit_21.setFont(font7)
+        self.lineEdit_21.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_21)
 
@@ -1219,7 +1232,7 @@ class Ui_sistema(object):
         self.lineEdit_15 = QLineEdit(self.frame_7)
         self.lineEdit_15.setObjectName(u"lineEdit_15")
         self.lineEdit_15.setMinimumSize(QSize(0, 31))
-        self.lineEdit_15.setFont(font7)
+        self.lineEdit_15.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_15)
 
@@ -1232,7 +1245,7 @@ class Ui_sistema(object):
         self.lineEdit_16 = QLineEdit(self.frame_7)
         self.lineEdit_16.setObjectName(u"lineEdit_16")
         self.lineEdit_16.setMinimumSize(QSize(0, 31))
-        self.lineEdit_16.setFont(font7)
+        self.lineEdit_16.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_16)
 
@@ -1245,7 +1258,7 @@ class Ui_sistema(object):
         self.lineEdit_17 = QLineEdit(self.frame_7)
         self.lineEdit_17.setObjectName(u"lineEdit_17")
         self.lineEdit_17.setMinimumSize(QSize(0, 31))
-        self.lineEdit_17.setFont(font7)
+        self.lineEdit_17.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_17)
 
@@ -1258,7 +1271,7 @@ class Ui_sistema(object):
         self.lineEdit_22 = QLineEdit(self.frame_7)
         self.lineEdit_22.setObjectName(u"lineEdit_22")
         self.lineEdit_22.setMinimumSize(QSize(0, 31))
-        self.lineEdit_22.setFont(font7)
+        self.lineEdit_22.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_22)
 
@@ -1271,7 +1284,7 @@ class Ui_sistema(object):
         self.lineEdit_18 = QLineEdit(self.frame_7)
         self.lineEdit_18.setObjectName(u"lineEdit_18")
         self.lineEdit_18.setMinimumSize(QSize(0, 31))
-        self.lineEdit_18.setFont(font7)
+        self.lineEdit_18.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_18)
 
@@ -1284,7 +1297,7 @@ class Ui_sistema(object):
         self.lineEdit_19 = QLineEdit(self.frame_7)
         self.lineEdit_19.setObjectName(u"lineEdit_19")
         self.lineEdit_19.setMinimumSize(QSize(0, 31))
-        self.lineEdit_19.setFont(font7)
+        self.lineEdit_19.setFont(font8)
 
         self.verticalLayout_18.addWidget(self.lineEdit_19)
 
@@ -1331,262 +1344,6 @@ class Ui_sistema(object):
 
         self.verticalLayout_4.setStretch(0, 11)
         self.stackedWidget.addWidget(self.page_registro)
-        self.page_kardex = QWidget()
-        self.page_kardex.setObjectName(u"page_kardex")
-        self.page_kardex.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
-        self.verticalLayout_6 = QVBoxLayout(self.page_kardex)
-        self.verticalLayout_6.setSpacing(0)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.frame_kardex = QFrame(self.page_kardex)
-        self.frame_kardex.setObjectName(u"frame_kardex")
-        self.frame_kardex.setStyleSheet(u"QFrame{\n"
-"background-color: rgb(191, 191, 191);\n"
-"}\n"
-"\n"
-"QPushButton{\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:10px;\n"
-"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(170, 255, 255);\n"
-"}")
-        self.frame_kardex.setFrameShape(QFrame.StyledPanel)
-        self.frame_kardex.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame_kardex)
-        self.horizontalLayout_4.setSpacing(20)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(70, -1, 70, -1)
-        self.label_6 = QLabel(self.frame_kardex)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setMinimumSize(QSize(160, 50))
-        self.label_6.setFont(font7)
-        self.label_6.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_4.addWidget(self.label_6)
-
-        self.lineEdit_2 = QLineEdit(self.frame_kardex)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setFont(font7)
-        self.lineEdit_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-
-        self.horizontalLayout_4.addWidget(self.lineEdit_2)
-
-        self.pushButton_4 = QPushButton(self.frame_kardex)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setEnabled(True)
-        self.pushButton_4.setMinimumSize(QSize(120, 50))
-        self.pushButton_4.setMaximumSize(QSize(120, 50))
-        self.pushButton_4.setSizeIncrement(QSize(120, 50))
-        self.pushButton_4.setFont(font7)
-        self.pushButton_4.setStyleSheet(u"background-color: rgb(108, 241, 255);")
-
-        self.horizontalLayout_4.addWidget(self.pushButton_4)
-
-
-        self.verticalLayout_6.addWidget(self.frame_kardex)
-
-        self.frame_kardex_contenedor = QFrame(self.page_kardex)
-        self.frame_kardex_contenedor.setObjectName(u"frame_kardex_contenedor")
-        self.frame_kardex_contenedor.setFrameShape(QFrame.StyledPanel)
-        self.frame_kardex_contenedor.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_17 = QVBoxLayout(self.frame_kardex_contenedor)
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.table_qwk_new = QTableWidget(self.frame_kardex_contenedor)
-        if (self.table_qwk_new.columnCount() < 11):
-            self.table_qwk_new.setColumnCount(11)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(0, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        __qtablewidgetitem6.setFont(font7);
-        __qtablewidgetitem6.setBackground(QColor(255, 255, 255));
-        self.table_qwk_new.setHorizontalHeaderItem(1, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        __qtablewidgetitem7.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(2, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(3, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        __qtablewidgetitem9.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(4, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        __qtablewidgetitem10.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(5, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        __qtablewidgetitem11.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(6, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        __qtablewidgetitem12.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(7, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        __qtablewidgetitem13.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(8, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        __qtablewidgetitem14.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(9, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        __qtablewidgetitem15.setFont(font7);
-        self.table_qwk_new.setHorizontalHeaderItem(10, __qtablewidgetitem15)
-        self.table_qwk_new.setObjectName(u"table_qwk_new")
-        self.table_qwk_new.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
-        self.table_qwk_new.setAutoScrollMargin(16)
-
-        self.verticalLayout_17.addWidget(self.table_qwk_new)
-
-
-        self.verticalLayout_6.addWidget(self.frame_kardex_contenedor)
-
-        self.verticalLayout_6.setStretch(0, 1)
-        self.verticalLayout_6.setStretch(1, 11)
-        self.stackedWidget.addWidget(self.page_kardex)
-        self.page_pagos = QWidget()
-        self.page_pagos.setObjectName(u"page_pagos")
-        self.page_pagos.setStyleSheet(u"QFrame{\n"
-"	background-color: rgb(153, 153, 153);\n"
-"}\n"
-"")
-        self.verticalLayout_7 = QVBoxLayout(self.page_pagos)
-        self.verticalLayout_7.setSpacing(0)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.frame_pagos = QFrame(self.page_pagos)
-        self.frame_pagos.setObjectName(u"frame_pagos")
-        self.frame_pagos.setMaximumSize(QSize(16777215, 52))
-        self.frame_pagos.setStyleSheet(u"QFrame{\n"
-"background-color: rgb(191, 191, 191);\n"
-"}\n"
-"QLabel{\n"
-"font: 75 12pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"QLineEdit{\n"
-"	font: 75 12pt \"MS Shell Dlg 2\";\n"
-"	background-color: rgb(255, 255, 255);\n"
-"}")
-        self.frame_pagos.setFrameShape(QFrame.StyledPanel)
-        self.frame_pagos.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_12 = QHBoxLayout(self.frame_pagos)
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(9, 0, 9, 0)
-        self.label_45 = QLabel(self.frame_pagos)
-        self.label_45.setObjectName(u"label_45")
-
-        self.horizontalLayout_12.addWidget(self.label_45)
-
-        self.comboBox_month = QComboBox(self.frame_pagos)
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.addItem("")
-        self.comboBox_month.setObjectName(u"comboBox_month")
-        self.comboBox_month.setMaximumSize(QSize(16777215, 16777215))
-        self.comboBox_month.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";")
-
-        self.horizontalLayout_12.addWidget(self.comboBox_month)
-
-        self.label_47 = QLabel(self.frame_pagos)
-        self.label_47.setObjectName(u"label_47")
-
-        self.horizontalLayout_12.addWidget(self.label_47)
-
-        self.lineEdit_year = QLineEdit(self.frame_pagos)
-        self.lineEdit_year.setObjectName(u"lineEdit_year")
-        self.lineEdit_year.setMaximumSize(QSize(110, 16777215))
-        self.lineEdit_year.setMaxLength(4)
-
-        self.horizontalLayout_12.addWidget(self.lineEdit_year)
-
-        self.label_34 = QLabel(self.frame_pagos)
-        self.label_34.setObjectName(u"label_34")
-        self.label_34.setMinimumSize(QSize(160, 25))
-        self.label_34.setMaximumSize(QSize(16777215, 35))
-        self.label_34.setFont(font6)
-        self.label_34.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_12.addWidget(self.label_34)
-
-        self.lineEdit_6 = QLineEdit(self.frame_pagos)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setFont(font6)
-        self.lineEdit_6.setStyleSheet(u"")
-
-        self.horizontalLayout_12.addWidget(self.lineEdit_6)
-
-        self.pushButton_15 = QPushButton(self.frame_pagos)
-        self.pushButton_15.setObjectName(u"pushButton_15")
-        self.pushButton_15.setEnabled(True)
-        self.pushButton_15.setMinimumSize(QSize(120, 40))
-        self.pushButton_15.setMaximumSize(QSize(120, 40))
-        self.pushButton_15.setSizeIncrement(QSize(120, 40))
-        self.pushButton_15.setFont(font7)
-        self.pushButton_15.setStyleSheet(u"QPushButton{\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:10px;\n"
-"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(170, 255, 255);\n"
-"}")
-
-        self.horizontalLayout_12.addWidget(self.pushButton_15)
-
-
-        self.verticalLayout_7.addWidget(self.frame_pagos)
-
-        self.frame_10 = QFrame(self.page_pagos)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setStyleSheet(u"")
-        self.frame_10.setFrameShape(QFrame.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_27 = QVBoxLayout(self.frame_10)
-        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
-        self.table_payments = QTableWidget(self.frame_10)
-        if (self.table_payments.columnCount() < 11):
-            self.table_payments.setColumnCount(11)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(0, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(1, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(2, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(3, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(4, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(5, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(6, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(7, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(8, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(9, __qtablewidgetitem25)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(10, __qtablewidgetitem26)
-        self.table_payments.setObjectName(u"table_payments")
-
-        self.verticalLayout_27.addWidget(self.table_payments)
-
-
-        self.verticalLayout_7.addWidget(self.frame_10)
-
-        self.verticalLayout_7.setStretch(0, 1)
-        self.verticalLayout_7.setStretch(1, 11)
-        self.stackedWidget.addWidget(self.page_pagos)
         self.page_reportes = QWidget()
         self.page_reportes.setObjectName(u"page_reportes")
         self.page_reportes.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
@@ -1691,21 +1448,21 @@ class Ui_sistema(object):
         self.lineEdit_4 = QLineEdit(self.frame_21)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
         self.lineEdit_4.setMinimumSize(QSize(0, 31))
-        self.lineEdit_4.setFont(font7)
+        self.lineEdit_4.setFont(font8)
 
         self.verticalLayout_30.addWidget(self.lineEdit_4)
 
         self.lineEdit_5 = QLineEdit(self.frame_21)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
         self.lineEdit_5.setMinimumSize(QSize(0, 31))
-        self.lineEdit_5.setFont(font7)
+        self.lineEdit_5.setFont(font8)
 
         self.verticalLayout_30.addWidget(self.lineEdit_5)
 
         self.lineEdit_3 = QLineEdit(self.frame_21)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
         self.lineEdit_3.setMinimumSize(QSize(0, 31))
-        self.lineEdit_3.setFont(font7)
+        self.lineEdit_3.setFont(font8)
 
         self.verticalLayout_30.addWidget(self.lineEdit_3)
 
@@ -1727,21 +1484,21 @@ class Ui_sistema(object):
         self.pushButton_11 = QPushButton(self.frame_22)
         self.pushButton_11.setObjectName(u"pushButton_11")
         self.pushButton_11.setMinimumSize(QSize(0, 35))
-        self.pushButton_11.setFont(font7)
+        self.pushButton_11.setFont(font8)
 
         self.verticalLayout_28.addWidget(self.pushButton_11)
 
         self.pushButton_10 = QPushButton(self.frame_22)
         self.pushButton_10.setObjectName(u"pushButton_10")
         self.pushButton_10.setMinimumSize(QSize(0, 35))
-        self.pushButton_10.setFont(font7)
+        self.pushButton_10.setFont(font8)
 
         self.verticalLayout_28.addWidget(self.pushButton_10)
 
         self.pushButton_8 = QPushButton(self.frame_22)
         self.pushButton_8.setObjectName(u"pushButton_8")
         self.pushButton_8.setMinimumSize(QSize(0, 35))
-        self.pushButton_8.setFont(font7)
+        self.pushButton_8.setFont(font8)
 
         self.verticalLayout_28.addWidget(self.pushButton_8)
 
@@ -1788,14 +1545,14 @@ class Ui_sistema(object):
         self.horizontalLayout_15.setContentsMargins(70, 0, 70, 0)
         self.label_3 = QLabel(self.frame_proyectos)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font7)
+        self.label_3.setFont(font8)
         self.label_3.setStyleSheet(u"background-color:rgba(0,0,0,0%);")
 
         self.horizontalLayout_15.addWidget(self.label_3)
 
         self.lineEdit_buscar_pro = QLineEdit(self.frame_proyectos)
         self.lineEdit_buscar_pro.setObjectName(u"lineEdit_buscar_pro")
-        self.lineEdit_buscar_pro.setFont(font5)
+        self.lineEdit_buscar_pro.setFont(font6)
         self.lineEdit_buscar_pro.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
 
@@ -1902,11 +1659,11 @@ class Ui_sistema(object):
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.label_5 = QLabel(self.frame_administrador)
         self.label_5.setObjectName(u"label_5")
-        font8 = QFont()
-        font8.setPointSize(14)
-        font8.setBold(True)
-        font8.setWeight(75)
-        self.label_5.setFont(font8)
+        font9 = QFont()
+        font9.setPointSize(14)
+        font9.setBold(True)
+        font9.setWeight(75)
+        self.label_5.setFont(font9)
         self.label_5.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_15.addWidget(self.label_5)
@@ -1978,14 +1735,14 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(sistema)
     # setupUi
 
     def retranslateUi(self, sistema):
-        sistema.setWindowTitle(QCoreApplication.translate("sistema", u"MainWindow", None))
+        sistema.setWindowTitle(QCoreApplication.translate("sistema", u"Project", None))
         self.bt_menu.setText(QCoreApplication.translate("sistema", u"    MENU ", None))
         self.btn_ocultar.setText(QCoreApplication.translate("sistema", u"OCULTAR \n"
 " ENCABEZADO", None))
@@ -2004,9 +1761,10 @@ class Ui_sistema(object):
         self.btn_admin.setText(QCoreApplication.translate("sistema", u"ADMINISTRADOR", None))
         self.label_2.setText(QCoreApplication.translate("sistema", u"AEC CONTRATISTAS \n"
 " GENERALES", None))
-        self.label_4.setText(QCoreApplication.translate("sistema", u"BIENVENIDO", None))
+        self.lbl_name_welcome.setText(QCoreApplication.translate("sistema", u"BIENVENIDO", None))
         self.label_50.setText(QCoreApplication.translate("sistema", u"AEC CONTRATISTAS GENERALES", None))
         self.label_49.setText("")
+        self.lbl_mensaje_show.setText("")
         self.label_35.setText(QCoreApplication.translate("sistema", u"Agregar un administrador", None))
         self.label_38.setText(QCoreApplication.translate("sistema", u"Agregar un administrador del sistema:", None))
         self.label_42.setText(QCoreApplication.translate("sistema", u"DNI", None))
@@ -2080,70 +1838,6 @@ class Ui_sistema(object):
         self.pushButton_12.setText(QCoreApplication.translate("sistema", u"Nuevo", None))
         self.pushButton_14.setText(QCoreApplication.translate("sistema", u"Actualizar \n"
 " Material", None))
-        self.label_6.setText(QCoreApplication.translate("sistema", u"Codigo o nombre \n"
-" material", None))
-        self.pushButton_4.setText(QCoreApplication.translate("sistema", u"Buscar", None))
-        ___qtablewidgetitem5 = self.table_qwk_new.horizontalHeaderItem(0)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("sistema", u"Codigo proyecto", None));
-        ___qtablewidgetitem6 = self.table_qwk_new.horizontalHeaderItem(1)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("sistema", u"Fecha", None));
-        ___qtablewidgetitem7 = self.table_qwk_new.horizontalHeaderItem(2)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("sistema", u"Entradas", None));
-        ___qtablewidgetitem8 = self.table_qwk_new.horizontalHeaderItem(3)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("sistema", u"Salidas", None));
-        ___qtablewidgetitem9 = self.table_qwk_new.horizontalHeaderItem(4)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("sistema", u"Devoluciones", None));
-        ___qtablewidgetitem10 = self.table_qwk_new.horizontalHeaderItem(5)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("sistema", u"Saldo", None));
-        ___qtablewidgetitem11 = self.table_qwk_new.horizontalHeaderItem(6)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("sistema", u"Tipo de trabajo", None));
-        ___qtablewidgetitem12 = self.table_qwk_new.horizontalHeaderItem(7)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("sistema", u"Lote", None));
-        ___qtablewidgetitem13 = self.table_qwk_new.horizontalHeaderItem(8)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("sistema", u"Responsable", None));
-        ___qtablewidgetitem14 = self.table_qwk_new.horizontalHeaderItem(9)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("sistema", u"Observaciones", None));
-        ___qtablewidgetitem15 = self.table_qwk_new.horizontalHeaderItem(10)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("sistema", u"Firma", None));
-        self.label_45.setText(QCoreApplication.translate("sistema", u"MES", None))
-        self.comboBox_month.setItemText(0, QCoreApplication.translate("sistema", u"ENERO", None))
-        self.comboBox_month.setItemText(1, QCoreApplication.translate("sistema", u"FEBRERO", None))
-        self.comboBox_month.setItemText(2, QCoreApplication.translate("sistema", u"MARZO", None))
-        self.comboBox_month.setItemText(3, QCoreApplication.translate("sistema", u"ABRIL", None))
-        self.comboBox_month.setItemText(4, QCoreApplication.translate("sistema", u"MAYO", None))
-        self.comboBox_month.setItemText(5, QCoreApplication.translate("sistema", u"JUNIO", None))
-        self.comboBox_month.setItemText(6, QCoreApplication.translate("sistema", u"JULIO", None))
-        self.comboBox_month.setItemText(7, QCoreApplication.translate("sistema", u"AGOSTO", None))
-        self.comboBox_month.setItemText(8, QCoreApplication.translate("sistema", u"SETIEMBRE", None))
-        self.comboBox_month.setItemText(9, QCoreApplication.translate("sistema", u"OCTUBRE", None))
-        self.comboBox_month.setItemText(10, QCoreApplication.translate("sistema", u"NOVIEMBRE", None))
-        self.comboBox_month.setItemText(11, QCoreApplication.translate("sistema", u"DICIEMBRE", None))
-
-        self.label_47.setText(QCoreApplication.translate("sistema", u"A\u00d1O", None))
-        self.label_34.setText(QCoreApplication.translate("sistema", u"CODIGO DE PROYECTO", None))
-        self.pushButton_15.setText(QCoreApplication.translate("sistema", u"Buscar", None))
-        ___qtablewidgetitem16 = self.table_payments.horizontalHeaderItem(0)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("sistema", u"DNI", None));
-        ___qtablewidgetitem17 = self.table_payments.horizontalHeaderItem(1)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("sistema", u"Nombres", None));
-        ___qtablewidgetitem18 = self.table_payments.horizontalHeaderItem(2)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("sistema", u"Apellidos", None));
-        ___qtablewidgetitem19 = self.table_payments.horizontalHeaderItem(3)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("sistema", u"Cargo", None));
-        ___qtablewidgetitem20 = self.table_payments.horizontalHeaderItem(4)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("sistema", u"Salario diario", None));
-        ___qtablewidgetitem21 = self.table_payments.horizontalHeaderItem(5)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("sistema", u"Total de dias", None));
-        ___qtablewidgetitem22 = self.table_payments.horizontalHeaderItem(6)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("sistema", u"Total Girar", None));
-        ___qtablewidgetitem23 = self.table_payments.horizontalHeaderItem(7)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("sistema", u"Adelantos", None));
-        ___qtablewidgetitem24 = self.table_payments.horizontalHeaderItem(8)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("sistema", u"Por pagar", None));
-        ___qtablewidgetitem25 = self.table_payments.horizontalHeaderItem(9)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("sistema", u"Observaciones", None));
-        ___qtablewidgetitem26 = self.table_payments.horizontalHeaderItem(10)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("sistema", u"Estado", None));
         self.label_9.setText(QCoreApplication.translate("sistema", u"Obtenga los datos de trabajadores, materiales o asistencia", None))
         self.label_11.setText(QCoreApplication.translate("sistema", u"Nombres o DNI:", None))
         self.label_12.setText(QCoreApplication.translate("sistema", u"Codigo material \n"

@@ -80,8 +80,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.code_project=""
 		self.name_project=""
 		self.datos = Registro_datos()
-		self.payments_table_data()
-		self.table_qwk_new_data()
 		# mover ventana
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		self.page_inicio_new()
@@ -89,17 +87,17 @@ class control_aec(QMainWindow,Ui_sistema):
 		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
 		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
 		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
-		self.btn_asistencia.clicked.connect(self.open_attendance)
-		self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
-		self.btn_pagos.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_pagos))
+		self.btn_asistencia.clicked.connect(self.return_home)
+		#self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
+		self.btn_pagos.clicked.connect(self.page_pagos)
 		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
 		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))
 		#self.pushButton_get_dni.clicked.connect(self.retornar_origen)
 		self.btn_add_admin_ctrl.clicked.connect(self.ctrl_frame_add_admin)	
 		self.btn_delete_admin_ctrl.clicked.connect(self.ctrl_frame_delete_admin)
 		# realiza que los table view se ajusten de entrada de datos
-		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
-		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		#self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		#self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		# btn controls
 		self.btn_add_confirm_admin.clicked.connect(self.add_admin_new)
 		##self.add_admin_btn_ctrls.clicked.connect(self.es_null)
@@ -124,18 +122,25 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.oculto=False
 		self.add_busqueda_dni=None
 		# Agregamos todos los frames e control ocultar y mostrar
-		self.frame_encabezados=[self.frame_kardex,self.frame_pagos,self.frame_reportes,self.frame_proyectos,self.frame_administrador]
+		self.frame_encabezados=[self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
+	def page_pagos(self):
+		from controllers.tpayments import tpaymentst
+		payments=tpaymentst(self)
+		self.return_home()
+		payments.show()
 
 	def show_search_data(self):
 		from controllers.tsearch_dni import tsearch_dni
 		self.add_busqueda_dni=tsearch_dni(self)
 		self.add_busqueda_dni.show()
 	# Retorna al anterior punto de llamada
-	def retornar_origen(self):
-		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
+	def return_home(self):
+		self.lbl_name_welcome.setText("SISTEMA")
+		#self.lbl_mensaje_show.setText("La asistencia se controla\ndesde menu proyectos")
+		self.page_inicio_new()
 	def open_attendance(self):
 		from controllers.tcall_list import tasistencia
 		self.table_attendece=tasistencia(self)
@@ -294,7 +299,6 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.animacion.start()
 
 	def mover_arriba(self):
-		height = self.frame_kardex.height()
 		# verifica si esta oculto
 		if(self.oculto):
 			for frame_i in self.frame_encabezados:
@@ -326,40 +330,6 @@ class control_aec(QMainWindow,Ui_sistema):
 			self.showMaximized()
 		else:
 			self.showNormal()
-	def change_header(self,table_properties):
-		# Cahenged the size of contents of Qtablwidget to 12
-		font = QFont()
-		# set valor
-		font.setPointSize(12)
-		table_properties.setFont(font)
-		font = QFont()
-		font.setPointSize(12);
-		# Change the size of leters about horizontal header of table assitencia
-		table_properties.horizontalHeader().setFont(font);
-		table_properties.verticalHeader().setFont(font);
-		table_properties.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
-
-	def table_qwk_new_data(self):
-		self.change_header(self.table_qwk_new)
-		self.table_qwk_new.setRowCount(20)
-		self.table_qwk_new.setColumnCount(11)
-		for row in range(100):
-			for column in range(11):
-				item = QTableWidgetItem("Nombres full {}".format(row+1))
-				self.table_qwk_new.setItem(row, column, item)
-
-	# Genera tabla de pagos
-	def payments_table_data(self):
-		self.change_header(self.table_payments)
-		# Create a table by 6 column and 100 row
-		self.table_payments.setRowCount(20)
-		self.table_payments.setColumnCount(11)
-		# We go through the array or matrix
-		for row in range(100):
-			for column in range(11):
-				item = QTableWidgetItem("Nombres full {}".format(row+1))
-				self.table_payments.setItem(row, column, item)
-
 				
 # Se crea un control de la tabla
 class control_data(QDialog):
