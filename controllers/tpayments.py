@@ -17,11 +17,12 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		self.btn_close.clicked.connect(self.close)
-		self.frame_pagos_new()
+		#self.frame_pagos_new()
 		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.btn_close_pframe.clicked.connect(self.hide_frame)
-		self.btn_allow_pframe.clicked.connect(self.hide_frame)	
-		self.btn_pagar.clicked.connect(self.show_frame)
+		#self.btn_allow_pframe.clicked.connect(self.hide_frame)	
+		self.table_payments.cellClicked.connect(self.onCellClicked)
+		self.btn_show_table.clicked.connect(self.show_frame)
 	def resizeEvent(self, event):
 		rect = self.rect()
 		self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
@@ -39,6 +40,12 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		else:
 			self.showNormal()
 	#############################################MODULOS DE ACTIVIDAD###################
+	def onCellClicked(self, row, col):
+		item = self.table_payments.item(row, col)
+		self.lndt_sdni.setText(item.text())
+		mes_elegido = self.comboBox_month.currentText()
+		self.label_month_add.setText(mes_elegido)
+
 	def contar_dias(self):
 		#self.label_all_days.setText("21")
 		month_d = self.comboBox_month.currentIndex()+1
@@ -76,11 +83,13 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		return encontrado
 
 	def show_frame(self):
-		self.contar_dias()
-		self.frame_princiapl.hide()
+		#self.contar_dias()
+		self.btn_show_table.setText("TABLA DE DATOS")
+		self.frame_princiapl.show()
 		self.frame_pagos.show()
 
 	def hide_frame(self):
+		self.btn_show_table.setText("Haga click aqui, para mostrar cuadro de pagos")
 		self.frame_princiapl.show()
 		self.frame_pagos.hide()
 
@@ -102,11 +111,13 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 	# Genera tabla de pagos
 	def payments_table_data(self):
 		self.change_header(self.table_payments)
+		datos=self.datos.show_all_dni()
 		# Create a table by 6 column and 100 row
-		self.table_payments.setRowCount(20)
+		self.table_payments.setRowCount(len(datos))
 		self.table_payments.setColumnCount(11)
 		# We go through the array or matrix
-		for row in range(100):
+		for row in range(len(datos)):
 			for column in range(11):
-				item = QTableWidgetItem("Nombres full {}".format(row+1))
-				self.table_payments.setItem(row, column, item)
+				if(column<5):
+					item = QTableWidgetItem(str(datos[row][column]))
+					self.table_payments.setItem(row, column, item)

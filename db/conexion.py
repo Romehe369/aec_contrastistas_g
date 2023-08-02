@@ -98,7 +98,19 @@ class Registro_datos():
             results=None
         finally:
             return results
-        
+
+    def show_all_dni(self):
+        try:
+            cur = self.conexion.cursor()
+            sql = "SELECT dni,nombres,apellidos,categoria,sueldo_diario FROM ttrabajador"
+            cur.execute(sql)
+            table_trabajador = cur.fetchall()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            table_trabajador=[]
+        finally:
+            cur.close()
+        return table_trabajador
 
     def mostrar_trabajador(self):
         cur = self.conexion.cursor()
