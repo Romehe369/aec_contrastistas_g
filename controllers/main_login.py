@@ -84,14 +84,14 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		self.page_inicio_new()
 		#acceder a las paginas
-		#self.bt_inicio.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page))			
+		#self.bt_inicio.clicked.connect(lambda: self.pages.setCurrentWidget(self.page))			
 		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
-		self.btn_registro.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_registro))	
+		self.btn_registro.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_registro))	
 		self.btn_asistencia.clicked.connect(self.return_home)
-		#self.btn_kardex.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_kardex))			
+		self.btn_kardex.clicked.connect(self.page_kardex)			
 		self.btn_pagos.clicked.connect(self.page_pagos)
-		self.btn_reportes.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_reportes))
-		self.btn_admin.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_adminstracion))
+		self.btn_reportes.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_reportes))
+		self.btn_admin.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_adminstracion))
 		#self.pushButton_get_dni.clicked.connect(self.retornar_origen)
 		self.btn_add_admin_ctrl.clicked.connect(self.ctrl_frame_add_admin)	
 		self.btn_delete_admin_ctrl.clicked.connect(self.ctrl_frame_delete_admin)
@@ -126,10 +126,19 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
+
+	def page_kardex(self):
+		from controllers.t_karderctrl import tkardex
+		tkardex_frame=tkardex(self)
+		tkardex_frame.show()
+		self.pages.setCurrentWidget(self.page_inicio)
+		self.lbl_mensaje_show.setText("Controle desde menu proyectos")
+
 	def page_pagos(self):
 		from controllers.tpayments import tpaymentst
 		payments=tpaymentst(self)
-		self.return_home()
+		self.pages.setCurrentWidget(self.page_inicio)
+		self.lbl_mensaje_show.setText("REALIZO LA OPERACION DE PAGO")
 		payments.show()
 
 	def show_search_data(self):
@@ -139,17 +148,17 @@ class control_aec(QMainWindow,Ui_sistema):
 	# Retorna al anterior punto de llamada
 	def return_home(self):
 		self.lbl_name_welcome.setText("SISTEMA")
-		#self.lbl_mensaje_show.setText("La asistencia se controla\ndesde menu proyectos")
+		self.lbl_mensaje_show.setText("La asistencia se controla desde menu proyectos")
 		self.page_inicio_new()
 	def open_attendance(self):
 		from controllers.tcall_list import tasistencia
 		self.table_attendece=tasistencia(self)
 		self.table_attendece.show()
 		self.table_attendece.call_list_data()
-		#self.stackedWidget.setCurrentWidget(self.page_asistencia)
+		#self.pages.setCurrentWidget(self.page_asistencia)
 
 	def page_inicio_new(self):
-		self.stackedWidget.setCurrentWidget(self.page_inicio)
+		self.pages.setCurrentWidget(self.page_inicio)
 
 	def update_date_now(self):
 		now = datetime.now()
@@ -158,7 +167,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.datetime_decline.setDate(d)
 
 	def click_btn_proyectos(self):
-		self.stackedWidget.setCurrentWidget(self.page_proyectos)
+		self.pages.setCurrentWidget(self.page_proyectos)
 		self.add_control_frame()
 
 	def borrar_elementos(self):
@@ -218,12 +227,12 @@ class control_aec(QMainWindow,Ui_sistema):
 	def ctrl_frame_delete_admin(self):
 		self.add_admin_frame.hide()
 		self.delete_admin_frame.show()
-		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
+		self.pages.setCurrentWidget(self.page_add_administrator)
 
 	def ctrl_frame_add_admin(self):
 		self.add_admin_frame.show()
 		self.delete_admin_frame.hide()
-		self.stackedWidget.setCurrentWidget(self.page_add_administrator)
+		self.pages.setCurrentWidget(self.page_add_administrator)
 
 	def add_new_project(self):
 		self.ui_add_project=add_project(self)

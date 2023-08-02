@@ -1,22 +1,28 @@
-from views.ui_tsearch_data import Ui_tsearch_dni
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 
-class tsearch_dni(QMainWindow, Ui_tsearch_dni):
+from db.conexion  import Registro_datos
+from views.ui_tkardex import Ui_tkarded
+
+class tkardex(QMainWindow, Ui_tkarded):
 	def __init__(self, parent):
-		super(tsearch_dni,self).__init__(parent)
+		super(tkardex,self).__init__(parent)
 		self.setupUi(self)
 		self.setWindowFlag(Qt.FramelessWindowHint)
-		self.setAttribute(Qt.WA_TranslucentBackground)
-		self.btn_close_search.clicked.connect(self.close)
-		self.btn_decline.clicked.connect(self.close)
+		#self.setAttribute(Qt.WA_TranslucentBackground)
 		self.datos = Registro_datos()
+		self.table_qwk_new_data()
 		self.gripSize = 10
 		self.grip = QSizeGrip(self)
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
+		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		self.btn_close.clicked.connect(self.close)
+	###########################################Mover ventana###########################
 	def resizeEvent(self, event):
 		rect = self.rect()
 		self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
-
 	def mousePressEvent(self, event):
 		self.clickPosition = event.globalPos()
 	def mover_ventana(self, event):
@@ -29,7 +35,6 @@ class tsearch_dni(QMainWindow, Ui_tsearch_dni):
 			self.showMaximized()
 		else:
 			self.showNormal()
-	#self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 	def change_header(self,table_properties):
 		# Cahenged the size of contents of Qtablwidget to 12
 		font = QFont()

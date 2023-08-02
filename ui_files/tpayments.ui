@@ -593,6 +593,15 @@ border-radius:0px;
           <property name="spacing">
            <number>15</number>
           </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>9</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
           <item>
            <widget class="QLabel" name="label">
             <property name="text">
@@ -758,7 +767,7 @@ border:none;
              </widget>
             </item>
             <item row="2" column="3">
-             <widget class="QLabel" name="label_10">
+             <widget class="QLabel" name="label_all_days">
               <property name="minimumSize">
                <size>
                 <width>0</width>

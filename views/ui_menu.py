@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuZlIhup.ui'
+## Form generated from reading UI file 'menuWxidlr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1276, 955)
+        sistema.resize(1276, 957)
         sistema.setMinimumSize(QSize(0, 0))
         sistema.setMaximumSize(QSize(16777215, 16777215))
         sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
@@ -332,13 +332,13 @@ class Ui_sistema(object):
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.stackedWidget = QStackedWidget(self.frame_contenedor)
-        self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setMinimumSize(QSize(0, 0))
-        self.stackedWidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.stackedWidget.setFrameShape(QFrame.NoFrame)
-        self.stackedWidget.setFrameShadow(QFrame.Plain)
-        self.stackedWidget.setLineWidth(0)
+        self.pages = QStackedWidget(self.frame_contenedor)
+        self.pages.setObjectName(u"pages")
+        self.pages.setMinimumSize(QSize(0, 0))
+        self.pages.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.pages.setFrameShape(QFrame.NoFrame)
+        self.pages.setFrameShadow(QFrame.Plain)
+        self.pages.setLineWidth(0)
         self.page_inicio = QWidget()
         self.page_inicio.setObjectName(u"page_inicio")
         self.page_inicio.setStyleSheet(u"background-color: rgb(29, 151, 202);")
@@ -421,7 +421,7 @@ class Ui_sistema(object):
 
         self.verticalLayout_16.addWidget(self.frame_28)
 
-        self.stackedWidget.addWidget(self.page_inicio)
+        self.pages.addWidget(self.page_inicio)
         self.page_add_administrator = QWidget()
         self.page_add_administrator.setObjectName(u"page_add_administrator")
         self.page_add_administrator.setStyleSheet(u"QWidget{\n"
@@ -698,7 +698,7 @@ class Ui_sistema(object):
 
         self.verticalLayout_9.addWidget(self.frame_23)
 
-        self.stackedWidget.addWidget(self.page_add_administrator)
+        self.pages.addWidget(self.page_add_administrator)
         self.page_registro = QWidget()
         self.page_registro.setObjectName(u"page_registro")
         self.page_registro.setStyleSheet(u"QFrame{\n"
@@ -1343,7 +1343,7 @@ class Ui_sistema(object):
         self.verticalLayout_4.addWidget(self.frame_4)
 
         self.verticalLayout_4.setStretch(0, 11)
-        self.stackedWidget.addWidget(self.page_registro)
+        self.pages.addWidget(self.page_registro)
         self.page_reportes = QWidget()
         self.page_reportes.setObjectName(u"page_reportes")
         self.page_reportes.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 0, 255, 255), stop:1 rgba(176, 183, 232, 255));")
@@ -1372,19 +1372,19 @@ class Ui_sistema(object):
         self.frame_reportes.setFrameShadow(QFrame.Raised)
         self.verticalLayout_26 = QVBoxLayout(self.frame_reportes)
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
-        self.label_9 = QLabel(self.frame_reportes)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
-        self.label_9.setAlignment(Qt.AlignCenter)
+        self.lbl_title_reportes = QLabel(self.frame_reportes)
+        self.lbl_title_reportes.setObjectName(u"lbl_title_reportes")
+        self.lbl_title_reportes.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
+        self.lbl_title_reportes.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_26.addWidget(self.label_9)
+        self.verticalLayout_26.addWidget(self.lbl_title_reportes)
 
 
         self.verticalLayout_8.addWidget(self.frame_reportes)
 
-        self.frame_12 = QFrame(self.page_reportes)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setStyleSheet(u"QFrame{\n"
+        self.frame_contenedor_reports = QFrame(self.page_reportes)
+        self.frame_contenedor_reports.setObjectName(u"frame_contenedor_reports")
+        self.frame_contenedor_reports.setStyleSheet(u"QFrame{\n"
 "background-color: rgb(117, 117, 117);\n"
 "font: 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
@@ -1397,123 +1397,102 @@ class Ui_sistema(object):
 "\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(170, 255, 255);\n"
+"}\n"
+"QLineEdit{\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
 "}")
-        self.frame_12.setFrameShape(QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_13 = QHBoxLayout(self.frame_12)
-        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.horizontalLayout_13.setContentsMargins(70, -1, 70, -1)
-        self.frame_20 = QFrame(self.frame_12)
-        self.frame_20.setObjectName(u"frame_20")
-        self.frame_20.setMinimumSize(QSize(200, 0))
-        self.frame_20.setFrameShape(QFrame.StyledPanel)
-        self.frame_20.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_29 = QVBoxLayout(self.frame_20)
-        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
-        self.label_11 = QLabel(self.frame_20)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setMinimumSize(QSize(0, 40))
-        self.label_11.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.frame_contenedor_reports.setFrameShape(QFrame.StyledPanel)
+        self.frame_contenedor_reports.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_contenedor_reports)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.comboBox_9 = QComboBox(self.frame_contenedor_reports)
+        self.comboBox_9.addItem("")
+        self.comboBox_9.addItem("")
+        self.comboBox_9.addItem("")
+        self.comboBox_9.setObjectName(u"comboBox_9")
+        self.comboBox_9.setMinimumSize(QSize(200, 31))
+        self.comboBox_9.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 170, 255);")
 
-        self.verticalLayout_29.addWidget(self.label_11)
+        self.gridLayout.addWidget(self.comboBox_9, 0, 0, 1, 1)
 
-        self.label_12 = QLabel(self.frame_20)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setMinimumSize(QSize(0, 40))
-        self.label_12.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.comboBox_11 = QComboBox(self.frame_contenedor_reports)
+        self.comboBox_11.addItem("")
+        self.comboBox_11.addItem("")
+        self.comboBox_11.setObjectName(u"comboBox_11")
+        self.comboBox_11.setMinimumSize(QSize(200, 31))
+        self.comboBox_11.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 170, 255);")
 
-        self.verticalLayout_29.addWidget(self.label_12)
+        self.gridLayout.addWidget(self.comboBox_11, 2, 0, 1, 1)
 
-        self.label_10 = QLabel(self.frame_20)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMinimumSize(QSize(0, 40))
-        self.label_10.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.lineEdit_6 = QLineEdit(self.frame_contenedor_reports)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.lineEdit_6.setMinimumSize(QSize(0, 31))
+        self.lineEdit_6.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_29.addWidget(self.label_10)
+        self.gridLayout.addWidget(self.lineEdit_6, 2, 1, 1, 1)
 
-        self.verticalSpacer_8 = QSpacerItem(20, 350, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.comboBox_10 = QComboBox(self.frame_contenedor_reports)
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.addItem("")
+        self.comboBox_10.setObjectName(u"comboBox_10")
+        self.comboBox_10.setMinimumSize(QSize(200, 31))
+        self.comboBox_10.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 170, 255);")
 
-        self.verticalLayout_29.addItem(self.verticalSpacer_8)
+        self.gridLayout.addWidget(self.comboBox_10, 1, 0, 1, 1)
 
+        self.lineEdit = QLineEdit(self.frame_contenedor_reports)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setMinimumSize(QSize(0, 31))
+        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.horizontalLayout_13.addWidget(self.frame_20)
+        self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 1)
 
-        self.frame_21 = QFrame(self.frame_12)
-        self.frame_21.setObjectName(u"frame_21")
-        self.frame_21.setFrameShape(QFrame.StyledPanel)
-        self.frame_21.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_30 = QVBoxLayout(self.frame_21)
-        self.verticalLayout_30.setSpacing(15)
-        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
-        self.lineEdit_4 = QLineEdit(self.frame_21)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setMinimumSize(QSize(0, 31))
-        self.lineEdit_4.setFont(font8)
+        self.lineEdit_2 = QLineEdit(self.frame_contenedor_reports)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setMinimumSize(QSize(0, 31))
+        self.lineEdit_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_30.addWidget(self.lineEdit_4)
+        self.gridLayout.addWidget(self.lineEdit_2, 1, 1, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.frame_21)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setMinimumSize(QSize(0, 31))
-        self.lineEdit_5.setFont(font8)
-
-        self.verticalLayout_30.addWidget(self.lineEdit_5)
-
-        self.lineEdit_3 = QLineEdit(self.frame_21)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setMinimumSize(QSize(0, 31))
-        self.lineEdit_3.setFont(font8)
-
-        self.verticalLayout_30.addWidget(self.lineEdit_3)
-
-        self.verticalSpacer_9 = QSpacerItem(20, 370, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_30.addItem(self.verticalSpacer_9)
-
-
-        self.horizontalLayout_13.addWidget(self.frame_21)
-
-        self.frame_22 = QFrame(self.frame_12)
-        self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setMinimumSize(QSize(200, 0))
-        self.frame_22.setFrameShape(QFrame.StyledPanel)
-        self.frame_22.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_28 = QVBoxLayout(self.frame_22)
-        self.verticalLayout_28.setSpacing(9)
-        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
-        self.pushButton_11 = QPushButton(self.frame_22)
+        self.pushButton_11 = QPushButton(self.frame_contenedor_reports)
         self.pushButton_11.setObjectName(u"pushButton_11")
-        self.pushButton_11.setMinimumSize(QSize(0, 35))
+        self.pushButton_11.setMinimumSize(QSize(200, 35))
         self.pushButton_11.setFont(font8)
 
-        self.verticalLayout_28.addWidget(self.pushButton_11)
+        self.gridLayout.addWidget(self.pushButton_11, 0, 2, 1, 1)
 
-        self.pushButton_10 = QPushButton(self.frame_22)
+        self.pushButton_10 = QPushButton(self.frame_contenedor_reports)
         self.pushButton_10.setObjectName(u"pushButton_10")
-        self.pushButton_10.setMinimumSize(QSize(0, 35))
+        self.pushButton_10.setMinimumSize(QSize(200, 35))
         self.pushButton_10.setFont(font8)
 
-        self.verticalLayout_28.addWidget(self.pushButton_10)
+        self.gridLayout.addWidget(self.pushButton_10, 1, 2, 1, 1)
 
-        self.pushButton_8 = QPushButton(self.frame_22)
+        self.pushButton_8 = QPushButton(self.frame_contenedor_reports)
         self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setMinimumSize(QSize(0, 35))
+        self.pushButton_8.setMinimumSize(QSize(200, 35))
         self.pushButton_8.setFont(font8)
 
-        self.verticalLayout_28.addWidget(self.pushButton_8)
-
-        self.verticalSpacer_10 = QSpacerItem(20, 382, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_28.addItem(self.verticalSpacer_10)
+        self.gridLayout.addWidget(self.pushButton_8, 2, 2, 1, 1)
 
 
-        self.horizontalLayout_13.addWidget(self.frame_22)
+        self.verticalLayout_7.addLayout(self.gridLayout)
+
+        self.verticalSpacer_7 = QSpacerItem(20, 695, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_7.addItem(self.verticalSpacer_7)
 
 
-        self.verticalLayout_8.addWidget(self.frame_12)
+        self.verticalLayout_8.addWidget(self.frame_contenedor_reports)
 
         self.verticalLayout_8.setStretch(0, 1)
-        self.stackedWidget.addWidget(self.page_reportes)
+        self.pages.addWidget(self.page_reportes)
         self.page_proyectos = QWidget()
         self.page_proyectos.setObjectName(u"page_proyectos")
         self.verticalLayout_10 = QVBoxLayout(self.page_proyectos)
@@ -1607,7 +1586,7 @@ class Ui_sistema(object):
         self.verticalLayout_10.addWidget(self.frame_contenedor_data)
 
         self.verticalLayout_10.setStretch(0, 1)
-        self.stackedWidget.addWidget(self.page_proyectos)
+        self.pages.addWidget(self.page_proyectos)
         self.frame_contenedor_data.raise_()
         self.frame_proyectos.raise_()
         self.page_adminstracion = QWidget()
@@ -1716,9 +1695,9 @@ class Ui_sistema(object):
 
         self.verticalLayout_11.setStretch(0, 1)
         self.verticalLayout_11.setStretch(1, 11)
-        self.stackedWidget.addWidget(self.page_adminstracion)
+        self.pages.addWidget(self.page_adminstracion)
 
-        self.verticalLayout_3.addWidget(self.stackedWidget)
+        self.verticalLayout_3.addWidget(self.pages)
 
 
         self.horizontalLayout.addWidget(self.frame_contenedor)
@@ -1735,7 +1714,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.stackedWidget.setCurrentIndex(0)
+        self.pages.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -1838,12 +1817,18 @@ class Ui_sistema(object):
         self.pushButton_12.setText(QCoreApplication.translate("sistema", u"Nuevo", None))
         self.pushButton_14.setText(QCoreApplication.translate("sistema", u"Actualizar \n"
 " Material", None))
-        self.label_9.setText(QCoreApplication.translate("sistema", u"Obtenga los datos de trabajadores, materiales o asistencia", None))
-        self.label_11.setText(QCoreApplication.translate("sistema", u"Nombres o DNI:", None))
-        self.label_12.setText(QCoreApplication.translate("sistema", u"Codigo material \n"
-" o nombre :", None))
-        self.label_10.setText(QCoreApplication.translate("sistema", u"Codigo proyecto\n"
-" o nombre:", None))
+        self.lbl_title_reportes.setText(QCoreApplication.translate("sistema", u"Obtenga los datos de trabajadores, materiales o asistencia", None))
+        self.comboBox_9.setItemText(0, QCoreApplication.translate("sistema", u"DNI", None))
+        self.comboBox_9.setItemText(1, QCoreApplication.translate("sistema", u"NOMBRES", None))
+        self.comboBox_9.setItemText(2, QCoreApplication.translate("sistema", u"APELLIDOS", None))
+
+        self.comboBox_11.setItemText(0, QCoreApplication.translate("sistema", u"CODIGO MATERIAL", None))
+        self.comboBox_11.setItemText(1, QCoreApplication.translate("sistema", u"NOMBRE", None))
+
+        self.comboBox_10.setItemText(0, QCoreApplication.translate("sistema", u"CODIGO PROYECTO", None))
+        self.comboBox_10.setItemText(1, QCoreApplication.translate("sistema", u"NOMBRE", None))
+        self.comboBox_10.setItemText(2, QCoreApplication.translate("sistema", u"RESPONSABLE", None))
+
         self.pushButton_11.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_10.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))
         self.pushButton_8.setText(QCoreApplication.translate("sistema", u"Ver detalles", None))

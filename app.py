@@ -6,3 +6,5 @@ if __name__ == "__main__":
     window = MiApp()
     window.show()
     app.exec_()
+# valores
+# 1,2,2

@@ -1,8 +1,7 @@
-
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-
+from datetime import date, datetime, timedelta
 from db.conexion  import Registro_datos
 from views.ui_tpayments import Ui_tpayments
 
@@ -39,7 +38,45 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 			self.showMaximized()
 		else:
 			self.showNormal()
+	#############################################MODULOS DE ACTIVIDAD###################
+	def contar_dias(self):
+		#self.label_all_days.setText("21")
+		month_d = self.comboBox_month.currentIndex()+1
+		year_d=int(self.lineEdit_year.text())
+		dni="76174442"
+		#month_d=dia.month
+		#year_d=dia.year
+		# El inicio de mes
+		dia_inicio=date(year_d,month_d,1)
+		# fin de mes
+		if(month_d==12):
+			dia_fin=date(year_d+1,1,1)
+		else:
+			dia_fin=date(year_d,month_d+1,1)
+		fin_mes=dia_fin-timedelta(1)
+		count=1
+		suma_dias=0
+		while(dia_inicio!=fin_mes):
+			datos=self.datos.show_all_data(fin_mes)
+			if(len(datos)>=1):
+				suma_dias+=self.addition_days_new(datos,dni)
+			fin_mes=fin_mes-timedelta(1)
+			count+=1
+		datos=self.datos.show_all_data(dia_inicio)
+		if(len(datos)>=1):
+			suma_dias+=self.addition_days_new(datos,dni)
+		self.label_all_days.setText(str(suma_dias))
+
+	def addition_days_new(self,this_table,dni):
+		encontrado=0
+		for i in this_table:
+			if(dni==i[1] and i[2]):
+				encontrado=1
+				break
+		return encontrado
+
 	def show_frame(self):
+		self.contar_dias()
 		self.frame_princiapl.hide()
 		self.frame_pagos.show()
 

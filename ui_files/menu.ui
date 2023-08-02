@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1276</width>
-    <height>955</height>
+    <height>957</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -715,7 +715,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
            <number>0</number>
           </property>
           <item>
-           <widget class="QStackedWidget" name="stackedWidget">
+           <widget class="QStackedWidget" name="pages">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -735,7 +735,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -2890,7 +2890,7 @@ QPushButton:hover{
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_26">
                  <item>
-                  <widget class="QLabel" name="label_9">
+                  <widget class="QLabel" name="lbl_title_reportes">
                    <property name="styleSheet">
                     <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
@@ -2906,7 +2906,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_12">
+               <widget class="QFrame" name="frame_contenedor_reports">
                 <property name="styleSheet">
                  <string notr="true">QFrame{
 background-color: rgb(117, 117, 117);
@@ -2921,6 +2921,9 @@ background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y
 
 QPushButton:hover{
 	background-color: rgb(170, 255, 255);
+}
+QLineEdit{
+font: 12pt &quot;MS Shell Dlg 2&quot;;
 }</string>
                 </property>
                 <property name="frameShape">
@@ -2929,254 +2932,198 @@ QPushButton:hover{
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_13">
-                 <property name="leftMargin">
-                  <number>70</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>70</number>
-                 </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
                  <item>
-                  <widget class="QFrame" name="frame_20">
-                   <property name="minimumSize">
-                    <size>
-                     <width>200</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_29">
-                    <item>
-                     <widget class="QLabel" name="label_11">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>40</height>
-                       </size>
-                      </property>
+                  <layout class="QGridLayout" name="gridLayout">
+                   <item row="0" column="0">
+                    <widget class="QComboBox" name="comboBox_9">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 170, 255);</string>
+                     </property>
+                     <item>
                       <property name="text">
-                       <string>Nombres o DNI:</string>
+                       <string>DNI</string>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_12">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>40</height>
-                       </size>
-                      </property>
+                     </item>
+                     <item>
                       <property name="text">
-                       <string>Codigo material 
- o nombre :</string>
+                       <string>NOMBRES</string>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_10">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>40</height>
-                       </size>
-                      </property>
+                     </item>
+                     <item>
                       <property name="text">
-                       <string>Codigo proyecto
- o nombre:</string>
+                       <string>APELLIDOS</string>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QComboBox" name="comboBox_11">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 170, 255);</string>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>CODIGO MATERIAL</string>
                       </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="verticalSpacer_8">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>NOMBRE</string>
                       </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>350</height>
-                       </size>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLineEdit" name="lineEdit_6">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QComboBox" name="comboBox_10">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 170, 255);</string>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>CODIGO PROYECTO</string>
                       </property>
-                     </spacer>
-                    </item>
-                   </layout>
-                  </widget>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>NOMBRE</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>RESPONSABLE</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLineEdit" name="lineEdit">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLineEdit" name="lineEdit_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QPushButton" name="pushButton_11">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Ver detalles</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="2">
+                    <widget class="QPushButton" name="pushButton_10">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Ver detalles</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="2">
+                    <widget class="QPushButton" name="pushButton_8">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Ver detalles</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_21">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                  <spacer name="verticalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
                    </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_30">
-                    <property name="spacing">
-                     <number>15</number>
-                    </property>
-                    <item>
-                     <widget class="QLineEdit" name="lineEdit_4">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>31</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="lineEdit_5">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>31</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="lineEdit_3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>31</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="verticalSpacer_9">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>370</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_22">
-                   <property name="minimumSize">
+                   <property name="sizeHint" stdset="0">
                     <size>
-                     <width>200</width>
-                     <height>0</height>
+                     <width>20</width>
+                     <height>695</height>
                     </size>
                    </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_28">
-                    <property name="spacing">
-                     <number>9</number>
-                    </property>
-                    <item>
-                     <widget class="QPushButton" name="pushButton_11">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Ver detalles</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="pushButton_10">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Ver detalles</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="pushButton_8">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Ver detalles</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="verticalSpacer_10">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>382</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                   </layout>
-                  </widget>
+                  </spacer>
                  </item>
                 </layout>
                </widget>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tpaymentsYliSSo.ui'
+## Form generated from reading UI file 'tpaymentsoDgIEu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -295,6 +295,7 @@ class Ui_tpayments(object):
         self.verticalLayout = QVBoxLayout(self.frame_pagos)
         self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(20, 9, 20, -1)
         self.label = QLabel(self.frame_pagos)
         self.label.setObjectName(u"label")
         self.label.setAlignment(Qt.AlignCenter)
@@ -376,12 +377,12 @@ class Ui_tpayments(object):
 
         self.gridLayout_4.addWidget(self.label_46, 1, 0, 1, 1)
 
-        self.label_10 = QLabel(self.frame_pagos)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMinimumSize(QSize(0, 31))
-        self.label_10.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_all_days = QLabel(self.frame_pagos)
+        self.label_all_days.setObjectName(u"label_all_days")
+        self.label_all_days.setMinimumSize(QSize(0, 31))
+        self.label_all_days.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_4.addWidget(self.label_10, 2, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.label_all_days, 2, 3, 1, 1)
 
         self.lineEdit_7 = QLineEdit(self.frame_pagos)
         self.lineEdit_7.setObjectName(u"lineEdit_7")
@@ -591,7 +592,7 @@ class Ui_tpayments(object):
         self.label_35.setText(QCoreApplication.translate("tpayments", u"DNI:", None))
         self.label_11.setText(QCoreApplication.translate("tpayments", u"TextLabel", None))
         self.label_46.setText(QCoreApplication.translate("tpayments", u"NOMBRES:", None))
-        self.label_10.setText(QCoreApplication.translate("tpayments", u"23", None))
+        self.label_all_days.setText(QCoreApplication.translate("tpayments", u"23", None))
         self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("tpayments", u"Ingrese  el DNI", None))
         self.label_4.setText(QCoreApplication.translate("tpayments", u"TOTAL DE DIAS:", None))
         self.comboBox_month_2.setItemText(0, QCoreApplication.translate("tpayments", u"ENERO", None))

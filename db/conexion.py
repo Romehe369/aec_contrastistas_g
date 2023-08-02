@@ -1,8 +1,5 @@
 import mysql.connector
-import datetime
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
+from datetime import date, datetime, timedelta
 #from controllers.change_password import Dialogo
 
 class Registro_datos():
@@ -78,7 +75,7 @@ class Registro_datos():
     def convert_date(self,date_str):
         # Falta modificar para no presentar errores, con la funcion datetime
         date_str= date_str.split("/")       
-        date_str=datetime.date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
+        date_str=date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
         return date_str
     # Modifcar los datos de trabajador
     def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto):    
@@ -222,10 +219,22 @@ class Registro_datos():
             self.conexion.commit() 
             cur.close()
         except Exception as e:
-            print(e)
             agregado=False
         finally:
             return agregado
+
+    def show_all_data(self,date_month):
+        try:
+            cur = self.conexion.cursor()
+            sql = "SELECT code_project,dni,asistencia FROM tasistencia WHERE date_month = '{}'".format(date_month)
+            cur.execute(sql)
+            asistencia = cur.fetchall()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            asistencia=[]
+        finally:
+            cur.close()
+        return asistencia
         
     ###################################### UBICACION #################################
     # Manejar datos of region
@@ -254,4 +263,4 @@ class Registro_datos():
         return name_districts
 
 #variable=Registro_datos()
-#variable.phrases_similares()
+#variable.show_all_data()
