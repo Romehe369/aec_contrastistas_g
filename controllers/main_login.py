@@ -29,7 +29,6 @@ class MiApp(QMainWindow, Ui_login):
 		# evento click para acceder al sistema
 		self.bt_ingresar.clicked.connect(self.iniciar_sesion)
 		self.btn_close.clicked.connect(self.close)
-     	
      	# Realizamos una petición a la base de datos de ussers
 		self.datos = Registro_datos()
 
@@ -45,19 +44,20 @@ class MiApp(QMainWindow, Ui_login):
 		password_entry = self.password.text()
 		users_entry = users
 		users_all_information = self.datos.busca_users(users_entry)
-		if(len(users_all_information)==0):
-			self.usuario_incorrecto.setText('Usuario incorrecto')
+		# Cuando no existe ninguna informacion
+		if(users_all_information is None):
+			self.usuario_incorrecto.setText('Usuario no registrado')
 		else:
-			users1=users_all_information[2]
+			users=users_all_information[2]
 			password=users_all_information[3]
+			id_access=users_all_information[0]
 			if(password_entry==password and users==users_entry):
 				for i in range(0,99):
-					time.sleep(0.000)
 					self.progressBar.setValue(i)
 					self.cargando.setText('Cargando...')
 
 				self.ventana = control_aec()
-				self.ventana.set_pass(users,password)
+				self.ventana.set_pass(users,password,id_access)
 				self.ventana.show()
 				self.close()
 			else:
@@ -74,8 +74,8 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.gripSize = 10
 		self.grip = QSizeGrip(self)
 		self.grip.resize(self.gripSize, self.gripSize)
-		self.txt_users=""
-		self.txt_password=""
+		self.users=""
+		self.password=""
 		self.alto_qfadd_project=0
 		self.code_project=""
 		self.name_project=""
@@ -113,9 +113,14 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.dialogo=Dialogo()
 		self.btn_agregar_pro.clicked.connect(self.add_new_project)
 		#self.btn_Buscar_pro.clicked.connect()
-		self.lndt_add_password.textChanged.connect(self.verificar_users)
+		self.lineEdit_add_users.textChanged.connect(self.verificar_users)
 		self.v_ScrollBar_project.valueChanged.connect(self.scroll_frame)
 		self.btn_search_iddni.clicked.connect(self.show_search_data)
+		self.lndt_confirm_password_new.textChanged.connect(self.verificar_pass)
+		self.lndt_add_password.textChanged.connect(self.validate_password)
+		self.btn_show_admin.clicked.connect(self.show_admin)
+		self.tableWidget_admin.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		self.tableWidget_admin.cellClicked.connect(self.onCellClicked)
 		# menu lateral
 		self.borrar_elementos()
 		self.bt_menu.clicked.connect(self.mover_menu)
@@ -126,6 +131,10 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
+
+	def onCellClicked(self, row, col):
+		item = self.tableWidget_admin.item(row, 3)
+		self.lndt_delete_id.setText(item.text())
 
 	def page_kardex(self):
 		from controllers.t_karderctrl import tkardex
@@ -183,7 +192,23 @@ class control_aec(QMainWindow,Ui_sistema):
 		value = self.v_ScrollBar_project.value()
 		height_cont=int(self.frame_contenedor_pro.height()/100)
 		self.frame_contenedor_pro.move(self.frame_contenedor_pro.x(), -value*height_cont)
-	
+	def show_admin(self):
+		list_users=self.datos.showfull_admin()
+		self.tableWidget_admin.setRowCount(len(list_users))
+		self.tableWidget_admin.setColumnCount(5)
+		for row in range(len(list_users)):
+			dni_admin=list_users[row][0]
+			act=self.datos.buscar_trabajador(dni_admin)
+			pos=1
+			for column in range(5):
+				if(column<3):
+					item = QTableWidgetItem(act[column])
+					self.tableWidget_admin.setItem(row, column, item)
+				else:
+					item = QTableWidgetItem(list_users[row][pos])
+					self.tableWidget_admin.setItem(row, column, item)
+					pos+=1
+
 	# Eliminamos un administrador del sistema
 	def delete_bd_admin(self):
 		# Obtenemos el dni- o users
@@ -205,25 +230,55 @@ class control_aec(QMainWindow,Ui_sistema):
 		# Recuperamos los datos
 		users=self.lineEdit_add_users.text()
 		password=self.lndt_add_password.text()
-		if(users=="" or password==""):
+		dni=self.lineEdit_dni_admin.text()
+		if(users=="" or password=="" or dni=="" or len(users)<=5):
 			self.dialogo.show()
 			self.dialogo.label_mensaje.setText("Completa los datos \n correctamente")
 		else:
-			self.datos.add_admin(users, password)
+			self.datos.add_admin(dni,users, password)
 			self.dialogo.show()
 			self.dialogo.label_mensaje.setText("Se agrego\ncorrectamente")
 
+	def verificar_pass(self):
+		password=self.lndt_add_password.text()
+		confirm=self.lndt_confirm_password_new.text()
+		if(password!=confirm):
+			self.label_confirmation.setText("No coincide la contraseña")
+		else:
+			self.label_confirmation.setText("")
+
+	def validate_password(self):
+		text=self.lndt_add_password.text()
+		if(len(text)<8):
+			self.label_validate.setText("La contraseña debe\nser mayor a 7 caracteres")
+		else:
+			if(self.is_alnumver(text)==False):
+				self.label_validate.setText("Debe contener\nnúmeros y letras")
+			else:
+				self.label_validate.setText("")
+
+	def is_alnumver(self,password):
+		numeric="0123456789"
+		for i in password:
+			if(i in numeric):
+				return True
+		return False
+
 	def verificar_users(self):
 		users=self.lineEdit_add_users.text()
-		act = self.datos.busca_users(users)
-		# Verifica si existe el users en la base de datos
-		if act is not None:
-			self.dialogo.label_mensaje.setText("El users ya existe")
-			# Mostramos los mensajes y ponemos en blanco los datos
-			self.lineEdit_add_users.setText("")
-			self.lndt_add_password.setText("")
-			self.dialogo.show()
-
+		if(len(users)>5):
+			self.label_validate_users.setText("")
+			act = self.datos.busca_users(users)
+			# Verifica si existe el users en la base de datos
+			if act is not None:
+				self.dialogo.label_mensaje.setText("El users ya existe")
+				# Mostramos los mensajes y ponemos en blanco los datos
+				self.lineEdit_add_users.setText("")
+				self.lndt_add_password.setText("")
+				self.label_validate_users.setText("")
+				self.dialogo.show()
+		else:
+			self.label_validate_users.setText("El user debe tener mas de 5 caracteres")
 	def ctrl_frame_delete_admin(self):
 		self.add_admin_frame.hide()
 		self.delete_admin_frame.show()
@@ -265,9 +320,10 @@ class control_aec(QMainWindow,Ui_sistema):
 			count_next_line+=1
 		self.alto_qfadd_project=count_next_line
 
-	def set_pass(self,txt1,txt2):
-		self.txt_users=txt1
-		self.txt_password=txt2
+	def set_pass(self,users,password,id_access):
+		self.users=users
+		self.password=password
+		self.id_access=id_access
 
 	def cambiar_password(self):
 		#from controllers.change_password import changed_password_uad

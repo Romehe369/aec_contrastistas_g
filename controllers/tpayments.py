@@ -23,6 +23,10 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		#self.btn_allow_pframe.clicked.connect(self.hide_frame)	
 		self.table_payments.cellClicked.connect(self.onCellClicked)
 		self.btn_show_table.clicked.connect(self.show_frame)
+		self.lineEdit_year.textChanged.connect(self.verificar_year)
+		self.lndt_adelantos.textChanged.connect(self.calcular)
+		self.comboBox_month.currentIndexChanged.connect(self.verifcar_mes)
+	############################MOVIMIENTO CUADRO##############################
 	def resizeEvent(self, event):
 		rect = self.rect()
 		self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
@@ -45,12 +49,27 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		self.lndt_sdni.setText(item.text())
 		mes_elegido = self.comboBox_month.currentText()
 		self.label_month_add.setText(mes_elegido)
+		name = self.table_payments.item(row, col+1)
+		self.label_name.setText(name.text())
+		surname = self.table_payments.item(row, col+2)
+		self.label_surnames.setText(surname.text())
+		mounth = self.table_payments.item(row, col+4)
+		self.label_days_pay.setText(mounth.text())
+		self.contar_dias()
 
+	def verificar_year(self):
+		year=self.lineEdit_year.text()
+		if(len(year)==4):
+			self.label_periodo.setText(year)
+			self.contar_dias()
+	def verifcar_mes(self):
+		self.label_month_add.setText(self.comboBox_month.currentText())
+		self.contar_dias()
 	def contar_dias(self):
 		#self.label_all_days.setText("21")
 		month_d = self.comboBox_month.currentIndex()+1
 		year_d=int(self.lineEdit_year.text())
-		dni="76174442"
+		dni=self.lndt_sdni.text()
 		#month_d=dia.month
 		#year_d=dia.year
 		# El inicio de mes
@@ -73,6 +92,19 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		if(len(datos)>=1):
 			suma_dias+=self.addition_days_new(datos,dni)
 		self.label_all_days.setText(str(suma_dias))
+		self.calcular()
+
+	def calcular(self):
+		total_dias=int(self.label_all_days.text())
+		dia_pay=float(self.label_days_pay.text())
+		adelanto=self.lndt_adelantos.text()
+		if(len(adelanto)==0):
+			adelanto=0
+		adelantos=float(adelanto)
+		total=dia_pay*total_dias
+		if(total>=adelantos):
+			total=total-adelantos;
+		self.label_total.setText(str(total))
 
 	def addition_days_new(self,this_table,dni):
 		encontrado=0

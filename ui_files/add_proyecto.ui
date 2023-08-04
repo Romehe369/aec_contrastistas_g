@@ -116,7 +116,7 @@ border:none;
      <string>Ingrese el nombre del proyecto</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="id_res_linetext">
+   <widget class="QLineEdit" name="lineEdit_dni_admin">
     <property name="geometry">
      <rect>
       <x>30</x>

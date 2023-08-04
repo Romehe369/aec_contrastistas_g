@@ -52,7 +52,7 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		nombres=self.lineEditName.text()
 		apellidos=self.lineEditSurname.text()
 		combo_sexo=self.comboBox_sexo.currentText()
-		fecha_inicio=self.dateEdit_fecha_init.text()
+		fecha_inicio=self.dateEdit_fecha_init.date()
 		combo_categoria=self.comboBox_categoria.currentText()
 		correo=self.lineEdit_Correo.text()
 		nro_movil=self.lineEdit_celular.text()

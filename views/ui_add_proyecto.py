@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectoTHnegY.ui'
+## Form generated from reading UI file 'add_proyectoFSwfTw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -67,11 +67,11 @@ class Ui_add_project_new(object):
         self.name_project_lineEdit.setObjectName(u"name_project_lineEdit")
         self.name_project_lineEdit.setGeometry(QRect(30, 170, 611, 31))
         self.name_project_lineEdit.setStyleSheet(u"")
-        self.id_res_linetext = QLineEdit(self.frame_contenedor)
-        self.id_res_linetext.setObjectName(u"id_res_linetext")
-        self.id_res_linetext.setGeometry(QRect(30, 240, 241, 31))
-        self.id_res_linetext.setStyleSheet(u"")
-        self.id_res_linetext.setMaxLength(8)
+        self.lineEdit_dni_admin = QLineEdit(self.frame_contenedor)
+        self.lineEdit_dni_admin.setObjectName(u"lineEdit_dni_admin")
+        self.lineEdit_dni_admin.setGeometry(QRect(30, 240, 241, 31))
+        self.lineEdit_dni_admin.setStyleSheet(u"")
+        self.lineEdit_dni_admin.setMaxLength(8)
         self.search_name_db = QPushButton(self.frame_contenedor)
         self.search_name_db.setObjectName(u"search_name_db")
         self.search_name_db.setGeometry(QRect(280, 240, 181, 31))
@@ -247,7 +247,7 @@ class Ui_add_project_new(object):
         self.label_3.setText(QCoreApplication.translate("add_project_new", u"Nombre del proyecto:", None))
         self.label_4.setText(QCoreApplication.translate("add_project_new", u"DNI Responsable:", None))
         self.name_project_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese el nombre del proyecto", None))
-        self.id_res_linetext.setPlaceholderText(QCoreApplication.translate("add_project_new", u"DNI del responsable de la obra", None))
+        self.lineEdit_dni_admin.setPlaceholderText(QCoreApplication.translate("add_project_new", u"DNI del responsable de la obra", None))
         self.search_name_db.setText(QCoreApplication.translate("add_project_new", u"Buscar por nombre", None))
         self.allow_btn.setText(QCoreApplication.translate("add_project_new", u"Aceptar", None))
         self.decline_btn.setText(QCoreApplication.translate("add_project_new", u"Cancelar", None))

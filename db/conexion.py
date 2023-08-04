@@ -14,55 +14,68 @@ class Registro_datos():
             return None
         
     ################### login data ########################
+    def add_admin(self,dni,users, password):
+        agregado=True
+        try:
+            cur = self.conexion.cursor()
+            sql="""INSERT INTO tlogin_data (dni,users, password) VALUES (%s, %s,%s)"""
+            val=(dni,users,password)
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            agregado=False
+        finally:
+            cur.close()
+        return agregado
     def elimina_admin(self,users):
         # Indica que se genero un error o no existe dicho ussers
         eliminado=True
         try:
             cur = self.conexion.cursor()
-            sql = "DELETE FROM tlogin_data WHERE users = %s"
-            cur.execute(sql,(users,))
+            sql = """DELETE FROM tlogin_data WHERE users = %s"""
+            val= (users,)
+            cur.execute(sql,val)
             cur.rowcount
             self.conexion.commit()    
         except Exception as e:
             eliminado=False
         finally:
             cur.close() 
-            return eliminado
-
-    def add_admin(self,users, password):
-        agregado=True
-        try:
-            cur = self.conexion.cursor()
-            sql='''INSERT INTO tlogin_data (id,users, password) 
-            VALUES(DEFAULT,'{}', '{}')'''.format(users, password)
-            cur.execute(sql)
-            self.conexion.commit() 
-        except Exception as e:
-            agregado=False
-        finally:
-            cur.close()
-            return agregado
+        return eliminado
 
     def busca_users(self, users):
         try:
             cur = self.conexion.cursor()
-            sql = "SELECT * FROM tlogin_data WHERE users = '{}'".format(users)
-            cur.execute(sql)
+            sql = """SELECT * FROM tlogin_data WHERE users = %s"""
+            val=(users,)
+            cur.execute(sql,val)
             encontrado = cur.fetchone()
-            cur.close()    
         except Exception as e:
-            encontrado=[]
+            encontrado=None
         finally:
-            return encontrado 
-    
+            cur.close()
+        return encontrado
+
+    def showfull_admin(self):
+        try:
+            cur = self.conexion.cursor()
+            sql = """SELECT dni,users,password FROM tlogin_data"""
+            cur.execute(sql)
+            table_admin = cur.fetchall()
+        except Exception as e:
+            table_admin=[]
+        finally:
+            cur.close()
+        return table_admin
+
     # Se cambia la contraseña del usuario
-    def actualiza_password(self, users, password):
+    def actualiza_password(self,id,password):
         update=True
         try:
             cur = self.conexion.cursor()
-            sql ='''UPDATE tlogin_data SET id=DEFAULT password = '{}'
-            WHERE users = '{}' '''.format(password,users)
-            cur.execute(sql)
+            sql="""UPDATE tlogin_data SET password=%s  WHERE id = %s"""
+            val = (password,id)
+            cur.execute(sql,val)
             a = cur.rowcount
             # Se guarde y persista simpre
             self.conexion.commit()    
@@ -71,6 +84,7 @@ class Registro_datos():
             update=False
         finally:
             return update
+    ################### login data #######################
     ################################### date ######################
     def convert_date(self,date_str):
         # Falta modificar para no presentar errores, con la funcion datetime
@@ -78,11 +92,12 @@ class Registro_datos():
         date_str=date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
         return date_str
     # Modifcar los datos de trabajador
-    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto):    
-        fecha_inicio=self.convert_date(fecha_inicio)
+    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto):
+        print(fecha_inicio)
         cur = self.conexion.cursor()
-        sql= '''INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,SUELDO_DIARIO,FOTO) 
-        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
+        print(fecha_inicio)
+        sql= """INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,SUELDO_DIARIO,FOTO) 
+        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
         # Convert data into tuple format
         insert_blob_tuple = (dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto)
         cur.execute(sql,insert_blob_tuple)
@@ -273,6 +288,27 @@ class Registro_datos():
         name_districts = cur.fetchall()
         cur.close()     
         return name_districts
+    #############################################
+    def update_password(self):
+        id=8
+        dni="76213933"
+        users="ronald3"
+        password="admin199"
+        update=True
+        try:
+            cur = self.conexion.cursor()
+            sql="""UPDATE tlogin_data SET dni=%s, users=%s, password=%s  WHERE id = %s"""
+            val = (dni,users,password,id)
+            cur.execute(sql,val)
+            a = cur.rowcount
+            # Se guarde y persista simpre
+            self.conexion.commit()    
+        except Exception as e:
+            update=False
+        finally:
+            cur.close()
+        return update
 
 #variable=Registro_datos()
-#variable.show_all_data()
+#var=variable.showfull_admin()
+#print(var)

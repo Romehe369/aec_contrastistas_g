@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuWxidlr.ui'
+## Form generated from reading UI file 'menuajDGcj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -570,6 +570,16 @@ class Ui_sistema(object):
 
         self.verticalLayout_34.addWidget(self.lineEdit_add_users)
 
+        self.label_validate_users = QLabel(self.frame_26)
+        self.label_validate_users.setObjectName(u"label_validate_users")
+        self.label_validate_users.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"color: rgb(255, 0, 0);\n"
+"border:0px;\n"
+"font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_validate_users.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_34.addWidget(self.label_validate_users)
+
         self.label_41 = QLabel(self.frame_26)
         self.label_41.setObjectName(u"label_41")
         self.label_41.setMinimumSize(QSize(0, 0))
@@ -580,12 +590,17 @@ class Ui_sistema(object):
         self.lndt_add_password = QLineEdit(self.frame_26)
         self.lndt_add_password.setObjectName(u"lndt_add_password")
         self.lndt_add_password.setMinimumSize(QSize(0, 31))
+        self.lndt_add_password.setEchoMode(QLineEdit.Normal)
         self.lndt_add_password.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.lndt_add_password)
 
         self.label_validate = QLabel(self.frame_26)
         self.label_validate.setObjectName(u"label_validate")
+        self.label_validate.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"color: rgb(255, 0, 0);\n"
+"border:0px;\n"
+"font: 75 12pt \"MS Shell Dlg 2\";")
         self.label_validate.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.label_validate)
@@ -600,12 +615,17 @@ class Ui_sistema(object):
         self.lndt_confirm_password_new = QLineEdit(self.frame_26)
         self.lndt_confirm_password_new.setObjectName(u"lndt_confirm_password_new")
         self.lndt_confirm_password_new.setMinimumSize(QSize(0, 31))
+        self.lndt_confirm_password_new.setEchoMode(QLineEdit.Normal)
         self.lndt_confirm_password_new.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.lndt_confirm_password_new)
 
         self.label_confirmation = QLabel(self.frame_26)
         self.label_confirmation.setObjectName(u"label_confirmation")
+        self.label_confirmation.setStyleSheet(u"background-color: rgba(0,0,0,0%);\n"
+"color: rgb(255, 0, 0);\n"
+"border:0px;\n"
+"font: 75 12pt \"MS Shell Dlg 2\";")
         self.label_confirmation.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_34.addWidget(self.label_confirmation)
@@ -1714,7 +1734,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.pages.setCurrentIndex(3)
+        self.pages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -1751,6 +1771,7 @@ class Ui_sistema(object):
         self.btn_search_iddni.setText(QCoreApplication.translate("sistema", u"    Buscar por nombre o apellidos    ", None))
         self.label_46.setText(QCoreApplication.translate("sistema", u"Usuario", None))
         self.lineEdit_add_users.setPlaceholderText(QCoreApplication.translate("sistema", u"Ingrese usuario", None))
+        self.label_validate_users.setText("")
         self.label_41.setText(QCoreApplication.translate("sistema", u"Contrase\u00f1a", None))
         self.lndt_add_password.setPlaceholderText(QCoreApplication.translate("sistema", u"Ingrese contrase\u00f1a", None))
         self.label_validate.setText("")
@@ -1759,7 +1780,7 @@ class Ui_sistema(object):
         self.label_confirmation.setText("")
         self.btn_add_confirm_admin.setText(QCoreApplication.translate("sistema", u"Agregar administrador", None))
         self.label_40.setText(QCoreApplication.translate("sistema", u"Eliminar un administrador del sistema o controlador de asistencia en la web", None))
-        self.label_44.setText(QCoreApplication.translate("sistema", u"DNI o Usuario", None))
+        self.label_44.setText(QCoreApplication.translate("sistema", u"Usuario", None))
         self.btn_show_admin.setText(QCoreApplication.translate("sistema", u"Ver lista de administradores", None))
         ___qtablewidgetitem = self.tableWidget_admin.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("sistema", u"DNI", None));

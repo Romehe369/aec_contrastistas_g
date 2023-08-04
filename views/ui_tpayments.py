@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tpaymentsVDtWEe.ui'
+## Form generated from reading UI file 'tpaymentsjRFFah.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -28,7 +28,7 @@ class Ui_tpayments(object):
         self.frame_agregar.setObjectName(u"frame_agregar")
         self.frame_agregar.setStyleSheet(u"QFrame{\n"
 "border: 5px solid rgb(0, 0, 127);\n"
-"background-color: rgb(170, 170, 255);\n"
+"background-color: rgb(191, 191, 191);\n"
 "font: 75 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "QLabel{\n"
@@ -65,7 +65,7 @@ class Ui_tpayments(object):
         self.frame_superior.setMaximumSize(QSize(16777215, 35))
         self.frame_superior.setStyleSheet(u"QFrame{\n"
 "border: none;\n"
-"	background-color: rgb(158, 158, 158);\n"
+"background-color: rgb(117, 117, 117);\n"
 "}")
         self.horizontalLayout = QHBoxLayout(self.frame_superior)
         self.horizontalLayout.setSpacing(0)
@@ -74,7 +74,8 @@ class Ui_tpayments(object):
         self.lbl_title = QLabel(self.frame_superior)
         self.lbl_title.setObjectName(u"lbl_title")
         self.lbl_title.setMinimumSize(QSize(0, 0))
-        self.lbl_title.setStyleSheet(u"")
+        self.lbl_title.setStyleSheet(u"color: rgb(255, 255, 255);\n"
+"font: 75 14pt \"MS Shell Dlg 2\";")
         self.lbl_title.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout.addWidget(self.lbl_title)
@@ -100,14 +101,14 @@ class Ui_tpayments(object):
         self.btn_close.setMaximumSize(QSize(35, 35))
         self.btn_close.setStyleSheet(u"QPushButton{\n"
 "background-color: rgb(255, 0, 0);\n"
-"color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
 "font: 75 14pt \"MS Shell Dlg 2\";\n"
 "border:none;\n"
 "border-radius:0px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"	background-color: rgb(170, 0, 255);\n"
+"	background-color: rgb(255, 255, 0);\n"
 "}")
 
         self.horizontalLayout.addWidget(self.btn_close)
@@ -293,6 +294,7 @@ class Ui_tpayments(object):
         self.verticalLayout = QVBoxLayout(self.frame)
         self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(-1, 9, -1, -1)
         self.label = QLabel(self.frame)
         self.label.setObjectName(u"label")
         self.label.setStyleSheet(u"border:none;")
@@ -332,31 +334,12 @@ class Ui_tpayments(object):
 
         self.gridLayout_4.addWidget(self.label_3, 1, 2, 1, 1)
 
-        self.label_7 = QLabel(self.frame)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setStyleSheet(u"QFrame{\n"
-"border:none;\n"
-"}")
-        self.label_7.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_4.addWidget(self.label_7, 0, 4, 1, 1)
-
         self.label_surnames = QLabel(self.frame)
         self.label_surnames.setObjectName(u"label_surnames")
         self.label_surnames.setMinimumSize(QSize(0, 31))
         self.label_surnames.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
         self.gridLayout_4.addWidget(self.label_surnames, 2, 1, 1, 1)
-
-        self.label_4 = QLabel(self.frame)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(0, 31))
-        self.label_4.setStyleSheet(u"QFrame{\n"
-"border:none;\n"
-"}")
-        self.label_4.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_4.addWidget(self.label_4, 2, 2, 1, 1)
 
         self.label_46 = QLabel(self.frame)
         self.label_46.setObjectName(u"label_46")
@@ -387,19 +370,6 @@ class Ui_tpayments(object):
 
         self.gridLayout_4.addWidget(self.label_48, 2, 0, 1, 1)
 
-        self.label_all_days = QLabel(self.frame)
-        self.label_all_days.setObjectName(u"label_all_days")
-        self.label_all_days.setMinimumSize(QSize(0, 31))
-        self.label_all_days.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.gridLayout_4.addWidget(self.label_all_days, 2, 3, 1, 1)
-
-        self.label_days_pay = QLabel(self.frame)
-        self.label_days_pay.setObjectName(u"label_days_pay")
-        self.label_days_pay.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.gridLayout_4.addWidget(self.label_days_pay, 0, 5, 1, 1)
-
         self.label_2 = QLabel(self.frame)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setStyleSheet(u"QFrame{\n"
@@ -414,19 +384,11 @@ class Ui_tpayments(object):
         self.lndt_sdni.setMinimumSize(QSize(0, 31))
         self.lndt_sdni.setMaximumSize(QSize(300, 16777215))
         self.lndt_sdni.setFont(font)
-        self.lndt_sdni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lndt_sdni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: rgb(255, 255, 255);")
         self.lndt_sdni.setMaxLength(8)
 
         self.gridLayout_4.addWidget(self.lndt_sdni, 0, 1, 1, 1)
-
-        self.label_8 = QLabel(self.frame)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setStyleSheet(u"QFrame{\n"
-"border:none;\n"
-"}")
-        self.label_8.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_4.addWidget(self.label_8, 1, 4, 1, 1)
 
         self.label_name = QLabel(self.frame)
         self.label_name.setObjectName(u"label_name")
@@ -441,20 +403,69 @@ class Ui_tpayments(object):
 
         self.gridLayout_4.addWidget(self.label_total, 2, 5, 1, 1)
 
-        self.lndt_adelantos = QLineEdit(self.frame)
-        self.lndt_adelantos.setObjectName(u"lndt_adelantos")
-        self.lndt_adelantos.setMinimumSize(QSize(0, 31))
-        self.lndt_adelantos.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.gridLayout_4.addWidget(self.lndt_adelantos, 1, 5, 1, 1)
-
         self.label_month_add = QLabel(self.frame)
         self.label_month_add.setObjectName(u"label_month_add")
-        self.label_month_add.setMinimumSize(QSize(300, 31))
+        self.label_month_add.setMinimumSize(QSize(0, 31))
         self.label_month_add.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
         self.gridLayout_4.addWidget(self.label_month_add, 0, 3, 1, 1)
 
+        self.label_8 = QLabel(self.frame)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setStyleSheet(u"QFrame{\n"
+"border:none;\n"
+"}")
+        self.label_8.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.label_8, 2, 2, 1, 1)
+
+        self.lndt_adelantos = QLineEdit(self.frame)
+        self.lndt_adelantos.setObjectName(u"lndt_adelantos")
+        self.lndt_adelantos.setMinimumSize(QSize(0, 31))
+        self.lndt_adelantos.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: rgb(255, 255, 255);")
+
+        self.gridLayout_4.addWidget(self.lndt_adelantos, 2, 3, 1, 1)
+
+        self.label_all_days = QLabel(self.frame)
+        self.label_all_days.setObjectName(u"label_all_days")
+        self.label_all_days.setMinimumSize(QSize(0, 31))
+        self.label_all_days.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.gridLayout_4.addWidget(self.label_all_days, 0, 5, 1, 1)
+
+        self.label_4 = QLabel(self.frame)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMinimumSize(QSize(0, 31))
+        self.label_4.setStyleSheet(u"QFrame{\n"
+"border:none;\n"
+"}")
+        self.label_4.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.label_4, 0, 4, 1, 1)
+
+        self.label_7 = QLabel(self.frame)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setStyleSheet(u"QFrame{\n"
+"border:none;\n"
+"}")
+        self.label_7.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.label_7, 1, 4, 1, 1)
+
+        self.label_days_pay = QLabel(self.frame)
+        self.label_days_pay.setObjectName(u"label_days_pay")
+        self.label_days_pay.setMinimumSize(QSize(150, 0))
+        self.label_days_pay.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.gridLayout_4.addWidget(self.label_days_pay, 1, 5, 1, 1)
+
+        self.gridLayout_4.setColumnStretch(0, 1)
+        self.gridLayout_4.setColumnStretch(1, 3)
+        self.gridLayout_4.setColumnStretch(2, 1)
+        self.gridLayout_4.setColumnStretch(3, 3)
+        self.gridLayout_4.setColumnStretch(4, 1)
+        self.gridLayout_4.setColumnStretch(5, 4)
 
         self.verticalLayout.addLayout(self.gridLayout_4)
 
@@ -578,21 +589,22 @@ class Ui_tpayments(object):
         self.label_periodo.setText(QCoreApplication.translate("tpayments", u"2023", None))
         self.label_35.setText(QCoreApplication.translate("tpayments", u"DNI:", None))
         self.label_3.setText(QCoreApplication.translate("tpayments", u"PERIODO", None))
-        self.label_7.setText(QCoreApplication.translate("tpayments", u"POR DIA:", None))
         self.label_surnames.setText(QCoreApplication.translate("tpayments", u"No especifica", None))
-        self.label_4.setText(QCoreApplication.translate("tpayments", u"TOTAL DE DIAS:", None))
         self.label_46.setText(QCoreApplication.translate("tpayments", u"NOMBRES:", None))
         self.label_9.setText(QCoreApplication.translate("tpayments", u"TOTAL:", None))
         self.label_48.setText(QCoreApplication.translate("tpayments", u"APELLIDOS:", None))
-        self.label_all_days.setText(QCoreApplication.translate("tpayments", u"0", None))
-        self.label_days_pay.setText(QCoreApplication.translate("tpayments", u"55", None))
         self.label_2.setText(QCoreApplication.translate("tpayments", u"MES:", None))
         self.lndt_sdni.setPlaceholderText(QCoreApplication.translate("tpayments", u"Ingrese  el DNI", None))
-        self.label_8.setText(QCoreApplication.translate("tpayments", u"ADELANTOS:", None))
         self.label_name.setText(QCoreApplication.translate("tpayments", u"No especifica", None))
         self.label_total.setText(QCoreApplication.translate("tpayments", u"0", None))
-        self.lndt_adelantos.setPlaceholderText(QCoreApplication.translate("tpayments", u"Adelantos", None))
         self.label_month_add.setText(QCoreApplication.translate("tpayments", u"ENERO", None))
+        self.label_8.setText(QCoreApplication.translate("tpayments", u"ADELANTOS:", None))
+        self.lndt_adelantos.setText(QCoreApplication.translate("tpayments", u"0", None))
+        self.lndt_adelantos.setPlaceholderText(QCoreApplication.translate("tpayments", u"Adelantos", None))
+        self.label_all_days.setText(QCoreApplication.translate("tpayments", u"0", None))
+        self.label_4.setText(QCoreApplication.translate("tpayments", u"TOTAL DE DIAS:", None))
+        self.label_7.setText(QCoreApplication.translate("tpayments", u"POR DIA:", None))
+        self.label_days_pay.setText(QCoreApplication.translate("tpayments", u"0", None))
         self.label_estado.setText(QCoreApplication.translate("tpayments", u"ESTADO : NO PAGADO", None))
         self.btn_pagar_new.setText(QCoreApplication.translate("tpayments", u"PAGAR", None))
         self.btn_dar_adelantos.setText(QCoreApplication.translate("tpayments", u"DAR ADELANTOS", None))

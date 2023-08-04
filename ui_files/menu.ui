@@ -735,7 +735,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -1205,6 +1205,22 @@ QPushButton:hover{
                         </widget>
                        </item>
                        <item>
+                        <widget class="QLabel" name="label_validate_users">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(255, 0, 0);
+border:0px;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
                         <widget class="QLabel" name="label_41">
                          <property name="minimumSize">
                           <size>
@@ -1228,6 +1244,9 @@ QPushButton:hover{
                            <height>31</height>
                           </size>
                          </property>
+                         <property name="echoMode">
+                          <enum>QLineEdit::Normal</enum>
+                         </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
@@ -1238,6 +1257,12 @@ QPushButton:hover{
                        </item>
                        <item>
                         <widget class="QLabel" name="label_validate">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(255, 0, 0);
+border:0px;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1270,6 +1295,9 @@ QPushButton:hover{
                            <height>31</height>
                           </size>
                          </property>
+                         <property name="echoMode">
+                          <enum>QLineEdit::Normal</enum>
+                         </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
@@ -1280,6 +1308,12 @@ QPushButton:hover{
                        </item>
                        <item>
                         <widget class="QLabel" name="label_confirmation">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(255, 0, 0);
+border:0px;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -1357,7 +1391,7 @@ QPushButton:hover{
                     <item>
                      <widget class="QLabel" name="label_44">
                       <property name="text">
-                       <string>DNI o Usuario</string>
+                       <string>Usuario</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
