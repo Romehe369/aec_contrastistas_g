@@ -45,6 +45,7 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 			self.showNormal()
 	#############################################MODULOS DE ACTIVIDAD###################
 	def onCellClicked(self, row, col):
+		col=0
 		item = self.table_payments.item(row, col)
 		self.lndt_sdni.setText(item.text())
 		mes_elegido = self.comboBox_month.currentText()

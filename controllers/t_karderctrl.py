@@ -15,6 +15,8 @@ class tkardex(QMainWindow, Ui_tkarded):
 		self.table_qwk_new_data()
 		self.gripSize = 10
 		self.grip = QSizeGrip(self)
+		self.frame_delete.hide()
+		self.btn_confirm_delete.hide()
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
