@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'table_asistenciaBeezqe.ui'
+## Form generated from reading UI file 'table_asistenciaMcKAor.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -28,7 +28,7 @@ class Ui_tasistencia(object):
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"QFrame{\n"
 "border: 3px solid rgb(0, 0, 127);\n"
-"background-color: rgb(170, 170, 255);\n"
+"	background-color: rgb(240, 240, 240);\n"
 "font: 75 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "QLabel{\n"
@@ -78,7 +78,7 @@ class Ui_tasistencia(object):
 
         self.btn_ampliar = QPushButton(self.frame_superior)
         self.btn_ampliar.setObjectName(u"btn_ampliar")
-        self.btn_ampliar.setMaximumSize(QSize(35, 31))
+        self.btn_ampliar.setMaximumSize(QSize(35, 35))
         self.btn_ampliar.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(0, 0, 255);\n"
 "font: 75 14pt \"MS Shell Dlg 2\";\n"
@@ -94,7 +94,7 @@ class Ui_tasistencia(object):
 
         self.btn_close = QPushButton(self.frame_superior)
         self.btn_close.setObjectName(u"btn_close")
-        self.btn_close.setMaximumSize(QSize(35, 31))
+        self.btn_close.setMaximumSize(QSize(35, 35))
         self.btn_close.setStyleSheet(u"QPushButton{\n"
 "background-color: rgb(255, 0, 0);\n"
 "color: rgb(255, 255, 255);\n"
@@ -127,9 +127,9 @@ class Ui_tasistencia(object):
         font.setItalic(False)
         font.setWeight(50)
         self.dt_fecha_list.setFont(font)
-        self.dt_fecha_list.setStyleSheet(u"background-color: rgb(0, 135, 203);\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;")
+        self.dt_fecha_list.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"background-color: rgb(240, 240, 240);")
         self.dt_fecha_list.setCalendarPopup(True)
         self.dt_fecha_list.setDate(QDate(2023, 1, 1))
 
@@ -146,7 +146,8 @@ class Ui_tasistencia(object):
         self.change_code_project.setObjectName(u"change_code_project")
         self.change_code_project.setMinimumSize(QSize(0, 30))
         self.change_code_project.setStyleSheet(u"color: rgb(85, 0, 0);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";")
+"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"border: 1px solid rgb(0, 0, 127);")
 
         self.gridLayout.addWidget(self.change_code_project, 0, 1, 1, 1)
 
@@ -156,6 +157,7 @@ class Ui_tasistencia(object):
         self.btn_delete.setStyleSheet(u"QPushButton{\n"
 "border:none;\n"
 "border-radius:0px;\n"
+"border: 1px solid rgb(0, 0, 127);\n"
 "}")
 
         self.gridLayout.addWidget(self.btn_delete, 4, 3, 1, 1)
@@ -163,7 +165,8 @@ class Ui_tasistencia(object):
         self.change_responsible_name = QLabel(self.frame)
         self.change_responsible_name.setObjectName(u"change_responsible_name")
         self.change_responsible_name.setMinimumSize(QSize(0, 30))
-        self.change_responsible_name.setStyleSheet(u"color: rgb(85, 0, 0);\n"
+        self.change_responsible_name.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"color: rgb(85, 0, 0);\n"
 "font: 75 12pt \"MS Shell Dlg 2\";")
 
         self.gridLayout.addWidget(self.change_responsible_name, 4, 1, 1, 1)
@@ -172,7 +175,8 @@ class Ui_tasistencia(object):
         self.change_name_project.setObjectName(u"change_name_project")
         self.change_name_project.setMinimumSize(QSize(0, 30))
         self.change_name_project.setStyleSheet(u"color: rgb(85, 0, 0);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";")
+"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"border: 1px solid rgb(0, 0, 127);")
 
         self.gridLayout.addWidget(self.change_name_project, 3, 1, 1, 1)
 
@@ -187,7 +191,10 @@ class Ui_tasistencia(object):
         self.lineEdit_dni_admin.setObjectName(u"lineEdit_dni_admin")
         self.lineEdit_dni_admin.setMinimumSize(QSize(0, 31))
         self.lineEdit_dni_admin.setMaximumSize(QSize(300, 16777215))
+        self.lineEdit_dni_admin.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: rgb(240, 240, 240);")
         self.lineEdit_dni_admin.setMaxLength(8)
+        self.lineEdit_dni_admin.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.lineEdit_dni_admin, 3, 2, 1, 1)
 
@@ -211,6 +218,7 @@ class Ui_tasistencia(object):
         self.btn_add_new.setStyleSheet(u"QPushButton{\n"
 "border:none;\n"
 "border-radius:0px;\n"
+"border: 1px solid rgb(0, 0, 127);\n"
 "}")
 
         self.gridLayout.addWidget(self.btn_add_new, 4, 2, 1, 1)
@@ -221,6 +229,7 @@ class Ui_tasistencia(object):
         self.btn_search_dni.setStyleSheet(u"QPushButton{\n"
 "border:none;\n"
 "border-radius:0px;\n"
+"border: 1px solid rgb(0, 0, 127);\n"
 "}")
 
         self.gridLayout.addWidget(self.btn_search_dni, 3, 3, 1, 1)

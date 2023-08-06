@@ -67,12 +67,12 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		self.label_month_add.setText(self.comboBox_month.currentText())
 		self.contar_dias()
 	def contar_dias(self):
-		#self.label_all_days.setText("21")
+		# Obtienes el mes
 		month_d = self.comboBox_month.currentIndex()+1
+		# Obteenmos el anio
 		year_d=int(self.lineEdit_year.text())
+		# Obtenemos el DNI
 		dni=self.lndt_sdni.text()
-		#month_d=dia.month
-		#year_d=dia.year
 		# El inicio de mes
 		dia_inicio=date(year_d,month_d,1)
 		# fin de mes
@@ -81,17 +81,8 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		else:
 			dia_fin=date(year_d,month_d+1,1)
 		fin_mes=dia_fin-timedelta(1)
-		count=1
-		suma_dias=0
-		while(dia_inicio!=fin_mes):
-			datos=self.datos.show_all_data(fin_mes)
-			if(len(datos)>=1):
-				suma_dias+=self.addition_days_new(datos,dni)
-			fin_mes=fin_mes-timedelta(1)
-			count+=1
-		datos=self.datos.show_all_data(dia_inicio)
-		if(len(datos)>=1):
-			suma_dias+=self.addition_days_new(datos,dni)
+		datos=self.datos.between_month(dia_inicio,fin_mes,dni)
+		suma_dias=datos[0][0]
 		self.label_all_days.setText(str(suma_dias))
 		self.calcular()
 
@@ -106,14 +97,6 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		if(total>=adelantos):
 			total=total-adelantos;
 		self.label_total.setText(str(total))
-
-	def addition_days_new(self,this_table,dni):
-		encontrado=0
-		for i in this_table:
-			if(dni==i[1] and i[2]):
-				encontrado=1
-				break
-		return encontrado
 
 	def show_frame(self):
 		#self.contar_dias()

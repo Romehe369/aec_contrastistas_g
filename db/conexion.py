@@ -93,9 +93,8 @@ class Registro_datos():
         return date_str
     # Modifcar los datos de trabajador
     def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto):
-        print(fecha_inicio)
+        fecha_inicio=self.convert_date(fecha_inicio)
         cur = self.conexion.cursor()
-        print(fecha_inicio)
         sql= """INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,SUELDO_DIARIO,FOTO) 
         VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
         # Convert data into tuple format
@@ -205,7 +204,7 @@ class Registro_datos():
         finally:
             cur.close() 
             return eliminado
-    ###################################### DISTRIBUCION ##########################
+    ###################################### DISTRIBUCION  ASISTENCIA##########################
     def add_distribution_presence(self, id_distribucion,code_project,dni,estado):
         agregado=False
         try:
@@ -220,7 +219,7 @@ class Registro_datos():
             agregado=False
         finally:
             return agregado
-    ###################################### ASISTENCIA ################################
+    
     def list_tasistencia(self, code_project):
         try:
             cur = self.conexion.cursor()
@@ -234,23 +233,26 @@ class Registro_datos():
             registro=[]
         finally:
             return registro
+    ###################################### ASISTENCIA ################################
     def add_presence(self,date_month,id_distribucion,code_project, dni, asistencia, observacion, justificacion):
+        agregado=True
         date_month=self.convert_date(date_month)
-        agregado=False
         try:
             cur = self.conexion.cursor()
-            sql='''INSERT INTO tasistencia (id,date_month, id_distribucion,code_project, dni, asistencia, observacion, justificacion) 
-            VALUES(DEFAULT,'{}', '{}','{}', '{}','{}', '{}','{}')'''.format(date_month, id_distribucion,code_project, dni, asistencia, observacion, justificacion)
-            cur.execute(sql)
-            agregado=True
+            sql= """INSERT INTO tasistencia(date_month, id_distribucion,code_project, dni, asistencia, observacion, justificacion) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+            # Convert data into tuple format
+            val = (date_month, id_distribucion,code_project, dni, asistencia, observacion, justificacion)
+            cur.execute(sql,val)
             self.conexion.commit() 
-            cur.close()
         except Exception as e:
             agregado=False
         finally:
-            return agregado
+            cur.close()
+        return agregado
 
     def show_all_data(self,date_month):
+        date_month=self.convert_date(date_month)
         try:
             cur = self.conexion.cursor()
             sql = "SELECT code_project,dni,asistencia FROM tasistencia WHERE date_month = '{}'".format(date_month)
@@ -262,6 +264,22 @@ class Registro_datos():
         finally:
             cur.close()
         return asistencia
+
+    def delete_asistence(self,id):
+        cont_row=0
+        try:
+            cur = self.conexion.cursor()
+            sql = "DELETE FROM tasistencia WHERE id = %s"
+            val=(id,)
+            cur.execute(sql,val)
+            cont_row=cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            # Si no se logro elimianar
+            cont_row=0
+        finally:
+            cur.close() 
+        return cont_row
         
     ###################################### UBICACION #################################
     # Manejar datos of region
@@ -288,7 +306,7 @@ class Registro_datos():
         name_districts = cur.fetchall()
         cur.close()     
         return name_districts
-    #############################################
+    #######################################END UBICACION########################
     def update_password(self):
         id=8
         dni="76213933"
@@ -309,6 +327,151 @@ class Registro_datos():
             cur.close()
         return update
 
-#variable=Registro_datos()
-#var=variable.showfull_admin()
+    def delete_dispresence(self,id_distribucion):
+        eliminado=True
+        try:
+            cur = self.conexion.cursor()
+            sql = "DELETE FROM ttrabajador_distribucion WHERE id_distribucion = %s"
+            val=(id_distribucion,)
+            cur.execute(sql,val)
+            cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            # Si no se logro elimianar
+            eliminado=False
+        finally:
+            cur.close() 
+        return eliminado
+
+    def update_dispresence(self,id_distribucion,estado):
+        eliminado=True
+        try:
+            cur = self.conexion.cursor()
+            sql="""UPDATE ttrabajador_distribucion SET estado=%s  WHERE id_distribucion = %s"""
+            val = (estado,id_distribucion,)
+            cur.execute(sql,val)
+            eliminado=cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            # Si no se logro elimianar
+            eliminado=False
+        finally:
+            cur.close() 
+        return eliminado
+
+    def group_by(self,this):
+        eliminado=True
+        try:
+            cur = self.conexion.cursor()
+            sql="""UPDATE ttrabajador_distribucion SET estado=%s  WHERE id_distribucion = %s"""
+            val = (estado,id_distribucion,)
+            cur.execute(sql,val)
+            eliminado=cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            # Si no se logro elimianar
+            eliminado=False
+        finally:
+            cur.close() 
+        return eliminado
+    def consultar(self):
+        find = "SELECT  department,sum(strength) from college_data GROUP BY(department) HAVING sum(strength)<=400 ";
+
+    def group_by_dni(self):
+        try:
+            cur = self.conexion.cursor()
+            # Consulta para obtener la cantidad de países únicos
+            query="""
+            SELECT dni 
+            FROM ttrabajador_distribucion 
+            GROUP BY dni
+            ORDER BY dni DESC;
+            """
+            cur.execute(query)
+            # Obtener el resultado
+            result = cur.fetchall()
+            total_paises = result
+        except Exception as e:
+            # Si no se logro elimianar
+            eliminado=False
+        finally:
+            cur.close() 
+        return eliminado
+
+    # Condicion AND  fetchone = None y fetchall = []
+    def datemonth_and_dni(self,date_month,dni):
+        date_month=self.convert_date(date_month)
+        result=[]
+        try:
+            cur = self.conexion.cursor()
+            # Consulta para obetener dos datos
+            query="""
+            SELECT * FROM tasistencia
+            WHERE date_month = %s AND dni = %s ;
+            """
+            val=(date_month,dni,)
+            cur.execute(query,val)
+            # Obtener el resultado
+            result = cur.fetchall()
+        except Exception as e:
+            # Si no se logro elimianar
+            result=[]
+        finally:
+            cur.close() 
+        return result
+
+    def count_and_dni(self,date_month,dni):
+        result=[]
+        try:
+            cur = self.conexion.cursor()
+            # Consulta para obetener dos datos
+            query="""
+            SELECT COUNT(dni)
+            FROM tasistencia
+            WHERE date_month = %s AND dni = %s ;
+            """
+            val=(date_month,dni,)
+            cur.execute(query,val)
+            # Obtener el resultado
+            result = cur.fetchone()
+        except Exception as e:
+            # Si no se logro elimianar
+            result=[]
+        finally:
+            cur.close() 
+        return result
+    def between_month(self,date_start,date_end,dni):
+        #date_start=self.convert_date(date_start)
+        #date_end=self.convert_date(date_end)
+        result=[]
+        try:
+            cur = self.conexion.cursor()
+            # Consulta para obetener dos datos
+            query="""
+            SELECT COUNT(dni)
+            FROM tasistencia
+            WHERE (date_month BETWEEN %s AND %s) AND dni = %s;
+            """
+            val=(date_start,date_end,dni,)
+            cur.execute(query,val)
+            # Obtener el resultado
+            result = cur.fetchall()
+        except Exception as e:
+            # Si no se logro elimianar
+            result=[]
+        finally:
+            cur.close() 
+        return result
+
+
+
+variable=Registro_datos()
+#var=variable.show_all_data(variable.convert_date("05/08/2023"))
+#var=variable.delete_asistence("72773129017")
+#r=variable.contar()
 #print(var)
+#r=variable.datemonth_and_dni(variable.convert_date("5/8/2023"),"78254969")
+#r=variable.between_month("01/08/2023","20/08/2022","76213932")
+#print(r[0][0])
+
+# ALTER TABLE `tasistencia` AUTO_INCREMENT = 1;
