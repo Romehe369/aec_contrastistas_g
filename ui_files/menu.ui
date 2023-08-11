@@ -144,7 +144,7 @@ font: 87 12pt &quot;Arial Black&quot;;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../assets/icons/menu.png</normaloff>../assets/icons/menu.png</iconset>
+           <normaloff>../assets/menu.png</normaloff>../assets/menu.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -284,7 +284,7 @@ background-color:#ffff00;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../assets/icons/minimizar.png</normaloff>../assets/icons/minimizar.png</iconset>
+           <normaloff>../assets/minimizar.png</normaloff>../assets/minimizar.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -323,7 +323,7 @@ background-color:#55ff00;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../assets/icons/restaurar.png</normaloff>../assets/icons/restaurar.png</iconset>
+           <normaloff>../assets/restaurar.png</normaloff>../assets/restaurar.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -365,7 +365,7 @@ background-color:#55ff00;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../assets/icons/maximizar.png</normaloff>../assets/icons/maximizar.png</iconset>
+           <normaloff>../assets/maximizar.png</normaloff>../assets/maximizar.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -400,7 +400,7 @@ background-color:red;
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../assets/icons/cerrar.png</normaloff>../assets/icons/cerrar.png</iconset>
+           <normaloff>../assets/cerrar.png</normaloff>../assets/cerrar.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -735,7 +735,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -848,7 +848,7 @@ color: rgb(255, 255, 255);</string>
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap>../assets/icons/icono.png</pixmap>
+                       <pixmap>../assets/icono.png</pixmap>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>

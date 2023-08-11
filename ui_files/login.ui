@@ -45,7 +45,7 @@ border:0px;</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../assets/icons/icono.png</pixmap>
+        <pixmap>../assets/icono.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>

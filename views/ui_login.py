@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginbxdvOR.ui'
+## Form generated from reading UI file 'loginOBrOGG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -34,7 +34,7 @@ class Ui_login(object):
         self.label_4.setGeometry(QRect(170, 20, 101, 91))
         self.label_4.setStyleSheet(u"background-color:rgba(0,0,0,0%);\n"
 "border:0px;")
-        self.label_4.setPixmap(QPixmap(u"./assets/icons/icono.png"))
+        self.label_4.setPixmap(QPixmap(u"./assets/icono.png"))
         self.label_4.setScaledContents(True)
         self.label_2 = QLabel(self.frame)
         self.label_2.setObjectName(u"label_2")

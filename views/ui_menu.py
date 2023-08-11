@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menusBjrGJ.ui'
+## Form generated from reading UI file 'menuZTICCg.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -73,7 +73,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"./assets/icons/menu.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./assets/menu.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_menu.setIcon(icon)
         self.bt_menu.setIconSize(QSize(32, 32))
         self.bt_menu.setAutoDefault(False)
@@ -140,7 +140,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u"./assets/icons/minimizar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"./assets/minimizar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_minimizar.setIcon(icon1)
         self.bt_minimizar.setIconSize(QSize(32, 32))
         self.bt_minimizar.setFlat(False)
@@ -162,7 +162,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u"./assets/icons/restaurar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"./assets/restaurar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_restaurar.setIcon(icon2)
         self.bt_restaurar.setIconSize(QSize(30, 30))
 
@@ -185,7 +185,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"./assets/icons/maximizar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"./assets/maximizar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_maximizar.setIcon(icon3)
         self.bt_maximizar.setIconSize(QSize(32, 32))
 
@@ -205,7 +205,7 @@ class Ui_sistema(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"./assets/icons/cerrar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"./assets/cerrar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.bt_cerrar.setIcon(icon4)
         self.bt_cerrar.setIconSize(QSize(32, 32))
 
@@ -391,7 +391,7 @@ class Ui_sistema(object):
         self.label_49.setObjectName(u"label_49")
         self.label_49.setMinimumSize(QSize(300, 300))
         self.label_49.setMaximumSize(QSize(16777215, 16777215))
-        self.label_49.setPixmap(QPixmap(u"./assets/icons/icono.png"))
+        self.label_49.setPixmap(QPixmap(u"./assets/icono.png"))
         self.label_49.setAlignment(Qt.AlignCenter)
         self.label_49.setIndent(-1)
 
@@ -1785,7 +1785,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.pages.setCurrentIndex(2)
+        self.pages.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(sistema)
