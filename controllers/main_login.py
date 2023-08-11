@@ -86,8 +86,8 @@ class control_aec(QMainWindow,Ui_sistema):
 		#acceder a las paginas
 		#self.bt_inicio.clicked.connect(lambda: self.pages.setCurrentWidget(self.page))			
 		self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
-		self.btn_registro.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_registro))	
-		self.btn_asistencia.clicked.connect(self.return_home)
+		self.btn_registro.clicked.connect(self.get_datosregistros)	
+		self.btn_asistencia.clicked.connect(self.view_configuration)
 		self.btn_kardex.clicked.connect(self.page_kardex)			
 		self.btn_pagos.clicked.connect(self.page_pagos)
 		self.btn_reportes.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_reportes))
@@ -98,6 +98,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		# realiza que los table view se ajusten de entrada de datos
 		#self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		#self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+		self.table_combo.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		# btn controls
 		self.btn_add_confirm_admin.clicked.connect(self.add_admin_new)
 		##self.add_admin_btn_ctrls.clicked.connect(self.es_null)
@@ -121,6 +122,11 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_show_admin.clicked.connect(self.show_admin)
 		self.tableWidget_admin.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.tableWidget_admin.cellClicked.connect(self.onCellClicked)
+		self.btn_add_options.clicked.connect(self.open_options)
+		self.btn_add_row.clicked.connect(self.add_row)
+		self.btn_save_options.clicked.connect(self.save_tableoptions)
+		self.btn_returnsave.clicked.connect(self.get_datosregistros)
+		self.id_options=[]
 		# menu lateral
 		self.borrar_elementos()
 		self.bt_menu.clicked.connect(self.mover_menu)
@@ -131,6 +137,106 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
+	def view_configuration(self):
+		print("No ha procedimiento")
+
+	def get_datosregistros(self):
+		self.pages.setCurrentWidget(self.page_registro)
+		datos=self.datos.get_option()
+		self.cmbbox_documents.clear()
+		self.cmbbox_rotated.clear()
+		self.cmbbox_mediopay.clear()
+		self.cmbbox_costcenter.clear()
+		self.cmbbox_responsable.clear()
+		self.cmbbox_egreso.clear()
+		for i in datos:
+			tex=i[1]
+			if tex is not None:
+				self.cmbbox_documents.addItems([i[1]])
+		for i in datos:
+			tex=i[2]
+			if tex is not None:
+				self.cmbbox_rotated.addItems([i[2]])
+		for i in datos:
+			tex=i[3]
+			if tex is not None:
+				self.cmbbox_mediopay.addItems([i[3]])
+		for i in datos:
+			tex=i[4]
+			if tex is not None:
+				self.cmbbox_costcenter.addItems([i[4]])
+		for i in datos:
+			tex=i[5]
+			if tex is not None:
+				self.cmbbox_responsable.addItems([i[5]])
+		for i in datos:
+			tex=i[6]
+			if tex is not None:
+				self.cmbbox_egreso.addItems([i[6]])
+
+	def add_row(self):
+		current_row_count = self.table_combo.rowCount()
+		self.table_combo.setRowCount(current_row_count + 1)
+
+	def change_header(self,table_properties):
+		# Cahenged the size of contents of Qtablwidget to 12
+		font = QFont()
+		# set valor
+		font.setPointSize(12)
+		table_properties.setFont(font)
+		font = QFont()
+		font.setPointSize(12);
+		# Change the size of leters about horizontal header of table assitencia
+		table_properties.horizontalHeader().setFont(font);
+		table_properties.verticalHeader().setFont(font);
+		table_properties.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
+
+	def open_options(self):
+		datos=self.datos.get_option()
+		self.id_options=[]
+		self.pages.setCurrentWidget(self.page_add_combo)
+		self.table_combo.setRowCount(len(datos))
+		self.table_combo.setColumnCount(6)
+		self.change_header(self.table_combo)
+		if(datos!=[]):
+			for row in range(len(datos)):
+				self.id_options.append(datos[row][0])
+				for column in range(1,7):
+					item = QTableWidgetItem(datos[row][column])
+					self.table_combo.setItem(row, column-1, item)
+
+	def save_tableoptions(self):
+		# Obtenemos el umero de filas
+		i=self.table_combo.rowCount()
+		# Obtenemos el numero de columnas
+		j=self.table_combo.columnCount()
+		for row in range(i):
+			column=[]
+			for col in range(j):
+				item = self.table_combo.item(row, col)
+				# get data only that value is different of None
+				if(item is not None):
+					info=item.text()
+					if(info!=""):
+						column.append(info)
+					else:
+						column.append(None)
+				else:
+					column.append(None)
+			result=all(element is None for element in column)
+			# Si una fila esta vacia se elimina la posicion
+			if(result and i==len(self.id_options)):
+				act=self.datos.delete_options(self.id_options[row])
+			else:
+				# No esta vacio pero se ha modificado
+				if(row<len(self.id_options)):
+					act=self.datos.update_option(self.id_options[row],column[0],column[1],column[2],column[3],column[4],column[5])
+				# Verifica que no este vacio y lo agrega
+				elif(result==False):
+					act=self.datos.set_option(column[0],column[1],column[2],column[3],column[4],column[5])
+		self.dialogo.show()
+		self.dialogo.label_mensaje.setText("Se guardo las modificaciones")
+		self.get_datosregistros()
 
 	def onCellClicked(self, row, col):
 		item = self.tableWidget_admin.item(row, 3)
@@ -140,14 +246,13 @@ class control_aec(QMainWindow,Ui_sistema):
 		from controllers.t_karderctrl import tkardex
 		tkardex_frame=tkardex(self)
 		tkardex_frame.show()
-		self.pages.setCurrentWidget(self.page_inicio)
-		self.lbl_mensaje_show.setText("Controle desde menu proyectos")
+		self.return_home()
 
 	def page_pagos(self):
 		from controllers.tpayments import tpaymentst
 		payments=tpaymentst(self)
 		self.pages.setCurrentWidget(self.page_inicio)
-		self.lbl_mensaje_show.setText("REALIZO LA OPERACION DE PAGO")
+		self.return_home()
 		payments.show()
 
 	def show_search_data(self):
@@ -280,13 +385,9 @@ class control_aec(QMainWindow,Ui_sistema):
 		else:
 			self.label_validate_users.setText("El user debe tener mas de 5 caracteres")
 	def ctrl_frame_delete_admin(self):
-		self.add_admin_frame.hide()
-		self.delete_admin_frame.show()
-		self.pages.setCurrentWidget(self.page_add_administrator)
+		self.pages.setCurrentWidget(self.page_delete)
 
 	def ctrl_frame_add_admin(self):
-		self.add_admin_frame.show()
-		self.delete_admin_frame.hide()
 		self.pages.setCurrentWidget(self.page_add_administrator)
 
 	def add_new_project(self):

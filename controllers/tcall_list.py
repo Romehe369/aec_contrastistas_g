@@ -271,7 +271,6 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 				self.list_id_distribution.append((i[0],i[2]))
 				#Verificamos que no este eliminado de la lista
 				if(i[3]):
-
 					# Obtenemos la informacion del dni de dicho trabajador
 					act = self.datos.buscar_trabajador(i[2])
 					if act!=[]:
@@ -293,7 +292,6 @@ class tasistencia(QMainWindow, Ui_tasistencia):
 				item = QTableWidgetItem(datos_fila[column])
 				self.table_asistencia.setItem(row, column, item)
 		self.disanable_column(len(info_dni))
-
 
 class CheckBoxWidget(QWidget):
     def __init__(self, parent=None):

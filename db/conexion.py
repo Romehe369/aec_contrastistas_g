@@ -280,7 +280,41 @@ class Registro_datos():
         finally:
             cur.close() 
         return cont_row
-        
+    ##################################### ADD FACTURA ################################
+    def add_factura(self,cod_factura, date_filed, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation):
+        agregado=True
+        date_filed=self.convert_date(date_filed)
+        date_issue=self.convert_date(date_issue)
+        try:
+            cur = self.conexion.cursor()
+            sql= """INSERT INTO tfactura(cod_factura, date_filed, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+            val = (cod_factura, date_filed, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation)
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            agregado=False
+        finally:
+            cur.close()
+        return agregado
+    ##################################### END FACTURA ################################
+    ##################################### ADD MATERIAL ################################
+    def add_material(self,code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total):
+        agregado=True
+        try:
+            cur = self.conexion.cursor()
+            sql= """INSERT INTO tmaterial(code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+            val = (code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total)
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            agregado=False
+        finally:
+            cur.close()
+        return agregado
+    ##################################### END MATERIAL ################################
+
     ###################################### UBICACION #################################
     # Manejar datos of region
     def get_region(self):
@@ -440,6 +474,7 @@ class Registro_datos():
         finally:
             cur.close() 
         return result
+        
     def between_month(self,date_start,date_end,dni):
         #date_start=self.convert_date(date_start)
         #date_end=self.convert_date(date_end)
@@ -462,10 +497,76 @@ class Registro_datos():
         finally:
             cur.close() 
         return result
+    ################################ INSERT OPTIONS #############################
+    def set_option(self,document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure):
+        agregado=True
+        try:
+            cur = self.conexion.cursor()
+            sql= """INSERT INTO topcion (document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure) 
+            VALUES(%s,%s,%s,%s,%s,%s)"""
+            val = (document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure,)
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            agregado=False
+        finally:
+            cur.close()
+        return agregado
+
+    def get_option(self):
+        try:
+            cur = self.conexion.cursor()
+            sql = """SELECT * FROM topcion"""
+            cur.execute(sql)
+            asistencia = cur.fetchall()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            asistencia=[]
+        finally:
+            cur.close()
+        return asistencia
+
+    def update_option(self,id,document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure):
+        update=True
+        try:
+            cur = self.conexion.cursor()
+            sql="""
+            UPDATE topcion 
+            SET document_type = %s, rotated_to = %s, payment_method = %s, cost_center = %s, expense_made = %s, type_expenditure = %s  
+            WHERE id = %s"""
+            val = (document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure,id,)
+            cur.execute(sql,val)
+            a = cur.rowcount
+            # Se guarde y persista simpre
+            self.conexion.commit()  
+        except Exception as e:
+            update=False
+        finally:
+            cur.close()
+        return update
+
+    def delete_options(self,id):
+        cont_row=0
+        try:
+            cur = self.conexion.cursor()
+            sql = "DELETE FROM topcion WHERE id = %s"
+            val=(id,)
+            cur.execute(sql,val)
+            cont_row=cur.rowcount
+            self.conexion.commit()    
+        except Exception as e:
+            # Si no se logro elimianar
+            cont_row=0
+        finally:
+            cur.close() 
+        return cont_row
+    ################################ INSERT OPTIONS #############################
 
 
 
-variable=Registro_datos()
+
+
+#variable=Registro_datos()
 #var=variable.show_all_data(variable.convert_date("05/08/2023"))
 #var=variable.delete_asistence("72773129017")
 #r=variable.contar()
@@ -473,5 +574,7 @@ variable=Registro_datos()
 #r=variable.datemonth_and_dni(variable.convert_date("5/8/2023"),"78254969")
 #r=variable.between_month("01/08/2023","20/08/2022","76213932")
 #print(r[0][0])
+#print(len(variable.get_option()))
+#print(variable.delete_options(10))
 
 # ALTER TABLE `tasistencia` AUTO_INCREMENT = 1;
