@@ -281,15 +281,15 @@ class Registro_datos():
             cur.close() 
         return cont_row
     ##################################### ADD FACTURA ################################
-    def add_factura(self,cod_factura, date_filed, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation):
+    def add_factura(self,cod_factura, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle):
         agregado=True
-        date_filed=self.convert_date(date_filed)
+        payment_date=self.convert_date(payment_date)
         date_issue=self.convert_date(date_issue)
         try:
             cur = self.conexion.cursor()
-            sql= """INSERT INTO tfactura(cod_factura, date_filed, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation) 
-            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
-            val = (cod_factura, date_filed, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation)
+            sql= """INSERT INTO tfactura(cod_factura, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+            val = (cod_factura, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
@@ -299,13 +299,13 @@ class Registro_datos():
         return agregado
     ##################################### END FACTURA ################################
     ##################################### ADD MATERIAL ################################
-    def add_material(self,code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total):
+    def add_material(self,code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable):
         agregado=True
         try:
             cur = self.conexion.cursor()
-            sql= """INSERT INTO tmaterial(code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total) 
+            sql= """INSERT INTO tmaterial(code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable) 
             VALUES(%s,%s,%s,%s,%s,%s,%s)"""
-            val = (code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total)
+            val = (code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:

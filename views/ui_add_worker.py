@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_workerIfJiLb.ui'
+## Form generated from reading UI file 'add_workerRmSpqM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -13,283 +13,426 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_Dialog_add_Trabajador(object):
-    def setupUi(self, Dialog_add_Trabajador):
-        if not Dialog_add_Trabajador.objectName():
-            Dialog_add_Trabajador.setObjectName(u"Dialog_add_Trabajador")
-        Dialog_add_Trabajador.resize(720, 601)
-        font = QFont()
-        font.setPointSize(11)
-        Dialog_add_Trabajador.setFont(font)
-        Dialog_add_Trabajador.setStyleSheet(u"")
-        self.frame_3 = QFrame(Dialog_add_Trabajador)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setGeometry(QRect(10, 10, 701, 581))
-        self.frame_3.setStyleSheet(u"QFrame{\n"
-"	font: 12pt \"MS Shell Dlg 2\";\n"
-"	background-color: rgb(144, 144, 144);\n"
-"	border: 5px solid rgb(0, 0, 127);\n"
-"	border-radius:10px;\n"
-"}\n"
-"QPushButton{\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:10px;\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+class Ui_add_Trabajador(object):
+    def setupUi(self, add_Trabajador):
+        if not add_Trabajador.objectName():
+            add_Trabajador.setObjectName(u"add_Trabajador")
+        add_Trabajador.resize(813, 651)
+        self.centralwidget = QWidget(add_Trabajador)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.verticalLayout_4 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.frame_superior = QFrame(self.centralwidget)
+        self.frame_superior.setObjectName(u"frame_superior")
+        self.frame_superior.setMinimumSize(QSize(0, 35))
+        self.frame_superior.setMaximumSize(QSize(16777215, 35))
+        self.frame_superior.setStyleSheet(u"QFrame{\n"
+"border: none;\n"
+"	background-color: rgb(158, 158, 158);\n"
+"}")
+        self.layout_principal = QHBoxLayout(self.frame_superior)
+        self.layout_principal.setSpacing(0)
+        self.layout_principal.setObjectName(u"layout_principal")
+        self.layout_principal.setContentsMargins(0, 0, 0, 0)
+        self.lbl_title = QLabel(self.frame_superior)
+        self.lbl_title.setObjectName(u"lbl_title")
+        self.lbl_title.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+        self.lbl_title.setAlignment(Qt.AlignCenter)
+
+        self.layout_principal.addWidget(self.lbl_title)
+
+        self.btn_ampliar = QPushButton(self.frame_superior)
+        self.btn_ampliar.setObjectName(u"btn_ampliar")
+        self.btn_ampliar.setMaximumSize(QSize(35, 35))
+        self.btn_ampliar.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(0, 0, 255);\n"
+"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"border:none;\n"
+"border-radius:0px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"background-color: white;\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"QLineEdit{\n"
-"background-color: white;\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"QComboBox{\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"QDateEdit{\n"
-"background-color: white;\n"
-"}\n"
-"QLabel{\n"
-"border:none;\n"
-"background-color:rgba(0,0,0,0%);\n"
+"	background-color: rgb(170, 255, 255);\n"
 "}")
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
-        self.lblCelular = QLabel(self.frame_3)
-        self.lblCelular.setObjectName(u"lblCelular")
-        self.lblCelular.setGeometry(QRect(360, 420, 151, 31))
-        self.lblCelular.setMinimumSize(QSize(0, 31))
-        font1 = QFont()
-        font1.setFamily(u"MS Shell Dlg 2")
-        font1.setPointSize(12)
-        font1.setBold(False)
-        font1.setItalic(False)
-        font1.setWeight(50)
-        self.lblCelular.setFont(font1)
-        self.img_dni = QLabel(self.frame_3)
-        self.img_dni.setObjectName(u"img_dni")
-        self.img_dni.setGeometry(QRect(370, 90, 311, 211))
-        self.img_dni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:10px;\n"
-"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
-        self.img_dni.setScaledContents(True)
-        self.label = QLabel(self.frame_3)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(440, 60, 111, 21))
-        self.label.setFont(font1)
-        self.label.setStyleSheet(u"")
-        self.label.setAlignment(Qt.AlignCenter)
-        self.lblCategoria = QLabel(self.frame_3)
-        self.lblCategoria.setObjectName(u"lblCategoria")
-        self.lblCategoria.setGeometry(QRect(30, 360, 111, 31))
-        self.lblCategoria.setMinimumSize(QSize(0, 31))
-        self.lblCategoria.setFont(font1)
-        self.lineEdit_celular = QLineEdit(self.frame_3)
-        self.lineEdit_celular.setObjectName(u"lineEdit_celular")
-        self.lineEdit_celular.setGeometry(QRect(360, 450, 311, 31))
-        self.lineEdit_celular.setMinimumSize(QSize(0, 31))
-        self.lineEdit_celular.setFont(font1)
-        self.lineEdit_celular.setMaxLength(9)
-        self.frame_2 = QFrame(self.frame_3)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(360, 300, 331, 51))
-        self.frame_2.setStyleSheet(u"QFrame{\n"
+
+        self.layout_principal.addWidget(self.btn_ampliar)
+
+        self.btn_close = QPushButton(self.frame_superior)
+        self.btn_close.setObjectName(u"btn_close")
+        self.btn_close.setMaximumSize(QSize(35, 35))
+        self.btn_close.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(255, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "border:none;\n"
-"background-color:rgba(0,0,0,0%);\n"
-"}")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout = QHBoxLayout(self.frame_2)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.pushButton_cargar = QPushButton(self.frame_2)
-        self.pushButton_cargar.setObjectName(u"pushButton_cargar")
-        self.pushButton_cargar.setMinimumSize(QSize(0, 31))
-        self.pushButton_cargar.setFont(font1)
-
-        self.horizontalLayout.addWidget(self.pushButton_cargar)
-
-        self.pushButton_delete = QPushButton(self.frame_2)
-        self.pushButton_delete.setObjectName(u"pushButton_delete")
-        self.pushButton_delete.setMinimumSize(QSize(0, 31))
-        self.pushButton_delete.setFont(font1)
-
-        self.horizontalLayout.addWidget(self.pushButton_delete)
-
-        self.btn_aceptar = QPushButton(self.frame_3)
-        self.btn_aceptar.setObjectName(u"btn_aceptar")
-        self.btn_aceptar.setGeometry(QRect(160, 510, 171, 41))
-        self.btn_aceptar.setFont(font1)
-        self.btn_aceptar.setAutoFillBackground(False)
-        self.lineEditDNI = QLineEdit(self.frame_3)
-        self.lineEditDNI.setObjectName(u"lineEditDNI")
-        self.lineEditDNI.setGeometry(QRect(30, 90, 281, 31))
-        self.lineEditDNI.setMinimumSize(QSize(0, 31))
-        self.lineEditDNI.setFont(font1)
-        self.lineEditDNI.setMaxLength(8)
-        self.label_fecha_inicio = QLabel(self.frame_3)
-        self.label_fecha_inicio.setObjectName(u"label_fecha_inicio")
-        self.label_fecha_inicio.setGeometry(QRect(30, 300, 111, 31))
-        self.label_fecha_inicio.setMinimumSize(QSize(0, 31))
-        self.label_fecha_inicio.setFont(font1)
-        self.frame = QFrame(self.frame_3)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(30, 10, 641, 45))
-        self.frame.setStyleSheet(u"QFrame{\n"
-"border:none;\n"
+"border-radius:0px;\n"
 "}\n"
 "\n"
-"")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout = QVBoxLayout(self.frame)
-        self.verticalLayout.setSpacing(0)
+"QPushButton:hover{\n"
+"	background-color: rgb(170, 0, 255);\n"
+"}")
+
+        self.layout_principal.addWidget(self.btn_close)
+
+
+        self.verticalLayout_4.addWidget(self.frame_superior)
+
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_trabajador = QLabel(self.frame)
-        self.label_trabajador.setObjectName(u"label_trabajador")
-        font2 = QFont()
-        font2.setFamily(u"MS Shell Dlg 2")
-        font2.setPointSize(18)
-        font2.setBold(False)
-        font2.setItalic(False)
-        font2.setWeight(9)
-        self.label_trabajador.setFont(font2)
-        self.label_trabajador.setStyleSheet(u"font: 75 18pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 255, 0);")
-        self.label_trabajador.setAlignment(Qt.AlignCenter)
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(15, 0, 15, 0)
+        self.lblName = QLabel(self.centralwidget)
+        self.lblName.setObjectName(u"lblName")
+        self.lblName.setMinimumSize(QSize(0, 31))
+        font = QFont()
+        font.setFamily(u"MS Shell Dlg 2")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.lblName.setFont(font)
+        self.lblName.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.verticalLayout.addWidget(self.label_trabajador)
+        self.gridLayout.addWidget(self.lblName, 1, 0, 1, 1)
 
-        self.dateEdit_fecha_init = QDateEdit(self.frame_3)
-        self.dateEdit_fecha_init.setObjectName(u"dateEdit_fecha_init")
-        self.dateEdit_fecha_init.setGeometry(QRect(30, 330, 211, 31))
-        self.dateEdit_fecha_init.setMinimumSize(QSize(0, 31))
-        font3 = QFont()
-        font3.setPointSize(12)
-        self.dateEdit_fecha_init.setFont(font3)
-        self.dateEdit_fecha_init.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+        self.lblSurname = QLabel(self.centralwidget)
+        self.lblSurname.setObjectName(u"lblSurname")
+        self.lblSurname.setMinimumSize(QSize(0, 31))
+        self.lblSurname.setFont(font)
+        self.lblSurname.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.lblSurname, 2, 0, 1, 1)
+
+        self.lineEditName = QLineEdit(self.centralwidget)
+        self.lineEditName.setObjectName(u"lineEditName")
+        self.lineEditName.setMinimumSize(QSize(0, 31))
+        self.lineEditName.setFont(font)
+
+        self.gridLayout.addWidget(self.lineEditName, 1, 1, 1, 1)
+
+        self.lineEditSurname = QLineEdit(self.centralwidget)
+        self.lineEditSurname.setObjectName(u"lineEditSurname")
+        self.lineEditSurname.setMinimumSize(QSize(0, 31))
+        self.lineEditSurname.setFont(font)
+        self.lineEditSurname.setCursorMoveStyle(Qt.LogicalMoveStyle)
+
+        self.gridLayout.addWidget(self.lineEditSurname, 2, 1, 1, 1)
+
+        self.comboBox_sexo = QComboBox(self.centralwidget)
+        self.comboBox_sexo.addItem("")
+        self.comboBox_sexo.addItem("")
+        self.comboBox_sexo.setObjectName(u"comboBox_sexo")
+        self.comboBox_sexo.setMinimumSize(QSize(0, 31))
+        self.comboBox_sexo.setFont(font)
+        self.comboBox_sexo.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:0px;")
+
+        self.gridLayout.addWidget(self.comboBox_sexo, 3, 1, 1, 1)
+
+        self.lineEditDNI = QLineEdit(self.centralwidget)
+        self.lineEditDNI.setObjectName(u"lineEditDNI")
+        self.lineEditDNI.setMinimumSize(QSize(0, 31))
+        self.lineEditDNI.setFont(font)
+        self.lineEditDNI.setMaxLength(8)
+
+        self.gridLayout.addWidget(self.lineEditDNI, 0, 1, 1, 1)
+
+        self.label_sexo = QLabel(self.centralwidget)
+        self.label_sexo.setObjectName(u"label_sexo")
+        self.label_sexo.setMinimumSize(QSize(0, 31))
+        self.label_sexo.setFont(font)
+        self.label_sexo.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_sexo, 3, 0, 1, 1)
+
+        self.label_fecha_inicio = QLabel(self.centralwidget)
+        self.label_fecha_inicio.setObjectName(u"label_fecha_inicio")
+        self.label_fecha_inicio.setMinimumSize(QSize(0, 31))
+        self.label_fecha_inicio.setFont(font)
+        self.label_fecha_inicio.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_fecha_inicio, 4, 0, 1, 1)
+
+        self.dateEdit_fecha_init = QDateEdit(self.centralwidget)
+        self.dateEdit_fecha_init.setObjectName(u"dateEdit_fecha_init")
+        self.dateEdit_fecha_init.setMinimumSize(QSize(0, 31))
+        font1 = QFont()
+        font1.setPointSize(12)
+        self.dateEdit_fecha_init.setFont(font1)
+        self.dateEdit_fecha_init.setStyleSheet(u"QCalendarWidget QWidget {\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"font: 14pt \"MS Shell Dlg 2\";\n"
+"background-color : lightgreen;\n"
+"}\n"
+"#qt_calendar_prevmonth, \n"
+"#qt_calendar_nextmonth {\n"
+"	/* border delete */\n"
+"    /* delete default icons */\n"
+"    min-width: 50px;\n"
+"    max-height: 33px;\n"
+"	/* set background transparent */\n"
+"}\n"
+"#qt_calendar_navigationbar {\n"
+"	font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"#qt_calendar_monthbutton {\n"
+"	font: 14pt \"MS Shell Dlg 2\";\n"
+"	width: 110px;\n"
+"	height: 31px;\n"
+"}\n"
+"#qt_calendar_yearbutton {\n"
+"	font: 75 14pt \"MS Shell Dlg 2\";\n"
+"	width: 70px;\n"
+"	height: 31px;\n"
+"}")
         self.dateEdit_fecha_init.setCalendarPopup(True)
         self.dateEdit_fecha_init.setDate(QDate(2023, 1, 1))
-        self.comboBox_categoria = QComboBox(self.frame_3)
+
+        self.gridLayout.addWidget(self.dateEdit_fecha_init, 4, 1, 1, 1)
+
+        self.lblDNI = QLabel(self.centralwidget)
+        self.lblDNI.setObjectName(u"lblDNI")
+        self.lblDNI.setMinimumSize(QSize(0, 31))
+        self.lblDNI.setFont(font)
+        self.lblDNI.setStyleSheet(u"")
+        self.lblDNI.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.lblDNI, 0, 0, 1, 1)
+
+        self.lblCelular = QLabel(self.centralwidget)
+        self.lblCelular.setObjectName(u"lblCelular")
+        self.lblCelular.setMinimumSize(QSize(0, 31))
+        self.lblCelular.setFont(font)
+        self.lblCelular.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.lblCelular, 3, 2, 1, 1)
+
+        self.lineEdit_celular = QLineEdit(self.centralwidget)
+        self.lineEdit_celular.setObjectName(u"lineEdit_celular")
+        self.lineEdit_celular.setMinimumSize(QSize(0, 31))
+        self.lineEdit_celular.setFont(font)
+        self.lineEdit_celular.setMaxLength(9)
+
+        self.gridLayout.addWidget(self.lineEdit_celular, 3, 3, 1, 1)
+
+        self.label_correo = QLabel(self.centralwidget)
+        self.label_correo.setObjectName(u"label_correo")
+        self.label_correo.setMinimumSize(QSize(0, 31))
+        self.label_correo.setFont(font)
+        self.label_correo.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_correo, 2, 2, 1, 1)
+
+        self.lineEdit_Correo = QLineEdit(self.centralwidget)
+        self.lineEdit_Correo.setObjectName(u"lineEdit_Correo")
+        self.lineEdit_Correo.setMinimumSize(QSize(0, 31))
+        self.lineEdit_Correo.setFont(font)
+
+        self.gridLayout.addWidget(self.lineEdit_Correo, 2, 3, 1, 1)
+
+        self.lblCategoria = QLabel(self.centralwidget)
+        self.lblCategoria.setObjectName(u"lblCategoria")
+        self.lblCategoria.setMinimumSize(QSize(0, 31))
+        self.lblCategoria.setFont(font)
+        self.lblCategoria.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.lblCategoria, 0, 2, 1, 1)
+
+        self.comboBox_categoria = QComboBox(self.centralwidget)
         self.comboBox_categoria.addItem("")
         self.comboBox_categoria.addItem("")
         self.comboBox_categoria.addItem("")
         self.comboBox_categoria.addItem("")
         self.comboBox_categoria.addItem("")
         self.comboBox_categoria.setObjectName(u"comboBox_categoria")
-        self.comboBox_categoria.setGeometry(QRect(30, 390, 211, 31))
         self.comboBox_categoria.setMinimumSize(QSize(0, 31))
-        self.comboBox_categoria.setFont(font1)
+        self.comboBox_categoria.setFont(font)
         self.comboBox_categoria.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:0px;")
-        self.comboBox_sexo = QComboBox(self.frame_3)
-        self.comboBox_sexo.addItem("")
-        self.comboBox_sexo.addItem("")
-        self.comboBox_sexo.setObjectName(u"comboBox_sexo")
-        self.comboBox_sexo.setGeometry(QRect(30, 270, 211, 31))
-        self.comboBox_sexo.setMinimumSize(QSize(0, 31))
-        self.comboBox_sexo.setFont(font1)
-        self.comboBox_sexo.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;")
-        self.lineEdit_Correo = QLineEdit(self.frame_3)
-        self.lineEdit_Correo.setObjectName(u"lineEdit_Correo")
-        self.lineEdit_Correo.setGeometry(QRect(360, 380, 311, 31))
-        self.lineEdit_Correo.setMinimumSize(QSize(0, 31))
-        self.lineEdit_Correo.setFont(font1)
-        self.label_sexo = QLabel(self.frame_3)
-        self.label_sexo.setObjectName(u"label_sexo")
-        self.label_sexo.setGeometry(QRect(30, 240, 47, 31))
-        self.label_sexo.setMinimumSize(QSize(0, 31))
-        self.label_sexo.setFont(font1)
-        self.lblDNI = QLabel(self.frame_3)
-        self.lblDNI.setObjectName(u"lblDNI")
-        self.lblDNI.setGeometry(QRect(30, 60, 47, 31))
-        self.lblDNI.setMinimumSize(QSize(0, 31))
-        self.lblDNI.setFont(font1)
-        self.lblDNI.setStyleSheet(u"")
-        self.lblName = QLabel(self.frame_3)
-        self.lblName.setObjectName(u"lblName")
-        self.lblName.setGeometry(QRect(30, 120, 81, 31))
-        self.lblName.setMinimumSize(QSize(0, 31))
-        self.lblName.setFont(font1)
-        self.lblSurname = QLabel(self.frame_3)
-        self.lblSurname.setObjectName(u"lblSurname")
-        self.lblSurname.setGeometry(QRect(30, 180, 81, 31))
-        self.lblSurname.setMinimumSize(QSize(0, 31))
-        self.lblSurname.setFont(font1)
-        self.lineEditSurname = QLineEdit(self.frame_3)
-        self.lineEditSurname.setObjectName(u"lineEditSurname")
-        self.lineEditSurname.setGeometry(QRect(30, 210, 281, 31))
-        self.lineEditSurname.setMinimumSize(QSize(0, 31))
-        self.lineEditSurname.setFont(font1)
-        self.lineEditSurname.setCursorMoveStyle(Qt.LogicalMoveStyle)
-        self.label_correo = QLabel(self.frame_3)
-        self.label_correo.setObjectName(u"label_correo")
-        self.label_correo.setGeometry(QRect(360, 350, 161, 31))
-        self.label_correo.setMinimumSize(QSize(0, 31))
-        self.label_correo.setFont(font1)
-        self.lineEditName = QLineEdit(self.frame_3)
-        self.lineEditName.setObjectName(u"lineEditName")
-        self.lineEditName.setGeometry(QRect(30, 150, 281, 31))
-        self.lineEditName.setMinimumSize(QSize(0, 31))
-        self.lineEditName.setFont(font1)
-        self.btn_cancelar = QPushButton(self.frame_3)
-        self.btn_cancelar.setObjectName(u"btn_cancelar")
-        self.btn_cancelar.setGeometry(QRect(350, 510, 191, 41))
-        self.btn_cancelar.setFont(font1)
-        self.label_2 = QLabel(self.frame_3)
+
+        self.gridLayout.addWidget(self.comboBox_categoria, 0, 3, 1, 1)
+
+        self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(30, 420, 111, 31))
         self.label_2.setMinimumSize(QSize(0, 31))
-        self.label_2.setStyleSheet(u"border:none;")
-        self.lineEdit_salario = QLineEdit(self.frame_3)
+        self.label_2.setStyleSheet(u"border:none;\n"
+"font: 12pt \"MS Shell Dlg 2\";")
+        self.label_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_2, 1, 2, 1, 1)
+
+        self.lineEdit_salario = QLineEdit(self.centralwidget)
         self.lineEdit_salario.setObjectName(u"lineEdit_salario")
-        self.lineEdit_salario.setGeometry(QRect(30, 450, 281, 31))
         self.lineEdit_salario.setMinimumSize(QSize(0, 31))
-        self.lineEdit_salario.setFont(font1)
+        self.lineEdit_salario.setFont(font)
         self.lineEdit_salario.setCursorMoveStyle(Qt.LogicalMoveStyle)
 
-        self.retranslateUi(Dialog_add_Trabajador)
+        self.gridLayout.addWidget(self.lineEdit_salario, 1, 3, 1, 1)
 
-        QMetaObject.connectSlotsByName(Dialog_add_Trabajador)
+
+        self.verticalLayout.addLayout(self.gridLayout)
+
+
+        self.verticalLayout_4.addLayout(self.verticalLayout)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(15, -1, 15, -1)
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.label_sexo_2 = QLabel(self.centralwidget)
+        self.label_sexo_2.setObjectName(u"label_sexo_2")
+        self.label_sexo_2.setMinimumSize(QSize(0, 31))
+        self.label_sexo_2.setMaximumSize(QSize(16777215, 31))
+        self.label_sexo_2.setFont(font)
+        self.label_sexo_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_2.addWidget(self.label_sexo_2)
+
+        self.img_dni_2 = QLabel(self.centralwidget)
+        self.img_dni_2.setObjectName(u"img_dni_2")
+        self.img_dni_2.setMinimumSize(QSize(0, 300))
+        self.img_dni_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
+        self.img_dni_2.setScaledContents(True)
+
+        self.verticalLayout_2.addWidget(self.img_dni_2)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.pushButton_cargar = QPushButton(self.centralwidget)
+        self.pushButton_cargar.setObjectName(u"pushButton_cargar")
+        self.pushButton_cargar.setMinimumSize(QSize(0, 31))
+        self.pushButton_cargar.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.pushButton_cargar)
+
+        self.pushButton_delete = QPushButton(self.centralwidget)
+        self.pushButton_delete.setObjectName(u"pushButton_delete")
+        self.pushButton_delete.setMinimumSize(QSize(0, 31))
+        self.pushButton_delete.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.pushButton_delete)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_4)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_2)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label_sexo_3 = QLabel(self.centralwidget)
+        self.label_sexo_3.setObjectName(u"label_sexo_3")
+        self.label_sexo_3.setMinimumSize(QSize(0, 31))
+        self.label_sexo_3.setMaximumSize(QSize(16777215, 31))
+        self.label_sexo_3.setFont(font)
+        self.label_sexo_3.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_3.addWidget(self.label_sexo_3)
+
+        self.img_dni = QLabel(self.centralwidget)
+        self.img_dni.setObjectName(u"img_dni")
+        self.img_dni.setMinimumSize(QSize(0, 300))
+        self.img_dni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
+        self.img_dni.setScaledContents(True)
+
+        self.verticalLayout_3.addWidget(self.img_dni)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setSpacing(6)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.pushButton_cargar_2 = QPushButton(self.centralwidget)
+        self.pushButton_cargar_2.setObjectName(u"pushButton_cargar_2")
+        self.pushButton_cargar_2.setMinimumSize(QSize(0, 31))
+        self.pushButton_cargar_2.setFont(font)
+
+        self.horizontalLayout_5.addWidget(self.pushButton_cargar_2)
+
+        self.pushButton_delete_2 = QPushButton(self.centralwidget)
+        self.pushButton_delete_2.setObjectName(u"pushButton_delete_2")
+        self.pushButton_delete_2.setMinimumSize(QSize(0, 31))
+        self.pushButton_delete_2.setFont(font)
+
+        self.horizontalLayout_5.addWidget(self.pushButton_delete_2)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_5)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_3)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(15, 0, 15, -1)
+        self.btn_aceptar = QPushButton(self.centralwidget)
+        self.btn_aceptar.setObjectName(u"btn_aceptar")
+        self.btn_aceptar.setFont(font)
+        self.btn_aceptar.setAutoFillBackground(False)
+
+        self.horizontalLayout_3.addWidget(self.btn_aceptar)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_4.addItem(self.verticalSpacer)
+
+        add_Trabajador.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(add_Trabajador)
+
+        QMetaObject.connectSlotsByName(add_Trabajador)
     # setupUi
 
-    def retranslateUi(self, Dialog_add_Trabajador):
-        Dialog_add_Trabajador.setWindowTitle(QCoreApplication.translate("Dialog_add_Trabajador", u"Agregar un persona", None))
-        self.lblCelular.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Celular o telefono:", None))
+    def retranslateUi(self, add_Trabajador):
+        add_Trabajador.setWindowTitle(QCoreApplication.translate("add_Trabajador", u"MainWindow", None))
+        self.lbl_title.setText(QCoreApplication.translate("add_Trabajador", u"AGREGAR UN EMPLEADOR Y/O TRABAJDOR", None))
+        self.btn_ampliar.setText(QCoreApplication.translate("add_Trabajador", u"\u25a0", None))
+        self.btn_close.setText(QCoreApplication.translate("add_Trabajador", u"X", None))
+        self.lblName.setText(QCoreApplication.translate("add_Trabajador", u"Nombres:", None))
+        self.lblSurname.setText(QCoreApplication.translate("add_Trabajador", u"Apellidos:", None))
+        self.lineEditName.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese los nombres", None))
+        self.lineEditSurname.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese apellidos", None))
+        self.comboBox_sexo.setItemText(0, QCoreApplication.translate("add_Trabajador", u"Femenino", None))
+        self.comboBox_sexo.setItemText(1, QCoreApplication.translate("add_Trabajador", u"Masculino", None))
+
+        self.lineEditDNI.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese DNI", None))
+        self.label_sexo.setText(QCoreApplication.translate("add_Trabajador", u"Sexo:", None))
+        self.label_fecha_inicio.setText(QCoreApplication.translate("add_Trabajador", u"Fecha de inicio", None))
+        self.lblDNI.setText(QCoreApplication.translate("add_Trabajador", u"DNI :", None))
+        self.lblCelular.setText(QCoreApplication.translate("add_Trabajador", u"Celular o telefono:", None))
+        self.lineEdit_celular.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese n\u00famero celular o telef.", None))
+        self.label_correo.setText(QCoreApplication.translate("add_Trabajador", u"Correo electronico:", None))
+        self.lineEdit_Correo.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese correo electronico", None))
+        self.lblCategoria.setText(QCoreApplication.translate("add_Trabajador", u"Categoria:", None))
+        self.comboBox_categoria.setItemText(0, QCoreApplication.translate("add_Trabajador", u"Operario", None))
+        self.comboBox_categoria.setItemText(1, QCoreApplication.translate("add_Trabajador", u"Ingenerio", None))
+        self.comboBox_categoria.setItemText(2, QCoreApplication.translate("add_Trabajador", u"Maestro", None))
+        self.comboBox_categoria.setItemText(3, QCoreApplication.translate("add_Trabajador", u"Ayudante", None))
+        self.comboBox_categoria.setItemText(4, QCoreApplication.translate("add_Trabajador", u"Oficial", None))
+
+        self.label_2.setText(QCoreApplication.translate("add_Trabajador", u"Salario diario:", None))
+        self.lineEdit_salario.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese salario por dia", None))
+        self.label_sexo_2.setText(QCoreApplication.translate("add_Trabajador", u"FOTO DNI PRINCIPAL", None))
+        self.img_dni_2.setText("")
+        self.pushButton_cargar.setText(QCoreApplication.translate("add_Trabajador", u"Cargar", None))
+        self.pushButton_delete.setText(QCoreApplication.translate("add_Trabajador", u"Limpiar", None))
+        self.label_sexo_3.setText(QCoreApplication.translate("add_Trabajador", u"FOTO DNI REVERSO", None))
         self.img_dni.setText("")
-        self.label.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"AGREGAR DNI", None))
-        self.lblCategoria.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Categoria:", None))
-        self.lineEdit_celular.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese n\u00famero celular o telef.", None))
-        self.pushButton_cargar.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Cargar", None))
-        self.pushButton_delete.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Eliminar", None))
-        self.btn_aceptar.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Aceptar", None))
-        self.lineEditDNI.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese DNI", None))
-        self.label_fecha_inicio.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Fecha de inicio", None))
-        self.label_trabajador.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"AGREGAR UN PERSONAL", None))
-        self.comboBox_categoria.setItemText(0, QCoreApplication.translate("Dialog_add_Trabajador", u"Operario", None))
-        self.comboBox_categoria.setItemText(1, QCoreApplication.translate("Dialog_add_Trabajador", u"Ingenerio", None))
-        self.comboBox_categoria.setItemText(2, QCoreApplication.translate("Dialog_add_Trabajador", u"Maestro", None))
-        self.comboBox_categoria.setItemText(3, QCoreApplication.translate("Dialog_add_Trabajador", u"Ayudante", None))
-        self.comboBox_categoria.setItemText(4, QCoreApplication.translate("Dialog_add_Trabajador", u"Oficial", None))
-
-        self.comboBox_sexo.setItemText(0, QCoreApplication.translate("Dialog_add_Trabajador", u"Femenino", None))
-        self.comboBox_sexo.setItemText(1, QCoreApplication.translate("Dialog_add_Trabajador", u"Masculino", None))
-
-        self.lineEdit_Correo.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese correo electronico", None))
-        self.label_sexo.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Sexo", None))
-        self.lblDNI.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"DNI :", None))
-        self.lblName.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Nombres:", None))
-        self.lblSurname.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Apellidos:", None))
-        self.lineEditSurname.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese apellidos", None))
-        self.label_correo.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Correo electronico:", None))
-        self.lineEditName.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese los nombres", None))
-        self.btn_cancelar.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Cancelar", None))
-        self.label_2.setText(QCoreApplication.translate("Dialog_add_Trabajador", u"Salario diario", None))
-        self.lineEdit_salario.setPlaceholderText(QCoreApplication.translate("Dialog_add_Trabajador", u"Ingrese salario por dia", None))
+        self.pushButton_cargar_2.setText(QCoreApplication.translate("add_Trabajador", u"Cargar", None))
+        self.pushButton_delete_2.setText(QCoreApplication.translate("add_Trabajador", u"Limpiar", None))
+        self.btn_aceptar.setText(QCoreApplication.translate("add_Trabajador", u"AGREGAR TRABAJADOR", None))
     # retranslateUi
 

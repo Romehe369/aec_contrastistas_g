@@ -22,9 +22,7 @@ class MiApp(QMainWindow, Ui_login):
 	def __init__(self):
 		super().__init__()
 		self.setupUi(self)
-		#eliminar barra
-		self.setWindowFlag(Qt.FramelessWindowHint)
-		#transparente
+		#self.setWindowFlag(Qt.FramelessWindowHint)
 		self.setAttribute(Qt.WA_TranslucentBackground)
 		# evento click para acceder al sistema
 		self.bt_ingresar.clicked.connect(self.iniciar_sesion)
@@ -38,15 +36,14 @@ class MiApp(QMainWindow, Ui_login):
 
 	def iniciar_sesion(self):
 		# Los labels de contraseña y usuario ponemos en blanco
-		self.contrasena_incorrecta.clear()
-		self.usuario_incorrecto.clear()
 		users = self.users.text()
 		password_entry = self.password.text()
 		users_entry = users
 		users_all_information = self.datos.busca_users(users_entry)
 		# Cuando no existe ninguna informacion
 		if(users_all_information is None):
-			self.usuario_incorrecto.setText('Usuario no registrado')
+			#self.usuario_incorrecto.setText('Usuario no registrado')
+			QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
 		else:
 			users=users_all_information[2]
 			password=users_all_information[3]
@@ -54,14 +51,12 @@ class MiApp(QMainWindow, Ui_login):
 			if(password_entry==password and users==users_entry):
 				for i in range(0,99):
 					self.progressBar.setValue(i)
-					self.cargando.setText('Cargando...')
-
 				self.ventana = control_aec()
 				self.ventana.set_pass(users,password,id_access)
 				self.ventana.show()
 				self.close()
 			else:
-				self.contrasena_incorrecta.setText('Contraseña incorrecta')
+				QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
 			
 class control_aec(QMainWindow,Ui_sistema):
 	def __init__(self):
@@ -126,17 +121,91 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_add_row.clicked.connect(self.add_row)
 		self.btn_save_options.clicked.connect(self.save_tableoptions)
 		self.btn_returnsave.clicked.connect(self.get_datosregistros)
+		self.btn_registrar_ie.clicked.connect(self.set_factura)
+		self.btn_add_newgasto.clicked.connect(self.clear_resgitros)
+		self.lineEdit_detalle.textChanged.connect(self.this_upperf)
+		self.lineEdit_coddocu.textChanged.connect(self.change_idmatrial)
+		self.btn_updatemat.clicked.connect(self.update_dbmaterial)
+		self.lineEdit_cantidadmt.textChanged.connect(self.calcular_total)
+		self.lineEdit_costounit.textChanged.connect(self.calcular_total)
 		self.id_options=[]
 		# menu lateral
 		self.borrar_elementos()
 		self.bt_menu.clicked.connect(self.mover_menu)
 		self.oculto=False
+		self.code_add_registro=""
 		self.add_busqueda_dni=None
 		# Agregamos todos los frames e control ocultar y mostrar
 		self.frame_encabezados=[self.frame_reportes,self.frame_proyectos,self.frame_administrador]
 		self.valor_x=0
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
+
+	def calcular_total(self):
+		self.update_dbmaterial()
+		cantidad=self.lineEdit_cantidadmt.text()
+		precio=self.lineEdit_costounit.text()
+		if(len(cantidad)>0 and len(precio)>0):
+			try:
+				this_cantidad=float(cantidad)
+				this_precio=float(precio)
+			except Exception as e:
+				self.dialogo.show()
+				this_cantidad=0
+				this_precio=0
+				self.dialogo.label_mensaje.setText("Los datos cantidad o\nprecion invalido")
+			finally:
+				total=this_cantidad*this_precio
+				self.label_allmt.setText(str(total))
+
+	def update_dbmaterial(self):
+		code_material=""
+		month=self.comboBox_mothn.currentText()
+		code_material=month[:3]+"."+self.aleatorio_value(6)
+		self.label_codematerial.setText(code_material)
+
+	def change_idmatrial(self):
+		tex=self.lineEdit_coddocu.text()
+		self.lineEdit_codefin.setText(tex)
+
+	def this_upperf(self):
+		tex=self.lineEdit_detalle.text()
+		self.lineEdit_detalle.setText(tex.upper())
+		self.lineEdit_namematrial.setText(tex.upper())
+	def aleatorio_value(self,dim):
+		code=""
+		for l in range(0,dim):
+			rand=random.randint(0,9)
+			if(rand%2==0):
+				code+=chr(random.randint(ord('A'), ord('Z')))
+			else:
+				code+=str(random.randint(0, 9))
+		return code
+		
+	def set_factura(self):
+		code_factura=""
+		month=self.comboBox_mothn.currentText()
+		document_type=self.cmbbox_documents.currentText()
+		date_emision=self.date_emision.text()
+		rotated_to=self.cmbbox_rotated.currentText()
+		detalle=self.lineEdit_detalle.text()
+		amount=self.lineEdit_mntt.text()
+		payment_method=self.cmbbox_mediopay.currentText()
+		cost_center=self.cmbbox_costcenter.currentText()
+		expense_made=self.cmbbox_responsable.currentText()
+		document_number=self.lineEdit_nrodoc.text()
+		date_payments=self.datetime_decline.text()
+		igv=self.lineEdit_igv.text()
+		check_number="14555665"
+		type_expenditure=self.cmbbox_egreso.currentText()
+		observation=self.lineEdit_observation.text()
+		code_docuemts=self.lineEdit_coddocu.text()
+		code_factura=month[:3]+self.aleatorio_value(4)+code_docuemts
+		self.code_add_registro=code_factura
+		act=self.datos.add_factura(code_factura,date_emision, date_payments, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle)
+
+	def clear_resgitros(self):
+		print("Borrado ")
 	def view_configuration(self):
 		print("No ha procedimiento")
 
@@ -279,6 +348,7 @@ class control_aec(QMainWindow,Ui_sistema):
 		d = QDate(now.year, now.month, now.day)
 		self.date_emision.setDate(d)
 		self.datetime_decline.setDate(d)
+		self.comboBox_mothn.setCurrentIndex(now.month-1)
 
 	def click_btn_proyectos(self):
 		self.pages.setCurrentWidget(self.page_proyectos)
@@ -292,11 +362,15 @@ class control_aec(QMainWindow,Ui_sistema):
 				child.widget().deleteLater()
 
 	def scroll_frame(self):
-		self.frame_contenedor_pro.resize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*190)
+		width=self.frame_contenedor_proyec.width()-9
+		height=self.frame_contenedor_proyec.height()-9
+		self.frame_contexto.setFixedSize(width, height)
+		self.frame_contenedor_pro.setFixedSize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*190)
 		# Actualizar la posición vertical del QFrame según el valor de la QScrollBar
 		value = self.v_ScrollBar_project.value()
 		height_cont=int(self.frame_contenedor_pro.height()/100)
 		self.frame_contenedor_pro.move(self.frame_contenedor_pro.x(), -value*height_cont)
+
 	def show_admin(self):
 		list_users=self.datos.showfull_admin()
 		self.tableWidget_admin.setRowCount(len(list_users))
@@ -395,13 +469,14 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.ui_add_project.show()
 		
 	def add_control_frame(self):
+		self.frame_contenedor_data.setMaximumSize(QSize(self.frame_contexto.width(),self.frame_contexto.height()))
 		self.borrar_elementos()
 		# Aqui se define el ancho y alto de nuestro objeto
 		width=200	# ancho del frame a crear
 		height=150  # alto del frame a crear
 		# Tamanio del conetenedor
-		width_cont=int(self.frame_contenedor_pro.width()/220)
-		height_cont=int(self.frame_contenedor_pro.height()/170)
+		width_cont=int(self.frame_contexto.width()/220)
+		height_cont=int(self.frame_contexto.height()/170)
 		# obtenemos los datos
 		valor=self.datos.show_tproject() 
 		# Contador para detener el bucle while
@@ -419,6 +494,11 @@ class control_aec(QMainWindow,Ui_sistema):
 				contador_bucle+=1
 				count_column+=1
 			count_next_line+=1
+			if(self.alto_qfadd_project>1):
+				self.frame_contenedor_pro.setFixedSize(self.frame_contenedor_pro.width(),self.alto_qfadd_project*190)
+
+			elif(count_next_line>=4):
+				self.frame_contenedor_pro.setFixedSize(self.frame_contenedor_pro.width(),self.frame_contenedor_pro.height()+190)
 		self.alto_qfadd_project=count_next_line
 
 	def set_pass(self,users,password,id_access):

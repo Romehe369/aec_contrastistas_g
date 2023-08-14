@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectoFSwfTw.ui'
+## Form generated from reading UI file 'add_proyectoLkvLsB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,15 +17,11 @@ class Ui_add_project_new(object):
     def setupUi(self, add_project_new):
         if not add_project_new.objectName():
             add_project_new.setObjectName(u"add_project_new")
-        add_project_new.resize(684, 627)
-        self.frame_contenedor = QFrame(add_project_new)
-        self.frame_contenedor.setObjectName(u"frame_contenedor")
-        self.frame_contenedor.setGeometry(QRect(9, 9, 666, 609))
-        self.frame_contenedor.setStyleSheet(u"QFrame{\n"
-"	font: 12pt \"MS Shell Dlg 2\";\n"
-"	border: 5px solid rgb(0, 0, 127);\n"
-"	border-radius:10px;\n"
-"	background-color: rgb(144, 144, 144);\n"
+        add_project_new.resize(800, 525)
+        self.centralwidget = QWidget(add_project_new)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u"QWidget{\n"
+"	background-color: rgb(255, 255, 255);\n"
 "}\n"
 "QPushButton{\n"
 "border: 1px solid rgb(0, 0, 127);\n"
@@ -51,190 +47,280 @@ class Ui_add_project_new(object):
 "}\n"
 "QLabel{\n"
 "border:none;\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
+"}\n"
+"\n"
+"QCalendarWidget QWidget {\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"font: 14pt \"MS Shell Dlg 2\";\n"
+"background-color : lightgreen;\n"
+"}\n"
+"#qt_calendar_prevmonth, \n"
+"#qt_calendar_nextmonth {\n"
+"	/* border delete */\n"
+"    /* delete default icons */\n"
+" "
+                        "   min-width: 50px;\n"
+"    max-height: 33px;\n"
+"	/* set background transparent */\n"
+"}\n"
+"#qt_calendar_navigationbar {\n"
+"	font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    background-color: #fff;\n"
+"}\n"
+"\n"
+"#qt_calendar_monthbutton {\n"
+"	font: 14pt \"MS Shell Dlg 2\";\n"
+"	width: 110px;\n"
+"	height: 31px;\n"
+"}\n"
+"#qt_calendar_yearbutton {\n"
+"	font: 75 14pt \"MS Shell Dlg 2\";\n"
+"	width: 70px;\n"
+"	height: 31px;\n"
 "}")
-        self.frame_contenedor.setFrameShape(QFrame.StyledPanel)
-        self.frame_contenedor.setFrameShadow(QFrame.Raised)
-        self.label_2 = QLabel(self.frame_contenedor)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(30, 80, 131, 31))
-        self.label_3 = QLabel(self.frame_contenedor)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(30, 146, 251, 20))
-        self.label_4 = QLabel(self.frame_contenedor)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(30, 210, 151, 16))
-        self.name_project_lineEdit = QLineEdit(self.frame_contenedor)
-        self.name_project_lineEdit.setObjectName(u"name_project_lineEdit")
-        self.name_project_lineEdit.setGeometry(QRect(30, 170, 611, 31))
-        self.name_project_lineEdit.setStyleSheet(u"")
-        self.lineEdit_dni_admin = QLineEdit(self.frame_contenedor)
-        self.lineEdit_dni_admin.setObjectName(u"lineEdit_dni_admin")
-        self.lineEdit_dni_admin.setGeometry(QRect(30, 240, 241, 31))
-        self.lineEdit_dni_admin.setStyleSheet(u"")
-        self.lineEdit_dni_admin.setMaxLength(8)
-        self.search_name_db = QPushButton(self.frame_contenedor)
-        self.search_name_db.setObjectName(u"search_name_db")
-        self.search_name_db.setGeometry(QRect(280, 240, 181, 31))
-        self.search_name_db.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;")
-        self.allow_btn = QPushButton(self.frame_contenedor)
-        self.allow_btn.setObjectName(u"allow_btn")
-        self.allow_btn.setGeometry(QRect(130, 550, 180, 41))
-        self.decline_btn = QPushButton(self.frame_contenedor)
-        self.decline_btn.setObjectName(u"decline_btn")
-        self.decline_btn.setGeometry(QRect(350, 550, 180, 41))
-        self.label_9 = QLabel(self.frame_contenedor)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(30, 360, 181, 16))
-        self.label_9.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.label_10 = QLabel(self.frame_contenedor)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(245, 360, 191, 16))
-        self.label_10.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.label_11 = QLabel(self.frame_contenedor)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setGeometry(QRect(30, 430, 151, 16))
-        self.references_plainTextEdit = QPlainTextEdit(self.frame_contenedor)
-        self.references_plainTextEdit.setObjectName(u"references_plainTextEdit")
-        self.references_plainTextEdit.setGeometry(QRect(30, 450, 621, 81))
-        self.references_plainTextEdit.setStyleSheet(u"border: none;\n"
-"background-color: rgb(255, 255, 255);")
-        self.frame_3 = QFrame(self.frame_contenedor)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setGeometry(QRect(30, 290, 621, 61))
-        self.frame_3.setStyleSheet(u"QFrame{\n"
+        self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_superior = QFrame(self.centralwidget)
+        self.frame_superior.setObjectName(u"frame_superior")
+        self.frame_superior.setMinimumSize(QSize(0, 35))
+        self.frame_superior.setStyleSheet(u"QFrame{\n"
+"border: none;\n"
+"	background-color: rgb(158, 158, 158);\n"
+"}")
+        self.layout_principal = QHBoxLayout(self.frame_superior)
+        self.layout_principal.setSpacing(0)
+        self.layout_principal.setObjectName(u"layout_principal")
+        self.layout_principal.setContentsMargins(0, 0, 0, 0)
+        self.lbl_title = QLabel(self.frame_superior)
+        self.lbl_title.setObjectName(u"lbl_title")
+        self.lbl_title.setStyleSheet(u"font: 14pt \"MS Shell Dlg 2\";")
+        self.lbl_title.setAlignment(Qt.AlignCenter)
+
+        self.layout_principal.addWidget(self.lbl_title)
+
+        self.btn_ampliar = QPushButton(self.frame_superior)
+        self.btn_ampliar.setObjectName(u"btn_ampliar")
+        self.btn_ampliar.setMaximumSize(QSize(35, 35))
+        self.btn_ampliar.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(0, 0, 255);\n"
+"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "border:none;\n"
+"border-radius:0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(170, 255, 255);\n"
 "}")
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout = QHBoxLayout(self.frame_3)
-        self.horizontalLayout.setSpacing(20)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.frame_4 = QFrame(self.frame_3)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_4)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_5 = QLabel(self.frame_4)
+
+        self.layout_principal.addWidget(self.btn_ampliar)
+
+        self.btn_close = QPushButton(self.frame_superior)
+        self.btn_close.setObjectName(u"btn_close")
+        self.btn_close.setMaximumSize(QSize(35, 35))
+        self.btn_close.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(255, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"border:none;\n"
+"border-radius:0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(170, 0, 255);\n"
+"}")
+
+        self.layout_principal.addWidget(self.btn_close)
+
+
+        self.verticalLayout_2.addWidget(self.frame_superior)
+
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(15, -1, 15, -1)
+        self.number_of_days = QLineEdit(self.centralwidget)
+        self.number_of_days.setObjectName(u"number_of_days")
+        self.number_of_days.setMinimumSize(QSize(0, 31))
+        self.number_of_days.setStyleSheet(u"background-color: rgb(0, 255, 255);")
+
+        self.gridLayout.addWidget(self.number_of_days, 6, 2, 1, 1)
+
+        self.label_5 = QLabel(self.centralwidget)
         self.label_5.setObjectName(u"label_5")
+        self.label_5.setMinimumSize(QSize(0, 31))
         self.label_5.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_3.addWidget(self.label_5)
+        self.gridLayout.addWidget(self.label_5, 3, 0, 1, 1)
 
-        self.comboBox_region = QComboBox(self.frame_4)
-        self.comboBox_region.setObjectName(u"comboBox_region")
-        self.comboBox_region.setMinimumSize(QSize(0, 31))
-        self.comboBox_region.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;")
+        self.checkBox_numbers_of_days = QCheckBox(self.centralwidget)
+        self.checkBox_numbers_of_days.setObjectName(u"checkBox_numbers_of_days")
+        self.checkBox_numbers_of_days.setMinimumSize(QSize(0, 31))
+        self.checkBox_numbers_of_days.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(0, 255, 255);")
 
-        self.verticalLayout_3.addWidget(self.comboBox_region)
+        self.gridLayout.addWidget(self.checkBox_numbers_of_days, 5, 2, 1, 1)
 
+        self.lineEdit_dni_admin = QLineEdit(self.centralwidget)
+        self.lineEdit_dni_admin.setObjectName(u"lineEdit_dni_admin")
+        self.lineEdit_dni_admin.setMinimumSize(QSize(0, 31))
+        self.lineEdit_dni_admin.setStyleSheet(u"")
+        self.lineEdit_dni_admin.setMaxLength(8)
 
-        self.horizontalLayout.addWidget(self.frame_4)
+        self.gridLayout.addWidget(self.lineEdit_dni_admin, 2, 1, 1, 1)
 
-        self.frame_5 = QFrame(self.frame_3)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.frame_5)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_7 = QLabel(self.frame_5)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.verticalLayout_4.addWidget(self.label_7)
-
-        self.comboBox_province = QComboBox(self.frame_5)
+        self.comboBox_province = QComboBox(self.centralwidget)
         self.comboBox_province.setObjectName(u"comboBox_province")
         self.comboBox_province.setMinimumSize(QSize(0, 31))
         self.comboBox_province.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:0px;")
 
-        self.verticalLayout_4.addWidget(self.comboBox_province)
+        self.gridLayout.addWidget(self.comboBox_province, 4, 1, 1, 1)
 
+        self.search_name_db = QPushButton(self.centralwidget)
+        self.search_name_db.setObjectName(u"search_name_db")
+        self.search_name_db.setMinimumSize(QSize(0, 31))
+        self.search_name_db.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
 
-        self.horizontalLayout.addWidget(self.frame_5)
+        self.gridLayout.addWidget(self.search_name_db, 2, 2, 1, 1)
 
-        self.frame_6 = QFrame(self.frame_3)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.frame_6)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.frame_6)
+        self.label_7 = QLabel(self.centralwidget)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMinimumSize(QSize(0, 31))
+        self.label_7.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_7, 3, 1, 1, 1)
+
+        self.label_4 = QLabel(self.centralwidget)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMinimumSize(QSize(0, 31))
+        self.label_4.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_4.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_4, 2, 0, 1, 1)
+
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(0, 31))
+        self.label_3.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_3.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_3, 1, 0, 1, 1)
+
+        self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
+        self.label_8.setMinimumSize(QSize(0, 31))
         self.label_8.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_5.addWidget(self.label_8)
+        self.gridLayout.addWidget(self.label_8, 3, 2, 1, 1)
 
-        self.comboBox_district = QComboBox(self.frame_6)
+        self.comboBox_district = QComboBox(self.centralwidget)
         self.comboBox_district.setObjectName(u"comboBox_district")
         self.comboBox_district.setMinimumSize(QSize(0, 31))
         self.comboBox_district.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:0px;")
 
-        self.verticalLayout_5.addWidget(self.comboBox_district)
+        self.gridLayout.addWidget(self.comboBox_district, 4, 2, 1, 1)
 
+        self.label_9 = QLabel(self.centralwidget)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMinimumSize(QSize(0, 31))
+        self.label_9.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.horizontalLayout.addWidget(self.frame_6)
+        self.gridLayout.addWidget(self.label_9, 5, 0, 1, 1)
 
-        self.start_dateEdit = QDateEdit(self.frame_contenedor)
+        self.label_10 = QLabel(self.centralwidget)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMinimumSize(QSize(0, 31))
+        self.label_10.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_10, 5, 1, 1, 1)
+
+        self.lbl_code_pro_random = QLabel(self.centralwidget)
+        self.lbl_code_pro_random.setObjectName(u"lbl_code_pro_random")
+        self.lbl_code_pro_random.setMinimumSize(QSize(0, 31))
+        self.lbl_code_pro_random.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"color:rgb(0, 0, 255);")
+
+        self.gridLayout.addWidget(self.lbl_code_pro_random, 0, 1, 1, 1)
+
+        self.comboBox_region = QComboBox(self.centralwidget)
+        self.comboBox_region.setObjectName(u"comboBox_region")
+        self.comboBox_region.setMinimumSize(QSize(250, 31))
+        self.comboBox_region.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
+
+        self.gridLayout.addWidget(self.comboBox_region, 4, 0, 1, 1)
+
+        self.end_dateEdit = QDateEdit(self.centralwidget)
+        self.end_dateEdit.setObjectName(u"end_dateEdit")
+        self.end_dateEdit.setMinimumSize(QSize(0, 31))
+        self.end_dateEdit.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;")
+        self.end_dateEdit.setCalendarPopup(True)
+
+        self.gridLayout.addWidget(self.end_dateEdit, 6, 1, 1, 1)
+
+        self.name_project_lineEdit = QLineEdit(self.centralwidget)
+        self.name_project_lineEdit.setObjectName(u"name_project_lineEdit")
+        self.name_project_lineEdit.setMinimumSize(QSize(0, 31))
+        self.name_project_lineEdit.setStyleSheet(u"")
+
+        self.gridLayout.addWidget(self.name_project_lineEdit, 1, 1, 1, 1)
+
+        self.start_dateEdit = QDateEdit(self.centralwidget)
         self.start_dateEdit.setObjectName(u"start_dateEdit")
-        self.start_dateEdit.setGeometry(QRect(30, 390, 191, 31))
+        self.start_dateEdit.setMinimumSize(QSize(0, 31))
         self.start_dateEdit.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
 "border-radius:0px;")
         self.start_dateEdit.setProperty("showGroupSeparator", False)
         self.start_dateEdit.setCalendarPopup(True)
-        self.end_dateEdit = QDateEdit(self.frame_contenedor)
-        self.end_dateEdit.setObjectName(u"end_dateEdit")
-        self.end_dateEdit.setGeometry(QRect(245, 390, 191, 31))
-        self.end_dateEdit.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;")
-        self.end_dateEdit.setCalendarPopup(True)
-        self.info_txt_lbl = QLabel(self.frame_contenedor)
-        self.info_txt_lbl.setObjectName(u"info_txt_lbl")
-        self.info_txt_lbl.setGeometry(QRect(280, 70, 371, 91))
-        self.info_txt_lbl.setStyleSheet(u"QLabel{\n"
-"	border: 2px solid red;\n"
-"	border-radius:10px;\n"
-"}")
-        self.info_txt_lbl.setAlignment(Qt.AlignCenter)
-        self.lbl_code_pro_random = QLabel(self.frame_contenedor)
-        self.lbl_code_pro_random.setObjectName(u"lbl_code_pro_random")
-        self.lbl_code_pro_random.setGeometry(QRect(30, 110, 211, 31))
-        self.lbl_code_pro_random.setStyleSheet(u"font: 75 18pt \"MS Shell Dlg 2\";\n"
-"color:rgb(0, 0, 255);")
-        self.name_project_label = QLabel(self.frame_contenedor)
-        self.name_project_label.setObjectName(u"name_project_label")
-        self.name_project_label.setGeometry(QRect(20, 20, 613, 33))
-        font = QFont()
-        font.setFamily(u"Times New Roman")
-        font.setPointSize(24)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(9)
-        self.name_project_label.setFont(font)
-        self.name_project_label.setStyleSheet(u"color: rgb(255, 255, 255);\n"
-"font: 75 24pt \"Times New Roman\";")
-        self.name_project_label.setAlignment(Qt.AlignCenter)
-        self.checkBox_numbers_of_days = QCheckBox(self.frame_contenedor)
-        self.checkBox_numbers_of_days.setObjectName(u"checkBox_numbers_of_days")
-        self.checkBox_numbers_of_days.setGeometry(QRect(460, 360, 191, 21))
-        self.checkBox_numbers_of_days.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(0, 255, 255);")
-        self.number_of_days = QLineEdit(self.frame_contenedor)
-        self.number_of_days.setObjectName(u"number_of_days")
-        self.number_of_days.setGeometry(QRect(460, 390, 194, 31))
-        self.number_of_days.setMinimumSize(QSize(0, 31))
-        self.number_of_days.setStyleSheet(u"background-color: rgb(0, 255, 255);")
+
+        self.gridLayout.addWidget(self.start_dateEdit, 6, 0, 1, 1)
+
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 31))
+        self.label_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
+
+
+        self.verticalLayout_2.addLayout(self.gridLayout)
+
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setSpacing(9)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(15, -1, 15, -1)
+        self.label_11 = QLabel(self.centralwidget)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout.addWidget(self.label_11)
+
+        self.references_plainTextEdit = QPlainTextEdit(self.centralwidget)
+        self.references_plainTextEdit.setObjectName(u"references_plainTextEdit")
+        self.references_plainTextEdit.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
+
+        self.verticalLayout.addWidget(self.references_plainTextEdit)
+
+        self.allow_btn = QPushButton(self.centralwidget)
+        self.allow_btn.setObjectName(u"allow_btn")
+        self.allow_btn.setMinimumSize(QSize(0, 31))
+
+        self.verticalLayout.addWidget(self.allow_btn)
+
+
+        self.verticalLayout_2.addLayout(self.verticalLayout)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer)
+
+        add_project_new.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(add_project_new)
 
@@ -242,30 +328,27 @@ class Ui_add_project_new(object):
     # setupUi
 
     def retranslateUi(self, add_project_new):
-        add_project_new.setWindowTitle(QCoreApplication.translate("add_project_new", u"Dialog", None))
-        self.label_2.setText(QCoreApplication.translate("add_project_new", u"Codigo proyecto:", None))
-        self.label_3.setText(QCoreApplication.translate("add_project_new", u"Nombre del proyecto:", None))
-        self.label_4.setText(QCoreApplication.translate("add_project_new", u"DNI Responsable:", None))
-        self.name_project_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese el nombre del proyecto", None))
+        add_project_new.setWindowTitle(QCoreApplication.translate("add_project_new", u"MainWindow", None))
+        self.lbl_title.setText(QCoreApplication.translate("add_project_new", u"Agregar un proyecto", None))
+        self.btn_ampliar.setText(QCoreApplication.translate("add_project_new", u"\u25a0", None))
+        self.btn_close.setText(QCoreApplication.translate("add_project_new", u"X", None))
+        self.number_of_days.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Active \"Cantidad de d\u00edas\"", None))
+        self.label_5.setText(QCoreApplication.translate("add_project_new", u"Region", None))
+        self.checkBox_numbers_of_days.setText(QCoreApplication.translate("add_project_new", u"Cantidad de d\u00edas", None))
         self.lineEdit_dni_admin.setPlaceholderText(QCoreApplication.translate("add_project_new", u"DNI del responsable de la obra", None))
         self.search_name_db.setText(QCoreApplication.translate("add_project_new", u"Buscar por nombre", None))
-        self.allow_btn.setText(QCoreApplication.translate("add_project_new", u"Aceptar", None))
-        self.decline_btn.setText(QCoreApplication.translate("add_project_new", u"Cancelar", None))
-        self.label_9.setText(QCoreApplication.translate("add_project_new", u"Fecha inicio:", None))
-        self.label_10.setText(QCoreApplication.translate("add_project_new", u"Fecha fin:", None))
+        self.label_7.setText(QCoreApplication.translate("add_project_new", u"Provincia", None))
+        self.label_4.setText(QCoreApplication.translate("add_project_new", u"DNI Responsable:", None))
+        self.label_3.setText(QCoreApplication.translate("add_project_new", u"Nombre del proyecto:", None))
+        self.label_8.setText(QCoreApplication.translate("add_project_new", u"Distrito", None))
+        self.label_9.setText(QCoreApplication.translate("add_project_new", u"Fecha inicio", None))
+        self.label_10.setText(QCoreApplication.translate("add_project_new", u"Fecha fin", None))
+        self.lbl_code_pro_random.setText(QCoreApplication.translate("add_project_new", u"Codigo aleatorio", None))
+        self.name_project_lineEdit.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Ingrese el nombre del proyecto", None))
+        self.label_2.setText(QCoreApplication.translate("add_project_new", u"Codigo proyecto", None))
         self.label_11.setText(QCoreApplication.translate("add_project_new", u"Referencias:", None))
         self.references_plainTextEdit.setPlainText("")
         self.references_plainTextEdit.setPlaceholderText("")
-        self.label_5.setText(QCoreApplication.translate("add_project_new", u"Region", None))
-        self.label_7.setText(QCoreApplication.translate("add_project_new", u"Provincia", None))
-        self.label_8.setText(QCoreApplication.translate("add_project_new", u"Distrito", None))
-        self.info_txt_lbl.setText(QCoreApplication.translate("add_project_new", u"El c\u00f3digo del proyecto se genera\n"
-"automaticamente, no es editable, ni modificable.\n"
-" La cantidad de d\u00edas calcula la \"Fecha Fin\" \n"
-" durante ese periodo de d\u00edas.", None))
-        self.lbl_code_pro_random.setText(QCoreApplication.translate("add_project_new", u"Codigo aleatorio", None))
-        self.name_project_label.setText(QCoreApplication.translate("add_project_new", u"Agregar un proyecto", None))
-        self.checkBox_numbers_of_days.setText(QCoreApplication.translate("add_project_new", u"Cantidad de d\u00edas", None))
-        self.number_of_days.setPlaceholderText(QCoreApplication.translate("add_project_new", u"Active \"Cantidad de d\u00edas\"", None))
+        self.allow_btn.setText(QCoreApplication.translate("add_project_new", u"Aceptar", None))
     # retranslateUi
 

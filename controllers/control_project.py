@@ -46,16 +46,23 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.datos = Registro_datos()
         self.allow_btn.clicked.connect(self.get_all_data)
         self.search_name_db.clicked.connect(self.search_db)
-        self.decline_btn.clicked.connect(self.close)
+        self.btn_close.clicked.connect(self.close)
         self.number_of_days.textChanged.connect(self.validator_check)
         self.checkBox_numbers_of_days.stateChanged.connect(self.activate_num_days)
         self.agregar_datos() #frame_contenedor
         self.id_region=0
-        self.frame_contenedor.mouseMoveEvent = self.mover_ventana
+        self.gripSize = 10
+        self.grip = QSizeGrip(self)
+        self.grip.resize(self.gripSize, self.gripSize)
+        self.frame_superior.mouseMoveEvent = self.mover_ventana
         self.comboBox_region.currentIndexChanged.connect(self.agregar_province)
         self.comboBox_province.currentIndexChanged.connect(self.agregar_distritos)
         self.code_project=self.random_value()
         self.start_dateEdit.dateChanged.connect(self.random_value)
+
+    def resizeEvent(self, event):
+        rect = self.rect()
+        self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
 
     def mousePressEvent(self, event):
         self.clickPosition = event.globalPos()

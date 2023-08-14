@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1193</width>
-    <height>560</height>
+    <height>571</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -735,7 +735,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>5</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -1778,7 +1778,7 @@ border: 0px;
                           </widget>
                          </item>
                          <item row="2" column="3">
-                          <widget class="QLineEdit" name="lineEdit_25">
+                          <widget class="QLineEdit" name="lineEdit_igv">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -1853,7 +1853,7 @@ border: 0px;
                           </widget>
                          </item>
                          <item row="4" column="1">
-                          <widget class="QLineEdit" name="lineEdit_11">
+                          <widget class="QLineEdit" name="lineEdit_detalle">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -1903,7 +1903,7 @@ border: 0px;
                           </widget>
                          </item>
                          <item row="5" column="3">
-                          <widget class="QLineEdit" name="lineEdit_24">
+                          <widget class="QLineEdit" name="lineEdit_coddocu">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -1918,7 +1918,7 @@ border: 0px;
                           </widget>
                          </item>
                          <item row="0" column="3">
-                          <widget class="QLineEdit" name="lineEdit_23">
+                          <widget class="QLineEdit" name="lineEdit_nrodoc">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -2094,7 +2094,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                           </widget>
                          </item>
                          <item row="5" column="1">
-                          <widget class="QLineEdit" name="lineEdit_12">
+                          <widget class="QLineEdit" name="lineEdit_mntt">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -2128,7 +2128,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                           </widget>
                          </item>
                          <item row="4" column="3">
-                          <widget class="QLineEdit" name="lineEdit_20">
+                          <widget class="QLineEdit" name="lineEdit_observation">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -2222,6 +2222,22 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                            </property>
                           </widget>
                          </item>
+                         <item row="6" column="2">
+                          <widget class="QLineEdit" name="check_number">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Codigo de medio de pago</string>
+                           </property>
+                          </widget>
+                         </item>
                         </layout>
                        </item>
                        <item>
@@ -2300,48 +2316,18 @@ border: 0px;
                        </item>
                        <item>
                         <layout class="QGridLayout" name="gridLayout_2">
-                         <item row="1" column="0">
-                          <widget class="QLabel" name="label_23">
+                         <item row="2" column="0">
+                          <widget class="QLabel" name="label_24">
                            <property name="text">
-                            <string>Nombre material :</string>
+                            <string>Cantidad:</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                            </property>
                           </widget>
                          </item>
-                         <item row="4" column="1">
-                          <widget class="QLineEdit" name="lineEdit_22">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="3" column="1">
-                          <widget class="QLineEdit" name="lineEdit_17">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="1">
-                          <widget class="QLineEdit" name="lineEdit_21">
+                          <widget class="QLineEdit" name="lineEdit_costounit">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -2354,7 +2340,70 @@ border: 0px;
                             </font>
                            </property>
                            <property name="text">
-                            <string/>
+                            <string>0</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="7" column="1">
+                          <widget class="QCheckBox" name="checkBox_reutizable">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color:rgba(0,0,0,0%);</string>
+                           </property>
+                           <property name="text">
+                            <string>REUTILIZABLE</string>
+                           </property>
+                           <property name="checkable">
+                            <bool>true</bool>
+                           </property>
+                           <property name="checked">
+                            <bool>false</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="5" column="0">
+                          <widget class="QLabel" name="label_26">
+                           <property name="text">
+                            <string>Guia de remision :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="5" column="1">
+                          <widget class="QLineEdit" name="lineEdit_guiaremision">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="6" column="1">
+                          <widget class="QLineEdit" name="lineEdit_codefin">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
                            </property>
                           </widget>
                          </item>
@@ -2368,10 +2417,26 @@ border: 0px;
                            </property>
                           </widget>
                          </item>
-                         <item row="0" column="0">
-                          <widget class="QLabel" name="label_48">
+                         <item row="4" column="1">
+                          <widget class="QLabel" name="label_allmt">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
                            <property name="text">
-                            <string>Codigo material :</string>
+                            <string>0</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="7" column="0">
+                          <widget class="QLabel" name="label_33">
+                           <property name="text">
+                            <string>ES:</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2388,33 +2453,24 @@ border: 0px;
                            </property>
                           </widget>
                          </item>
-                         <item row="5" column="1">
-                          <widget class="QLineEdit" name="lineEdit_18">
+                         <item row="0" column="1">
+                          <widget class="QLabel" name="label_codematerial">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
                              <height>31</height>
                             </size>
                            </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="5" column="0">
-                          <widget class="QLabel" name="label_26">
                            <property name="text">
-                            <string>Guia de remision :</string>
+                            <string>code</string>
                            </property>
                            <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                            <set>Qt::AlignCenter</set>
                            </property>
                           </widget>
                          </item>
                          <item row="1" column="1">
-                          <widget class="QLineEdit" name="lineEdit_15">
+                          <widget class="QLineEdit" name="lineEdit_namematrial">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -2425,6 +2481,24 @@ border: 0px;
                             <font>
                              <pointsize>12</pointsize>
                             </font>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="1">
+                          <widget class="QLineEdit" name="lineEdit_cantidadmt">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>0</string>
                            </property>
                           </widget>
                          </item>
@@ -2438,82 +2512,56 @@ border: 0px;
                            </property>
                           </widget>
                          </item>
-                         <item row="2" column="0">
-                          <widget class="QLabel" name="label_24">
+                         <item row="0" column="0">
+                          <widget class="QLabel" name="label_48">
                            <property name="text">
-                            <string>Cantidad:</string>
+                            <string>Codigo material :</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                            </property>
                           </widget>
                          </item>
-                         <item row="2" column="1">
-                          <widget class="QLineEdit" name="lineEdit_16">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
+                         <item row="1" column="0">
+                          <widget class="QLabel" name="label_23">
+                           <property name="text">
+                            <string>Nombre material :</string>
                            </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                            </property>
                           </widget>
                          </item>
-                         <item row="6" column="1">
-                          <widget class="QLineEdit" name="lineEdit_19">
+                         <item row="8" column="1">
+                          <widget class="QComboBox" name="comboBox_medida">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
                              <height>31</height>
                             </size>
                            </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
+                          </widget>
+                         </item>
+                         <item row="8" column="0">
+                          <widget class="QLabel" name="label_34">
+                           <property name="text">
+                            <string>Medida:</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                            </property>
                           </widget>
                          </item>
                         </layout>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_33">
-                         <property name="text">
-                          <string>Se utiliza en fracciones:</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QCheckBox" name="checkBox">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>31</height>
-                          </size>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                         </property>
-                         <property name="text">
-                          <string>REUTILIZABLE</string>
-                         </property>
-                         <property name="checkable">
-                          <bool>true</bool>
-                         </property>
-                         <property name="checked">
-                          <bool>false</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,1">
+                         <property name="leftMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="topMargin">
+                          <number>20</number>
+                         </property>
                          <item>
                           <widget class="QPushButton" name="btn_updatemat">
                            <property name="minimumSize">
@@ -2523,7 +2571,7 @@ border: 0px;
                             </size>
                            </property>
                            <property name="text">
-                            <string>ActualizarMaterial</string>
+                            <string>Actualizar material</string>
                            </property>
                           </widget>
                          </item>
@@ -3157,11 +3205,17 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_contenedor_data">
+               <widget class="QFrame" name="frame_contenedor_proyec">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
                   <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
                  </size>
                 </property>
                 <property name="styleSheet">
@@ -3173,7 +3227,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
                  <property name="spacing">
                   <number>0</number>
                  </property>
@@ -3190,11 +3244,17 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_contenedor_pro">
+                  <widget class="QFrame" name="frame_contexto">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
                      <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -3203,11 +3263,29 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QGridLayout" name="gridLayout_add_frame">
-                    <item row="0" column="0">
-                     <widget class="QFrame" name="frame_27">
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(30, 146, 255);</string>
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame_contenedor_data">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
                       </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -3215,30 +3293,61 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_10">
+                       <item>
+                        <widget class="QFrame" name="frame_contenedor_pro">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QGridLayout" name="gridLayout_add_frame">
+                          <item row="0" column="0">
+                           <widget class="QFrame" name="frame_27">
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(30, 146, 255);</string>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QScrollBar" name="v_ScrollBar_project">
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QScrollBar" name="v_ScrollBar_project">
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
                   </widget>
                  </item>
                 </layout>
                </widget>
               </item>
              </layout>
-             <zorder>frame_contenedor_data</zorder>
-             <zorder>frame_proyectos</zorder>
             </widget>
             <widget class="QWidget" name="page_adminstracion">
              <property name="styleSheet">
@@ -3480,7 +3589,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                    </size>
                   </property>
                   <property name="text">
-                   <string>Editar</string>
+                   <string>Buscar dni o proyecto</string>
                   </property>
                  </widget>
                 </item>

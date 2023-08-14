@@ -4,9 +4,9 @@ from PySide2.QtWidgets import *
 
 from controllers.change_password import Dialogo
 from db.conexion  import Registro_datos
-from views.ui_add_worker import Ui_Dialog_add_Trabajador
+from views.ui_add_worker import Ui_add_Trabajador
 
-class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
+class new_trabajador(QMainWindow, Ui_add_Trabajador):
 	def __init__(self, parent):
 		super(new_trabajador,self).__init__(parent)
 		self.setupUi(self)
@@ -20,13 +20,35 @@ class new_trabajador(QMainWindow, Ui_Dialog_add_Trabajador):
 		self.dni_true=False
 		self.file_namepic=""
 		self.btn_aceptar.clicked.connect(self.get_data_frame)
-		self.btn_cancelar.clicked.connect(self.close)
 		# Cuando hacemos click en el boton de cargar una imagen
 		self.pushButton_cargar.clicked.connect(self.cargar)
 		# Cuando hacemos click en el boton de eleminar una imagen
 		self.pushButton_delete.clicked.connect(self.limpiar)
 		self.lineEditDNI.textChanged.connect(self.verificar_dni)
+		self.btn_close.clicked.connect(self.close)
 		self.datos = Registro_datos()
+		self.gripSize = 10
+		self.grip = QSizeGrip(self)
+		self.grip.resize(self.gripSize, self.gripSize)
+		self.frame_superior.mouseMoveEvent = self.mover_ventana
+	############################MOVIMIENTO CUADRO##############################
+	def resizeEvent(self, event):
+		rect = self.rect()
+		self.grip.move(rect.right() - self.gripSize, rect.bottom() - self.gripSize)
+
+	def mousePressEvent(self, event):
+		self.clickPosition = event.globalPos()
+	def mover_ventana(self, event):
+		if self.isMaximized() == False:         
+			if event.buttons() == Qt.LeftButton:
+				self.move(self.pos() + event.globalPos() - self.clickPosition)
+				self.clickPosition = event.globalPos()
+				event.accept()
+		if event.globalPos().y() <=20:
+			self.showMaximized()
+		else:
+			self.showNormal()
+	#############################################MODULOS DE ACTIVIDAD###################
 
 	def verificar_dni(self):
 		# Recuperamos los valores de lineeditdni

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuZTICCg.ui'
+## Form generated from reading UI file 'menuZeEcxH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_sistema(object):
     def setupUi(self, sistema):
         if not sistema.objectName():
             sistema.setObjectName(u"sistema")
-        sistema.resize(1193, 560)
+        sistema.resize(1193, 571)
         sistema.setMinimumSize(QSize(0, 0))
         sistema.setMaximumSize(QSize(16777215, 16777215))
         sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
@@ -850,14 +850,14 @@ class Ui_sistema(object):
 
         self.gridLayout_3.addWidget(self.label_31, 0, 2, 1, 1)
 
-        self.lineEdit_25 = QLineEdit(self.frame_5)
-        self.lineEdit_25.setObjectName(u"lineEdit_25")
-        self.lineEdit_25.setMinimumSize(QSize(0, 31))
+        self.lineEdit_igv = QLineEdit(self.frame_5)
+        self.lineEdit_igv.setObjectName(u"lineEdit_igv")
+        self.lineEdit_igv.setMinimumSize(QSize(0, 31))
         font6 = QFont()
         font6.setPointSize(12)
-        self.lineEdit_25.setFont(font6)
+        self.lineEdit_igv.setFont(font6)
 
-        self.gridLayout_3.addWidget(self.lineEdit_25, 2, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.lineEdit_igv, 2, 3, 1, 1)
 
         self.label_15 = QLabel(self.frame_5)
         self.label_15.setObjectName(u"label_15")
@@ -887,13 +887,13 @@ class Ui_sistema(object):
 
         self.gridLayout_3.addWidget(self.label_19, 5, 0, 1, 1)
 
-        self.lineEdit_11 = QLineEdit(self.frame_5)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
-        self.lineEdit_11.setMinimumSize(QSize(0, 31))
-        self.lineEdit_11.setFont(font6)
-        self.lineEdit_11.setStyleSheet(u"background-color: rgb(170, 255, 255);")
+        self.lineEdit_detalle = QLineEdit(self.frame_5)
+        self.lineEdit_detalle.setObjectName(u"lineEdit_detalle")
+        self.lineEdit_detalle.setMinimumSize(QSize(0, 31))
+        self.lineEdit_detalle.setFont(font6)
+        self.lineEdit_detalle.setStyleSheet(u"background-color: rgb(170, 255, 255);")
 
-        self.gridLayout_3.addWidget(self.lineEdit_11, 4, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.lineEdit_detalle, 4, 1, 1, 1)
 
         self.label_29 = QLabel(self.frame_5)
         self.label_29.setObjectName(u"label_29")
@@ -909,19 +909,19 @@ class Ui_sistema(object):
 
         self.gridLayout_3.addWidget(self.label_28, 5, 2, 1, 1)
 
-        self.lineEdit_24 = QLineEdit(self.frame_5)
-        self.lineEdit_24.setObjectName(u"lineEdit_24")
-        self.lineEdit_24.setMinimumSize(QSize(0, 31))
-        self.lineEdit_24.setFont(font6)
+        self.lineEdit_coddocu = QLineEdit(self.frame_5)
+        self.lineEdit_coddocu.setObjectName(u"lineEdit_coddocu")
+        self.lineEdit_coddocu.setMinimumSize(QSize(0, 31))
+        self.lineEdit_coddocu.setFont(font6)
 
-        self.gridLayout_3.addWidget(self.lineEdit_24, 5, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.lineEdit_coddocu, 5, 3, 1, 1)
 
-        self.lineEdit_23 = QLineEdit(self.frame_5)
-        self.lineEdit_23.setObjectName(u"lineEdit_23")
-        self.lineEdit_23.setMinimumSize(QSize(0, 31))
-        self.lineEdit_23.setFont(font6)
+        self.lineEdit_nrodoc = QLineEdit(self.frame_5)
+        self.lineEdit_nrodoc.setObjectName(u"lineEdit_nrodoc")
+        self.lineEdit_nrodoc.setMinimumSize(QSize(0, 31))
+        self.lineEdit_nrodoc.setFont(font6)
 
-        self.gridLayout_3.addWidget(self.lineEdit_23, 0, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.lineEdit_nrodoc, 0, 3, 1, 1)
 
         self.label_17 = QLabel(self.frame_5)
         self.label_17.setObjectName(u"label_17")
@@ -1004,13 +1004,13 @@ class Ui_sistema(object):
 
         self.gridLayout_3.addWidget(self.label_21, 7, 0, 1, 1)
 
-        self.lineEdit_12 = QLineEdit(self.frame_5)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
-        self.lineEdit_12.setMinimumSize(QSize(0, 31))
-        self.lineEdit_12.setFont(font6)
-        self.lineEdit_12.setStyleSheet(u"background-color: rgb(170, 255, 255);")
+        self.lineEdit_mntt = QLineEdit(self.frame_5)
+        self.lineEdit_mntt.setObjectName(u"lineEdit_mntt")
+        self.lineEdit_mntt.setMinimumSize(QSize(0, 31))
+        self.lineEdit_mntt.setFont(font6)
+        self.lineEdit_mntt.setStyleSheet(u"background-color: rgb(170, 255, 255);")
 
-        self.gridLayout_3.addWidget(self.lineEdit_12, 5, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.lineEdit_mntt, 5, 1, 1, 1)
 
         self.label_18 = QLabel(self.frame_5)
         self.label_18.setObjectName(u"label_18")
@@ -1019,12 +1019,12 @@ class Ui_sistema(object):
 
         self.gridLayout_3.addWidget(self.label_18, 4, 0, 1, 1)
 
-        self.lineEdit_20 = QLineEdit(self.frame_5)
-        self.lineEdit_20.setObjectName(u"lineEdit_20")
-        self.lineEdit_20.setMinimumSize(QSize(0, 31))
-        self.lineEdit_20.setFont(font6)
+        self.lineEdit_observation = QLineEdit(self.frame_5)
+        self.lineEdit_observation.setObjectName(u"lineEdit_observation")
+        self.lineEdit_observation.setMinimumSize(QSize(0, 31))
+        self.lineEdit_observation.setFont(font6)
 
-        self.gridLayout_3.addWidget(self.lineEdit_20, 4, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.lineEdit_observation, 4, 3, 1, 1)
 
         self.date_emision = QDateEdit(self.frame_5)
         self.date_emision.setObjectName(u"date_emision")
@@ -1067,6 +1067,13 @@ class Ui_sistema(object):
 
         self.gridLayout_3.addWidget(self.label_51, 2, 2, 1, 1)
 
+        self.check_number = QLineEdit(self.frame_5)
+        self.check_number.setObjectName(u"check_number")
+        self.check_number.setMinimumSize(QSize(0, 31))
+        self.check_number.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_3.addWidget(self.check_number, 6, 2, 1, 1)
+
 
         self.verticalLayout_19.addLayout(self.gridLayout_3)
 
@@ -1100,57 +1107,28 @@ class Ui_sistema(object):
 
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.label_23 = QLabel(self.frame_7)
-        self.label_23.setObjectName(u"label_23")
-        self.label_23.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_24 = QLabel(self.frame_7)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout_2.addWidget(self.label_23, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_24, 2, 0, 1, 1)
 
-        self.lineEdit_22 = QLineEdit(self.frame_7)
-        self.lineEdit_22.setObjectName(u"lineEdit_22")
-        self.lineEdit_22.setMinimumSize(QSize(0, 31))
-        self.lineEdit_22.setFont(font6)
+        self.lineEdit_costounit = QLineEdit(self.frame_7)
+        self.lineEdit_costounit.setObjectName(u"lineEdit_costounit")
+        self.lineEdit_costounit.setMinimumSize(QSize(0, 31))
+        self.lineEdit_costounit.setFont(font6)
 
-        self.gridLayout_2.addWidget(self.lineEdit_22, 4, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.lineEdit_costounit, 3, 1, 1, 1)
 
-        self.lineEdit_17 = QLineEdit(self.frame_7)
-        self.lineEdit_17.setObjectName(u"lineEdit_17")
-        self.lineEdit_17.setMinimumSize(QSize(0, 31))
-        self.lineEdit_17.setFont(font6)
+        self.checkBox_reutizable = QCheckBox(self.frame_7)
+        self.checkBox_reutizable.setObjectName(u"checkBox_reutizable")
+        self.checkBox_reutizable.setMinimumSize(QSize(0, 31))
+        self.checkBox_reutizable.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";\n"
+"background-color:rgba(0,0,0,0%);")
+        self.checkBox_reutizable.setCheckable(True)
+        self.checkBox_reutizable.setChecked(False)
 
-        self.gridLayout_2.addWidget(self.lineEdit_17, 3, 1, 1, 1)
-
-        self.lineEdit_21 = QLineEdit(self.frame_7)
-        self.lineEdit_21.setObjectName(u"lineEdit_21")
-        self.lineEdit_21.setMinimumSize(QSize(0, 31))
-        self.lineEdit_21.setFont(font6)
-
-        self.gridLayout_2.addWidget(self.lineEdit_21, 0, 1, 1, 1)
-
-        self.label_27 = QLabel(self.frame_7)
-        self.label_27.setObjectName(u"label_27")
-        self.label_27.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.label_27, 6, 0, 1, 1)
-
-        self.label_48 = QLabel(self.frame_7)
-        self.label_48.setObjectName(u"label_48")
-        self.label_48.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.label_48, 0, 0, 1, 1)
-
-        self.label_52 = QLabel(self.frame_7)
-        self.label_52.setObjectName(u"label_52")
-        self.label_52.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.label_52, 4, 0, 1, 1)
-
-        self.lineEdit_18 = QLineEdit(self.frame_7)
-        self.lineEdit_18.setObjectName(u"lineEdit_18")
-        self.lineEdit_18.setMinimumSize(QSize(0, 31))
-        self.lineEdit_18.setFont(font6)
-
-        self.gridLayout_2.addWidget(self.lineEdit_18, 5, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.checkBox_reutizable, 7, 1, 1, 1)
 
         self.label_26 = QLabel(self.frame_7)
         self.label_26.setObjectName(u"label_26")
@@ -1158,12 +1136,65 @@ class Ui_sistema(object):
 
         self.gridLayout_2.addWidget(self.label_26, 5, 0, 1, 1)
 
-        self.lineEdit_15 = QLineEdit(self.frame_7)
-        self.lineEdit_15.setObjectName(u"lineEdit_15")
-        self.lineEdit_15.setMinimumSize(QSize(0, 31))
-        self.lineEdit_15.setFont(font6)
+        self.lineEdit_guiaremision = QLineEdit(self.frame_7)
+        self.lineEdit_guiaremision.setObjectName(u"lineEdit_guiaremision")
+        self.lineEdit_guiaremision.setMinimumSize(QSize(0, 31))
+        self.lineEdit_guiaremision.setFont(font6)
 
-        self.gridLayout_2.addWidget(self.lineEdit_15, 1, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.lineEdit_guiaremision, 5, 1, 1, 1)
+
+        self.lineEdit_codefin = QLineEdit(self.frame_7)
+        self.lineEdit_codefin.setObjectName(u"lineEdit_codefin")
+        self.lineEdit_codefin.setMinimumSize(QSize(0, 31))
+        self.lineEdit_codefin.setFont(font6)
+
+        self.gridLayout_2.addWidget(self.lineEdit_codefin, 6, 1, 1, 1)
+
+        self.label_27 = QLabel(self.frame_7)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.label_27, 6, 0, 1, 1)
+
+        self.label_allmt = QLabel(self.frame_7)
+        self.label_allmt.setObjectName(u"label_allmt")
+        self.label_allmt.setMinimumSize(QSize(0, 31))
+        self.label_allmt.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_allmt, 4, 1, 1, 1)
+
+        self.label_33 = QLabel(self.frame_7)
+        self.label_33.setObjectName(u"label_33")
+        self.label_33.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.label_33, 7, 0, 1, 1)
+
+        self.label_52 = QLabel(self.frame_7)
+        self.label_52.setObjectName(u"label_52")
+        self.label_52.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.label_52, 4, 0, 1, 1)
+
+        self.label_codematerial = QLabel(self.frame_7)
+        self.label_codematerial.setObjectName(u"label_codematerial")
+        self.label_codematerial.setMinimumSize(QSize(0, 31))
+        self.label_codematerial.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_codematerial, 0, 1, 1, 1)
+
+        self.lineEdit_namematrial = QLineEdit(self.frame_7)
+        self.lineEdit_namematrial.setObjectName(u"lineEdit_namematrial")
+        self.lineEdit_namematrial.setMinimumSize(QSize(0, 31))
+        self.lineEdit_namematrial.setFont(font6)
+
+        self.gridLayout_2.addWidget(self.lineEdit_namematrial, 1, 1, 1, 1)
+
+        self.lineEdit_cantidadmt = QLineEdit(self.frame_7)
+        self.lineEdit_cantidadmt.setObjectName(u"lineEdit_cantidadmt")
+        self.lineEdit_cantidadmt.setMinimumSize(QSize(0, 31))
+        self.lineEdit_cantidadmt.setFont(font6)
+
+        self.gridLayout_2.addWidget(self.lineEdit_cantidadmt, 2, 1, 1, 1)
 
         self.label_25 = QLabel(self.frame_7)
         self.label_25.setObjectName(u"label_25")
@@ -1171,46 +1202,36 @@ class Ui_sistema(object):
 
         self.gridLayout_2.addWidget(self.label_25, 3, 0, 1, 1)
 
-        self.label_24 = QLabel(self.frame_7)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_48 = QLabel(self.frame_7)
+        self.label_48.setObjectName(u"label_48")
+        self.label_48.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout_2.addWidget(self.label_24, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_48, 0, 0, 1, 1)
 
-        self.lineEdit_16 = QLineEdit(self.frame_7)
-        self.lineEdit_16.setObjectName(u"lineEdit_16")
-        self.lineEdit_16.setMinimumSize(QSize(0, 31))
-        self.lineEdit_16.setFont(font6)
+        self.label_23 = QLabel(self.frame_7)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout_2.addWidget(self.lineEdit_16, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_23, 1, 0, 1, 1)
 
-        self.lineEdit_19 = QLineEdit(self.frame_7)
-        self.lineEdit_19.setObjectName(u"lineEdit_19")
-        self.lineEdit_19.setMinimumSize(QSize(0, 31))
-        self.lineEdit_19.setFont(font6)
+        self.comboBox_medida = QComboBox(self.frame_7)
+        self.comboBox_medida.setObjectName(u"comboBox_medida")
+        self.comboBox_medida.setMinimumSize(QSize(0, 31))
 
-        self.gridLayout_2.addWidget(self.lineEdit_19, 6, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.comboBox_medida, 8, 1, 1, 1)
+
+        self.label_34 = QLabel(self.frame_7)
+        self.label_34.setObjectName(u"label_34")
+        self.label_34.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.label_34, 8, 0, 1, 1)
 
 
         self.verticalLayout_18.addLayout(self.gridLayout_2)
 
-        self.label_33 = QLabel(self.frame_7)
-        self.label_33.setObjectName(u"label_33")
-        self.label_33.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_18.addWidget(self.label_33)
-
-        self.checkBox = QCheckBox(self.frame_7)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setMinimumSize(QSize(0, 31))
-        self.checkBox.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
-        self.checkBox.setCheckable(True)
-        self.checkBox.setChecked(False)
-
-        self.verticalLayout_18.addWidget(self.checkBox)
-
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(0, 20, -1, -1)
         self.btn_updatemat = QPushButton(self.frame_7)
         self.btn_updatemat.setObjectName(u"btn_updatemat")
         self.btn_updatemat.setMinimumSize(QSize(0, 31))
@@ -1546,16 +1567,34 @@ class Ui_sistema(object):
 
         self.verticalLayout_10.addWidget(self.frame_proyectos)
 
-        self.frame_contenedor_data = QFrame(self.page_proyectos)
+        self.frame_contenedor_proyec = QFrame(self.page_proyectos)
+        self.frame_contenedor_proyec.setObjectName(u"frame_contenedor_proyec")
+        self.frame_contenedor_proyec.setMinimumSize(QSize(0, 0))
+        self.frame_contenedor_proyec.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_contenedor_proyec.setStyleSheet(u"background-color: rgb(117, 117, 117);")
+        self.frame_contenedor_proyec.setFrameShape(QFrame.StyledPanel)
+        self.frame_contenedor_proyec.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_contenedor_proyec)
+        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.frame_contexto = QFrame(self.frame_contenedor_proyec)
+        self.frame_contexto.setObjectName(u"frame_contexto")
+        self.frame_contexto.setMinimumSize(QSize(0, 0))
+        self.frame_contexto.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_contexto.setFrameShape(QFrame.StyledPanel)
+        self.frame_contexto.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame_contexto)
+        self.horizontalLayout_7.setSpacing(0)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.frame_contenedor_data = QFrame(self.frame_contexto)
         self.frame_contenedor_data.setObjectName(u"frame_contenedor_data")
-        self.frame_contenedor_data.setMinimumSize(QSize(0, 0))
-        self.frame_contenedor_data.setStyleSheet(u"background-color: rgb(117, 117, 117);")
+        self.frame_contenedor_data.setMaximumSize(QSize(16777215, 16777215))
         self.frame_contenedor_data.setFrameShape(QFrame.StyledPanel)
         self.frame_contenedor_data.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_16 = QHBoxLayout(self.frame_contenedor_data)
-        self.horizontalLayout_16.setSpacing(0)
-        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_10 = QHBoxLayout(self.frame_contenedor_data)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.frame_contenedor_pro = QFrame(self.frame_contenedor_data)
         self.frame_contenedor_pro.setObjectName(u"frame_contenedor_pro")
         self.frame_contenedor_pro.setMinimumSize(QSize(0, 0))
@@ -1572,22 +1611,26 @@ class Ui_sistema(object):
         self.gridLayout_add_frame.addWidget(self.frame_27, 0, 0, 1, 1)
 
 
-        self.horizontalLayout_16.addWidget(self.frame_contenedor_pro)
+        self.horizontalLayout_10.addWidget(self.frame_contenedor_pro)
 
         self.v_ScrollBar_project = QScrollBar(self.frame_contenedor_data)
         self.v_ScrollBar_project.setObjectName(u"v_ScrollBar_project")
         self.v_ScrollBar_project.setMaximumSize(QSize(16777215, 16777215))
         self.v_ScrollBar_project.setOrientation(Qt.Vertical)
 
-        self.horizontalLayout_16.addWidget(self.v_ScrollBar_project)
+        self.horizontalLayout_10.addWidget(self.v_ScrollBar_project)
 
 
-        self.verticalLayout_10.addWidget(self.frame_contenedor_data)
+        self.horizontalLayout_7.addWidget(self.frame_contenedor_data)
+
+
+        self.horizontalLayout_8.addWidget(self.frame_contexto)
+
+
+        self.verticalLayout_10.addWidget(self.frame_contenedor_proyec)
 
         self.verticalLayout_10.setStretch(0, 1)
         self.pages.addWidget(self.page_proyectos)
-        self.frame_contenedor_data.raise_()
-        self.frame_proyectos.raise_()
         self.page_adminstracion = QWidget()
         self.page_adminstracion.setObjectName(u"page_adminstracion")
         self.page_adminstracion.setStyleSheet(u"QFrame{\n"
@@ -1785,7 +1828,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.pages.setCurrentIndex(0)
+        self.pages.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -1849,7 +1892,7 @@ class Ui_sistema(object):
 
         self.label_30.setText(QCoreApplication.translate("sistema", u"Observacion :", None))
         self.label_31.setText(QCoreApplication.translate("sistema", u"Nro de documento :", None))
-        self.lineEdit_25.setText(QCoreApplication.translate("sistema", u"18", None))
+        self.lineEdit_igv.setText(QCoreApplication.translate("sistema", u"18", None))
         self.label_15.setText(QCoreApplication.translate("sistema", u"Tipo de documento :", None))
         self.label_14.setText(QCoreApplication.translate("sistema", u"Mes :", None))
         self.label_19.setText(QCoreApplication.translate("sistema", u"Monto total (S/) :", None))
@@ -1865,18 +1908,23 @@ class Ui_sistema(object):
         self.label_16.setText(QCoreApplication.translate("sistema", u"Fecha de emision :", None))
         self.btn_add_newgasto.setText(QCoreApplication.translate("sistema", u"Ingresar nuevo gasto", None))
         self.label_51.setText(QCoreApplication.translate("sistema", u"IGV(%):", None))
+        self.check_number.setPlaceholderText(QCoreApplication.translate("sistema", u"Codigo de medio de pago", None))
         self.label_8.setText(QCoreApplication.translate("sistema", u"Registro de materiales", None))
-        self.label_23.setText(QCoreApplication.translate("sistema", u"Nombre material :", None))
-        self.lineEdit_21.setText("")
-        self.label_27.setText(QCoreApplication.translate("sistema", u"Codigo financiero:", None))
-        self.label_48.setText(QCoreApplication.translate("sistema", u"Codigo material :", None))
-        self.label_52.setText(QCoreApplication.translate("sistema", u"TOTAL :", None))
-        self.label_26.setText(QCoreApplication.translate("sistema", u"Guia de remision :", None))
-        self.label_25.setText(QCoreApplication.translate("sistema", u"Costo Unitario :", None))
         self.label_24.setText(QCoreApplication.translate("sistema", u"Cantidad:", None))
-        self.label_33.setText(QCoreApplication.translate("sistema", u"Se utiliza en fracciones:", None))
-        self.checkBox.setText(QCoreApplication.translate("sistema", u"REUTILIZABLE", None))
-        self.btn_updatemat.setText(QCoreApplication.translate("sistema", u"ActualizarMaterial", None))
+        self.lineEdit_costounit.setText(QCoreApplication.translate("sistema", u"0", None))
+        self.checkBox_reutizable.setText(QCoreApplication.translate("sistema", u"REUTILIZABLE", None))
+        self.label_26.setText(QCoreApplication.translate("sistema", u"Guia de remision :", None))
+        self.label_27.setText(QCoreApplication.translate("sistema", u"Codigo financiero:", None))
+        self.label_allmt.setText(QCoreApplication.translate("sistema", u"0", None))
+        self.label_33.setText(QCoreApplication.translate("sistema", u"ES:", None))
+        self.label_52.setText(QCoreApplication.translate("sistema", u"TOTAL :", None))
+        self.label_codematerial.setText(QCoreApplication.translate("sistema", u"code", None))
+        self.lineEdit_cantidadmt.setText(QCoreApplication.translate("sistema", u"0", None))
+        self.label_25.setText(QCoreApplication.translate("sistema", u"Costo Unitario :", None))
+        self.label_48.setText(QCoreApplication.translate("sistema", u"Codigo material :", None))
+        self.label_23.setText(QCoreApplication.translate("sistema", u"Nombre material :", None))
+        self.label_34.setText(QCoreApplication.translate("sistema", u"Medida:", None))
+        self.btn_updatemat.setText(QCoreApplication.translate("sistema", u"Actualizar material", None))
         self.btn_add_newmaterial.setText(QCoreApplication.translate("sistema", u"Nuevo", None))
         self.label_40.setText(QCoreApplication.translate("sistema", u"Eliminar un administrador del sistema o controlador de asistencia en la web", None))
         self.label_44.setText(QCoreApplication.translate("sistema", u"Usuario", None))
@@ -1937,7 +1985,7 @@ class Ui_sistema(object):
         ___qtablewidgetitem10 = self.table_combo.horizontalHeaderItem(5)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("sistema", u"Tipo de egreso", None));
         self.btn_add_row.setText(QCoreApplication.translate("sistema", u"Agregar una fila", None))
-        self.pushButton_edit.setText(QCoreApplication.translate("sistema", u"Editar", None))
+        self.pushButton_edit.setText(QCoreApplication.translate("sistema", u"Buscar dni o proyecto", None))
         self.btn_save_options.setText(QCoreApplication.translate("sistema", u"Guardar", None))
         self.btn_returnsave.setText(QCoreApplication.translate("sistema", u"RETORNAR", None))
     # retranslateUi
