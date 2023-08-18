@@ -9,6 +9,9 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 	def __init__(self, parent):
 		super(tpaymentst,self).__init__(parent)
 		self.setupUi(self)
+		icon = QIcon()
+		icon.addFile("./assets/icono.png", QSize(), QIcon.Normal, QIcon.Off)
+		self.setWindowIcon(icon)
 		self.setWindowFlag(Qt.FramelessWindowHint)
 		self.datos = Registro_datos()
 		self.gripSize = 10
@@ -17,7 +20,7 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		self.grip.resize(self.gripSize, self.gripSize)
 		self.frame_superior.mouseMoveEvent = self.mover_ventana
 		self.btn_close.clicked.connect(self.close)
-		#self.frame_pagos_new()
+		self.table_detalls.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.table_payments.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 		self.btn_close_pframe.clicked.connect(self.hide_frame)
 		#self.btn_allow_pframe.clicked.connect(self.hide_frame)	
@@ -26,6 +29,10 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		self.lineEdit_year.textChanged.connect(self.verificar_year)
 		self.lndt_adelantos.textChanged.connect(self.calcular)
 		self.comboBox_month.currentIndexChanged.connect(self.verifcar_mes)
+		self.table_detalls.hide()
+		self.estado_btn=False
+		self.btn_details.clicked.connect(self.show_information)
+		self.btn_dar_adelantos.clicked.connect(self.give_advances)
 	############################MOVIMIENTO CUADRO##############################
 	def resizeEvent(self, event):
 		rect = self.rect()
@@ -58,6 +65,52 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		self.label_days_pay.setText(mounth.text())
 		self.contar_dias()
 
+	def give_advances(self):
+		give_advan = QMessageBox(self)
+		periodo=self.label_periodo.text()
+		mes=self.label_month_add.text()
+		dni=self.lndt_sdni.text()
+		total_dias=self.label_all_days.text()
+		total_girar=self.label_total.text()
+		adelantos=0
+		try:
+			adelantos=float(self.lndt_adelantos.text())
+		except Exception as e:
+			adelantos=0
+		por_pagar=self.label_porpagar.text()
+		observaciones="No especifica"
+		estado=0
+		if(adelantos<=0):
+			QMessageBox.information(self, "Dar adelanto", "Elija un monto mayor.", QMessageBox.Ok)
+		else:
+			give_advan.setWindowTitle("Dar adelanto al trabajador")
+			give_advan.setIcon(QMessageBox.Question)
+			give_advan.setText("¿Esta seguro que desea dar adelanto a "+dni+" ? ")
+			botonSi = give_advan.addButton("Si", QMessageBox.YesRole)
+			botonCancelar = give_advan.addButton("Cancelar", QMessageBox.NoRole)
+			give_advan.exec_()
+			if give_advan.clickedButton() == botonSi:
+				act=self.datos.add_tpagos(periodo,mes,dni,total_dias,total_girar,adelantos,por_pagar,observaciones,estado)
+				if(act):
+					QMessageBox.information(self, "Dar adelanto", "Se ha dado adelanto.", QMessageBox.Ok)
+		
+	def show_information(self):
+		if(self.estado_btn):
+			self.btn_details.setText("VER DETALLES")
+			self.estado_btn=False
+			self.table_detalls.hide()
+			self.table_payments.show()
+		else:
+			self.btn_details.setText("RETORNAR")
+			self.estado_btn=True
+			self.table_detalls.show()
+			self.table_payments.hide()
+			sql="""SELECT * FROM tpagos"""
+			act=self.datos.get_datos(sql)
+			if(len(act)>0):
+				self.show_paymentstable(act)
+
+
 	def verificar_year(self):
 		year=self.lineEdit_year.text()
 		if(len(year)==4):
@@ -89,14 +142,18 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 	def calcular(self):
 		total_dias=int(self.label_all_days.text())
 		dia_pay=float(self.label_days_pay.text())
-		adelanto=self.lndt_adelantos.text()
-		if(len(adelanto)==0):
+		try:
+			adelanto=float(self.lndt_adelantos.text())
+		except Exception as e:
 			adelanto=0
-		adelantos=float(adelanto)
+		adelantos=adelanto
 		total=dia_pay*total_dias
+		self.label_total.setText(str(total))
 		if(total>=adelantos):
 			total=total-adelantos;
-		self.label_total.setText(str(total))
+		else:
+			total=0
+		self.label_porpagar.setText(str(total))
 
 	def show_frame(self):
 		#self.contar_dias()
@@ -111,6 +168,7 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 
 	def frame_pagos_new(self):
 		self.frame_pagos.hide()
+
 	def change_header(self,table_properties):
 		# Cahenged the size of contents of Qtablwidget to 12
 		font = QFont()
@@ -124,16 +182,32 @@ class tpaymentst(QMainWindow, Ui_tpayments):
 		table_properties.verticalHeader().setFont(font);
 		table_properties.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
 
+	def show_paymentstable(self,datos):
+		self.change_header(self.table_detalls)
+		self.table_detalls.setRowCount(len(datos))
+		self.table_detalls.setColumnCount(11)
+		# We go through the array or matrix
+		for row in range(len(datos)):
+			# Obtenemos el dni de la bd
+			dni_get=datos[row][3]
+			# Buscamos los datos en la table trabajador
+			get_dnid=self.datos.buscar_trabajador(dni_get)
+			data_full=get_dnid+datos[row][4:]
+			for column in range(11):
+				item = QTableWidgetItem(str(data_full[column]))
+				self.table_detalls.setItem(row, column, item)
+
 	# Genera tabla de pagos
 	def payments_table_data(self):
+		now = datetime.now()
+		self.comboBox_month.setCurrentIndex(now.month-1)
 		self.change_header(self.table_payments)
 		datos=self.datos.show_all_dni()
 		# Create a table by 6 column and 100 row
 		self.table_payments.setRowCount(len(datos))
-		self.table_payments.setColumnCount(11)
+		self.table_payments.setColumnCount(5)
 		# We go through the array or matrix
 		for row in range(len(datos)):
-			for column in range(11):
-				if(column<5):
-					item = QTableWidgetItem(str(datos[row][column]))
-					self.table_payments.setItem(row, column, item)
+			for column in range(5):
+				item = QTableWidgetItem(str(datos[row][column]))
+				self.table_payments.setItem(row, column, item)

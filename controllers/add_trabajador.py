@@ -1,8 +1,6 @@
-from PySide2.QtCore import Qt, QDir
-from PySide2.QtGui import  QPixmap
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-
-from controllers.change_password import Dialogo
 from db.conexion  import Registro_datos
 from views.ui_add_worker import Ui_add_Trabajador
 
@@ -13,9 +11,11 @@ class new_trabajador(QMainWindow, Ui_add_Trabajador):
 		#eliminar barra
 		self.setWindowFlag(Qt.FramelessWindowHint)
 		# Hacer transparente
+		icon = QIcon()
+		icon.addFile("./assets/icono.png", QSize(), QIcon.Normal, QIcon.Off)
+		self.setWindowIcon(icon)
 		self.setAttribute(Qt.WA_TranslucentBackground)
 		# crear un mensaje
-		self.dialogo = Dialogo()
 		# Variables de control
 		self.dni_true=False
 		self.file_namepic=""
@@ -62,12 +62,10 @@ class new_trabajador(QMainWindow, Ui_add_Trabajador):
 				# Si el dni  existe nos devuelve un valor diferente de []
 				if act is not None:
 					# Si el ya existe le mostramos un mensaje de que ya existe dicho dni
-					self.dialogo.label_mensaje.setText("El nro dni ya existe")
-					self.dialogo.show()
+					QMessageBox.information(self, "Mensaje", "El nro dni ya existe.", QMessageBox.Ok)
 			elif(len(dni)>=1):
 				# Si el valor ingresado no se asemeja a un dni le mostramos que el valro es invalido
-				self.dialogo.label_mensaje.setText("El nro dni es invalido \n verifique por favor")
-				self.dialogo.show()
+				QMessageBox.information(self, "Mensaje", "El nro dni es invalido \n verifique por favor", QMessageBox.Ok)
 
 	def get_data_frame(self):
 		dni=self.lineEditDNI.text()
@@ -81,27 +79,22 @@ class new_trabajador(QMainWindow, Ui_add_Trabajador):
 		try:
 			salario=float(self.lineEdit_salario.text())
 		except Exception as e:
-			self.dialogo.label_mensaje.setText("Escriba el salario\nde los decimales con punto")
-			self.dialogo.show()
+			QMessageBox.information(self, "Mensaje", "Escriba el salario de los\n decimales con punto", QMessageBox.Ok)
 		else:
 			# Obetenmos las caracteristicas de las photos
 			if(self.file_namepic!="" and len(dni)==8):
 				photo=self.convertToBinaryData()
 				if(dni!="" and nombres!="" and apellidos!=""):
 					self.datos.insertar_trabajador(dni,nombres,apellidos,combo_sexo,fecha_inicio,correo,nro_movil,combo_categoria,salario,photo)
-					self.dialogo.label_mensaje.setText("Se agrego existosamente")
+					QMessageBox.information(self, "Mensaje", "Se agrego existosamente", QMessageBox.Ok)
 					self.file_namepic=""
-					self.dialogo.show()
 					self.close()
 				else:
-					self.dialogo.label_mensaje.setText("Hay espacios vacios\npor completar")
-					self.dialogo.show()
+					QMessageBox.information(self, "Mensaje", "Hay espacios vaciospor completar", QMessageBox.Ok)
 			elif (len(dni)<8):
-				self.dialogo.label_mensaje.setText("El número de DNI debe\nser de 8 digitos")
-				self.dialogo.show()
+				QMessageBox.information(self, "Mensaje", "El número de DNI debe ser de 8 digitos", QMessageBox.Ok)
 			else:
-				self.dialogo.label_mensaje.setText("Falta agregar\nla foto de DNI")
-				self.dialogo.show()
+				QMessageBox.information(self, "Mensaje", "Falta agregar la foto de DNI", QMessageBox.Ok)
 
 	def convertToBinaryData(self):
 	    # Convert digital data to binary format

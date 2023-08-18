@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_workerRmSpqM.ui'
+## Form generated from reading UI file 'add_workeriPspvW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_add_Trabajador(object):
     def setupUi(self, add_Trabajador):
         if not add_Trabajador.objectName():
             add_Trabajador.setObjectName(u"add_Trabajador")
-        add_Trabajador.resize(813, 651)
+        add_Trabajador.resize(906, 653)
         self.centralwidget = QWidget(add_Trabajador)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
@@ -295,14 +295,28 @@ class Ui_add_Trabajador(object):
 
         self.verticalLayout_2.addWidget(self.label_sexo_2)
 
-        self.img_dni_2 = QLabel(self.centralwidget)
-        self.img_dni_2.setObjectName(u"img_dni_2")
-        self.img_dni_2.setMinimumSize(QSize(0, 300))
-        self.img_dni_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
-        self.img_dni_2.setScaledContents(True)
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_2.addWidget(self.img_dni_2)
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.img_dni = QLabel(self.centralwidget)
+        self.img_dni.setObjectName(u"img_dni")
+        self.img_dni.setMinimumSize(QSize(400, 300))
+        self.img_dni.setMaximumSize(QSize(500, 400))
+        self.img_dni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
+        self.img_dni.setScaledContents(True)
+
+        self.horizontalLayout_2.addWidget(self.img_dni)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -337,31 +351,45 @@ class Ui_add_Trabajador(object):
 
         self.verticalLayout_3.addWidget(self.label_sexo_3)
 
-        self.img_dni = QLabel(self.centralwidget)
-        self.img_dni.setObjectName(u"img_dni")
-        self.img_dni.setMinimumSize(QSize(0, 300))
-        self.img_dni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
-        self.img_dni.setScaledContents(True)
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_3.addWidget(self.img_dni)
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_3)
+
+        self.img_dnireverse = QLabel(self.centralwidget)
+        self.img_dnireverse.setObjectName(u"img_dnireverse")
+        self.img_dnireverse.setMinimumSize(QSize(400, 300))
+        self.img_dnireverse.setMaximumSize(QSize(500, 400))
+        self.img_dnireverse.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));")
+        self.img_dnireverse.setScaledContents(True)
+
+        self.horizontalLayout_6.addWidget(self.img_dnireverse)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_6)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setSpacing(6)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.pushButton_cargar_2 = QPushButton(self.centralwidget)
-        self.pushButton_cargar_2.setObjectName(u"pushButton_cargar_2")
-        self.pushButton_cargar_2.setMinimumSize(QSize(0, 31))
-        self.pushButton_cargar_2.setFont(font)
+        self.btn_uplouddni = QPushButton(self.centralwidget)
+        self.btn_uplouddni.setObjectName(u"btn_uplouddni")
+        self.btn_uplouddni.setMinimumSize(QSize(0, 31))
+        self.btn_uplouddni.setFont(font)
 
-        self.horizontalLayout_5.addWidget(self.pushButton_cargar_2)
+        self.horizontalLayout_5.addWidget(self.btn_uplouddni)
 
-        self.pushButton_delete_2 = QPushButton(self.centralwidget)
-        self.pushButton_delete_2.setObjectName(u"pushButton_delete_2")
-        self.pushButton_delete_2.setMinimumSize(QSize(0, 31))
-        self.pushButton_delete_2.setFont(font)
+        self.btn_deletere = QPushButton(self.centralwidget)
+        self.btn_deletere.setObjectName(u"btn_deletere")
+        self.btn_deletere.setMinimumSize(QSize(0, 31))
+        self.btn_deletere.setFont(font)
 
-        self.horizontalLayout_5.addWidget(self.pushButton_delete_2)
+        self.horizontalLayout_5.addWidget(self.btn_deletere)
 
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_5)
@@ -426,13 +454,13 @@ class Ui_add_Trabajador(object):
         self.label_2.setText(QCoreApplication.translate("add_Trabajador", u"Salario diario:", None))
         self.lineEdit_salario.setPlaceholderText(QCoreApplication.translate("add_Trabajador", u"Ingrese salario por dia", None))
         self.label_sexo_2.setText(QCoreApplication.translate("add_Trabajador", u"FOTO DNI PRINCIPAL", None))
-        self.img_dni_2.setText("")
+        self.img_dni.setText("")
         self.pushButton_cargar.setText(QCoreApplication.translate("add_Trabajador", u"Cargar", None))
         self.pushButton_delete.setText(QCoreApplication.translate("add_Trabajador", u"Limpiar", None))
         self.label_sexo_3.setText(QCoreApplication.translate("add_Trabajador", u"FOTO DNI REVERSO", None))
-        self.img_dni.setText("")
-        self.pushButton_cargar_2.setText(QCoreApplication.translate("add_Trabajador", u"Cargar", None))
-        self.pushButton_delete_2.setText(QCoreApplication.translate("add_Trabajador", u"Limpiar", None))
+        self.img_dnireverse.setText("")
+        self.btn_uplouddni.setText(QCoreApplication.translate("add_Trabajador", u"Cargar", None))
+        self.btn_deletere.setText(QCoreApplication.translate("add_Trabajador", u"Limpiar", None))
         self.btn_aceptar.setText(QCoreApplication.translate("add_Trabajador", u"AGREGAR TRABAJADOR", None))
     # retranslateUi
 

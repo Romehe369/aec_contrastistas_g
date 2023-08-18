@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tpaymentsjRFFah.ui'
+## Form generated from reading UI file 'tpaymentsuehTme.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_tpayments(object):
     def setupUi(self, tpayments):
         if not tpayments.objectName():
             tpayments.setObjectName(u"tpayments")
-        tpayments.resize(1066, 607)
+        tpayments.resize(1066, 608)
         self.centralwidget = QWidget(tpayments)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
@@ -28,7 +28,7 @@ class Ui_tpayments(object):
         self.frame_agregar.setObjectName(u"frame_agregar")
         self.frame_agregar.setStyleSheet(u"QFrame{\n"
 "border: 5px solid rgb(0, 0, 127);\n"
-"background-color: rgb(191, 191, 191);\n"
+"	background-color: rgb(255, 255, 255);\n"
 "font: 75 12pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "QLabel{\n"
@@ -130,29 +130,63 @@ class Ui_tpayments(object):
         self.layout_info = QHBoxLayout()
         self.layout_info.setSpacing(6)
         self.layout_info.setObjectName(u"layout_info")
-        self.layout_info.setContentsMargins(200, -1, 200, -1)
+        self.layout_info.setContentsMargins(150, -1, 150, -1)
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label_45 = QLabel(self.frame_princiapl)
-        self.label_45.setObjectName(u"label_45")
-        self.label_45.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout.addWidget(self.label_45, 0, 2, 1, 1)
-
-        self.lineEdit_6 = QLineEdit(self.frame_princiapl)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setMinimumSize(QSize(0, 31))
-        self.lineEdit_6.setMaximumSize(QSize(300, 16777215))
+        self.lineEdit_dni = QLineEdit(self.frame_princiapl)
+        self.lineEdit_dni.setObjectName(u"lineEdit_dni")
+        self.lineEdit_dni.setMinimumSize(QSize(0, 31))
+        self.lineEdit_dni.setMaximumSize(QSize(300, 16777215))
         font = QFont()
         font.setFamily(u"MS Shell Dlg 2")
         font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(9)
-        self.lineEdit_6.setFont(font)
-        self.lineEdit_6.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lineEdit_dni.setFont(font)
+        self.lineEdit_dni.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout.addWidget(self.lineEdit_6, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_dni, 1, 1, 1, 1)
+
+        self.btn_details = QPushButton(self.frame_princiapl)
+        self.btn_details.setObjectName(u"btn_details")
+        self.btn_details.setMinimumSize(QSize(250, 31))
+        self.btn_details.setStyleSheet(u"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"}")
+
+        self.gridLayout.addWidget(self.btn_details, 2, 4, 1, 1)
+
+        self.comboBox_2 = QComboBox(self.frame_princiapl)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboBox_2.setMinimumSize(QSize(0, 31))
+        self.comboBox_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.gridLayout.addWidget(self.comboBox_2, 1, 0, 1, 1)
+
+        self.label_49 = QLabel(self.frame_princiapl)
+        self.label_49.setObjectName(u"label_49")
+        self.label_49.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_49, 2, 2, 1, 1)
+
+        self.label_47 = QLabel(self.frame_princiapl)
+        self.label_47.setObjectName(u"label_47")
+        self.label_47.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout.addWidget(self.label_47, 2, 0, 1, 1)
+
+        self.lineEdit_year = QLineEdit(self.frame_princiapl)
+        self.lineEdit_year.setObjectName(u"lineEdit_year")
+        self.lineEdit_year.setMinimumSize(QSize(0, 31))
+        self.lineEdit_year.setMaximumSize(QSize(300, 16777215))
+        self.lineEdit_year.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lineEdit_year.setMaxLength(4)
+
+        self.gridLayout.addWidget(self.lineEdit_year, 2, 1, 1, 1)
 
         self.comboBox_month = QComboBox(self.frame_princiapl)
         self.comboBox_month.addItem("")
@@ -172,43 +206,13 @@ class Ui_tpayments(object):
         self.comboBox_month.setMaximumSize(QSize(16777215, 16777215))
         self.comboBox_month.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout.addWidget(self.comboBox_month, 0, 3, 1, 1)
+        self.gridLayout.addWidget(self.comboBox_month, 1, 4, 1, 1)
 
-        self.label_10 = QLabel(self.frame_princiapl)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_45 = QLabel(self.frame_princiapl)
+        self.label_45.setObjectName(u"label_45")
+        self.label_45.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout.addWidget(self.label_10, 1, 0, 1, 1)
-
-        self.comboBox_2 = QComboBox(self.frame_princiapl)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-        self.comboBox_2.setMinimumSize(QSize(0, 31))
-        self.comboBox_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.gridLayout.addWidget(self.comboBox_2, 0, 0, 1, 1)
-
-        self.lineEdit_year = QLineEdit(self.frame_princiapl)
-        self.lineEdit_year.setObjectName(u"lineEdit_year")
-        self.lineEdit_year.setMinimumSize(QSize(0, 31))
-        self.lineEdit_year.setMaximumSize(QSize(16777215, 16777215))
-        self.lineEdit_year.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-        self.lineEdit_year.setMaxLength(4)
-
-        self.gridLayout.addWidget(self.lineEdit_year, 1, 3, 1, 1)
-
-        self.label_47 = QLabel(self.frame_princiapl)
-        self.label_47.setObjectName(u"label_47")
-        self.label_47.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout.addWidget(self.label_47, 1, 2, 1, 1)
-
-        self.label_15 = QLabel(self.frame_princiapl)
-        self.label_15.setObjectName(u"label_15")
-        self.label_15.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.gridLayout.addWidget(self.label_15, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.label_45, 1, 2, 1, 1)
 
 
         self.layout_info.addLayout(self.gridLayout)
@@ -236,8 +240,8 @@ class Ui_tpayments(object):
         self.layout_data.setObjectName(u"layout_data")
         self.layout_data.setContentsMargins(20, -1, 20, 6)
         self.table_payments = QTableWidget(self.frame_princiapl)
-        if (self.table_payments.columnCount() < 11):
-            self.table_payments.setColumnCount(11)
+        if (self.table_payments.columnCount() < 5):
+            self.table_payments.setColumnCount(5)
         __qtablewidgetitem = QTableWidgetItem()
         self.table_payments.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -248,22 +252,40 @@ class Ui_tpayments(object):
         self.table_payments.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
         self.table_payments.setHorizontalHeaderItem(4, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(6, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(7, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(8, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(9, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.table_payments.setHorizontalHeaderItem(10, __qtablewidgetitem10)
         self.table_payments.setObjectName(u"table_payments")
         self.table_payments.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
         self.layout_data.addWidget(self.table_payments)
+
+        self.table_detalls = QTableWidget(self.frame_princiapl)
+        if (self.table_detalls.columnCount() < 11):
+            self.table_detalls.setColumnCount(11)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(0, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(1, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(2, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(3, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(4, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(5, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(6, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(7, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(8, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(9, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.table_detalls.setHorizontalHeaderItem(10, __qtablewidgetitem15)
+        self.table_detalls.setObjectName(u"table_detalls")
+        self.table_detalls.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.layout_data.addWidget(self.table_detalls)
 
 
         self.verticalLayout_2.addLayout(self.layout_data)
@@ -292,9 +314,7 @@ class Ui_tpayments(object):
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
-        self.verticalLayout.setSpacing(15)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(-1, 9, -1, -1)
         self.label = QLabel(self.frame)
         self.label.setObjectName(u"label")
         self.label.setStyleSheet(u"border:none;")
@@ -410,23 +430,6 @@ class Ui_tpayments(object):
 
         self.gridLayout_4.addWidget(self.label_month_add, 0, 3, 1, 1)
 
-        self.label_8 = QLabel(self.frame)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setStyleSheet(u"QFrame{\n"
-"border:none;\n"
-"}")
-        self.label_8.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.gridLayout_4.addWidget(self.label_8, 2, 2, 1, 1)
-
-        self.lndt_adelantos = QLineEdit(self.frame)
-        self.lndt_adelantos.setObjectName(u"lndt_adelantos")
-        self.lndt_adelantos.setMinimumSize(QSize(0, 31))
-        self.lndt_adelantos.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
-"background-color: rgb(255, 255, 255);")
-
-        self.gridLayout_4.addWidget(self.lndt_adelantos, 2, 3, 1, 1)
-
         self.label_all_days = QLabel(self.frame)
         self.label_all_days.setObjectName(u"label_all_days")
         self.label_all_days.setMinimumSize(QSize(0, 31))
@@ -460,6 +463,23 @@ class Ui_tpayments(object):
 
         self.gridLayout_4.addWidget(self.label_days_pay, 1, 5, 1, 1)
 
+        self.lndt_adelantos = QLineEdit(self.frame)
+        self.lndt_adelantos.setObjectName(u"lndt_adelantos")
+        self.lndt_adelantos.setMinimumSize(QSize(0, 31))
+        self.lndt_adelantos.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: rgb(255, 255, 255);")
+
+        self.gridLayout_4.addWidget(self.lndt_adelantos, 2, 3, 1, 1)
+
+        self.label_8 = QLabel(self.frame)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setStyleSheet(u"QFrame{\n"
+"border:none;\n"
+"}")
+        self.label_8.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.label_8, 2, 2, 1, 1)
+
         self.gridLayout_4.setColumnStretch(0, 1)
         self.gridLayout_4.setColumnStretch(1, 3)
         self.gridLayout_4.setColumnStretch(2, 1)
@@ -469,20 +489,56 @@ class Ui_tpayments(object):
 
         self.verticalLayout.addLayout(self.gridLayout_4)
 
-        self.label_estado = QLabel(self.frame)
-        self.label_estado.setObjectName(u"label_estado")
+        self.horizontalFrame = QFrame(self.frame)
+        self.horizontalFrame.setObjectName(u"horizontalFrame")
+        self.horizontalFrame.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"border:none;")
+        self.horizontalLayout_5 = QHBoxLayout(self.horizontalFrame)
+        self.horizontalLayout_5.setSpacing(25)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.label_51 = QLabel(self.horizontalFrame)
+        self.label_51.setObjectName(u"label_51")
+        self.label_51.setMinimumSize(QSize(0, 31))
+        self.label_51.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"border:none;")
+        self.label_51.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_5.addWidget(self.label_51)
+
+        self.label_porpagar = QLabel(self.horizontalFrame)
+        self.label_porpagar.setObjectName(u"label_porpagar")
+        self.label_porpagar.setMaximumSize(QSize(200, 16777215))
+        self.label_porpagar.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"border:none;")
+
+        self.horizontalLayout_5.addWidget(self.label_porpagar)
+
+        self.label_esta = QLabel(self.horizontalFrame)
+        self.label_esta.setObjectName(u"label_esta")
         font1 = QFont()
         font1.setFamily(u"MS Shell Dlg 2")
         font1.setPointSize(14)
         font1.setBold(False)
         font1.setItalic(False)
         font1.setWeight(9)
+        self.label_esta.setFont(font1)
+        self.label_esta.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"border:none;")
+        self.label_esta.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_5.addWidget(self.label_esta)
+
+        self.label_estado = QLabel(self.horizontalFrame)
+        self.label_estado.setObjectName(u"label_estado")
         self.label_estado.setFont(font1)
         self.label_estado.setStyleSheet(u"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "border:none;")
-        self.label_estado.setAlignment(Qt.AlignCenter)
+        self.label_estado.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout.addWidget(self.label_estado)
+        self.horizontalLayout_5.addWidget(self.label_estado)
+
+
+        self.verticalLayout.addWidget(self.horizontalFrame)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -540,8 +596,14 @@ class Ui_tpayments(object):
         self.lbl_title.setText(QCoreApplication.translate("tpayments", u"T TAREO Y OTROS", None))
         self.btn_ampliar.setText(QCoreApplication.translate("tpayments", u"\u25a0", None))
         self.btn_close.setText(QCoreApplication.translate("tpayments", u"X", None))
-        self.label_45.setText(QCoreApplication.translate("tpayments", u"MES:", None))
-        self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("tpayments", u"Ingrese codigo y presione ENTER", None))
+        self.lineEdit_dni.setPlaceholderText(QCoreApplication.translate("tpayments", u"Ingrese DNI y presione ENTER", None))
+        self.btn_details.setText(QCoreApplication.translate("tpayments", u"VER DETALLES", None))
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("tpayments", u"MOSTRAR TODO", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("tpayments", u"DNI", None))
+
+        self.label_49.setText(QCoreApplication.translate("tpayments", u"DETALLES:", None))
+        self.label_47.setText(QCoreApplication.translate("tpayments", u"PERIODO:", None))
+        self.lineEdit_year.setText(QCoreApplication.translate("tpayments", u"2023", None))
         self.comboBox_month.setItemText(0, QCoreApplication.translate("tpayments", u"ENERO", None))
         self.comboBox_month.setItemText(1, QCoreApplication.translate("tpayments", u"FEBRERO", None))
         self.comboBox_month.setItemText(2, QCoreApplication.translate("tpayments", u"MARZO", None))
@@ -555,13 +617,7 @@ class Ui_tpayments(object):
         self.comboBox_month.setItemText(10, QCoreApplication.translate("tpayments", u"NOVIEMBRE", None))
         self.comboBox_month.setItemText(11, QCoreApplication.translate("tpayments", u"DICIEMBRE", None))
 
-        self.label_10.setText(QCoreApplication.translate("tpayments", u"NOMBRE DEL PROYECTO :", None))
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("tpayments", u"MOSTRAR TODO", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("tpayments", u"CODIGO", None))
-
-        self.lineEdit_year.setText(QCoreApplication.translate("tpayments", u"2023", None))
-        self.label_47.setText(QCoreApplication.translate("tpayments", u"PERIODO:", None))
-        self.label_15.setText(QCoreApplication.translate("tpayments", u"No especifica", None))
+        self.label_45.setText(QCoreApplication.translate("tpayments", u"MES:", None))
         self.btn_show_table.setText(QCoreApplication.translate("tpayments", u"TABLA DE DATOS", None))
         ___qtablewidgetitem = self.table_payments.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("tpayments", u"DNI", None));
@@ -573,18 +629,28 @@ class Ui_tpayments(object):
         ___qtablewidgetitem3.setText(QCoreApplication.translate("tpayments", u"Cargo", None));
         ___qtablewidgetitem4 = self.table_payments.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("tpayments", u"Diario", None));
-        ___qtablewidgetitem5 = self.table_payments.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("tpayments", u"Total de dias", None));
-        ___qtablewidgetitem6 = self.table_payments.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("tpayments", u"Total Girar", None));
-        ___qtablewidgetitem7 = self.table_payments.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("tpayments", u"Adelantos", None));
-        ___qtablewidgetitem8 = self.table_payments.horizontalHeaderItem(8)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("tpayments", u"Por pagar", None));
-        ___qtablewidgetitem9 = self.table_payments.horizontalHeaderItem(9)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("tpayments", u"Observaciones", None));
-        ___qtablewidgetitem10 = self.table_payments.horizontalHeaderItem(10)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("tpayments", u"Estado", None));
+        ___qtablewidgetitem5 = self.table_detalls.horizontalHeaderItem(0)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("tpayments", u"DNI", None));
+        ___qtablewidgetitem6 = self.table_detalls.horizontalHeaderItem(1)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("tpayments", u"Nombres", None));
+        ___qtablewidgetitem7 = self.table_detalls.horizontalHeaderItem(2)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("tpayments", u"Apellidos", None));
+        ___qtablewidgetitem8 = self.table_detalls.horizontalHeaderItem(3)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("tpayments", u"Cargo", None));
+        ___qtablewidgetitem9 = self.table_detalls.horizontalHeaderItem(4)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("tpayments", u"Diario", None));
+        ___qtablewidgetitem10 = self.table_detalls.horizontalHeaderItem(5)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("tpayments", u"Total de dias", None));
+        ___qtablewidgetitem11 = self.table_detalls.horizontalHeaderItem(6)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("tpayments", u"Total Girar", None));
+        ___qtablewidgetitem12 = self.table_detalls.horizontalHeaderItem(7)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("tpayments", u"Adelantos", None));
+        ___qtablewidgetitem13 = self.table_detalls.horizontalHeaderItem(8)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("tpayments", u"Por pagar", None));
+        ___qtablewidgetitem14 = self.table_detalls.horizontalHeaderItem(9)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("tpayments", u"Observaciones", None));
+        ___qtablewidgetitem15 = self.table_detalls.horizontalHeaderItem(10)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("tpayments", u"Estado", None));
         self.label.setText(QCoreApplication.translate("tpayments", u"MENU PAGAR", None))
         self.label_periodo.setText(QCoreApplication.translate("tpayments", u"2023", None))
         self.label_35.setText(QCoreApplication.translate("tpayments", u"DNI:", None))
@@ -598,14 +664,17 @@ class Ui_tpayments(object):
         self.label_name.setText(QCoreApplication.translate("tpayments", u"No especifica", None))
         self.label_total.setText(QCoreApplication.translate("tpayments", u"0", None))
         self.label_month_add.setText(QCoreApplication.translate("tpayments", u"ENERO", None))
-        self.label_8.setText(QCoreApplication.translate("tpayments", u"ADELANTOS:", None))
-        self.lndt_adelantos.setText(QCoreApplication.translate("tpayments", u"0", None))
-        self.lndt_adelantos.setPlaceholderText(QCoreApplication.translate("tpayments", u"Adelantos", None))
         self.label_all_days.setText(QCoreApplication.translate("tpayments", u"0", None))
         self.label_4.setText(QCoreApplication.translate("tpayments", u"TOTAL DE DIAS:", None))
         self.label_7.setText(QCoreApplication.translate("tpayments", u"POR DIA:", None))
         self.label_days_pay.setText(QCoreApplication.translate("tpayments", u"0", None))
-        self.label_estado.setText(QCoreApplication.translate("tpayments", u"ESTADO : NO PAGADO", None))
+        self.lndt_adelantos.setText(QCoreApplication.translate("tpayments", u"0", None))
+        self.lndt_adelantos.setPlaceholderText(QCoreApplication.translate("tpayments", u"Adelantos", None))
+        self.label_8.setText(QCoreApplication.translate("tpayments", u"ADELANTOS:", None))
+        self.label_51.setText(QCoreApplication.translate("tpayments", u"TOTAL A PAGAR:", None))
+        self.label_porpagar.setText(QCoreApplication.translate("tpayments", u"0", None))
+        self.label_esta.setText(QCoreApplication.translate("tpayments", u"ESTADO:", None))
+        self.label_estado.setText(QCoreApplication.translate("tpayments", u"NO PAGADO", None))
         self.btn_pagar_new.setText(QCoreApplication.translate("tpayments", u"PAGAR", None))
         self.btn_dar_adelantos.setText(QCoreApplication.translate("tpayments", u"DAR ADELANTOS", None))
         self.btn_close_pframe.setText(QCoreApplication.translate("tpayments", u"MOSTRAR SOLO TABLA", None))

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
-    <height>546</height>
+    <width>906</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -217,78 +217,55 @@ QPushButton:hover{
              <number>20</number>
             </property>
             <item>
-             <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0">
+             <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,0">
               <property name="horizontalSpacing">
-               <number>6</number>
+               <number>10</number>
               </property>
-              <item row="0" column="0">
-               <widget class="QComboBox" name="comboBox">
-                <property name="minimumSize">
-                 <size>
-                  <width>200</width>
-                  <height>31</height>
-                 </size>
-                </property>
-                <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>Codigo Material</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Nombre Material</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string>MEDIDA :</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit_4">
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_name">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
                   <height>31</height>
                  </size>
                 </property>
-                <property name="maximumSize">
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                </property>
+                <property name="text">
+                 <string>No espefica</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_13">
+                <property name="minimumSize">
                  <size>
-                  <width>500</width>
-                  <height>16777215</height>
+                  <width>0</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>NOMBRE:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLabel" name="label_saldo">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>31</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                 </property>
                 <property name="text">
-                 <string/>
-                </property>
-                <property name="placeholderText">
-                 <string>Digite aquí y presione ENTER</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
-               <widget class="QLabel" name="label_11">
-                <property name="styleSheet">
-                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                </property>
-                <property name="text">
-                 <string>BLS</string>
+                 <string>120</string>
                 </property>
                </widget>
               </item>
@@ -308,8 +285,8 @@ QPushButton:hover{
                 </property>
                </widget>
               </item>
-              <item row="2" column="3">
-               <widget class="QLabel" name="label_2">
+              <item row="2" column="5">
+               <widget class="QLabel" name="label_saldo_2">
                 <property name="minimumSize">
                  <size>
                   <width>150</width>
@@ -320,11 +297,33 @@ QPushButton:hover{
                  <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                 </property>
                 <property name="text">
-                 <string>120</string>
+                 <string>XYZ.ASDAS</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="2" column="0">
+              <item row="0" column="5">
+               <widget class="QPushButton" name="btn_viewdetals">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>VER DETALLES</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
                <widget class="QLabel" name="label_12">
                 <property name="minimumSize">
                  <size>
@@ -333,26 +332,81 @@ QPushButton:hover{
                  </size>
                 </property>
                 <property name="text">
-                 <string>NOMBRE:</string>
+                 <string> NOMBRE MATERIAL:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                 </property>
                </widget>
               </item>
-              <item row="2" column="1">
-               <widget class="QLabel" name="label_13">
+              <item row="0" column="2">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>MEDIDA :</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="4">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>REGISTRO:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="label_medida">
                 <property name="minimumSize">
                  <size>
-                  <width>0</width>
-                  <height>31</height>
+                  <width>150</width>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                 </property>
                 <property name="text">
-                 <string>No espefica</string>
+                 <string>BLS</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lndt_codemat">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="placeholderText">
+                 <string>Digite aquí y presione ENTER</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>HISTORIAL:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -368,6 +422,33 @@ QPushButton:hover{
             <property name="rightMargin">
              <number>20</number>
             </property>
+            <item>
+             <widget class="QTableWidget" name="table_showinfo">
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+              </property>
+              <column>
+               <property name="text">
+                <string>Nombre</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Cantidad</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Medida</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Responsable</string>
+               </property>
+              </column>
+             </widget>
+            </item>
             <item>
              <widget class="QTableWidget" name="table_qwk_new">
               <property name="maximumSize">
@@ -634,7 +715,7 @@ border: none;
                    </widget>
                   </item>
                   <item row="2" column="3">
-                   <widget class="QLineEdit" name="lineEdit_9">
+                   <widget class="QLineEdit" name="lndt_responsable_2">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -663,7 +744,7 @@ border: none;
                    </widget>
                   </item>
                   <item row="2" column="1">
-                   <widget class="QLineEdit" name="lineEdit_6">
+                   <widget class="QLineEdit" name="lndt_typeword">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -734,7 +815,7 @@ border: 1px solid rgb(0, 0, 127);</string>
                    </widget>
                   </item>
                   <item row="1" column="3">
-                   <widget class="QLineEdit" name="lineEdit_8">
+                   <widget class="QLineEdit" name="lndt_responsable">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -766,7 +847,7 @@ border: 1px solid rgb(0, 0, 127);</string>
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QLineEdit" name="lineEdit_5">
+                   <widget class="QLineEdit" name="code_proyecto">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -779,7 +860,7 @@ border: 1px solid rgb(0, 0, 127);</string>
                    </widget>
                   </item>
                   <item row="0" column="3">
-                   <widget class="QLineEdit" name="lineEdit_7">
+                   <widget class="QLineEdit" name="lndt_lote">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -821,7 +902,7 @@ border: 1px solid rgb(0, 0, 127);</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QComboBox" name="comboBox_2">
+                 <widget class="QComboBox" name="cmbbx_deleteop">
                   <property name="minimumSize">
                    <size>
                     <width>300</width>
@@ -844,7 +925,7 @@ border: 1px solid rgb(0, 0, 127);</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_10">
+                 <widget class="QLineEdit" name="lndt_deletecode">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -884,7 +965,32 @@ border-radius:0px;
                 </widget>
                </item>
                <item>
+                <widget class="QPushButton" name="btn_delete_rmaterial">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>IR A ELIMINAR</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QFrame" name="frame_show_btn">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">border: none;</string>
                  </property>
@@ -910,6 +1016,25 @@ border-radius:0px;
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
+                  <item>
+                   <widget class="QPushButton" name="btn_entradas">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>ENTRADAS</string>
+                    </property>
+                   </widget>
+                  </item>
                   <item>
                    <widget class="QPushButton" name="btn_out_material">
                     <property name="minimumSize">
@@ -945,25 +1070,6 @@ border-radius:0px;
                     </property>
                     <property name="text">
                      <string>DEVOLUCIONES</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btn_delete_rmaterial">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
-border: 1px solid rgb(0, 0, 127);
-border-radius:0px;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>IR A ELIMINAR</string>
                     </property>
                    </widget>
                   </item>

@@ -62,7 +62,9 @@ class control_aec(QMainWindow,Ui_sistema):
 	def __init__(self):
 		super().__init__()
 		self.setupUi(self)
-		#eliminar barra y de titulo - opacidad
+		icon = QIcon()
+		icon.addFile("./assets/icono.png", QSize(), QIcon.Normal, QIcon.Off)
+		self.setWindowIcon(icon)
 		self.setWindowFlag(Qt.FramelessWindowHint)
 		self.setWindowOpacity(1)
 		#SizeGrip
@@ -141,10 +143,29 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.update_date_now()
 		self.bt_cerrar.clicked.connect(self.close)
 
+	def closeEvent(self, event):
+		cerrar = QMessageBox(self)
+		cerrar.setWindowTitle("Salir del sistema AEC")
+		cerrar.setIcon(QMessageBox.Question)
+		cerrar.setText("¿Estás seguro que desea cerrar el sistema AEC?")
+		botonSalir = cerrar.addButton("Salir", QMessageBox.YesRole)
+		botonCancelar = cerrar.addButton("Cancelar", QMessageBox.NoRole)    
+		cerrar.exec_()    
+		if cerrar.clickedButton() == botonSalir:
+			event.accept()
+		else:
+			event.ignore()
+
 	def calcular_total(self):
 		self.update_dbmaterial()
+		code_material=self.label_codematerial.text()
+		name_material=self.lineEdit_namematrial.text()
 		cantidad=self.lineEdit_cantidadmt.text()
 		precio=self.lineEdit_costounit.text()
+		guia_remision=self.lineEdit_guiaremision.text()
+		code_search=self.lineEdit_codefin.text()
+		checkBox_reutizable=1
+		medida=self.comboBox_medida.currentText()
 		if(len(cantidad)>0 and len(precio)>0):
 			try:
 				this_cantidad=float(cantidad)
@@ -157,6 +178,7 @@ class control_aec(QMainWindow,Ui_sistema):
 			finally:
 				total=this_cantidad*this_precio
 				self.label_allmt.setText(str(total))
+			act=self.datos.add_material(code_material, self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
 
 	def update_dbmaterial(self):
 		code_material=""

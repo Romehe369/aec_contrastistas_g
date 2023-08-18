@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuZeEcxH.ui'
+## Form generated from reading UI file 'menuoPgDpH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -20,10 +20,7 @@ class Ui_sistema(object):
         sistema.resize(1193, 571)
         sistema.setMinimumSize(QSize(0, 0))
         sistema.setMaximumSize(QSize(16777215, 16777215))
-        sistema.setStyleSheet(u"background-color: rgb(0, 255, 255);\n"
-"QLineEdit{\n"
-"	background-color: rgb(255, 255, 255);\n"
-"}")
+        sistema.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.centralwidget = QWidget(sistema)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setMinimumSize(QSize(0, 0))

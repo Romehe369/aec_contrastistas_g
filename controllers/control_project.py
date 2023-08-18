@@ -23,6 +23,7 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         self.btn_decline.clicked.connect(self.close)
         self.label_code_project.setText(self.parent().code_project)
         self.label_title.setText(self.line_break())
+        self.frame.mouseMoveEvent = self.mover_ventana
 
     def line_break(self):
         name_project=self.parent().name_project
@@ -31,6 +32,15 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         split_text.insert(len_text,"\n")
         text_formal=" ".join(split_text)
         return text_formal
+
+    def mousePressEvent(self, event):
+        self.clickPosition = event.globalPos()
+    def mover_ventana(self, event):
+        if self.isMaximized() == False:         
+            if event.buttons() == Qt.LeftButton:
+                self.move(self.pos() + event.globalPos() - self.clickPosition)
+                self.clickPosition = event.globalPos()
+                event.accept()
 
 class add_project(QMainWindow,Ui_add_project_new):
     def __init__(self, parent):

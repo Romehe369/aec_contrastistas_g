@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tkardexCbBAGZ.ui'
+## Form generated from reading UI file 'tkardexyaiFzD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_tkarded(object):
     def setupUi(self, tkarded):
         if not tkarded.objectName():
             tkarded.setObjectName(u"tkarded")
-        tkarded.resize(859, 546)
+        tkarded.resize(906, 572)
         self.centralwidget = QWidget(tkarded)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -130,36 +130,27 @@ class Ui_tkarded(object):
         self.verticalLayout_2.setContentsMargins(20, -1, 20, -1)
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setHorizontalSpacing(6)
-        self.comboBox = QComboBox(self.frame)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(200, 31))
-        self.comboBox.setLayoutDirection(Qt.LeftToRight)
-        self.comboBox.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.gridLayout.setHorizontalSpacing(10)
+        self.label_name = QLabel(self.frame)
+        self.label_name.setObjectName(u"label_name")
+        self.label_name.setMinimumSize(QSize(0, 31))
+        self.label_name.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout.addWidget(self.comboBox, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_name, 2, 1, 1, 1)
 
-        self.label = QLabel(self.frame)
-        self.label.setObjectName(u"label")
-        self.label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_13 = QLabel(self.frame)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setMinimumSize(QSize(0, 31))
+        self.label_13.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout.addWidget(self.label, 0, 2, 1, 1)
+        self.gridLayout.addWidget(self.label_13, 2, 0, 1, 1)
 
-        self.lineEdit_4 = QLineEdit(self.frame)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setMinimumSize(QSize(0, 31))
-        self.lineEdit_4.setMaximumSize(QSize(500, 16777215))
-        self.lineEdit_4.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_saldo = QLabel(self.frame)
+        self.label_saldo.setObjectName(u"label_saldo")
+        self.label_saldo.setMinimumSize(QSize(150, 31))
+        self.label_saldo.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout.addWidget(self.lineEdit_4, 0, 1, 1, 1)
-
-        self.label_11 = QLabel(self.frame)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.gridLayout.addWidget(self.label_11, 0, 3, 1, 1)
+        self.gridLayout.addWidget(self.label_saldo, 2, 3, 1, 1)
 
         self.label_3 = QLabel(self.frame)
         self.label_3.setObjectName(u"label_3")
@@ -168,26 +159,63 @@ class Ui_tkarded(object):
 
         self.gridLayout.addWidget(self.label_3, 2, 2, 1, 1)
 
-        self.label_2 = QLabel(self.frame)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(150, 31))
-        self.label_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_saldo_2 = QLabel(self.frame)
+        self.label_saldo_2.setObjectName(u"label_saldo_2")
+        self.label_saldo_2.setMinimumSize(QSize(150, 31))
+        self.label_saldo_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label_saldo_2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.label_2, 2, 3, 1, 1)
+        self.gridLayout.addWidget(self.label_saldo_2, 2, 5, 1, 1)
+
+        self.btn_viewdetals = QPushButton(self.frame)
+        self.btn_viewdetals.setObjectName(u"btn_viewdetals")
+        self.btn_viewdetals.setMinimumSize(QSize(0, 31))
+        self.btn_viewdetals.setStyleSheet(u"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"}")
+
+        self.gridLayout.addWidget(self.btn_viewdetals, 0, 5, 1, 1)
 
         self.label_12 = QLabel(self.frame)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setMinimumSize(QSize(0, 31))
         self.label_12.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout.addWidget(self.label_12, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_12, 0, 0, 1, 1)
 
-        self.label_13 = QLabel(self.frame)
-        self.label_13.setObjectName(u"label_13")
-        self.label_13.setMinimumSize(QSize(0, 31))
-        self.label_13.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.label = QLabel(self.frame)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.gridLayout.addWidget(self.label_13, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.label, 0, 2, 1, 1)
+
+        self.label_2 = QLabel(self.frame)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_2, 2, 4, 1, 1)
+
+        self.label_medida = QLabel(self.frame)
+        self.label_medida.setObjectName(u"label_medida")
+        self.label_medida.setMinimumSize(QSize(150, 0))
+        self.label_medida.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.gridLayout.addWidget(self.label_medida, 0, 3, 1, 1)
+
+        self.lndt_codemat = QLineEdit(self.frame)
+        self.lndt_codemat.setObjectName(u"lndt_codemat")
+        self.lndt_codemat.setMinimumSize(QSize(0, 31))
+        self.lndt_codemat.setMaximumSize(QSize(16777215, 16777215))
+        self.lndt_codemat.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.gridLayout.addWidget(self.lndt_codemat, 0, 1, 1, 1)
+
+        self.label_10 = QLabel(self.frame)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_10, 0, 4, 1, 1)
 
 
         self.verticalLayout_2.addLayout(self.gridLayout)
@@ -198,45 +226,61 @@ class Ui_tkarded(object):
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(20, -1, 20, -1)
+        self.table_showinfo = QTableWidget(self.frame)
+        if (self.table_showinfo.columnCount() < 4):
+            self.table_showinfo.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.table_showinfo.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.table_showinfo.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.table_showinfo.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.table_showinfo.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.table_showinfo.setObjectName(u"table_showinfo")
+        self.table_showinfo.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+
+        self.verticalLayout_3.addWidget(self.table_showinfo)
+
         self.table_qwk_new = QTableWidget(self.frame)
         if (self.table_qwk_new.columnCount() < 11):
             self.table_qwk_new.setColumnCount(11)
         font = QFont()
         font.setPointSize(12)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setFont(font);
-        __qtablewidgetitem1.setBackground(QColor(255, 255, 255));
-        self.table_qwk_new.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
         __qtablewidgetitem4.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.table_qwk_new.setHorizontalHeaderItem(0, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
         __qtablewidgetitem5.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem5.setBackground(QColor(255, 255, 255));
+        self.table_qwk_new.setHorizontalHeaderItem(1, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
         __qtablewidgetitem6.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        self.table_qwk_new.setHorizontalHeaderItem(2, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
         __qtablewidgetitem7.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        self.table_qwk_new.setHorizontalHeaderItem(3, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
         __qtablewidgetitem8.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(8, __qtablewidgetitem8)
+        self.table_qwk_new.setHorizontalHeaderItem(4, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
         __qtablewidgetitem9.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(9, __qtablewidgetitem9)
+        self.table_qwk_new.setHorizontalHeaderItem(5, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
         __qtablewidgetitem10.setFont(font);
-        self.table_qwk_new.setHorizontalHeaderItem(10, __qtablewidgetitem10)
+        self.table_qwk_new.setHorizontalHeaderItem(6, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        __qtablewidgetitem11.setFont(font);
+        self.table_qwk_new.setHorizontalHeaderItem(7, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        __qtablewidgetitem12.setFont(font);
+        self.table_qwk_new.setHorizontalHeaderItem(8, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        __qtablewidgetitem13.setFont(font);
+        self.table_qwk_new.setHorizontalHeaderItem(9, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        __qtablewidgetitem14.setFont(font);
+        self.table_qwk_new.setHorizontalHeaderItem(10, __qtablewidgetitem14)
         self.table_qwk_new.setObjectName(u"table_qwk_new")
         self.table_qwk_new.setMaximumSize(QSize(16777215, 16777215))
         self.table_qwk_new.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
@@ -306,12 +350,12 @@ class Ui_tkarded(object):
 
         self.gridLayout_2.addWidget(self.label_9, 2, 2, 1, 1)
 
-        self.lineEdit_9 = QLineEdit(self.frame_hide)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
-        self.lineEdit_9.setMinimumSize(QSize(0, 31))
-        self.lineEdit_9.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lndt_responsable_2 = QLineEdit(self.frame_hide)
+        self.lndt_responsable_2.setObjectName(u"lndt_responsable_2")
+        self.lndt_responsable_2.setMinimumSize(QSize(0, 31))
+        self.lndt_responsable_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_2.addWidget(self.lineEdit_9, 2, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.lndt_responsable_2, 2, 3, 1, 1)
 
         self.label_6 = QLabel(self.frame_hide)
         self.label_6.setObjectName(u"label_6")
@@ -320,12 +364,12 @@ class Ui_tkarded(object):
 
         self.gridLayout_2.addWidget(self.label_6, 2, 0, 1, 1)
 
-        self.lineEdit_6 = QLineEdit(self.frame_hide)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setMinimumSize(QSize(0, 31))
-        self.lineEdit_6.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lndt_typeword = QLineEdit(self.frame_hide)
+        self.lndt_typeword.setObjectName(u"lndt_typeword")
+        self.lndt_typeword.setMinimumSize(QSize(0, 31))
+        self.lndt_typeword.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_2.addWidget(self.lineEdit_6, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.lndt_typeword, 2, 1, 1, 1)
 
         self.dateEdit = QDateEdit(self.frame_hide)
         self.dateEdit.setObjectName(u"dateEdit")
@@ -357,12 +401,12 @@ class Ui_tkarded(object):
 
         self.gridLayout_2.addWidget(self.label_4, 1, 0, 1, 1)
 
-        self.lineEdit_8 = QLineEdit(self.frame_hide)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-        self.lineEdit_8.setMinimumSize(QSize(0, 31))
-        self.lineEdit_8.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lndt_responsable = QLineEdit(self.frame_hide)
+        self.lndt_responsable.setObjectName(u"lndt_responsable")
+        self.lndt_responsable.setMinimumSize(QSize(0, 31))
+        self.lndt_responsable.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_2.addWidget(self.lineEdit_8, 1, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.lndt_responsable, 1, 3, 1, 1)
 
         self.label_5 = QLabel(self.frame_hide)
         self.label_5.setObjectName(u"label_5")
@@ -372,19 +416,19 @@ class Ui_tkarded(object):
 
         self.gridLayout_2.addWidget(self.label_5, 0, 0, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.frame_hide)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setMinimumSize(QSize(0, 31))
-        self.lineEdit_5.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.code_proyecto = QLineEdit(self.frame_hide)
+        self.code_proyecto.setObjectName(u"code_proyecto")
+        self.code_proyecto.setMinimumSize(QSize(0, 31))
+        self.code_proyecto.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_2.addWidget(self.lineEdit_5, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.code_proyecto, 0, 1, 1, 1)
 
-        self.lineEdit_7 = QLineEdit(self.frame_hide)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-        self.lineEdit_7.setMinimumSize(QSize(0, 31))
-        self.lineEdit_7.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lndt_lote = QLineEdit(self.frame_hide)
+        self.lndt_lote.setObjectName(u"lndt_lote")
+        self.lndt_lote.setMinimumSize(QSize(0, 31))
+        self.lndt_lote.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_2.addWidget(self.lineEdit_7, 0, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.lndt_lote, 0, 3, 1, 1)
 
 
         self.verticalLayout_5.addLayout(self.gridLayout_2)
@@ -400,21 +444,21 @@ class Ui_tkarded(object):
         self.horizontalLayout_2 = QHBoxLayout(self.frame_delete)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.comboBox_2 = QComboBox(self.frame_delete)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
-        self.comboBox_2.setMinimumSize(QSize(300, 31))
-        self.comboBox_2.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.cmbbx_deleteop = QComboBox(self.frame_delete)
+        self.cmbbx_deleteop.addItem("")
+        self.cmbbx_deleteop.addItem("")
+        self.cmbbx_deleteop.setObjectName(u"cmbbx_deleteop")
+        self.cmbbx_deleteop.setMinimumSize(QSize(300, 31))
+        self.cmbbx_deleteop.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.horizontalLayout_2.addWidget(self.comboBox_2)
+        self.horizontalLayout_2.addWidget(self.cmbbx_deleteop)
 
-        self.lineEdit_10 = QLineEdit(self.frame_delete)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
-        self.lineEdit_10.setMinimumSize(QSize(0, 31))
-        self.lineEdit_10.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
+        self.lndt_deletecode = QLineEdit(self.frame_delete)
+        self.lndt_deletecode.setObjectName(u"lndt_deletecode")
+        self.lndt_deletecode.setMinimumSize(QSize(0, 31))
+        self.lndt_deletecode.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.horizontalLayout_2.addWidget(self.lineEdit_10)
+        self.horizontalLayout_2.addWidget(self.lndt_deletecode)
 
 
         self.verticalLayout_7.addWidget(self.frame_delete)
@@ -432,8 +476,19 @@ class Ui_tkarded(object):
 
         self.horizontalLayout.addWidget(self.btn_confirm_delete)
 
+        self.btn_delete_rmaterial = QPushButton(self.frame_2)
+        self.btn_delete_rmaterial.setObjectName(u"btn_delete_rmaterial")
+        self.btn_delete_rmaterial.setMinimumSize(QSize(0, 31))
+        self.btn_delete_rmaterial.setStyleSheet(u"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"}")
+
+        self.horizontalLayout.addWidget(self.btn_delete_rmaterial)
+
         self.frame_show_btn = QFrame(self.frame_2)
         self.frame_show_btn.setObjectName(u"frame_show_btn")
+        self.frame_show_btn.setMaximumSize(QSize(16777215, 16777215))
         self.frame_show_btn.setStyleSheet(u"border: none;")
         self.frame_show_btn.setFrameShape(QFrame.StyledPanel)
         self.frame_show_btn.setFrameShadow(QFrame.Raised)
@@ -441,6 +496,16 @@ class Ui_tkarded(object):
         self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.btn_entradas = QPushButton(self.frame_show_btn)
+        self.btn_entradas.setObjectName(u"btn_entradas")
+        self.btn_entradas.setMinimumSize(QSize(0, 31))
+        self.btn_entradas.setStyleSheet(u"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"}")
+
+        self.horizontalLayout_3.addWidget(self.btn_entradas)
+
         self.btn_out_material = QPushButton(self.frame_show_btn)
         self.btn_out_material.setObjectName(u"btn_out_material")
         self.btn_out_material.setMinimumSize(QSize(0, 31))
@@ -460,16 +525,6 @@ class Ui_tkarded(object):
 "}")
 
         self.horizontalLayout_3.addWidget(self.btn_add_devoluciones)
-
-        self.btn_delete_rmaterial = QPushButton(self.frame_show_btn)
-        self.btn_delete_rmaterial.setObjectName(u"btn_delete_rmaterial")
-        self.btn_delete_rmaterial.setMinimumSize(QSize(0, 31))
-        self.btn_delete_rmaterial.setStyleSheet(u"QPushButton{\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;\n"
-"}")
-
-        self.horizontalLayout_3.addWidget(self.btn_delete_rmaterial)
 
 
         self.horizontalLayout.addWidget(self.frame_show_btn)
@@ -498,39 +553,49 @@ class Ui_tkarded(object):
         self.lbl_title.setText(QCoreApplication.translate("tkarded", u"T KARDEX MATERIAL", None))
         self.btn_ampliar.setText(QCoreApplication.translate("tkarded", u"\u25a0", None))
         self.btn_close.setText(QCoreApplication.translate("tkarded", u"X", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("tkarded", u"Codigo Material", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("tkarded", u"Nombre Material", None))
-
-        self.label.setText(QCoreApplication.translate("tkarded", u"MEDIDA :", None))
-        self.lineEdit_4.setText("")
-        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("tkarded", u"Digite aqu\u00ed y presione ENTER", None))
-        self.label_11.setText(QCoreApplication.translate("tkarded", u"BLS", None))
+        self.label_name.setText(QCoreApplication.translate("tkarded", u"No espefica", None))
+        self.label_13.setText(QCoreApplication.translate("tkarded", u"NOMBRE:", None))
+        self.label_saldo.setText(QCoreApplication.translate("tkarded", u"120", None))
         self.label_3.setText(QCoreApplication.translate("tkarded", u"SALDO :", None))
-        self.label_2.setText(QCoreApplication.translate("tkarded", u"120", None))
-        self.label_12.setText(QCoreApplication.translate("tkarded", u"NOMBRE:", None))
-        self.label_13.setText(QCoreApplication.translate("tkarded", u"No espefica", None))
-        ___qtablewidgetitem = self.table_qwk_new.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("tkarded", u"Codigo proyecto", None));
-        ___qtablewidgetitem1 = self.table_qwk_new.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("tkarded", u"Fecha", None));
-        ___qtablewidgetitem2 = self.table_qwk_new.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("tkarded", u"Entradas", None));
-        ___qtablewidgetitem3 = self.table_qwk_new.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("tkarded", u"Salidas", None));
-        ___qtablewidgetitem4 = self.table_qwk_new.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("tkarded", u"Devoluciones", None));
-        ___qtablewidgetitem5 = self.table_qwk_new.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("tkarded", u"Saldo", None));
-        ___qtablewidgetitem6 = self.table_qwk_new.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("tkarded", u"Tipo de trabajo", None));
-        ___qtablewidgetitem7 = self.table_qwk_new.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("tkarded", u"Lote", None));
-        ___qtablewidgetitem8 = self.table_qwk_new.horizontalHeaderItem(8)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("tkarded", u"Responsable", None));
-        ___qtablewidgetitem9 = self.table_qwk_new.horizontalHeaderItem(9)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("tkarded", u"Observaciones", None));
-        ___qtablewidgetitem10 = self.table_qwk_new.horizontalHeaderItem(10)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("tkarded", u"Firma", None));
+        self.label_saldo_2.setText(QCoreApplication.translate("tkarded", u"XYZ.ASDAS", None))
+        self.btn_viewdetals.setText(QCoreApplication.translate("tkarded", u"VER DETALLES", None))
+        self.label_12.setText(QCoreApplication.translate("tkarded", u" NOMBRE MATERIAL:", None))
+        self.label.setText(QCoreApplication.translate("tkarded", u"MEDIDA :", None))
+        self.label_2.setText(QCoreApplication.translate("tkarded", u"REGISTRO:", None))
+        self.label_medida.setText(QCoreApplication.translate("tkarded", u"BLS", None))
+        self.lndt_codemat.setText("")
+        self.lndt_codemat.setPlaceholderText(QCoreApplication.translate("tkarded", u"Digite aqu\u00ed y presione ENTER", None))
+        self.label_10.setText(QCoreApplication.translate("tkarded", u"HISTORIAL:", None))
+        ___qtablewidgetitem = self.table_showinfo.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("tkarded", u"Nro", None));
+        ___qtablewidgetitem1 = self.table_showinfo.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("tkarded", u"Nombre", None));
+        ___qtablewidgetitem2 = self.table_showinfo.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("tkarded", u"Cantidad", None));
+        ___qtablewidgetitem3 = self.table_showinfo.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("tkarded", u"Medida", None));
+        ___qtablewidgetitem4 = self.table_qwk_new.horizontalHeaderItem(0)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("tkarded", u"Codigo proyecto", None));
+        ___qtablewidgetitem5 = self.table_qwk_new.horizontalHeaderItem(1)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("tkarded", u"Fecha", None));
+        ___qtablewidgetitem6 = self.table_qwk_new.horizontalHeaderItem(2)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("tkarded", u"Entradas", None));
+        ___qtablewidgetitem7 = self.table_qwk_new.horizontalHeaderItem(3)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("tkarded", u"Salidas", None));
+        ___qtablewidgetitem8 = self.table_qwk_new.horizontalHeaderItem(4)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("tkarded", u"Devoluciones", None));
+        ___qtablewidgetitem9 = self.table_qwk_new.horizontalHeaderItem(5)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("tkarded", u"Saldo", None));
+        ___qtablewidgetitem10 = self.table_qwk_new.horizontalHeaderItem(6)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("tkarded", u"Tipo de trabajo", None));
+        ___qtablewidgetitem11 = self.table_qwk_new.horizontalHeaderItem(7)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("tkarded", u"Lote", None));
+        ___qtablewidgetitem12 = self.table_qwk_new.horizontalHeaderItem(8)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("tkarded", u"Responsable", None));
+        ___qtablewidgetitem13 = self.table_qwk_new.horizontalHeaderItem(9)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("tkarded", u"Observaciones", None));
+        ___qtablewidgetitem14 = self.table_qwk_new.horizontalHeaderItem(10)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("tkarded", u"Firma", None));
         self.label_title.setText(QCoreApplication.translate("tkarded", u"AGREGAR UNA SALIDA <=> DEVOLUCIONES", None))
         self.label_7.setText(QCoreApplication.translate("tkarded", u"LOTE:", None))
         self.label_9.setText(QCoreApplication.translate("tkarded", u"OBSERVACIONES:", None))
@@ -538,12 +603,13 @@ class Ui_tkarded(object):
         self.label_8.setText(QCoreApplication.translate("tkarded", u"RESPONSABLE:", None))
         self.label_4.setText(QCoreApplication.translate("tkarded", u"FECHA:", None))
         self.label_5.setText(QCoreApplication.translate("tkarded", u"CODIGO DE PROYECTO : ", None))
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("tkarded", u"Eliminar un registro por codigo", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("tkarded", u"Eliminar un registro por nombre", None))
+        self.cmbbx_deleteop.setItemText(0, QCoreApplication.translate("tkarded", u"Eliminar un registro por codigo", None))
+        self.cmbbx_deleteop.setItemText(1, QCoreApplication.translate("tkarded", u"Eliminar un registro por nombre", None))
 
         self.btn_confirm_delete.setText(QCoreApplication.translate("tkarded", u"CONFIRMAR ELIMINACION", None))
+        self.btn_delete_rmaterial.setText(QCoreApplication.translate("tkarded", u"IR A ELIMINAR", None))
+        self.btn_entradas.setText(QCoreApplication.translate("tkarded", u"ENTRADAS", None))
         self.btn_out_material.setText(QCoreApplication.translate("tkarded", u"SALIDAS", None))
         self.btn_add_devoluciones.setText(QCoreApplication.translate("tkarded", u"DEVOLUCIONES", None))
-        self.btn_delete_rmaterial.setText(QCoreApplication.translate("tkarded", u"IR A ELIMINAR", None))
     # retranslateUi
 

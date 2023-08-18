@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1066</width>
-    <height>607</height>
+    <height>608</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
       <property name="styleSheet">
        <string notr="true">QFrame{
 border: 5px solid rgb(0, 0, 127);
-background-color: rgb(191, 191, 191);
+	background-color: rgb(255, 255, 255);
 font: 75 12pt &quot;MS Shell Dlg 2&quot;;
 }
 QLabel{
@@ -228,25 +228,15 @@ border:none;
              <number>6</number>
             </property>
             <property name="leftMargin">
-             <number>200</number>
+             <number>150</number>
             </property>
             <property name="rightMargin">
-             <number>200</number>
+             <number>150</number>
             </property>
             <item>
-             <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0">
-              <item row="0" column="2">
-               <widget class="QLabel" name="label_45">
-                <property name="text">
-                 <string>MES:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit_6">
+             <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0">
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit_dni">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -272,11 +262,98 @@ border:none;
                  <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                 </property>
                 <property name="placeholderText">
-                 <string>Ingrese codigo y presione ENTER</string>
+                 <string>Ingrese DNI y presione ENTER</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="3">
+              <item row="2" column="4">
+               <widget class="QPushButton" name="btn_details">
+                <property name="minimumSize">
+                 <size>
+                  <width>250</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>VER DETALLES</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QComboBox" name="comboBox_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>MOSTRAR TODO</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>DNI</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="label_49">
+                <property name="text">
+                 <string>DETALLES:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_47">
+                <property name="text">
+                 <string>PERIODO:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="lineEdit_year">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>300</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                </property>
+                <property name="text">
+                 <string>2023</string>
+                </property>
+                <property name="maxLength">
+                 <number>4</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
                <widget class="QComboBox" name="comboBox_month">
                 <property name="minimumSize">
                  <size>
@@ -355,81 +432,13 @@ border:none;
                 </item>
                </widget>
               </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="label_10">
-                <property name="text">
-                 <string>NOMBRE DEL PROYECTO :</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QComboBox" name="comboBox_2">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>31</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>MOSTRAR TODO</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>CODIGO</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="1" column="3">
-               <widget class="QLineEdit" name="lineEdit_year">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>31</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                </property>
-                <property name="text">
-                 <string>2023</string>
-                </property>
-                <property name="maxLength">
-                 <number>4</number>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="2">
-               <widget class="QLabel" name="label_47">
+               <widget class="QLabel" name="label_45">
                 <property name="text">
-                 <string>PERIODO:</string>
+                 <string>MES:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLabel" name="label_15">
-                <property name="styleSheet">
-                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                </property>
-                <property name="text">
-                 <string>No especifica</string>
                 </property>
                </widget>
               </item>
@@ -477,6 +486,38 @@ background-color: rgb(170, 255, 255);
             </property>
             <item>
              <widget class="QTableWidget" name="table_payments">
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+              </property>
+              <column>
+               <property name="text">
+                <string>DNI</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Nombres</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Apellidos</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Cargo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Diario</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="table_detalls">
               <property name="styleSheet">
                <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
               </property>
@@ -587,12 +628,6 @@ border-radius:0px;
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
-             <property name="spacing">
-              <number>15</number>
-             </property>
-             <property name="topMargin">
-              <number>9</number>
-             </property>
              <item>
               <widget class="QLabel" name="label">
                <property name="styleSheet">
@@ -846,41 +881,6 @@ background-color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="2">
-                <widget class="QLabel" name="label_8">
-                 <property name="styleSheet">
-                  <string notr="true">QFrame{
-border:none;
-}</string>
-                 </property>
-                 <property name="text">
-                  <string>ADELANTOS:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="3">
-                <widget class="QLineEdit" name="lndt_adelantos">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: 1px solid rgb(0, 0, 127);
-background-color: rgb(255, 255, 255);</string>
-                 </property>
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Adelantos</string>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="5">
                 <widget class="QLabel" name="label_all_days">
                  <property name="minimumSize">
@@ -949,29 +949,137 @@ border:none;
                  </property>
                 </widget>
                </item>
+               <item row="2" column="3">
+                <widget class="QLineEdit" name="lndt_adelantos">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: 1px solid rgb(0, 0, 127);
+background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Adelantos</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_8">
+                 <property name="styleSheet">
+                  <string notr="true">QFrame{
+border:none;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>ADELANTOS:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </item>
              <item>
-              <widget class="QLabel" name="label_estado">
-               <property name="font">
-                <font>
-                 <family>MS Shell Dlg 2</family>
-                 <pointsize>14</pointsize>
-                 <weight>9</weight>
-                 <italic>false</italic>
-                 <bold>false</bold>
-                </font>
-               </property>
+              <widget class="QFrame" name="horizontalFrame">
                <property name="styleSheet">
                 <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
 border:none;</string>
                </property>
-               <property name="text">
-                <string>ESTADO : NO PAGADO</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,0,0">
+                <property name="spacing">
+                 <number>25</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_51">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>31</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+border:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>TOTAL A PAGAR:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_porpagar">
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+border:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>0</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_esta">
+                  <property name="font">
+                   <font>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>14</pointsize>
+                    <weight>9</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+border:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>ESTADO:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_estado">
+                  <property name="font">
+                   <font>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>14</pointsize>
+                    <weight>9</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+border:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>NO PAGADO</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>

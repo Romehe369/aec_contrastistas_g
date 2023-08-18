@@ -1,6 +1,7 @@
 import mysql.connector
 from datetime import date, datetime, timedelta
 #from controllers.change_password import Dialogo
+from PySide2.QtWidgets import *
 
 class Registro_datos():
 
@@ -138,8 +139,9 @@ class Registro_datos():
     def buscar_trabajador(self, dni):
         try:
             cur = self.conexion.cursor()
-            sql = "SELECT * FROM ttrabajador WHERE DNI = {}".format(dni)
-            cur.execute(sql)
+            sql = "SELECT dni,nombres,apellidos,categoria,sueldo_diario FROM ttrabajador WHERE dni = %s"
+            val=(dni,)
+            cur.execute(sql,val)
             # Solo obtiene un solo registro
             trabajador = cur.fetchone()
             cur.close()
@@ -304,12 +306,13 @@ class Registro_datos():
         try:
             cur = self.conexion.cursor()
             sql= """INSERT INTO tmaterial(code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable) 
-            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"""
             val = (code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
             agregado=False
+            print(e)
         finally:
             cur.close()
         return agregado
@@ -561,7 +564,34 @@ class Registro_datos():
             cur.close() 
         return cont_row
     ################################ INSERT OPTIONS #############################
+    def add_tpagos(self,periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado):
+        agregado=True
+        try:
+            cur = self.conexion.cursor()
+            sql= """INSERT INTO tpagos(periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+            val = (periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado,)
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            agregado=False
+            QMessageBox.critical(self, "Dar adelanto", "Error desconocido.",QMessageBox.Ok)
+        finally:
+            cur.close()
+        return agregado
 
+    def get_datos(self,sql):
+        t_datos=[]
+        try:
+            cur = self.conexion.cursor()
+            cur.execute(sql)
+            t_datos = cur.fetchall()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            t_datos=[]
+        finally:
+            cur.close()
+        return t_datos
 
 
 
