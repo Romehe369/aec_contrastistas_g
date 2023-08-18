@@ -10,7 +10,6 @@ from PySide2.QtWidgets import *
 from views.ui_cuadro_mensaje import Ui_add_cuadro
 from db.conexion  import Registro_datos
 from views.ui_add_proyecto import Ui_add_project_new
-from controllers.change_password import Dialogo
 
 class ctrl_project(QMainWindow,Ui_add_cuadro):
     def __init__(self, parent):
