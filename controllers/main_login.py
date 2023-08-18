@@ -2,19 +2,15 @@ import sys
 import time 
 import random
 from datetime import datetime, timedelta
-from PySide2 import QtCore
-from PySide2.QtCore import (QDate,QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt, QPropertyAnimation)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 from db.conexion  import Registro_datos
 from views.ui_login import Ui_login
 from views.ui_menu import Ui_sistema
 
-from controllers.change_password import (changed_password_uad, Dialogo)
+from controllers.change_password import changed_password_uad
 from controllers.add_trabajador import new_trabajador
 from controllers.control_project import add_project
 
@@ -108,7 +104,6 @@ class control_aec(QMainWindow,Ui_sistema):
 		self.btn_changes_password.clicked.connect(self.cambiar_password)
 		self.btn_ocultar.clicked.connect(self.mover_arriba)
 		self.bt_restaurar.hide()
-		self.dialogo=Dialogo()
 		self.btn_agregar_pro.clicked.connect(self.add_new_project)
 		#self.btn_Buscar_pro.clicked.connect()
 		self.lineEdit_add_users.textChanged.connect(self.verificar_users)

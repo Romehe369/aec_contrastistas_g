@@ -1,19 +1,10 @@
 import mysql.connector
 from datetime import date, datetime, timedelta
-#from controllers.change_password import Dialogo
-from PySide2.QtWidgets import *
 
 class Registro_datos():
-
     def __init__(self):
-        try:
-            self.conexion = mysql.connector.connect( host='localhost',database ='db_aeccontratistas', 
-                                            user = 'root',
-                                            password ='')
-            self.mensaje=Dialogo()
-        except Exception as e:
-            return None
-        
+        self.conexion = mysql.connector.connect( host='localhost',database ='db_aeccontratistas', user = 'root', password ='')
+
     ################### login data ########################
     def add_admin(self,dni,users, password):
         agregado=True
@@ -575,7 +566,6 @@ class Registro_datos():
             self.conexion.commit() 
         except Exception as e:
             agregado=False
-            QMessageBox.critical(self, "Dar adelanto", "Error desconocido.",QMessageBox.Ok)
         finally:
             cur.close()
         return agregado
@@ -596,7 +586,7 @@ class Registro_datos():
 
 
 
-#variable=Registro_datos()
+variable=Registro_datos()
 #var=variable.show_all_data(variable.convert_date("05/08/2023"))
 #var=variable.delete_asistence("72773129017")
 #r=variable.contar()
