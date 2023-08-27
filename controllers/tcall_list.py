@@ -45,16 +45,13 @@ class tasistencia(QMainWindow, Ui_tasistencia):
             id_distr=self.list_id_distribution[pos][0]
             act=self.datos.update_dispresence(id_distr,0)
             if(act):
-                self.dialogo.label_mensaje.setText("Se ha quitado\nde la lista")
-                self.dialogo.show()
+                QMessageBox.information(self, "Eliminar de la lista", "Se ha quitado de la lista.", QMessageBox.Ok)
                 self.call_list_data()
             else:
-                self.dialogo.label_mensaje.setText("No se puedo realizar\nla operación")
-                self.dialogo.show()
+                QMessageBox.information(self, "Eliminar de la lista", "No se puedo realizar la operación.", QMessageBox.Ok)
 
         else:
-            self.dialogo.label_mensaje.setText("Seleccione un\nnro de DNI")
-            self.dialogo.show()
+            QMessageBox.information(self, "Eliminar de la lista", "Seleccione un nro de DNI.", QMessageBox.Ok)
 
     def delete_fromtasistencia(self,dni):
         date_now=self.dt_fecha_list.text()
@@ -108,28 +105,21 @@ class tasistencia(QMainWindow, Ui_tasistencia):
                     break
             if exists:
                 if(self.add_exists_dni()):
-                    self.dialogo.label_mensaje.setText("Operacion Exitosa")
-                    self.dialogo.show()
+                    QMessageBox.information(self, "Agregar nuevo", "Operacion Exitosa.", QMessageBox.Ok)
                     self.call_list_data()
                 else:
                     # Si el ya existe le mostramos un mensaje de que ya existe dicho dni
-                    self.dialogo.label_mensaje.setText("El nro dni ya existe")
-                    self.dialogo.show()
-                    #self.lineEdit_dni_admin.setText("")
+                    QMessageBox.information(self, "Agregar nuevo", "El nro dni ya existe en la lista.", QMessageBox.Ok)
             else:
                 act = self.datos.buscar_trabajador(dni)
                 # Si el dni  existe nos devuelve un valor diferente de []
                 if act is not None:
                     act=self.datos.add_distribution_presence(id_distribucion,code_project,dni,1)
-                    #self.dialogo.label_mensaje.setText("Operacion Exitosa")
-                    #self.dialogo.show()
                     self.call_list_data()
                 else:
-                    self.dialogo.label_mensaje.setText("El DNI no esta registrado,\nregistre por favor")
-                    self.dialogo.show()
+                    QMessageBox.information(self, "Agregar nuevo", "El DNI no esta registrado, registre por favor.", QMessageBox.Ok)
         else:
-            self.dialogo.label_mensaje.setText("Seleccione un\nnro de DNI")
-            self.dialogo.show()
+            QMessageBox.information(self, "Agregar nuevo", "Seleccione un nro de DNI.", QMessageBox.Ok)
 
     def exists_inthismonth(self,this_object,dni):
         date_now=self.dt_fecha_list.text()
@@ -192,23 +182,16 @@ class tasistencia(QMainWindow, Ui_tasistencia):
                 columna.append(None)
                 columna.append(None)
                 act=self.datos.add_presence(date,columna[0],columna[1],this_dni,columna[5],columna[6],columna[7])
-                if(act):
-                    self.dialogo.label_mensaje.setText("Se guardo la lista")
-                    self.close()
-                    self.dialogo.show()
-                else:
-                    self.dialogo.label_mensaje.setText("No se pudo guardar la lista")
-                    self.dialogo.show()
+                if(act is False):
+                    QMessageBox.information(self, "Guardar lista", "No se pudo guardar la lista.", QMessageBox.Ok)
             # El dni existe en la tabla, no se vuelve a gregar el resgistro
             else:
                 # Se elimina dicho registro de asitencia, porque se ha descheaqueado
                 if(k.status==False):
                     # eliminar por dni un registro de la fecha
                     self.delete_fromtasistencia(this_dni)
-                    #act=self.datos.delete_asistence()
-                self.dialogo.label_mensaje.setText("Se guardo la lista")
-                self.close()
-                self.dialogo.show()
+        QMessageBox.information(self, "Guardar lista", "Se guardo la lista.", QMessageBox.Ok)
+        self.close()
 
     def resizeEvent(self, event):
         rect = self.rect()

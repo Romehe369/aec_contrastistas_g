@@ -1,10 +1,6 @@
 import sys
-from PySide2 import QtCore
-from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 from db.conexion  import Registro_datos
@@ -94,21 +90,18 @@ class changed_password_uad(QMainWindow,Ui_changes_password):
         password_old =self.lndt_password.text()
         # Verificamos que el password de anterior conincida
         if(password_old != self.password):
-            self.dialogo.label_mensaje.setText("Contraseña principal\nincorrecto")
+            QMessageBox.information(self, "Cambiar contraseña", "Contraseña principal incorrecto.", QMessageBox.Ok)
             self.lndt_password.setStyleSheet("""
             border-radius:10px;
             font: 75 12pt \"Arial\";
             border:0px;
             background-color: rgb(255, 170, 255);
             """)
-            self.dialogo.show()
         else:
             if(self.is_true_change()):
                 act = self.datos.actualiza_password(self.parent().id_access,self.change_new_password)
                 self.parent().password=self.change_new_password
-                self.dialogo.show()
-                self.dialogo.label_mensaje.setText("Las contraseña se\ncambio correctamente")
+                QMessageBox.information(self, "Cambiar contraseña", "Las contraseña se cambio correctamente.", QMessageBox.Ok)
                 self.close()
             else:
-                self.dialogo.show()
-                self.dialogo.label_mensaje.setText("Las contraseña no se\npudo modificar")
+                QMessageBox.information(self, "Cambiar contraseña", "Las contraseña no se pudo modificar.", QMessageBox.Ok)

@@ -2,8 +2,11 @@ import sys
 import time 
 import random
 from datetime import datetime, timedelta
-from PySide2.QtCore import *
-from PySide2.QtGui import *
+from PySide2.QtCore import (QEasingCurve,QDate,QCoreApplication, QMetaObject, QObject, QPoint,
+    QRect, QSize, QUrl, Qt, QPropertyAnimation)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
+    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+    QRadialGradient)
 from PySide2.QtWidgets import *
 
 from db.conexion  import Registro_datos
@@ -53,7 +56,14 @@ class MiApp(QMainWindow, Ui_login):
                 self.close()
             else:
                 QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
-            
+
+class ClickableLabel(QLabel):
+    def __init__(self, text):
+        super().__init__(text)
+
+    def mousePressEvent(self, event):
+        QMessageBox.about(self, "SISTEMA AEC CONTRATISTAS GENERALES", "<center><h3>SISTEMA DESARROLLADO PARA<br>AEC CONTRATISTAS GENERALES IRL</h3></center>")
+
 class control_aec(QMainWindow,Ui_sistema):
     def __init__(self):
         super().__init__()
@@ -76,15 +86,15 @@ class control_aec(QMainWindow,Ui_sistema):
         # mover ventana
         self.frame_superior.mouseMoveEvent = self.mover_ventana
         self.page_inicio_new()
+        self.icnon_menssage()
         #acceder a las paginas
-        #self.bt_inicio.clicked.connect(lambda: self.pages.setCurrentWidget(self.page))         
         self.btn_proyectos.clicked.connect(self.click_btn_proyectos)
         self.btn_registro.clicked.connect(self.get_datosregistros)  
-        self.btn_asistencia.clicked.connect(self.view_configuration)
         self.btn_kardex.clicked.connect(self.page_kardex)           
         self.btn_pagos.clicked.connect(self.page_pagos)
         self.btn_reportes.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_reportes))
         self.btn_admin.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_adminstracion))
+        self.btn_seetable.clicked.connect(lambda: self.pages.setCurrentWidget(self.page_showtable))
         self.btn_add_admin_ctrl.clicked.connect(self.ctrl_frame_add_admin)  
         self.btn_delete_admin_ctrl.clicked.connect(self.ctrl_frame_delete_admin)
         self.table_combo.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
@@ -116,9 +126,12 @@ class control_aec(QMainWindow,Ui_sistema):
         self.btn_registrar_ie.clicked.connect(self.set_factura)
         self.btn_add_newgasto.clicked.connect(self.clear_resgitros)
         self.lineEdit_detalle.textChanged.connect(self.this_upperf)
+        self.lineEdit_nrodoc.textChanged.connect(self.nrodoc_upper)
         self.lineEdit_coddocu.textChanged.connect(self.change_idmatrial)
         self.btn_updatemat.clicked.connect(self.update_dbmaterial)
+        self.btn_add_newmaterial.clicked.connect(self.add_dmaterial)
         self.lineEdit_cantidadmt.textChanged.connect(self.calcular_total)
+        self.lineEdit_mntt.textChanged.connect(self.cal_igv)
         self.lineEdit_costounit.textChanged.connect(self.calcular_total)
         self.id_options=[]
         # menu lateral
@@ -126,6 +139,7 @@ class control_aec(QMainWindow,Ui_sistema):
         self.bt_menu.clicked.connect(self.mover_menu)
         self.oculto=False
         self.code_add_registro=""
+        self.reutizable=0
         self.add_busqueda_dni=None
         # Agregamos todos los frames e control ocultar y mostrar
         self.frame_encabezados=[self.frame_reportes,self.frame_proyectos,self.frame_administrador]
@@ -145,17 +159,16 @@ class control_aec(QMainWindow,Ui_sistema):
             event.accept()
         else:
             event.ignore()
+    def cal_igv(self):
+        try:
+            amount=float(self.lineEdit_mntt.text())
+        except Exception as e:
+            amount=0
+        self.lineEdit_igv.setText(str(amount*0.18))
 
     def calcular_total(self):
-        self.update_dbmaterial()
-        code_material=self.label_codematerial.text()
-        name_material=self.lineEdit_namematrial.text()
         cantidad=self.lineEdit_cantidadmt.text()
         precio=self.lineEdit_costounit.text()
-        guia_remision=self.lineEdit_guiaremision.text()
-        code_search=self.lineEdit_codefin.text()
-        checkBox_reutizable=1
-        medida=self.comboBox_medida.currentText()
         if(len(cantidad)>0 and len(precio)>0):
             try:
                 this_cantidad=float(cantidad)
@@ -167,13 +180,68 @@ class control_aec(QMainWindow,Ui_sistema):
             finally:
                 total=this_cantidad*this_precio
                 self.label_allmt.setText(str(total))
-            act=self.datos.add_material(code_material, self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
 
-    def update_dbmaterial(self):
-        code_material=""
+    def add_dmaterial(self):
+        name_material=self.lineEdit_namematrial.text()
+        cantidad=self.lineEdit_cantidadmt.text()
+        precio=self.lineEdit_costounit.text()
+        guia_remision=self.lineEdit_guiaremision.text()
+        code_search=self.lineEdit_codefin.text()
+        checkBox_reutizable=1
+        medida=self.comboBox_medida.currentText()
         month=self.comboBox_mothn.currentText()
+        responsable=self.lndt_responsablen.text()
+        total=self.label_allmt.text()
         code_material=month[:3]+"."+self.aleatorio_value(6)
-        self.label_codematerial.setText(code_material)
+        act=self.datos.add_material(code_material, self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
+        if(act):
+            sql1="SELECT cantidad FROM tmarial_distribution WHERE name=%s"
+            val1=(name_material,)
+            data_exists=self.datos.get_data(sql1,val1)
+            print(data_exists)
+            if(data_exists):
+                cantidad=data_exists[0]+float(cantidad)
+                sql= """UPDATE tmarial_distribution SET cantidad = %s  WHERE name = %s"""
+                val = (cantidad,)
+                dat=self.datos.set_datos(sql,val)
+                if(dat):
+                    print("Se agrego")
+                else:
+                    print("No se puedo actualizar")
+            else:
+                sql= """INSERT INTO tmarial_distribution(name, cantidad, medida) VALUES(%s,%s,%s)"""
+                val = (name_material, cantidad, medida,)
+            add_material=self.datos.set_datos(sql,val)
+            QMessageBox.information(self, "Registrar material", "Se ha registrado el material.", QMessageBox.Ok)
+        else:
+            QMessageBox.information(self, "Registrar material", "No se pudo registrar el material.", QMessageBox.Ok)
+        
+
+    # Se realiza la actualizacion por nombre y es con respecto a la cantidad
+    def update_dbmaterial(self):
+        this=False
+        name_material=self.lineEdit_namematrial.text()
+        cantidad=self.lineEdit_cantidadmt.text()
+        precio=self.lineEdit_costounit.text()
+        guia_remision=self.lineEdit_guiaremision.text()
+        code_search=self.lineEdit_codefin.text()
+        checkBox_reutizable=self.check_reutilizable()
+        medida=self.comboBox_medida.currentText()
+        month=self.comboBox_mothn.currentText()
+        responsable=self.lndt_responsablen.text()
+        total=self.label_allmt.text()
+        code_material=month[:3]+"."+self.aleatorio_value(6)
+        if(this):
+            act=self.datos.add_material(code_material, self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
+            sql= """INSERT INTO tmarial_distribution(name, cantidad, medida) VALUES(%s,%s,%s)"""
+            val = (name_material, cantidad, medida,)
+            add_material=self.datos.set_datos(sql,val)
+
+    def check_reutilizable(self):
+        if(self.checkBox_reutizable.isChecked()):
+            return 1
+        else:
+            return 0
 
     def change_idmatrial(self):
         tex=self.lineEdit_coddocu.text()
@@ -183,6 +251,10 @@ class control_aec(QMainWindow,Ui_sistema):
         tex=self.lineEdit_detalle.text()
         self.lineEdit_detalle.setText(tex.upper())
         self.lineEdit_namematrial.setText(tex.upper())
+    def nrodoc_upper(self):
+        tex=self.lineEdit_nrodoc.text()
+        self.lineEdit_nrodoc.setText(tex.upper())
+
     def aleatorio_value(self,dim):
         code=""
         for l in range(0,dim):
@@ -200,25 +272,34 @@ class control_aec(QMainWindow,Ui_sistema):
         date_emision=self.date_emision.text()
         rotated_to=self.cmbbox_rotated.currentText()
         detalle=self.lineEdit_detalle.text()
-        amount=self.lineEdit_mntt.text()
+        # Tratamos de convertir en un numero el monto
+        try:
+            amount=float(self.lineEdit_mntt.text())
+        except Exception as e:
+            amount=0
         payment_method=self.cmbbox_mediopay.currentText()
         cost_center=self.cmbbox_costcenter.currentText()
         expense_made=self.cmbbox_responsable.currentText()
         document_number=self.lineEdit_nrodoc.text()
         date_payments=self.datetime_decline.text()
         igv=self.lineEdit_igv.text()
-        check_number="14555665"
+        check_number=self.check_number.text()
         type_expenditure=self.cmbbox_egreso.currentText()
         observation=self.lineEdit_observation.text()
         code_docuemts=self.lineEdit_coddocu.text()
         code_factura=month[:3]+self.aleatorio_value(4)+code_docuemts
         self.code_add_registro=code_factura
-        act=self.datos.add_factura(code_factura,date_emision, date_payments, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle)
-
+        if(detalle=="" or amount==0):
+            QMessageBox.critical(self, "Registrar factura", "Hay espacios vacios.", QMessageBox.Ok)
+        else:
+            act=self.datos.add_factura(code_factura,date_emision, date_payments, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle)
+            if(act):
+                QMessageBox.information(self, "Registrar factura", "Se ha registrado la factura.", QMessageBox.Ok)
+            else:
+                QMessageBox.information(self, "Registrar factura", "No se ha podido registrar la factura.", QMessageBox.Ok)
+    
     def clear_resgitros(self):
-        print("Borrado ")
-    def view_configuration(self):
-        print("No ha procedimiento")
+        QMessageBox.information(self, "Registrar factura", "Se ha eliminado los tokens.", QMessageBox.Ok)
 
     def get_datosregistros(self):
         self.pages.setCurrentWidget(self.page_registro)
@@ -352,6 +433,12 @@ class control_aec(QMainWindow,Ui_sistema):
 
     def page_inicio_new(self):
         self.pages.setCurrentWidget(self.page_inicio)
+    def icnon_menssage(self):
+        self.label_nameaec = ClickableLabel(self.frame_lateral)
+        self.label_nameaec.setStyleSheet("font: 75 12pt \"MS Shell Dlg 2\";")
+        self.label_nameaec.setText("AEC CONTRATISTAS \n GENERALES")
+        self.label_nameaec.setAlignment(Qt.AlignCenter)
+        self.verticalLayout_2.addWidget(self.label_nameaec)
 
     def update_date_now(self):
         now = datetime.now()
@@ -545,7 +632,7 @@ class control_aec(QMainWindow,Ui_sistema):
             self.animacion.setDuration(300)
             self.animacion.setStartValue(width)
             self.animacion.setEndValue(extender)
-            self.animacion.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
+            self.animacion.setEasingCurve(QEasingCurve.InOutQuart)
             self.animacion.start()
 
     def mover_arriba(self):
@@ -578,6 +665,16 @@ class control_aec(QMainWindow,Ui_sistema):
         else:
             self.showNormal()
             
+class CopyLabel(QLabel):
+    def __init__(self, text):
+        super().__init__(text)
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            clipboard = QApplication.clipboard()
+            clipboard.setText(self.text())
+            QMessageBox.information(self, "Copiar codigo", "Se ha copiado.", QMessageBox.Ok)
+            
 # Se crea un control de la tabla
 class control_data(QDialog):
     def __init__(self, parent,code_project,name_project,row,column):
@@ -589,18 +686,22 @@ class control_data(QDialog):
         self.qframe=QFrame()
         from controllers.control_project import ctrl_project
         self.ui_add=ctrl_project(self)
-        from controllers.change_password import dialogo_delete
-        self.view_delete=dialogo_delete(self)
+        self.ui_add.btn_decline.clicked.connect(self.ui_add.close)
         self.ui_add.btn_call_list.clicked.connect(self.call_list)
         self.ui_add.btn_delete_project.clicked.connect(self.delete_project)
 
     def delete_project(self):
-        self.view_delete.show()
-        self.view_delete.btn_alow.clicked.connect(self.delete_frame)
+        delete_pro = QMessageBox(self)
+        delete_pro.setWindowTitle("Eliminar proyecto")
+        delete_pro.setIcon(QMessageBox.Question)
+        delete_pro.setText("¿Esta seguro que desea eliminar este proyecto?")
+        button_yes = delete_pro.addButton("Si", QMessageBox.YesRole)
+        button_decline = delete_pro.addButton("Cancelar", QMessageBox.NoRole)
+        delete_pro.exec_()
+        if delete_pro.clickedButton() == button_yes:
+            self.delete_frame()
 
     def delete_frame(self):
-        # se cierra el menu de opciones
-        self.view_delete.close()
         item = self.parent().gridLayout_add_frame.itemAtPosition(self.row, self.column)
         datos = Registro_datos()
         # elimina el objeto seleccionado
@@ -608,19 +709,16 @@ class control_data(QDialog):
         if(datos.delete_project_bcode(self.code_project)):
             # Actualiza los datos visibles
             self.parent().add_control_frame()
-            self.dialogo.show()
             self.ui_add.close()
-            self.dialogo.label_mensaje.setText("Se elimino \n correctamente")
+            QMessageBox.information(self, "Eliminar proyecto", "Se elimino  correctamente.", QMessageBox.Ok)
         else:
-            self.dialogo.show()
-            self.dialogo.label_mensaje.setText("No se pudo realizar\nla operacion")
+            QMessageBox.critical(self, "Eliminar proyecto", "No se pudo realizar la operacion.", QMessageBox.Ok)
 
     def call_list(self):
         self.ui_add.close()
         self.parent().code_project=self.code_project
         self.parent().name_project=self.name_project
         self.parent().open_attendance()
-        self.close()
 
     def get_frame(self):
         return self.qframe
@@ -631,11 +729,19 @@ class control_data(QDialog):
         self.qframe.setMinimumSize(QSize(200, 170))
         self.v_layout_frame = QVBoxLayout(self.qframe)
         self.qframe.setStyleSheet("background-color: rgb(103, 105, 255);")
+
         self.lbl_frame = QLabel(self.qframe)
-        self.lbl_frame.setText("Cod. proyecto:\n"+self.code_project)
+        self.lbl_frame.setText("Cod. proyecto:")
         self.lbl_frame.setStyleSheet("font: 75 16pt Arial")
         self.lbl_frame.setAlignment(Qt.AlignCenter)
         self.v_layout_frame.addWidget(self.lbl_frame)
+
+        self.lbl_code = CopyLabel(self.qframe)
+        self.lbl_code.setText(self.code_project)
+        self.lbl_code.setStyleSheet("font: 75 16pt Arial")
+        self.lbl_code.setAlignment(Qt.AlignCenter)
+        self.v_layout_frame.addWidget(self.lbl_code)
+
         self.lbl_fr_name = QLabel(self.qframe)
         self.lbl_fr_name.setText("Nombre :\n"+self.ui_add.line_break())
         self.lbl_fr_name.setStyleSheet("font: 75 16pt Arial")

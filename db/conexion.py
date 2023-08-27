@@ -27,7 +27,7 @@ class Registro_datos():
             sql = """DELETE FROM tlogin_data WHERE users = %s"""
             val= (users,)
             cur.execute(sql,val)
-            cur.rowcount
+            eliminado=cur.rowcount
             self.conexion.commit()    
         except Exception as e:
             eliminado=False
@@ -286,6 +286,7 @@ class Registro_datos():
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
+            print(e)
             agregado=False
         finally:
             cur.close()
@@ -469,18 +470,11 @@ class Registro_datos():
             cur.close() 
         return result
         
-    def between_month(self,date_start,date_end,dni):
-        #date_start=self.convert_date(date_start)
-        #date_end=self.convert_date(date_end)
+    def between_month(self,date_start,date_end,dni,query):
         result=[]
         try:
             cur = self.conexion.cursor()
             # Consulta para obetener dos datos
-            query="""
-            SELECT COUNT(dni)
-            FROM tasistencia
-            WHERE (date_month BETWEEN %s AND %s) AND dni = %s;
-            """
             val=(date_start,date_end,dni,)
             cur.execute(query,val)
             # Obtener el resultado
@@ -555,20 +549,48 @@ class Registro_datos():
             cur.close() 
         return cont_row
     ################################ INSERT OPTIONS #############################
-    def add_tpagos(self,periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado):
+    def add_tpagos(self,date_now,periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado):
+        date_now=self.convert_date(date_now)
         agregado=True
         try:
             cur = self.conexion.cursor()
-            sql= """INSERT INTO tpagos(periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado) 
-            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-            val = (periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado,)
+            sql= """INSERT INTO tpagos(date_now,periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+            val = (date_now,periodo, mes, dni, total_dias,  total_girar, adelantos,por_pagar,observacion,estado,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
+            print(e)
             agregado=False
         finally:
             cur.close()
         return agregado
+
+    def get_data(self,query,val):
+        t_datos=None
+        try:
+            cur = self.conexion.cursor()
+            cur.execute(query,val)
+            t_datos = cur.fetchone()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            t_datos=None
+        finally:
+            cur.close()
+        return t_datos
+
+    def get_datasfull(self,query,val):
+        t_datos=None
+        try:
+            cur = self.conexion.cursor()
+            cur.execute(query,val)
+            t_datos = cur.fetchall()
+        # Se ejecuta cuando se comete un error     
+        except Exception as e:
+            t_datos=None
+        finally:
+            cur.close()
+        return t_datos
 
     def get_datos(self,sql):
         t_datos=[]
@@ -582,19 +604,19 @@ class Registro_datos():
         finally:
             cur.close()
         return t_datos
-
-
-
-
-variable=Registro_datos()
-#var=variable.show_all_data(variable.convert_date("05/08/2023"))
-#var=variable.delete_asistence("72773129017")
-#r=variable.contar()
-#print(var)
-#r=variable.datemonth_and_dni(variable.convert_date("5/8/2023"),"78254969")
-#r=variable.between_month("01/08/2023","20/08/2022","76213932")
-#print(r[0][0])
-#print(len(variable.get_option()))
-#print(variable.delete_options(10))
-
-# ALTER TABLE `tasistencia` AUTO_INCREMENT = 1;
+    # Las sentencias llegan en sql y val
+    def set_datos(self,sql,val):
+        # Indica que se ha agregado
+        agregado=True
+        try:
+            cur = self.conexion.cursor()
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            # Si se ha cometido algun fallo cambia estado de agregado
+            agregado=False
+            print(e)
+        finally:
+            # Cierra la conexion de todos modos
+            cur.close()
+        return agregado

@@ -442,11 +442,6 @@ border-radius:0px;
                 <string>Medida</string>
                </property>
               </column>
-              <column>
-               <property name="text">
-                <string>Responsable</string>
-               </property>
-              </column>
              </widget>
             </item>
             <item>
@@ -463,16 +458,6 @@ border-radius:0px;
               <property name="autoScrollMargin">
                <number>16</number>
               </property>
-              <column>
-               <property name="text">
-                <string>Codigo proyecto</string>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>12</pointsize>
-                </font>
-               </property>
-              </column>
               <column>
                <property name="text">
                 <string>Fecha</string>
@@ -725,6 +710,9 @@ border: none;
                     <property name="styleSheet">
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                     </property>
+                    <property name="placeholderText">
+                     <string>Nombre de proyecto</string>
+                    </property>
                    </widget>
                   </item>
                   <item row="2" column="0">
@@ -754,6 +742,9 @@ border: none;
                     <property name="styleSheet">
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                     </property>
+                    <property name="placeholderText">
+                     <string>Ingrese el tipo de trabajo</string>
+                    </property>
                    </widget>
                   </item>
                   <item row="1" column="1">
@@ -774,8 +765,38 @@ border: none;
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-border: 1px solid rgb(0, 0, 127);</string>
+                     <string notr="true">QDateEdit{
+border: 1px solid rgb(0, 0, 127)
+}
+QCalendarWidget QWidget {
+border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+font: 14pt &quot;MS Shell Dlg 2&quot;;
+background-color : lightgreen;
+}
+#qt_calendar_prevmonth, 
+#qt_calendar_nextmonth {
+	/* border delete */
+    /* delete default icons */
+    min-width: 50px;
+    max-height: 33px;
+	/* set background transparent */
+}
+#qt_calendar_navigationbar {
+	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+    background-color: #fff;
+}
+
+#qt_calendar_monthbutton {
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
+	width: 110px;
+	height: 31px;
+}
+#qt_calendar_yearbutton {
+	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+	width: 70px;
+	height: 31px;
+}</string>
                     </property>
                     <property name="calendarPopup">
                      <bool>true</bool>
@@ -825,6 +846,9 @@ border: 1px solid rgb(0, 0, 127);</string>
                     <property name="styleSheet">
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                     </property>
+                    <property name="placeholderText">
+                     <string>DNI </string>
+                    </property>
                    </widget>
                   </item>
                   <item row="0" column="0">
@@ -839,7 +863,7 @@ border: 1px solid rgb(0, 0, 127);</string>
                      <string notr="true"/>
                     </property>
                     <property name="text">
-                     <string>CODIGO DE PROYECTO : </string>
+                     <string>CANTIDAD : </string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -857,6 +881,9 @@ border: 1px solid rgb(0, 0, 127);</string>
                     <property name="styleSheet">
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                     </property>
+                    <property name="placeholderText">
+                     <string>Cantidad no mayor a saldo</string>
+                    </property>
                    </widget>
                   </item>
                   <item row="0" column="3">
@@ -869,6 +896,9 @@ border: 1px solid rgb(0, 0, 127);</string>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Lote</string>
                     </property>
                    </widget>
                   </item>
@@ -1016,25 +1046,6 @@ border-radius:0px;
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
-                  <item>
-                   <widget class="QPushButton" name="btn_entradas">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
-border: 1px solid rgb(0, 0, 127);
-border-radius:0px;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>ENTRADAS</string>
-                    </property>
-                   </widget>
-                  </item>
                   <item>
                    <widget class="QPushButton" name="btn_out_material">
                     <property name="minimumSize">

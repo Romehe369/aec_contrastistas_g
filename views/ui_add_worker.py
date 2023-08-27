@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_workeriPspvW.ui'
+## Form generated from reading UI file 'add_workerBbLXnB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -80,8 +80,10 @@ class Ui_add_Trabajador(object):
         self.verticalLayout_4.addWidget(self.frame_superior)
 
         self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setSpacing(6)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.gridLayout = QGridLayout()
+        self.gridLayout.setSpacing(10)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(15, 0, 15, 0)
         self.lblName = QLabel(self.centralwidget)

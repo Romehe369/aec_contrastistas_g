@@ -25,6 +25,8 @@ class new_trabajador(QMainWindow, Ui_add_Trabajador):
         # Cuando hacemos click en el boton de eleminar una imagen
         self.pushButton_delete.clicked.connect(self.limpiar)
         self.lineEditDNI.textChanged.connect(self.verificar_dni)
+        self.lineEditName.textChanged.connect(self.upper_name)
+        self.lineEditSurname.textChanged.connect(self.upper_surname)
         self.btn_close.clicked.connect(self.close)
         self.datos = Registro_datos()
         self.gripSize = 10
@@ -49,7 +51,13 @@ class new_trabajador(QMainWindow, Ui_add_Trabajador):
         else:
             self.showNormal()
     #############################################MODULOS DE ACTIVIDAD###################
-
+    def upper_name(self):
+        tex=self.lineEditName.text()
+        self.lineEditName.setText(tex.upper())
+    def upper_surname(self):
+        tex=self.lineEditSurname.text()
+        self.lineEditSurname.setText(tex.upper())
+        
     def verificar_dni(self):
         # Recuperamos los valores de lineeditdni
         dni=self.lineEditDNI.text()

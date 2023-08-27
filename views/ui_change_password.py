@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'change_passwordUZBMBr.ui'
+## Form generated from reading UI file 'change_passwordASaBOl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,11 +17,11 @@ class Ui_changes_password(object):
     def setupUi(self, changes_password):
         if not changes_password.objectName():
             changes_password.setObjectName(u"changes_password")
-        changes_password.resize(432, 531)
+        changes_password.resize(429, 489)
         changes_password.setStyleSheet(u"")
         self.frame_contenedor = QFrame(changes_password)
         self.frame_contenedor.setObjectName(u"frame_contenedor")
-        self.frame_contenedor.setGeometry(QRect(0, 10, 421, 511))
+        self.frame_contenedor.setGeometry(QRect(0, 10, 421, 471))
         self.frame_contenedor.setStyleSheet(u"QFrame{\n"
 "border: 1px solid rgb(0, 0, 0) ;\n"
 "background-color: qlineargradient(spread:pad, x1:0.409318, y1:0.636, x2:0.432, y2:0.0454545, stop:0 rgba(59, 123, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
@@ -74,20 +74,24 @@ class Ui_changes_password(object):
         self.frame_control.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame_control)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(20, -1, 20, 15)
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.label_5 = QLabel(self.frame_control)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMinimumSize(QSize(0, 31))
-        self.label_5.setAlignment(Qt.AlignCenter)
+        self.label_5.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
-        self.verticalLayout_2.addWidget(self.label_5)
+        self.horizontalLayout_2.addWidget(self.label_5)
 
         self.label_users_name = QLabel(self.frame_control)
         self.label_users_name.setObjectName(u"label_users_name")
         self.label_users_name.setMinimumSize(QSize(0, 31))
-        self.label_users_name.setAlignment(Qt.AlignCenter)
+        self.label_users_name.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_2.addWidget(self.label_users_name)
+        self.horizontalLayout_2.addWidget(self.label_users_name)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
 
         self.label_2 = QLabel(self.frame_control)
         self.label_2.setObjectName(u"label_2")
@@ -175,19 +179,24 @@ class Ui_changes_password(object):
 
         self.verticalLayout_2.addWidget(self.confirm_contrasena_incorrecta)
 
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.btn_aceptar = QPushButton(self.frame_control)
         self.btn_aceptar.setObjectName(u"btn_aceptar")
         self.btn_aceptar.setMinimumSize(QSize(0, 35))
         self.btn_aceptar.setStyleSheet(u"border: 1px solid rgb(0, 0, 0) ;")
 
-        self.verticalLayout_2.addWidget(self.btn_aceptar)
+        self.horizontalLayout_3.addWidget(self.btn_aceptar)
 
         self.btn_cancelar = QPushButton(self.frame_control)
         self.btn_cancelar.setObjectName(u"btn_cancelar")
         self.btn_cancelar.setMinimumSize(QSize(0, 35))
         self.btn_cancelar.setStyleSheet(u"border: 1px solid rgb(0, 0, 0) ;")
 
-        self.verticalLayout_2.addWidget(self.btn_cancelar)
+        self.horizontalLayout_3.addWidget(self.btn_cancelar)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
 
 
         self.verticalLayout.addWidget(self.frame_control)
@@ -200,8 +209,8 @@ class Ui_changes_password(object):
 
     def retranslateUi(self, changes_password):
         changes_password.setWindowTitle(QCoreApplication.translate("changes_password", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("changes_password", u"Cambiar contrase\u00f1a", None))
-        self.label_5.setText(QCoreApplication.translate("changes_password", u"USERS", None))
+        self.label.setText(QCoreApplication.translate("changes_password", u"Cambiar contrase\u00f1a admin", None))
+        self.label_5.setText(QCoreApplication.translate("changes_password", u"USERS :", None))
         self.label_users_name.setText(QCoreApplication.translate("changes_password", u"No especifica", None))
         self.label_2.setText(QCoreApplication.translate("changes_password", u"Contrase\u00f1a:", None))
         self.lndt_password.setPlaceholderText(QCoreApplication.translate("changes_password", u"Ingrese tu contrase\u00f1a", None))

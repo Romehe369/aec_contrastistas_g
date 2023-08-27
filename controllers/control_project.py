@@ -1,10 +1,7 @@
 import random
 from datetime import datetime, timedelta
-from PySide2.QtCore import (QDate,QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 from views.ui_cuadro_mensaje import Ui_add_cuadro
@@ -19,7 +16,6 @@ class ctrl_project(QMainWindow,Ui_add_cuadro):
         self.setWindowFlag(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         # Cerrar la ventana principal
-        self.btn_decline.clicked.connect(self.close)
         self.label_code_project.setText(self.parent().code_project)
         self.label_title.setText(self.line_break())
         self.frame.mouseMoveEvent = self.mover_ventana
@@ -49,7 +45,6 @@ class add_project(QMainWindow,Ui_add_project_new):
         self.setWindowFlag(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         # Cerrar la ventana principal
-        self.dialogo=Dialogo()
         self.date_now()
         self.number_of_days.setEnabled(False)
         self.datos = Registro_datos()
@@ -155,8 +150,7 @@ class add_project(QMainWindow,Ui_add_project_new):
             try:
                 number_of_days=int(self.number_of_days.text())
             except Exception as e:
-                self.dialogo.label_mensaje.setText("Dígite un número válido")
-                self.dialogo.show()
+                QMessageBox.information(self, "Calcular días", "Dígite un número válido.", QMessageBox.Ok)
             else:
                 date=self.start_dateEdit.date()
                 now = datetime(date.year(), date.month(), date.day())
@@ -193,14 +187,12 @@ class add_project(QMainWindow,Ui_add_project_new):
         values=[code_project,name_project,dni_responsible,region,province,district]
         if(self.no_exist_null_value(values)):
             self.datos.insertar_project(code_project,name_project,dni_responsible,region,province,district,date_start,date_end,references)
-            self.dialogo.label_mensaje.setText("Se agrego existosamente")
+            QMessageBox.information(self, "Agregar proyecto", "Se agrego existosamente.", QMessageBox.Ok)
             self.parent().ui_add_project=None
             self.parent().add_control_frame()
-            self.dialogo.show()
             self.close()
         else:
-            self.dialogo.label_mensaje.setText("Hay espacios vacios \n por completar")
-            self.dialogo.show()
+            QMessageBox.information(self, "Agregar proyecto", "Hay espacios vacios por completar.", QMessageBox.Ok)
 
 
 

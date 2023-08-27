@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_proyectoLkvLsB.ui'
+## Form generated from reading UI file 'add_proyectoUsDvqU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_add_project_new(object):
     def setupUi(self, add_project_new):
         if not add_project_new.objectName():
             add_project_new.setObjectName(u"add_project_new")
-        add_project_new.resize(800, 525)
+        add_project_new.resize(800, 520)
         self.centralwidget = QWidget(add_project_new)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"QWidget{\n"
@@ -294,7 +294,7 @@ class Ui_add_project_new(object):
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setSpacing(9)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(15, -1, 15, -1)
+        self.verticalLayout.setContentsMargins(15, -1, 15, 15)
         self.label_11 = QLabel(self.centralwidget)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setMinimumSize(QSize(0, 31))
@@ -312,6 +312,10 @@ class Ui_add_project_new(object):
         self.allow_btn.setMinimumSize(QSize(0, 31))
 
         self.verticalLayout.addWidget(self.allow_btn)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer_2)
 
 
         self.verticalLayout_2.addLayout(self.verticalLayout)

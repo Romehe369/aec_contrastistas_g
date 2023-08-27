@@ -1,7 +1,7 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
-
+from datetime import date, datetime, timedelta
 from db.conexion  import Registro_datos
 from views.ui_tkardex import Ui_tkarded
 
@@ -12,7 +12,6 @@ class tkardex(QMainWindow, Ui_tkarded):
         self.setWindowFlag(Qt.FramelessWindowHint)
         #self.setAttribute(Qt.WA_TranslucentBackground)
         self.datos = Registro_datos()
-        #self.table_qwk_new_data()
         self.gripSize = 10
         self.estado_buttton=False
         self.estado_btnreturn=False
@@ -20,14 +19,18 @@ class tkardex(QMainWindow, Ui_tkarded):
         self.frame_delete.hide()
         self.btn_confirm_delete.hide()
         self.table_qwk_new.hide()
+        self.add_infodata()
+        self.update_date()
         self.grip.resize(self.gripSize, self.gripSize)
         self.frame_superior.mouseMoveEvent = self.mover_ventana
+        self.table_showinfo.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         self.btn_close.clicked.connect(self.close)
         #################METODOS##############
         self.btn_delete_rmaterial.clicked.connect(self.close_menu)
-        self.lndt_codemat.textChanged.connect(self.add_infodata)
+        #self.lndt_codemat.textChanged.connect(self.add_infodata)
         self.btn_viewdetals.clicked.connect(self.show_info)
+        self.table_showinfo.cellClicked.connect(self.onCellClicked)
     ###########################################Mover ventana###########################
     def resizeEvent(self, event):
         rect = self.rect()
@@ -56,20 +59,24 @@ class tkardex(QMainWindow, Ui_tkarded):
             self.estado_buttton=True
             self.table_showinfo.hide()
             self.table_qwk_new.show()
+    def update_date(self):
+        now = datetime.now()
+        d = QDate(now.year, now.month, now.day)
+        self.dateEdit.setDate(d)
+
+    def onCellClicked(self, row, col):
+        col=0
+        item = self.table_showinfo.item(row, col)
+        self.label_name.setText(item.text())
+        cantidad = self.table_showinfo.item(row, col+1)
+        self.label_saldo.setText(cantidad.text())
+        medida = self.table_showinfo.item(row, col+2)
+        self.label_medida.setText(medida.text())
 
     def add_infodata(self):
-        print("Hello world")
-        """param=self.lndt_codemat.text()
-        sql="SELECT * FROM ttrabajador WHERE nombres LIKE %s"
-        results=self.datos.phrases_similares(sql,param)
-        if(results==[]):
-            self.lbl_seleccionado_dni.setText("NO EXISTE COINCIDENCIA DE LA BUSQUEDA")
-        else:
-            self.listWidget_show_s.clear()
-            self.listWidget_show_s.addItem("DNI\t"+"   NOMBRES Y APELLIDOS")
-            for row in results:
-                tex=row[0]+" : "+row[1]+" "+row[2]
-                self.listWidget_show_s.addItem(tex)"""
+        sql = "SELECT name,cantidad,medida FROM tmarial_distribution"
+        act=self.datos.get_datos(sql)
+        self.table_setdata(act)
 
     def close_menu(self):
         if(self.estado_btnreturn):
@@ -100,6 +107,14 @@ class tkardex(QMainWindow, Ui_tkarded):
         table_properties.verticalHeader().setFont(font);
         table_properties.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
 
+    def table_setdata(self,datos):
+        self.change_header(self.table_showinfo)
+        self.table_showinfo.setRowCount(len(datos))
+        self.table_showinfo.setColumnCount(3)
+        for row in range(len(datos)):
+            for column in range(3):
+                item = QTableWidgetItem(str(datos[row][column]))
+                self.table_showinfo.setItem(row, column, item)
 
     def table_qwk_new_data(self):
         self.frame_delete.hide()
