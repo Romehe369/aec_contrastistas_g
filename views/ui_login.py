@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginHrgaIq.ui'
+## Form generated from reading UI file 'loginCpiNsr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_login(object):
     def setupUi(self, login):
         if not login.objectName():
             login.setObjectName(u"login")
-        login.resize(440, 412)
+        login.resize(435, 389)
         icon = QIcon()
         icon.addFile(u"./assets/icono.png", QSize(), QIcon.Normal, QIcon.Off)
         login.setWindowIcon(icon)
@@ -39,13 +39,14 @@ class Ui_login(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 15)
         self.frame_4 = QFrame(self.frame)
         self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setMinimumSize(QSize(0, 100))
+        self.frame_4.setMinimumSize(QSize(0, 80))
         self.frame_4.setMaximumSize(QSize(16777215, 100))
         self.frame_4.setStyleSheet(u"border:none;\n"
 "background-color: rgb(51, 0, 102);")
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_5.setSpacing(6)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(9, 0, 0, 0)
         self.label_4 = QLabel(self.frame_4)
@@ -61,10 +62,14 @@ class Ui_login(object):
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer_3)
+
         self.label_6 = QLabel(self.frame_4)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setStyleSheet(u"color: rgb(255, 255, 255);\n"
-"font: 78 18pt \"MS Shell Dlg 2\";")
+"font:18pt \"MS Shell Dlg 2\";")
         self.label_6.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_2.addWidget(self.label_6)
@@ -72,10 +77,14 @@ class Ui_login(object):
         self.label_7 = QLabel(self.frame_4)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setStyleSheet(u"color: rgb(255, 255, 255);\n"
-"font: 75 12pt \"MS Shell Dlg 2\";")
+"font: 12pt \"MS Shell Dlg 2\";")
         self.label_7.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_2.addWidget(self.label_7)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer_2)
 
 
         self.horizontalLayout_5.addLayout(self.verticalLayout_2)
@@ -245,8 +254,10 @@ class Ui_login(object):
         self.label_7.setText(QCoreApplication.translate("login", u"Contruimos tu casa, tu construyes el futuro.", None))
         self.label_2.setText(QCoreApplication.translate("login", u"Usuario:", None))
         self.label_3.setText("")
+        self.users.setPlaceholderText(QCoreApplication.translate("login", u"Ingrese usuario", None))
         self.label.setText(QCoreApplication.translate("login", u"Contrase\u00f1a:", None))
         self.label_5.setText("")
+        self.password.setPlaceholderText(QCoreApplication.translate("login", u"Ingrese la contrase\u00f1a", None))
         self.bt_ingresar.setText(QCoreApplication.translate("login", u"Iniciar sesi\u00f3n", None))
         self.btn_close.setText(QCoreApplication.translate("login", u"Cancelar", None))
     # retranslateUi

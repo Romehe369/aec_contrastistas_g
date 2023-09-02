@@ -21,13 +21,14 @@ class MiApp(QMainWindow, Ui_login):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        #self.setWindowFlag(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         # evento click para acceder al sistema
         self.bt_ingresar.clicked.connect(self.iniciar_sesion)
         self.btn_close.clicked.connect(self.close)
-         # Realizamos una petición a la base de datos de ussers
+        # Realizamos una petición a la base de datos de ussers
         self.datos = Registro_datos()
+        # Esta clave solo se ejecuta al inicio, cuando no haya ningun usuario 
+        self.clave = "AEC99 2023P@ 3ROTY MNH@97"
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Return:
@@ -41,7 +42,6 @@ class MiApp(QMainWindow, Ui_login):
         users_all_information = self.datos.busca_users(users_entry)
         # Cuando no existe ninguna informacion
         if(users_all_information is None):
-            #self.usuario_incorrecto.setText('Usuario no registrado')
             QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
         else:
             users=users_all_information[2]
@@ -109,6 +109,7 @@ class control_aec(QMainWindow,Ui_sistema):
         self.btn_changes_password.clicked.connect(self.cambiar_password)
         self.btn_ocultar.clicked.connect(self.mover_arriba)
         self.bt_restaurar.hide()
+        self.frame_details.hide()
         self.btn_agregar_pro.clicked.connect(self.add_new_project)
         #self.btn_Buscar_pro.clicked.connect()
         self.lineEdit_add_users.textChanged.connect(self.verificar_users)
@@ -124,16 +125,18 @@ class control_aec(QMainWindow,Ui_sistema):
         self.btn_save_options.clicked.connect(self.save_tableoptions)
         self.btn_returnsave.clicked.connect(self.get_datosregistros)
         self.btn_registrar_ie.clicked.connect(self.set_factura)
-        self.btn_add_newgasto.clicked.connect(self.clear_resgitros)
         self.lineEdit_detalle.textChanged.connect(self.this_upperf)
         self.lineEdit_nrodoc.textChanged.connect(self.nrodoc_upper)
         self.lineEdit_coddocu.textChanged.connect(self.change_idmatrial)
-        self.btn_updatemat.clicked.connect(self.update_dbmaterial)
         self.btn_add_newmaterial.clicked.connect(self.add_dmaterial)
         self.lineEdit_cantidadmt.textChanged.connect(self.calcular_total)
         self.lineEdit_mntt.textChanged.connect(self.cal_igv)
         self.lineEdit_costounit.textChanged.connect(self.calcular_total)
+        self.btn_searchdnipro.clicked.connect(self.show_searchdni)
+        self.btn_seednidet.clicked.connect(self.see_detailsdni)
         self.id_options=[]
+        self.list_posndni=[]
+        self.list_posproject=[]
         # menu lateral
         self.borrar_elementos()
         self.bt_menu.clicked.connect(self.mover_menu)
@@ -159,6 +162,7 @@ class control_aec(QMainWindow,Ui_sistema):
             event.accept()
         else:
             event.ignore()
+    # Asignamos ep dni a la variable dada
     def cal_igv(self):
         try:
             amount=float(self.lineEdit_mntt.text())
@@ -180,7 +184,8 @@ class control_aec(QMainWindow,Ui_sistema):
             finally:
                 total=this_cantidad*this_precio
                 self.label_allmt.setText(str(total))
-
+    # metodo para agregar un material, va depender si ya existe en la base de datos
+    # dicho articulo
     def add_dmaterial(self):
         name_material=self.lineEdit_namematrial.text()
         cantidad=self.lineEdit_cantidadmt.text()
@@ -193,50 +198,29 @@ class control_aec(QMainWindow,Ui_sistema):
         responsable=self.lndt_responsablen.text()
         total=self.label_allmt.text()
         code_material=month[:3]+"."+self.aleatorio_value(6)
-        act=self.datos.add_material(code_material, self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
-        if(act):
-            sql1="SELECT cantidad FROM tmarial_distribution WHERE name=%s"
-            val1=(name_material,)
-            data_exists=self.datos.get_data(sql1,val1)
-            print(data_exists)
-            if(data_exists):
-                cantidad=data_exists[0]+float(cantidad)
-                sql= """UPDATE tmarial_distribution SET cantidad = %s  WHERE name = %s"""
-                val = (cantidad,)
-                dat=self.datos.set_datos(sql,val)
-                if(dat):
-                    print("Se agrego")
-                else:
-                    print("No se puedo actualizar")
-            else:
-                sql= """INSERT INTO tmarial_distribution(name, cantidad, medida) VALUES(%s,%s,%s)"""
-                val = (name_material, cantidad, medida,)
-            add_material=self.datos.set_datos(sql,val)
-            QMessageBox.information(self, "Registrar material", "Se ha registrado el material.", QMessageBox.Ok)
+        if(self.code_add_registro==""):
+            QMessageBox.critical(self, "Registrar material", "Primero registre la factura\n para registrar el material.", QMessageBox.Ok)
         else:
-            QMessageBox.information(self, "Registrar material", "No se pudo registrar el material.", QMessageBox.Ok)
+            # Agregamos el material en la bd material
+            act=self.datos.add_material(self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
+            if(act):
+                # Si existe este material en nuestra bd de tmarial_distrubucion actualizamos solo la cantidad
+                sql1="SELECT cantidad FROM tmaterial_distribution WHERE name_material=%s"
+                val1=(name_material,)
+                data_exists=self.datos.get_data(sql1,val1)
+                if(data_exists):
+                    cantidad=data_exists[0]+float(cantidad)
+                    sql= """UPDATE tmaterial_distribution SET cantidad = %s  WHERE name_material= %s"""
+                    val = (cantidad,name_material,)
+                    dat=self.datos.set_datos(sql,val)
+                else: 
+                    sql= """INSERT INTO tmaterial_distribution(code_material , name_material, cantidad, medida) VALUES(%s,%s,%s,%s)"""
+                    val = (code_material,name_material, cantidad, medida,)
+                    add_material=self.datos.set_datos(sql,val)
+                QMessageBox.information(self, "Registrar material", "Se ha registrado el material.", QMessageBox.Ok)
+            else:
+                QMessageBox.critical(self, "Registrar material", "No se pudo registrar el material.", QMessageBox.Ok)
         
-
-    # Se realiza la actualizacion por nombre y es con respecto a la cantidad
-    def update_dbmaterial(self):
-        this=False
-        name_material=self.lineEdit_namematrial.text()
-        cantidad=self.lineEdit_cantidadmt.text()
-        precio=self.lineEdit_costounit.text()
-        guia_remision=self.lineEdit_guiaremision.text()
-        code_search=self.lineEdit_codefin.text()
-        checkBox_reutizable=self.check_reutilizable()
-        medida=self.comboBox_medida.currentText()
-        month=self.comboBox_mothn.currentText()
-        responsable=self.lndt_responsablen.text()
-        total=self.label_allmt.text()
-        code_material=month[:3]+"."+self.aleatorio_value(6)
-        if(this):
-            act=self.datos.add_material(code_material, self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
-            sql= """INSERT INTO tmarial_distribution(name, cantidad, medida) VALUES(%s,%s,%s)"""
-            val = (name_material, cantidad, medida,)
-            add_material=self.datos.set_datos(sql,val)
-
     def check_reutilizable(self):
         if(self.checkBox_reutizable.isChecked()):
             return 1
@@ -271,37 +255,40 @@ class control_aec(QMainWindow,Ui_sistema):
         document_type=self.cmbbox_documents.currentText()
         date_emision=self.date_emision.text()
         rotated_to=self.cmbbox_rotated.currentText()
-        detalle=self.lineEdit_detalle.text()
+        name_material=self.lineEdit_detalle.text()
         # Tratamos de convertir en un numero el monto
         try:
             amount=float(self.lineEdit_mntt.text())
         except Exception as e:
             amount=0
         payment_method=self.cmbbox_mediopay.currentText()
-        cost_center=self.cmbbox_costcenter.currentText()
-        expense_made=self.cmbbox_responsable.currentText()
+        # Obtenemos el indice para recuperar de la lista
+        cost_cname=self.cmbbox_costcenter.currentIndex()
+        cost_center=self.list_posproject[cost_cname][0]
+        expense_dni=self.cmbbox_responsable.currentIndex()
+        expense_made=self.list_posndni[expense_dni][0]
         document_number=self.lineEdit_nrodoc.text()
         date_payments=self.datetime_decline.text()
         igv=self.lineEdit_igv.text()
         check_number=self.check_number.text()
         type_expenditure=self.cmbbox_egreso.currentText()
         observation=self.lineEdit_observation.text()
-        code_docuemts=self.lineEdit_coddocu.text()
-        code_factura=month[:3]+self.aleatorio_value(4)+code_docuemts
-        self.code_add_registro=code_factura
-        if(detalle=="" or amount==0):
+        code_docuemts=self.lineEdit_coddocu.text() 
+        if(len(code_docuemts)==0):
+            code_docuemts="0000"
+        code_factura=month[:3]+self.aleatorio_value(5)+code_docuemts
+        if(name_material=="" or amount==0 or cost_center=="" or expense_made==""):
             QMessageBox.critical(self, "Registrar factura", "Hay espacios vacios.", QMessageBox.Ok)
         else:
-            act=self.datos.add_factura(code_factura,date_emision, date_payments, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle)
+            act=self.datos.add_factura(code_factura, date_emision, name_material, date_payments, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation)
             if(act):
+                self.code_add_registro=code_factura
                 QMessageBox.information(self, "Registrar factura", "Se ha registrado la factura.", QMessageBox.Ok)
             else:
-                QMessageBox.information(self, "Registrar factura", "No se ha podido registrar la factura.", QMessageBox.Ok)
-    
-    def clear_resgitros(self):
-        QMessageBox.information(self, "Registrar factura", "Se ha eliminado los tokens.", QMessageBox.Ok)
+                QMessageBox.critical(self, "Registrar factura", "No se ha podido registrar la factura.", QMessageBox.Ok)
 
     def get_datosregistros(self):
+        self.list_posndni=[]
         self.pages.setCurrentWidget(self.page_registro)
         datos=self.datos.get_option()
         self.cmbbox_documents.clear()
@@ -310,10 +297,13 @@ class control_aec(QMainWindow,Ui_sistema):
         self.cmbbox_costcenter.clear()
         self.cmbbox_responsable.clear()
         self.cmbbox_egreso.clear()
+        self.comboBox_medida.clear()
+        #Agregamos la lista de tipo de documentos
         for i in datos:
             tex=i[1]
             if tex is not None:
                 self.cmbbox_documents.addItems([i[1]])
+        # Agregamos los nombres de girado a
         for i in datos:
             tex=i[2]
             if tex is not None:
@@ -322,23 +312,44 @@ class control_aec(QMainWindow,Ui_sistema):
             tex=i[3]
             if tex is not None:
                 self.cmbbox_mediopay.addItems([i[3]])
+        # Agregamos los dni de los responsable 
         for i in datos:
             tex=i[4]
-            if tex is not None:
-                self.cmbbox_costcenter.addItems([i[4]])
+            sql = "SELECT dni,nombres,apellidos FROM ttrabajador WHERE dni=%s" 
+            val = (tex,)
+            datos_bd=self.datos.get_data(sql,val)
+            self.list_posndni=self.list_posndni+[datos_bd]
+            if(datos_bd is not None):
+                self.cmbbox_responsable.addItems([datos_bd[1]+" "+datos_bd[2]])
         for i in datos:
             tex=i[5]
             if tex is not None:
-                self.cmbbox_responsable.addItems([i[5]])
+                self.cmbbox_egreso.addItems([i[5]])
         for i in datos:
             tex=i[6]
             if tex is not None:
-                self.cmbbox_egreso.addItems([i[6]])
+                self.comboBox_medida.addItems([i[6]])
+        sql = "SELECT code_project,name FROM tproject GROUP BY code_project" 
+        datos_bd=self.datos.get_datos(sql)
+        self.list_posproject=datos_bd
+        for i in datos_bd:
+            tex=i[1]
+            if tex is not None:
+                self.cmbbox_costcenter.addItems([tex])
+    def show_searchdni(self):
+        self.show_search_data()
+        self.btn_seednidet.show()
+        self.frame_details.hide()
 
+    def see_detailsdni(self):
+        self.lineEdit_gettingdni.setText(self.lineEdit_dni_admin.text())
+        self.frame_details.show()
+        self.btn_seednidet.hide()
+    # Agregar una fila al evento btn
     def add_row(self):
         current_row_count = self.table_combo.rowCount()
         self.table_combo.setRowCount(current_row_count + 1)
-
+    # Dar formato de tamanio de las tabla
     def change_header(self,table_properties):
         # Cahenged the size of contents of Qtablwidget to 12
         font = QFont()
@@ -351,18 +362,20 @@ class control_aec(QMainWindow,Ui_sistema):
         table_properties.horizontalHeader().setFont(font);
         table_properties.verticalHeader().setFont(font);
         table_properties.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
-
+    # Obtenemos los de la base de datos
     def open_options(self):
+        # Realizamos la conexion con la db
         datos=self.datos.get_option()
         self.id_options=[]
         self.pages.setCurrentWidget(self.page_add_combo)
         self.table_combo.setRowCount(len(datos))
-        self.table_combo.setColumnCount(6)
+        # Indicamos el tamnio de la table
+        self.table_combo.setColumnCount(7)
         self.change_header(self.table_combo)
         if(datos!=[]):
             for row in range(len(datos)):
                 self.id_options.append(datos[row][0])
-                for column in range(1,7):
+                for column in range(1,8):
                     item = QTableWidgetItem(datos[row][column])
                     self.table_combo.setItem(row, column-1, item)
 
@@ -384,17 +397,18 @@ class control_aec(QMainWindow,Ui_sistema):
                         column.append(None)
                 else:
                     column.append(None)
+            # Verifica si todos los elementos de la fila son vacias
             result=all(element is None for element in column)
-            # Si una fila esta vacia se elimina la posicion
+            # Si una fila esta vacia se elimina dicha fila
             if(result and i==len(self.id_options)):
                 act=self.datos.delete_options(self.id_options[row])
             else:
                 # No esta vacio pero se ha modificado
                 if(row<len(self.id_options)):
-                    act=self.datos.update_option(self.id_options[row],column[0],column[1],column[2],column[3],column[4],column[5])
+                    act=self.datos.update_option(self.id_options[row],column[0],column[1],column[2],column[3],column[4],column[5],column[6])
                 # Verifica que no este vacio y lo agrega
                 elif(result==False):
-                    act=self.datos.set_option(column[0],column[1],column[2],column[3],column[4],column[5])
+                    act=self.datos.set_option(column[0],column[1],column[2],column[3],column[4],column[5],column[6])
         QMessageBox.information(self, "Agregar opciones de tabla", "Se guardo las modificaciones.", QMessageBox.Ok)
         self.get_datosregistros()
 

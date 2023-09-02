@@ -696,7 +696,7 @@ font: 75 12pt &quot;Arial Narrow&quot;;
              <number>0</number>
             </property>
             <property name="currentIndex">
-             <number>8</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_inicio">
              <property name="styleSheet">
@@ -1633,6 +1633,462 @@ border: 0px;
                        </item>
                        <item>
                         <layout class="QGridLayout" name="gridLayout_3">
+                         <item row="2" column="1">
+                          <widget class="QDateEdit" name="date_emision">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>MS Shell Dlg 2</family>
+                             <pointsize>12</pointsize>
+                             <weight>9</weight>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true"/>
+                           </property>
+                           <property name="calendarPopup">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="2">
+                          <widget class="QLabel" name="label_29">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Tipo de egreso :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="1">
+                          <widget class="QLineEdit" name="lineEdit_detalle">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: rgb(170, 255, 255);</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="7" column="0">
+                          <widget class="QLabel" name="label_21">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Centro de costo :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="6" column="2">
+                          <widget class="QLineEdit" name="check_number">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Codigo de medio de pago</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="5" column="0">
+                          <widget class="QLabel" name="label_19">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Monto total (S/) :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="3">
+                          <widget class="QDateEdit" name="datetime_decline">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">border: 1px solid rgb(0, 0, 127);
+border-radius:0px;
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                           </property>
+                           <property name="calendarPopup">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="8" column="0">
+                          <widget class="QLabel" name="label_22">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Responsable :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="3">
+                          <widget class="QLabel" name="lineEdit_igv">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                           </property>
+                           <property name="text">
+                            <string>18</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="2">
+                          <widget class="QLabel" name="label_31">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Nro de documento :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="3">
+                          <widget class="QComboBox" name="cmbbox_egreso">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="2">
+                          <widget class="QLabel" name="label_30">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Observacion :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="7" column="1">
+                          <widget class="QComboBox" name="cmbbox_costcenter">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="2">
+                          <widget class="QLabel" name="label_32">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Fecha de cancelacion :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="2">
+                          <widget class="QLabel" name="label_51">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>IGV(%):</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="0">
+                          <widget class="QLabel" name="label_17">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Girado A :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="3" column="1">
+                          <widget class="QComboBox" name="cmbbox_rotated">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="0">
+                          <widget class="QLabel" name="label_14">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>MS Shell Dlg 2</family>
+                             <pointsize>12</pointsize>
+                             <weight>50</weight>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>Mes :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="5" column="1">
+                          <widget class="QLineEdit" name="lineEdit_mntt">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: rgb(170, 255, 255);</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="6" column="1">
+                          <widget class="QComboBox" name="cmbbox_mediopay">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="8" column="1">
+                          <widget class="QComboBox" name="cmbbox_responsable">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="5" column="3">
+                          <widget class="QLineEdit" name="lineEdit_coddocu">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Cod documento</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="0">
+                          <widget class="QLabel" name="label_18">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Detalle :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="2" column="0">
+                          <widget class="QLabel" name="label_16">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Fecha de emision :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="1">
+                          <widget class="QComboBox" name="cmbbox_documents">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="0">
+                          <widget class="QLabel" name="label_15">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Tipo de documento :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="5" column="2">
+                          <widget class="QLabel" name="label_28">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Codigo de documento :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="6" column="0">
+                          <widget class="QLabel" name="label_20">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>Medio de pago :</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="3">
+                          <widget class="QLineEdit" name="lineEdit_nrodoc">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>31</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Nro de documento</string>
+                           </property>
+                          </widget>
+                         </item>
                          <item row="0" column="1">
                           <widget class="QComboBox" name="comboBox_mothn">
                            <property name="minimumSize">
@@ -1706,376 +2162,6 @@ border: 0px;
                            </item>
                           </widget>
                          </item>
-                         <item row="4" column="2">
-                          <widget class="QLabel" name="label_30">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Observacion :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="2">
-                          <widget class="QLabel" name="label_31">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Nro de documento :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="0">
-                          <widget class="QLabel" name="label_15">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Tipo de documento :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="0">
-                          <widget class="QLabel" name="label_14">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>MS Shell Dlg 2</family>
-                             <pointsize>12</pointsize>
-                             <weight>50</weight>
-                             <italic>false</italic>
-                             <bold>false</bold>
-                            </font>
-                           </property>
-                           <property name="text">
-                            <string>Mes :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="5" column="0">
-                          <widget class="QLabel" name="label_19">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Monto total (S/) :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="4" column="1">
-                          <widget class="QLineEdit" name="lineEdit_detalle">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: rgb(170, 255, 255);</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="2">
-                          <widget class="QLabel" name="label_29">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Tipo de egreso :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="5" column="2">
-                          <widget class="QLabel" name="label_28">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Codigo de documento :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="5" column="3">
-                          <widget class="QLineEdit" name="lineEdit_coddocu">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Cod documento</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="3">
-                          <widget class="QLineEdit" name="lineEdit_nrodoc">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Nro de documento</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="0">
-                          <widget class="QLabel" name="label_17">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Girado A :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="6" column="3">
-                          <widget class="QPushButton" name="btn_registrar_ie">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>35</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Registrar</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="3">
-                          <widget class="QComboBox" name="cmbbox_egreso">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="6" column="1">
-                          <widget class="QComboBox" name="cmbbox_mediopay">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="8" column="0">
-                          <widget class="QLabel" name="label_22">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Responsable :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="1">
-                          <widget class="QComboBox" name="cmbbox_documents">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="2">
-                          <widget class="QLabel" name="label_32">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Fecha de cancelacion :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="7" column="1">
-                          <widget class="QComboBox" name="cmbbox_costcenter">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="6" column="0">
-                          <widget class="QLabel" name="label_20">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Medio de pago :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="1">
-                          <widget class="QComboBox" name="cmbbox_rotated">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="3">
-                          <widget class="QDateEdit" name="datetime_decline">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 1px solid rgb(0, 0, 127);
-border-radius:0px;
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                           </property>
-                           <property name="calendarPopup">
-                            <bool>true</bool>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="7" column="0">
-                          <widget class="QLabel" name="label_21">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Centro de costo :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="5" column="1">
-                          <widget class="QLineEdit" name="lineEdit_mntt">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: rgb(170, 255, 255);</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="4" column="0">
-                          <widget class="QLabel" name="label_18">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Detalle :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="4" column="3">
                           <widget class="QLineEdit" name="lineEdit_observation">
                            <property name="minimumSize">
@@ -2094,119 +2180,20 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="2" column="1">
-                          <widget class="QDateEdit" name="date_emision">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>MS Shell Dlg 2</family>
-                             <pointsize>12</pointsize>
-                             <weight>9</weight>
-                             <italic>false</italic>
-                             <bold>false</bold>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
-                           <property name="calendarPopup">
-                            <bool>true</bool>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="8" column="1">
-                          <widget class="QComboBox" name="cmbbox_responsable">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="0">
-                          <widget class="QLabel" name="label_16">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Fecha de emision :</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="9" column="1">
-                          <widget class="QPushButton" name="btn_add_newgasto">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>35</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Ingresar nuevo gasto</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="2">
-                          <widget class="QLabel" name="label_51">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>IGV(%):</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="6" column="2">
-                          <widget class="QLineEdit" name="check_number">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Codigo de medio de pago</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="3">
-                          <widget class="QLabel" name="lineEdit_igv">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                           </property>
-                           <property name="text">
-                            <string>18</string>
-                           </property>
-                          </widget>
-                         </item>
                         </layout>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btn_registrar_ie">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>35</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Registrar egresos y salidas</string>
+                         </property>
+                        </widget>
                        </item>
                        <item>
                         <spacer name="verticalSpacer_3">
@@ -2552,26 +2539,13 @@ background-color:rgba(0,0,0,0%);</string>
                         </layout>
                        </item>
                        <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,1">
+                        <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1">
                          <property name="leftMargin">
                           <number>0</number>
                          </property>
                          <property name="topMargin">
-                          <number>20</number>
+                          <number>0</number>
                          </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_updatemat">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
-                           </property>
-                           <property name="text">
-                            <string>Actualizar material</string>
-                           </property>
-                          </widget>
-                         </item>
                          <item>
                           <widget class="QPushButton" name="btn_add_newmaterial">
                            <property name="minimumSize">
@@ -2581,7 +2555,7 @@ background-color:rgba(0,0,0,0%);</string>
                             </size>
                            </property>
                            <property name="text">
-                            <string>Nuevo</string>
+                            <string>Registrar material</string>
                            </property>
                           </widget>
                          </item>
@@ -3547,11 +3521,6 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                 </column>
                 <column>
                  <property name="text">
-                  <string>Centro de costo</string>
-                 </property>
-                </column>
-                <column>
-                 <property name="text">
                   <string>(DNI) Responsable</string>
                  </property>
                 </column>
@@ -3562,15 +3531,136 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                 </column>
                 <column>
                  <property name="text">
-                  <string>Estructura</string>
+                  <string>Medida</string>
                  </property>
                 </column>
                 <column>
                  <property name="text">
-                  <string>Medida</string>
+                  <string>Estructura</string>
                  </property>
                 </column>
                </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_seednidet">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>31</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+border: none;
+border-radius:0px;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgba(0,0,0,0%);
+}
+QPushButton:hover{
+	background-color: rgb(170, 255, 0);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>VER NÚMERO DE DNI OBTENIDO</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../assets/ira.png</normaloff>../assets/ira.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>24</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_details">
+                  <property name="minimumSize">
+                   <size>
+                    <width>50</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_dniget">
+                     <property name="text">
+                      <string>NRO DE DNI:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_gettingdni">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>31</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="placeholderText">
+                      <string>No se busco ningún dni por nombres</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
               </item>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -3588,7 +3678,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_edit">
+                 <widget class="QPushButton" name="btn_searchdnipro">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -3596,7 +3686,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                    </size>
                   </property>
                   <property name="text">
-                   <string>Buscar dni o proyecto</string>
+                   <string>Buscar dni</string>
                   </property>
                  </widget>
                 </item>

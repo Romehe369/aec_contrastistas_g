@@ -274,15 +274,15 @@ class Registro_datos():
             cur.close() 
         return cont_row
     ##################################### ADD FACTURA ################################
-    def add_factura(self,cod_factura, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle):
+    def add_factura(self,cod_factura, date_issue,name_material, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation):
         agregado=True
         payment_date=self.convert_date(payment_date)
         date_issue=self.convert_date(date_issue)
         try:
             cur = self.conexion.cursor()
-            sql= """INSERT INTO tfactura(cod_factura, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle) 
+            sql= """INSERT INTO tfactura(cod_factura, date_issue, name_material, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation) 
             VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-            val = (cod_factura, date_issue, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,detalle,)
+            val = (cod_factura, date_issue, name_material, payment_date, document_type, document_number, payment_method, check_number, rotated_to, type_expenditure, cost_center, amount, expense_made, igv, observation,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
@@ -293,22 +293,37 @@ class Registro_datos():
         return agregado
     ##################################### END FACTURA ################################
     ##################################### ADD MATERIAL ################################
-    def add_material(self,code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable):
+    def add_material(self, cod_factura, name_material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable):
         agregado=True
         try:
             cur = self.conexion.cursor()
-            sql= """INSERT INTO tmaterial(code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable) 
-            VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"""
-            val = (code_material, cod_factura, material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable,)
+            sql= """INSERT INTO tmaterial(cod_factura, name_material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+            val = (cod_factura, name_material, guia_de_remision, cantidad, precio_unitario, precio_total,reutizable,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
             agregado=False
-            print(e)
         finally:
             cur.close()
         return agregado
     ##################################### END MATERIAL ################################
+    ##################################### TKARDEX ##############################
+    def insert_tkardex(self,code_material, unidad_medida, fecha, entradas,salidas,devoluciones,saldo,tipo_trabajo,lote,name_responsable,observaciones,firma):
+        agregado=True
+        fecha=self.convert_date(fecha)
+        try:
+            cur = self.conexion.cursor()
+            sql= """INSERT INTO tkardex(code_material, unidad_medida, fecha, entradas,salidas,devoluciones,saldo,tipo_trabajo,lote,name_responsable,observaciones,firma) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+            val = (code_material, unidad_medida, fecha, entradas,salidas,devoluciones,saldo,tipo_trabajo,lote,name_responsable,observaciones,firma,)
+            cur.execute(sql,val)
+            self.conexion.commit() 
+        except Exception as e:
+            agregado=False
+        finally:
+            cur.close()
+        return agregado
 
     ###################################### UBICACION #################################
     # Manejar datos of region
@@ -486,13 +501,13 @@ class Registro_datos():
             cur.close() 
         return result
     ################################ INSERT OPTIONS #############################
-    def set_option(self,document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure):
+    def set_option(self,document_type, rotated_to, payment_method, expense_made, type_expenditure,medida,trabajador):
         agregado=True
         try:
             cur = self.conexion.cursor()
-            sql= """INSERT INTO topcion (document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure) 
-            VALUES(%s,%s,%s,%s,%s,%s)"""
-            val = (document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure,)
+            sql= """INSERT INTO topcion (document_type, rotated_to, payment_method, expense_made, type_expenditure,medida,trabajador) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+            val = (document_type, rotated_to, payment_method, expense_made, type_expenditure,medida,trabajador,)
             cur.execute(sql,val)
             self.conexion.commit() 
         except Exception as e:
@@ -514,17 +529,16 @@ class Registro_datos():
             cur.close()
         return asistencia
 
-    def update_option(self,id,document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure):
+    def update_option(self,id,document_type, rotated_to, payment_method, expense_made, type_expenditure,medida,trabajador):
         update=True
         try:
             cur = self.conexion.cursor()
             sql="""
             UPDATE topcion 
-            SET document_type = %s, rotated_to = %s, payment_method = %s, cost_center = %s, expense_made = %s, type_expenditure = %s  
+            SET document_type = %s, rotated_to = %s, payment_method = %s, expense_made = %s, type_expenditure = %s, medida = %s ,trabajador = %s
             WHERE id = %s"""
-            val = (document_type, rotated_to, payment_method, cost_center, expense_made, type_expenditure,id,)
+            val = (document_type, rotated_to, payment_method, expense_made, type_expenditure,medida,trabajador,id,)
             cur.execute(sql,val)
-            a = cur.rowcount
             # Se guarde y persista simpre
             self.conexion.commit()  
         except Exception as e:
@@ -587,7 +601,7 @@ class Registro_datos():
             t_datos = cur.fetchall()
         # Se ejecuta cuando se comete un error     
         except Exception as e:
-            t_datos=None
+            t_datos=[]
         finally:
             cur.close()
         return t_datos

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>906</width>
-    <height>572</height>
+    <width>907</width>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -265,7 +265,7 @@ QPushButton:hover{
                  <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                 </property>
                 <property name="text">
-                 <string>120</string>
+                 <string>0</string>
                 </property>
                </widget>
               </item>
@@ -282,25 +282,6 @@ QPushButton:hover{
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="5">
-               <widget class="QLabel" name="label_saldo_2">
-                <property name="minimumSize">
-                 <size>
-                  <width>150</width>
-                  <height>31</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                </property>
-                <property name="text">
-                 <string>XYZ.ASDAS</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -410,6 +391,16 @@ border-radius:0px;
                 </property>
                </widget>
               </item>
+              <item row="2" column="5">
+               <widget class="QLabel" name="label_codemat">
+                <property name="text">
+                 <string>XYZUD.8965</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
              </layout>
             </item>
            </layout>
@@ -427,6 +418,11 @@ border-radius:0px;
               <property name="styleSheet">
                <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
               </property>
+              <column>
+               <property name="text">
+                <string>CODIGO MATERIAL</string>
+               </property>
+              </column>
               <column>
                <property name="text">
                 <string>Nombre</string>
@@ -615,16 +611,7 @@ border: none;
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_7">
-             <property name="spacing">
-              <number>12</number>
-             </property>
-             <property name="leftMargin">
-              <number>15</number>
-             </property>
-             <property name="rightMargin">
-              <number>15</number>
-             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
              <item>
               <widget class="QLabel" name="label_title">
                <property name="text">
@@ -667,40 +654,8 @@ border: none;
                   <property name="spacing">
                    <number>9</number>
                   </property>
-                  <item row="0" column="2">
-                   <widget class="QLabel" name="label_7">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>LOTE:</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QLabel" name="label_9">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>OBSERVACIONES:</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="3">
-                   <widget class="QLineEdit" name="lndt_responsable_2">
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="lndt_typeword">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -711,7 +666,7 @@ border: none;
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                     </property>
                     <property name="placeholderText">
-                     <string>Nombre de proyecto</string>
+                     <string>Ingrese el tipo de trabajo</string>
                     </property>
                    </widget>
                   </item>
@@ -731,8 +686,8 @@ border: none;
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="1">
-                   <widget class="QLineEdit" name="lndt_typeword">
+                  <item row="0" column="3">
+                   <widget class="QLineEdit" name="lndt_lote">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -743,7 +698,55 @@ border: none;
                      <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
                     </property>
                     <property name="placeholderText">
-                     <string>Ingrese el tipo de trabajo</string>
+                     <string>Lote</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QLineEdit" name="observations_ledt">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Nombre de proyecto</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLabel" name="label_9">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>OBSERVACIONES:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="label_8">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>RESPONSABLE:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -803,8 +806,8 @@ background-color : lightgreen;
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="2">
-                   <widget class="QLabel" name="label_8">
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_7">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -812,42 +815,10 @@ background-color : lightgreen;
                      </size>
                     </property>
                     <property name="text">
-                     <string>RESPONSABLE:</string>
+                     <string>LOTE:</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_4">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>FECHA:</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="3">
-                   <widget class="QLineEdit" name="lndt_responsable">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
-                    </property>
-                    <property name="placeholderText">
-                     <string>DNI </string>
                     </property>
                    </widget>
                   </item>
@@ -871,7 +842,7 @@ background-color : lightgreen;
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QLineEdit" name="code_proyecto">
+                   <widget class="QLineEdit" name="edit_cantidad">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -886,21 +857,70 @@ background-color : lightgreen;
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="3">
-                   <widget class="QLineEdit" name="lndt_lote">
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_4">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
                       <height>31</height>
                      </size>
                     </property>
-                    <property name="styleSheet">
-                     <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                    <property name="text">
+                     <string>FECHA:</string>
                     </property>
-                    <property name="placeholderText">
-                     <string>Lote</string>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
+                  </item>
+                  <item row="1" column="3">
+                   <layout class="QVBoxLayout" name="verticalLayout_7">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLineEdit" name="lndt_responsable">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>31</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Ingrese el nombre</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QListWidget" name="lstw_name">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>63</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QListWidget{
+color: rgb(255, 37, 226);
+border: 1px solid rgb(0, 0, 127);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>

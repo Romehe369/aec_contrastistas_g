@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>440</width>
-    <height>412</height>
+    <width>435</width>
+    <height>389</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,7 +67,7 @@ background-color: rgb(170, 170, 255);</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>100</height>
+           <height>80</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -87,6 +87,9 @@ background-color: rgb(51, 0, 102);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>6</number>
+          </property>
           <property name="leftMargin">
            <number>9</number>
           </property>
@@ -128,10 +131,23 @@ border:0px;</string>
              <number>0</number>
             </property>
             <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QLabel" name="label_6">
               <property name="styleSheet">
                <string notr="true">color: rgb(255, 255, 255);
-font: 78 18pt &quot;MS Shell Dlg 2&quot;;</string>
+font:18pt &quot;MS Shell Dlg 2&quot;;</string>
               </property>
               <property name="text">
                <string>Contratistas Generales E.I.R.L</string>
@@ -145,7 +161,7 @@ font: 78 18pt &quot;MS Shell Dlg 2&quot;;</string>
              <widget class="QLabel" name="label_7">
               <property name="styleSheet">
                <string notr="true">color: rgb(255, 255, 255);
-font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
               </property>
               <property name="text">
                <string>Contruimos tu casa, tu construyes el futuro.</string>
@@ -154,6 +170,19 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
                <set>Qt::AlignCenter</set>
               </property>
              </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
             </item>
            </layout>
           </item>
@@ -269,6 +298,9 @@ border:none;</string>
 border:none;
 font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
               </property>
+              <property name="placeholderText">
+               <string>Ingrese usuario</string>
+              </property>
              </widget>
             </item>
            </layout>
@@ -371,6 +403,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
               </property>
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
+              </property>
+              <property name="placeholderText">
+               <string>Ingrese la contraseña</string>
               </property>
              </widget>
             </item>
