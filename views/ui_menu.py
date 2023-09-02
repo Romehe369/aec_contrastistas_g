@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'menuXrVqJO.ui'
+## Form generated from reading UI file 'menuZofyqc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1070,16 +1070,14 @@ class Ui_sistema(object):
 "")
         self.frame_7.setFrameShape(QFrame.StyledPanel)
         self.frame_7.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_7)
-        self.verticalLayout_18.setSpacing(9)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.verticalLayout_18.setContentsMargins(9, 9, 9, 0)
+        self.verticalLayout_20 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_8 = QLabel(self.frame_7)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setMinimumSize(QSize(0, 31))
         self.label_8.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_18.addWidget(self.label_8)
+        self.verticalLayout_20.addWidget(self.label_8)
 
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -1199,15 +1197,33 @@ class Ui_sistema(object):
 
         self.gridLayout_2.addWidget(self.label_36, 8, 0, 1, 1)
 
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setSpacing(0)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.lndt_responsablen = QLineEdit(self.frame_7)
         self.lndt_responsablen.setObjectName(u"lndt_responsablen")
         self.lndt_responsablen.setMinimumSize(QSize(0, 31))
         self.lndt_responsablen.setFont(font7)
+        self.lndt_responsablen.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
 
-        self.gridLayout_2.addWidget(self.lndt_responsablen, 8, 1, 1, 1)
+        self.verticalLayout_18.addWidget(self.lndt_responsablen)
+
+        self.lstw_name = QListWidget(self.frame_7)
+        self.lstw_name.setObjectName(u"lstw_name")
+        self.lstw_name.setMaximumSize(QSize(16777215, 16777215))
+        self.lstw_name.setStyleSheet(u"QListWidget{\n"
+"color: rgb(255, 37, 226);\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"}")
+
+        self.verticalLayout_18.addWidget(self.lstw_name)
 
 
-        self.verticalLayout_18.addLayout(self.gridLayout_2)
+        self.gridLayout_2.addLayout(self.verticalLayout_18, 8, 1, 1, 1)
+
+
+        self.verticalLayout_20.addLayout(self.gridLayout_2)
 
         self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
@@ -1220,11 +1236,11 @@ class Ui_sistema(object):
 
         self.horizontalLayout_9.setStretch(0, 1)
 
-        self.verticalLayout_18.addLayout(self.horizontalLayout_9)
+        self.verticalLayout_20.addLayout(self.horizontalLayout_9)
 
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_18.addItem(self.verticalSpacer_2)
+        self.verticalLayout_20.addItem(self.verticalSpacer_2)
 
 
         self.horizontalLayout_6.addWidget(self.frame_7)
@@ -2000,7 +2016,7 @@ class Ui_sistema(object):
 
         self.bt_menu.setDefault(False)
         self.btn_registro.setDefault(False)
-        self.pages.setCurrentIndex(7)
+        self.pages.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(sistema)
@@ -2090,17 +2106,20 @@ class Ui_sistema(object):
         self.comboBox_medida.setItemText(2, QCoreApplication.translate("sistema", u"UNIDADES", None))
 
         self.label_26.setText(QCoreApplication.translate("sistema", u"Guia de remision :", None))
-        self.lineEdit_costounit.setText(QCoreApplication.translate("sistema", u"0", None))
+        self.lineEdit_costounit.setText("")
+        self.lineEdit_costounit.setPlaceholderText(QCoreApplication.translate("sistema", u"Ingrese precio unitario", None))
         self.lineEdit_codefin.setPlaceholderText(QCoreApplication.translate("sistema", u"Cod financiero", None))
         self.checkBox_reutizable.setText(QCoreApplication.translate("sistema", u"REUTILIZABLE", None))
         self.label_25.setText(QCoreApplication.translate("sistema", u"Costo Unitario :", None))
         self.label_33.setText(QCoreApplication.translate("sistema", u"ES:", None))
-        self.lineEdit_cantidadmt.setText(QCoreApplication.translate("sistema", u"0", None))
+        self.lineEdit_namematrial.setPlaceholderText(QCoreApplication.translate("sistema", u"Ingrese nombre material", None))
+        self.lineEdit_cantidadmt.setText("")
+        self.lineEdit_cantidadmt.setPlaceholderText(QCoreApplication.translate("sistema", u"Ingrese cantidad", None))
         self.lineEdit_guiaremision.setPlaceholderText(QCoreApplication.translate("sistema", u"Guia de remisi\u00f3n", None))
-        self.label_52.setText(QCoreApplication.translate("sistema", u"TOTAL :", None))
+        self.label_52.setText(QCoreApplication.translate("sistema", u"Total :", None))
         self.label_23.setText(QCoreApplication.translate("sistema", u"Nombre material :", None))
         self.label_36.setText(QCoreApplication.translate("sistema", u"Resp. de entrega:", None))
-        self.lndt_responsablen.setPlaceholderText(QCoreApplication.translate("sistema", u"Nombre o dni", None))
+        self.lndt_responsablen.setPlaceholderText(QCoreApplication.translate("sistema", u"Nombres", None))
         self.btn_add_newmaterial.setText(QCoreApplication.translate("sistema", u"Registrar material", None))
         self.label_40.setText(QCoreApplication.translate("sistema", u"Eliminar un administrador del sistema o controlador de asistencia en la web", None))
         self.label_44.setText(QCoreApplication.translate("sistema", u"Usuario", None))

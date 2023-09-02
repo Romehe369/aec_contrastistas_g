@@ -2237,22 +2237,7 @@ border: 0px;
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_18">
-                       <property name="spacing">
-                        <number>9</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>9</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>9</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>9</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <widget class="QLabel" name="label_8">
                          <property name="minimumSize">
@@ -2366,7 +2351,10 @@ border: 0px;
                             </font>
                            </property>
                            <property name="text">
-                            <string>0</string>
+                            <string/>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Ingrese precio unitario</string>
                            </property>
                           </widget>
                          </item>
@@ -2444,6 +2432,9 @@ background-color:rgba(0,0,0,0%);</string>
                              <pointsize>12</pointsize>
                             </font>
                            </property>
+                           <property name="placeholderText">
+                            <string>Ingrese nombre material</string>
+                           </property>
                           </widget>
                          </item>
                          <item row="1" column="1">
@@ -2460,7 +2451,10 @@ background-color:rgba(0,0,0,0%);</string>
                             </font>
                            </property>
                            <property name="text">
-                            <string>0</string>
+                            <string/>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Ingrese cantidad</string>
                            </property>
                           </widget>
                          </item>
@@ -2485,7 +2479,7 @@ background-color:rgba(0,0,0,0%);</string>
                          <item row="3" column="0">
                           <widget class="QLabel" name="label_52">
                            <property name="text">
-                            <string>TOTAL :</string>
+                            <string>Total :</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2519,22 +2513,49 @@ background-color:rgba(0,0,0,0%);</string>
                           </widget>
                          </item>
                          <item row="8" column="1">
-                          <widget class="QLineEdit" name="lndt_responsablen">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>31</height>
-                            </size>
+                          <layout class="QVBoxLayout" name="verticalLayout_18">
+                           <property name="spacing">
+                            <number>0</number>
                            </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>12</pointsize>
-                            </font>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Nombre o dni</string>
-                           </property>
-                          </widget>
+                           <item>
+                            <widget class="QLineEdit" name="lndt_responsablen">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>31</height>
+                              </size>
+                             </property>
+                             <property name="font">
+                              <font>
+                               <pointsize>12</pointsize>
+                              </font>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">border: 1px solid rgb(0, 0, 127);</string>
+                             </property>
+                             <property name="placeholderText">
+                              <string>Nombres</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QListWidget" name="lstw_name">
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QListWidget{
+color: rgb(255, 37, 226);
+border: 1px solid rgb(0, 0, 127);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
                          </item>
                         </layout>
                        </item>

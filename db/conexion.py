@@ -321,6 +321,7 @@ class Registro_datos():
             self.conexion.commit() 
         except Exception as e:
             agregado=False
+            print(e)
         finally:
             cur.close()
         return agregado

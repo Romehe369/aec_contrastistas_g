@@ -199,7 +199,7 @@ class tkardex(QMainWindow, Ui_tkarded):
         if(results!=[]):
             self.lstw_name.clear()
             for row in results[:3]:
-                self.lstw_name.addItem(" "+row[0]+" "+row[1])
+                self.lstw_name.addItem(row[0]+" "+row[1])
 
     def itemClicked_event(self):
         selected_items = self.lstw_name.selectedItems()

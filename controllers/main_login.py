@@ -27,12 +27,40 @@ class MiApp(QMainWindow, Ui_login):
         self.btn_close.clicked.connect(self.close)
         # Realizamos una petición a la base de datos de ussers
         self.datos = Registro_datos()
+        self.frame_infoaccces.hide()
+        self.frame_clave.hide()
+        self.estado_btn=False
+        self.btn_accessclave.clicked.connect(self.show_setclave)
+        self.btn_acceder.clicked.connect(self.verificate_access)
+        self.lindt_clave.textChanged.connect(self.upper_clave)
         # Esta clave solo se ejecuta al inicio, cuando no haya ningun usuario 
-        self.clave = "AEC99 2023P@ 3ROTY MNH@97"
+        self.clave = "AEC99-223P@-3ROTY-MN@97"
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Return:
             self.iniciar_sesion()
+    def upper_clave(self):
+        tex=self.lindt_clave.text()
+        self.lindt_clave.setText(tex.upper())
+
+    def show_setclave(self):
+        if(self.estado_btn): 
+            self.estado_btn=False
+            self.frame_ctrl.show()
+            self.frame_clave.hide()
+        else:
+            self.estado_btn=True
+            self.frame_ctrl.hide()
+            self.frame_clave.show()
+
+    def verificate_access(self):
+        tex=self.lindt_clave.text()
+        if(self.clave==tex):
+            self.ventana = control_aec()
+            self.ventana.show()
+            self.close()
+        else:
+            QMessageBox.critical(self, "Acceder", "Clave invalida.", QMessageBox.Ok)
 
     def iniciar_sesion(self):
         # Los labels de contraseña y usuario ponemos en blanco
@@ -40,22 +68,27 @@ class MiApp(QMainWindow, Ui_login):
         password_entry = self.password.text()
         users_entry = users
         users_all_information = self.datos.busca_users(users_entry)
+        sql = "SELECT * FROM tlogin_data" 
+        datos_full=self.datos.get_datos(sql)
         # Cuando no existe ninguna informacion
-        if(users_all_information is None):
+        if(users_all_information is None and len(datos_full)>0):
             QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
         else:
-            users=users_all_information[2]
-            password=users_all_information[3]
-            id_access=users_all_information[0]
-            if(password_entry==password and users==users_entry):
-                for i in range(0,99):
-                    self.progressBar.setValue(i)
-                self.ventana = control_aec()
-                self.ventana.set_pass(users,password,id_access)
-                self.ventana.show()
-                self.close()
+            if(len(datos_full)==0):
+                self.frame_infoaccces.show()
             else:
-                QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
+                users=users_all_information[2]
+                password=users_all_information[3]
+                id_access=users_all_information[0]
+                if(password_entry==password and users==users_entry):
+                    for i in range(0,99):
+                        self.progressBar.setValue(i)
+                    self.ventana = control_aec()
+                    self.ventana.set_pass(users,password,id_access)
+                    self.ventana.show()
+                    self.close()
+                else:
+                    QMessageBox.about(self, "Error al iniciar sesion", "<font color='#3D59AB'><h3> Contraseña o usuario incorrecto <br> intentelo de nuevo por favor</h3></font>")
 
 class ClickableLabel(QLabel):
     def __init__(self, text):
@@ -110,6 +143,7 @@ class control_aec(QMainWindow,Ui_sistema):
         self.btn_ocultar.clicked.connect(self.mover_arriba)
         self.bt_restaurar.hide()
         self.frame_details.hide()
+        self.lstw_name.hide()
         self.btn_agregar_pro.clicked.connect(self.add_new_project)
         #self.btn_Buscar_pro.clicked.connect()
         self.lineEdit_add_users.textChanged.connect(self.verificar_users)
@@ -134,6 +168,8 @@ class control_aec(QMainWindow,Ui_sistema):
         self.lineEdit_costounit.textChanged.connect(self.calcular_total)
         self.btn_searchdnipro.clicked.connect(self.show_searchdni)
         self.btn_seednidet.clicked.connect(self.see_detailsdni)
+        self.lndt_responsablen.textChanged.connect(self.show_listwid)
+        self.lstw_name.itemClicked.connect(self.selected_oneitem)
         self.id_options=[]
         self.list_posndni=[]
         self.list_posproject=[]
@@ -184,11 +220,34 @@ class control_aec(QMainWindow,Ui_sistema):
             finally:
                 total=this_cantidad*this_precio
                 self.label_allmt.setText(str(total))
+    def show_listwid(self):
+        self.lstw_name.show()
+        self.obtener_similar()
+
+    def obtener_similar(self):
+        param=self.lndt_responsablen.text()
+        sql="SELECT nombres,apellidos FROM ttrabajador WHERE nombres LIKE %s"
+        results=self.datos.phrases_similares(sql,param)
+        if(results!=[]):
+            self.lstw_name.clear()
+            for row in results:
+                self.lstw_name.addItem(row[0]+" "+row[1])
+
+    def selected_oneitem(self):
+        selected_items = self.lstw_name.selectedItems()
+        if selected_items:
+            selected_item = selected_items[0]
+            dato = selected_item.text()
+            self.lndt_responsablen.setText(str(dato))
+        self.lstw_name.hide()
+
     # metodo para agregar un material, va depender si ya existe en la base de datos
     # dicho articulo
     def add_dmaterial(self):
+        fecha=self.date_emision.text()
         name_material=self.lineEdit_namematrial.text()
         cantidad=self.lineEdit_cantidadmt.text()
+        cantidad_aux=cantidad
         precio=self.lineEdit_costounit.text()
         guia_remision=self.lineEdit_guiaremision.text()
         code_search=self.lineEdit_codefin.text()
@@ -205,18 +264,37 @@ class control_aec(QMainWindow,Ui_sistema):
             act=self.datos.add_material(self.code_add_registro, name_material, guia_remision, cantidad, precio, total,checkBox_reutizable)
             if(act):
                 # Si existe este material en nuestra bd de tmarial_distrubucion actualizamos solo la cantidad
-                sql1="SELECT cantidad FROM tmaterial_distribution WHERE name_material=%s"
+                sql1="SELECT code_material,cantidad FROM tmaterial_distribution WHERE name_material=%s"
                 val1=(name_material,)
                 data_exists=self.datos.get_data(sql1,val1)
                 if(data_exists):
-                    cantidad=data_exists[0]+float(cantidad)
+                    cantidad=data_exists[1]+float(cantidad)
+                    add_datos=self.datos.insert_tkardex(data_exists[0], medida, fecha, cantidad_aux,0,0,cantidad,"","",responsable,"","")
                     sql= """UPDATE tmaterial_distribution SET cantidad = %s  WHERE name_material= %s"""
                     val = (cantidad,name_material,)
                     dat=self.datos.set_datos(sql,val)
-                else: 
-                    sql= """INSERT INTO tmaterial_distribution(code_material , name_material, cantidad, medida) VALUES(%s,%s,%s,%s)"""
-                    val = (code_material,name_material, cantidad, medida,)
-                    add_material=self.datos.set_datos(sql,val)
+                else:
+                    agregar_new = QMessageBox(self)
+                    agregar_new.setWindowTitle("Este material es nuevo")
+                    agregar_new.setIcon(QMessageBox.Question)
+                    agregar_new.setText("¿Estás seguro que desea agregar?")
+                    botonSalir = agregar_new.addButton("SI", QMessageBox.YesRole)
+                    botonCancelar = agregar_new.addButton("NO", QMessageBox.NoRole)    
+                    agregar_new.exec_()    
+                    if agregar_new.clickedButton() == botonSalir:
+                        sql= """INSERT INTO tmaterial_distribution(code_material , name_material, cantidad, medida) VALUES(%s,%s,%s,%s)"""
+                        val = (code_material,name_material, cantidad, medida,)
+                        add_material=self.datos.set_datos(sql,val)
+                        if(add_material):
+                            sql1="SELECT code_material FROM tmaterial_distribution WHERE name_material=%s"
+                            val1=(name_material,)
+                            data_exists=self.datos.get_data(sql1,val1)
+                            add_datos=self.datos.insert_tkardex(data_exists[0], medida, fecha, cantidad,0,0,cantidad,"","",responsable,"","")
+                        else:
+                            QMessageBox.critical(self, "Registrar material", "Se genero un error al registrar el material.", QMessageBox.Ok)
+                    else:
+                        event.ignore()
+                    
                 QMessageBox.information(self, "Registrar material", "Se ha registrado el material.", QMessageBox.Ok)
             else:
                 QMessageBox.critical(self, "Registrar material", "No se pudo registrar el material.", QMessageBox.Ok)
@@ -517,12 +595,19 @@ class control_aec(QMainWindow,Ui_sistema):
         # Recuperamos los datos
         users=self.lineEdit_add_users.text()
         password=self.lndt_add_password.text()
+        password_conf=self.lndt_confirm_password_new.text()
         dni=self.lineEdit_dni_admin.text()
-        if(users=="" or password=="" or dni=="" or len(users)<=5):
+        if(users=="" or password=="" or dni=="" or password_conf=="" or len(users)<=5):
             QMessageBox.information(self, "Agregar administrador", "Completa los datos correctamente.", QMessageBox.Ok)
         else:
-            self.datos.add_admin(dni,users, password)
-            QMessageBox.information(self, "Agregar administrador", "Se agrego correctamente.", QMessageBox.Ok)
+            if(password==password_conf):
+                self.datos.add_admin(dni,users, password)
+                self.lineEdit_add_users.setText("")
+                self.lndt_add_password.setText("")
+                self.lndt_confirm_password_new.setText("")
+                QMessageBox.information(self, "Agregar administrador", "Se agrego correctamente.", QMessageBox.Ok)
+            else:
+                QMessageBox.critical(self, "Agregar administrador", "Error en confirmar contraseña.", QMessageBox.Ok)
 
     def verificar_pass(self):
         password=self.lndt_add_password.text()
@@ -534,10 +619,10 @@ class control_aec(QMainWindow,Ui_sistema):
 
     def validate_password(self):
         text=self.lndt_add_password.text()
-        if(len(text)<8):
+        if(len(text)<8 and len(text)>=1):
             self.label_validate.setText("La contraseña debe\nser mayor a 7 caracteres")
         else:
-            if(self.is_alnumver(text)==False):
+            if(self.is_alnumver(text)==False and len(text)>=1):
                 self.label_validate.setText("Debe contener\nnúmeros y letras")
             else:
                 self.label_validate.setText("")
@@ -561,7 +646,7 @@ class control_aec(QMainWindow,Ui_sistema):
                 self.lineEdit_add_users.setText("")
                 self.lndt_add_password.setText("")
                 self.label_validate_users.setText("")
-        else:
+        elif(len(users)>=1):
             self.label_validate_users.setText("El user debe tener mas de 5 caracteres")
     def ctrl_frame_delete_admin(self):
         self.pages.setCurrentWidget(self.page_delete)

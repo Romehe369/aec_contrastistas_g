@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginCpiNsr.ui'
+## Form generated from reading UI file 'loginibUtSt.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_login(object):
     def setupUi(self, login):
         if not login.objectName():
             login.setObjectName(u"login")
-        login.resize(435, 389)
+        login.resize(411, 350)
         icon = QIcon()
         icon.addFile(u"./assets/icono.png", QSize(), QIcon.Normal, QIcon.Off)
         login.setWindowIcon(icon)
@@ -29,14 +29,15 @@ class Ui_login(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"border: 3px solid rgb(0, 0, 0) ;\n"
-"background-color: rgb(170, 170, 255);")
+        self.frame.setMaximumSize(QSize(450, 500))
+        self.frame.setStyleSheet(u"border: 0px solid rgb(0, 0, 0) ;\n"
+"background-color: rgb(255, 255, 255);")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame)
         self.verticalLayout_3.setSpacing(9)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 15)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 10)
         self.frame_4 = QFrame(self.frame)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setMinimumSize(QSize(0, 80))
@@ -96,7 +97,15 @@ class Ui_login(object):
         self.verticalLayout.setSpacing(9)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(50, -1, 50, -1)
-        self.label_2 = QLabel(self.frame)
+        self.frame_ctrl = QFrame(self.frame)
+        self.frame_ctrl.setObjectName(u"frame_ctrl")
+        self.frame_ctrl.setStyleSheet(u"border:none;")
+        self.frame_ctrl.setFrameShape(QFrame.StyledPanel)
+        self.frame_ctrl.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_ctrl)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.frame_ctrl)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(16777215, 32))
         self.label_2.setStyleSheet(u"font: 75 14pt \"Arial\";\n"
@@ -104,9 +113,9 @@ class Ui_login(object):
 "border:none;")
         self.label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout.addWidget(self.label_2)
+        self.verticalLayout_7.addWidget(self.label_2)
 
-        self.frame_2 = QFrame(self.frame)
+        self.frame_2 = QFrame(self.frame_ctrl)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setMinimumSize(QSize(0, 35))
         self.frame_2.setMaximumSize(QSize(16777215, 35))
@@ -137,9 +146,9 @@ class Ui_login(object):
         self.horizontalLayout.addWidget(self.users)
 
 
-        self.verticalLayout.addWidget(self.frame_2)
+        self.verticalLayout_7.addWidget(self.frame_2)
 
-        self.label = QLabel(self.frame)
+        self.label = QLabel(self.frame_ctrl)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(16777215, 32))
         self.label.setStyleSheet(u"font: 75 14pt \"Arial\";\n"
@@ -147,9 +156,9 @@ class Ui_login(object):
 "border:none;")
         self.label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout.addWidget(self.label)
+        self.verticalLayout_7.addWidget(self.label)
 
-        self.frame_3 = QFrame(self.frame)
+        self.frame_3 = QFrame(self.frame_ctrl)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setMinimumSize(QSize(0, 35))
         self.frame_3.setMaximumSize(QSize(16777215, 35))
@@ -180,12 +189,29 @@ class Ui_login(object):
         self.horizontalLayout_2.addWidget(self.password)
 
 
-        self.verticalLayout.addWidget(self.frame_3)
+        self.verticalLayout_7.addWidget(self.frame_3)
 
-        self.horizontalLayout_3 = QHBoxLayout()
+        self.progressBar = QProgressBar(self.frame_ctrl)
+        self.progressBar.setObjectName(u"progressBar")
+        self.progressBar.setStyleSheet(u"QProgressBar{\n"
+"background-color: rgba(0,0,0,0%);\n"
+"border-radius:25px;\n"
+"border: none;}\n"
+"QProgressBar::chunk {\n"
+"background-color: qlineargradient(spread:pad, x1:0.443545, y1:0.517, x2:0.989, y2:0.5, stop:0 rgba(255, 59, 250, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"border-radius:25px;}")
+        self.progressBar.setValue(0)
+        self.progressBar.setTextVisible(False)
+
+        self.verticalLayout_7.addWidget(self.progressBar)
+
+        self.frame_hac = QFrame(self.frame_ctrl)
+        self.frame_hac.setObjectName(u"frame_hac")
+        self.frame_hac.setStyleSheet(u"border:none;")
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_hac)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(-1, 10, -1, 10)
-        self.bt_ingresar = QPushButton(self.frame)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.bt_ingresar = QPushButton(self.frame_hac)
         self.bt_ingresar.setObjectName(u"bt_ingresar")
         self.bt_ingresar.setMinimumSize(QSize(0, 31))
         self.bt_ingresar.setStyleSheet(u"QPushButton{\n"
@@ -198,7 +224,7 @@ class Ui_login(object):
 
         self.horizontalLayout_3.addWidget(self.bt_ingresar)
 
-        self.btn_close = QPushButton(self.frame)
+        self.btn_close = QPushButton(self.frame_hac)
         self.btn_close.setObjectName(u"btn_close")
         self.btn_close.setMinimumSize(QSize(0, 31))
         self.btn_close.setStyleSheet(u"QPushButton{\n"
@@ -214,21 +240,73 @@ class Ui_login(object):
         self.horizontalLayout_3.addWidget(self.btn_close)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.verticalLayout_7.addWidget(self.frame_hac)
 
-        self.progressBar = QProgressBar(self.frame)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setStyleSheet(u"QProgressBar{\n"
+
+        self.verticalLayout.addWidget(self.frame_ctrl)
+
+        self.frame_infoaccces = QFrame(self.frame)
+        self.frame_infoaccces.setObjectName(u"frame_infoaccces")
+        self.frame_infoaccces.setStyleSheet(u"border:none;")
+        self.frame_infoaccces.setFrameShape(QFrame.StyledPanel)
+        self.frame_infoaccces.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.frame_infoaccces)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.btn_accessclave = QPushButton(self.frame_infoaccces)
+        self.btn_accessclave.setObjectName(u"btn_accessclave")
+        self.btn_accessclave.setMinimumSize(QSize(0, 31))
+        self.btn_accessclave.setStyleSheet(u"QPushButton{\n"
+"border: none;\n"
+"border-radius:0px;\n"
+"font: 12pt \"MS Shell Dlg 2\";\n"
 "background-color: rgba(0,0,0,0%);\n"
-"border-radius:25px;\n"
-"border: none;}\n"
-"QProgressBar::chunk {\n"
-"background-color: qlineargradient(spread:pad, x1:0.443545, y1:0.517, x2:0.989, y2:0.5, stop:0 rgba(255, 59, 250, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"border-radius:25px;}")
-        self.progressBar.setValue(0)
-        self.progressBar.setTextVisible(False)
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(170, 255, 0);\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u"./assets/help.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_accessclave.setIcon(icon1)
+        self.btn_accessclave.setIconSize(QSize(24, 24))
 
-        self.verticalLayout.addWidget(self.progressBar)
+        self.verticalLayout_6.addWidget(self.btn_accessclave)
+
+        self.frame_clave = QFrame(self.frame_infoaccces)
+        self.frame_clave.setObjectName(u"frame_clave")
+        self.frame_clave.setStyleSheet(u"border: none;")
+        self.frame_clave.setFrameShape(QFrame.StyledPanel)
+        self.frame_clave.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame_clave)
+        self.verticalLayout_5.setSpacing(3)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.lindt_clave = QLineEdit(self.frame_clave)
+        self.lindt_clave.setObjectName(u"lindt_clave")
+        self.lindt_clave.setMinimumSize(QSize(0, 31))
+        self.lindt_clave.setStyleSheet(u"font: 75 12pt \"MS Shell Dlg 2\";\n"
+"border: 1px solid rgb(0, 0, 127);")
+        self.lindt_clave.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.lindt_clave)
+
+        self.btn_acceder = QPushButton(self.frame_clave)
+        self.btn_acceder.setObjectName(u"btn_acceder")
+        self.btn_acceder.setMinimumSize(QSize(0, 31))
+        self.btn_acceder.setStyleSheet(u"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"background-color: rgb(0, 255, 0);\n"
+"font: 87 12pt \"Segoe UI Black\"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(255, 255, 0);\n"
+"font: 87 12pt \"Segoe UI Black\"}")
+
+        self.verticalLayout_5.addWidget(self.btn_acceder)
+
+
+        self.verticalLayout_6.addWidget(self.frame_clave)
+
+
+        self.verticalLayout.addWidget(self.frame_infoaccces)
 
 
         self.verticalLayout_3.addLayout(self.verticalLayout)
@@ -260,5 +338,8 @@ class Ui_login(object):
         self.password.setPlaceholderText(QCoreApplication.translate("login", u"Ingrese la contrase\u00f1a", None))
         self.bt_ingresar.setText(QCoreApplication.translate("login", u"Iniciar sesi\u00f3n", None))
         self.btn_close.setText(QCoreApplication.translate("login", u"Cancelar", None))
+        self.btn_accessclave.setText(QCoreApplication.translate("login", u"  Ingresar con clave", None))
+        self.lindt_clave.setPlaceholderText(QCoreApplication.translate("login", u"XXXXX-XXXXX-XXXXX-XXXXX", None))
+        self.btn_acceder.setText(QCoreApplication.translate("login", u"ACCEDER", None))
     # retranslateUi
 
