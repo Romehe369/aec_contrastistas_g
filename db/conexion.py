@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 
 class Registro_datos():
     def __init__(self):
-        self.conexion = mysql.connector.connect( host='localhost',database ='db_aeccontratistas', user = 'root', password ='')
+        self.conexion = mysql.connector.connect(host='huahuatico.com',database ='huahuati_db_aeccontratistas',user = 'huahuati_user_dbaec', password ='RHHome963.A')
 
     ################### login data ########################
     def add_admin(self,dni,users, password):
@@ -84,16 +84,24 @@ class Registro_datos():
         date_str=date(int(date_str[2]), int(date_str[1]), int(date_str[0]))
         return date_str
     # Modifcar los datos de trabajador
-    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto):
+    def insertar_trabajador(self,dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto,foto_reverse):
+        insertar=True
         fecha_inicio=self.convert_date(fecha_inicio)
-        cur = self.conexion.cursor()
-        sql= """INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,SUELDO_DIARIO,FOTO) 
-        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-        # Convert data into tuple format
-        insert_blob_tuple = (dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto)
-        cur.execute(sql,insert_blob_tuple)
-        self.conexion.commit()    
-        cur.close()
+        try:
+            cur = self.conexion.cursor()
+            sql= """INSERT INTO ttrabajador (DNI, NOMBRES, APELLIDOS, SEXO, FECHA_INICIO,CORREO,NRO_CELULAR,CATEGORIA,SUELDO_DIARIO,FOTO,FOTO_REVERSE) 
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+            # Convert data into tuple format
+            insert_blob_tuple = (dni, nombres, apellidos, sexo, fecha_inicio,correo,nro_celular,categoria,sueldo_diario,foto,foto_reverse,)
+            cur.execute(sql,insert_blob_tuple)
+            self.conexion.commit()    
+        except Exception as e:
+            print(e)
+            insertar=False
+        finally:
+            cur.close()
+            return insertar
+            
     def phrases_similares(self,sql,param):
         try:
             cur = self.conexion.cursor()
@@ -419,29 +427,29 @@ class Registro_datos():
         finally:
             cur.close() 
         return eliminado
+
     def consultar(self):
         find = "SELECT  department,sum(strength) from college_data GROUP BY(department) HAVING sum(strength)<=400 ";
 
-    def group_by_dni(self):
+    def group_byes(self):
+        result=[]
         try:
             cur = self.conexion.cursor()
             # Consulta para obtener la cantidad de países únicos
             query="""
-            SELECT dni 
-            FROM ttrabajador_distribucion 
-            GROUP BY dni
-            ORDER BY dni DESC;
+            SELECT code_project, name 
+            FROM tproject
+            GROUP BY name;
             """
             cur.execute(query)
             # Obtener el resultado
             result = cur.fetchall()
-            total_paises = result
         except Exception as e:
             # Si no se logro elimianar
-            eliminado=False
+            result=[]
         finally:
             cur.close() 
-        return eliminado
+        return result
 
     # Condicion AND  fetchone = None y fetchall = []
     def datemonth_and_dni(self,date_month,dni):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'tkardexlLZnXS.ui'
+## Form generated from reading UI file 'tkardexEmoyJY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -477,56 +477,9 @@ class Ui_tkarded(object):
 
         self.verticalLayout_9.addWidget(self.frame_hide)
 
-        self.frame_delete = QFrame(self.frame_2)
-        self.frame_delete.setObjectName(u"frame_delete")
-        self.frame_delete.setStyleSheet(u"border: none;")
-        self.frame_delete.setFrameShape(QFrame.StyledPanel)
-        self.frame_delete.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_2 = QHBoxLayout(self.frame_delete)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.cmbbx_deleteop = QComboBox(self.frame_delete)
-        self.cmbbx_deleteop.addItem("")
-        self.cmbbx_deleteop.addItem("")
-        self.cmbbx_deleteop.setObjectName(u"cmbbx_deleteop")
-        self.cmbbx_deleteop.setMinimumSize(QSize(300, 31))
-        self.cmbbx_deleteop.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.horizontalLayout_2.addWidget(self.cmbbx_deleteop)
-
-        self.lndt_deletecode = QLineEdit(self.frame_delete)
-        self.lndt_deletecode.setObjectName(u"lndt_deletecode")
-        self.lndt_deletecode.setMinimumSize(QSize(0, 31))
-        self.lndt_deletecode.setStyleSheet(u"border: 1px solid rgb(0, 0, 127);")
-
-        self.horizontalLayout_2.addWidget(self.lndt_deletecode)
-
-
-        self.verticalLayout_9.addWidget(self.frame_delete)
-
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setSpacing(7)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.btn_confirm_delete = QPushButton(self.frame_2)
-        self.btn_confirm_delete.setObjectName(u"btn_confirm_delete")
-        self.btn_confirm_delete.setMinimumSize(QSize(0, 31))
-        self.btn_confirm_delete.setStyleSheet(u"QPushButton{\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;\n"
-"}")
-
-        self.horizontalLayout.addWidget(self.btn_confirm_delete)
-
-        self.btn_delete_rmaterial = QPushButton(self.frame_2)
-        self.btn_delete_rmaterial.setObjectName(u"btn_delete_rmaterial")
-        self.btn_delete_rmaterial.setMinimumSize(QSize(0, 31))
-        self.btn_delete_rmaterial.setStyleSheet(u"QPushButton{\n"
-"border: 1px solid rgb(0, 0, 127);\n"
-"border-radius:0px;\n"
-"}")
-
-        self.horizontalLayout.addWidget(self.btn_delete_rmaterial)
-
         self.frame_show_btn = QFrame(self.frame_2)
         self.frame_show_btn.setObjectName(u"frame_show_btn")
         self.frame_show_btn.setMaximumSize(QSize(16777215, 16777215))
@@ -537,6 +490,16 @@ class Ui_tkarded(object):
         self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.btn_addmaterial = QPushButton(self.frame_show_btn)
+        self.btn_addmaterial.setObjectName(u"btn_addmaterial")
+        self.btn_addmaterial.setMinimumSize(QSize(0, 31))
+        self.btn_addmaterial.setStyleSheet(u"QPushButton{\n"
+"border: 1px solid rgb(0, 0, 127);\n"
+"border-radius:0px;\n"
+"}")
+
+        self.horizontalLayout_3.addWidget(self.btn_addmaterial)
+
         self.btn_out_material = QPushButton(self.frame_show_btn)
         self.btn_out_material.setObjectName(u"btn_out_material")
         self.btn_out_material.setMinimumSize(QSize(0, 31))
@@ -638,11 +601,7 @@ class Ui_tkarded(object):
         self.label_4.setText(QCoreApplication.translate("tkarded", u"FECHA:", None))
         self.lndt_responsable.setText("")
         self.lndt_responsable.setPlaceholderText(QCoreApplication.translate("tkarded", u"Ingrese el nombre", None))
-        self.cmbbx_deleteop.setItemText(0, QCoreApplication.translate("tkarded", u"Eliminar un registro por codigo", None))
-        self.cmbbx_deleteop.setItemText(1, QCoreApplication.translate("tkarded", u"Eliminar un registro por nombre", None))
-
-        self.btn_confirm_delete.setText(QCoreApplication.translate("tkarded", u"CONFIRMAR ELIMINACION", None))
-        self.btn_delete_rmaterial.setText(QCoreApplication.translate("tkarded", u"IR A ELIMINAR", None))
+        self.btn_addmaterial.setText(QCoreApplication.translate("tkarded", u"AGREGAR", None))
         self.btn_out_material.setText(QCoreApplication.translate("tkarded", u"SALIDAS", None))
         self.btn_add_devoluciones.setText(QCoreApplication.translate("tkarded", u"DEVOLUCIONES", None))
     # retranslateUi

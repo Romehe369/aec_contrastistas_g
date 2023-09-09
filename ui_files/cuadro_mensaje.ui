@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>406</width>
-    <height>494</height>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>0</x>
      <y>10</y>
      <width>401</width>
-     <height>471</height>
+     <height>441</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -56,7 +56,7 @@ border-radius:5px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>210</y>
+      <y>170</y>
       <width>341</width>
       <height>50</height>
      </rect>
@@ -70,7 +70,7 @@ border-radius:5px;
     <property name="maximumSize">
      <size>
       <width>16777215</width>
-      <height>50</height>
+      <height>16777215</height>
      </size>
     </property>
     <property name="sizeIncrement">
@@ -83,36 +83,11 @@ border-radius:5px;
      <string>Llamar asistencia</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_view_list">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>150</y>
-      <width>341</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="sizeIncrement">
-     <size>
-      <width>0</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="text">
-     <string>Ver lista</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btn_delete_project">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>340</y>
+      <y>310</y>
       <width>341</width>
       <height>50</height>
      </rect>
@@ -143,7 +118,7 @@ border-radius:5px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>280</y>
+      <y>240</y>
       <width>341</width>
       <height>50</height>
      </rect>
@@ -167,7 +142,7 @@ border-radius:5px;
      </size>
     </property>
     <property name="text">
-     <string>Actividades</string>
+     <string>Editar</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_title">
@@ -198,8 +173,8 @@ border-radius:5px;
    <widget class="QPushButton" name="btn_decline">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>410</y>
+      <x>130</x>
+      <y>370</y>
       <width>161</width>
       <height>41</height>
      </rect>

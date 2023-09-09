@@ -16,8 +16,6 @@ class tkardex(QMainWindow, Ui_tkarded):
         self.estado_buttton=False
         self.estado_btnreturn=False
         self.grip = QSizeGrip(self)
-        self.frame_delete.hide()
-        self.btn_confirm_delete.hide()
         self.table_qwk_new.hide()
         self.add_infodata()
         self.update_date()
@@ -28,8 +26,6 @@ class tkardex(QMainWindow, Ui_tkarded):
         self.table_qwk_new.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         self.btn_close.clicked.connect(self.close)
         #################METODOS##############
-        self.btn_delete_rmaterial.clicked.connect(self.close_menu)
-        #self.lndt_codemat.textChanged.connect(self.add_infodata)
         self.btn_viewdetals.clicked.connect(self.show_info)
         self.table_showinfo.cellClicked.connect(self.onCellClicked)
         self.btn_out_material.clicked.connect(self.out_material)
@@ -100,7 +96,6 @@ class tkardex(QMainWindow, Ui_tkarded):
         except Exception as e:
             cantidad=0
             edit_cantidad=0
-            QMessageBox.critical(self, "Registrar devoluciones", "Cantidad Invalida.", QMessageBox.Ok)
         cantidad=cantidad+edit_cantidad
         saldo=cantidad
         devoluciones=edit_cantidad
@@ -129,7 +124,6 @@ class tkardex(QMainWindow, Ui_tkarded):
         except Exception as e:
             cantidad=0
             edit_cantidad=0
-            QMessageBox.critical(self, "Registrar salidas", "Cantidad Invalida.", QMessageBox.Ok)
         cantidad=cantidad-edit_cantidad
         saldo=cantidad
         salidas=edit_cantidad
@@ -162,22 +156,6 @@ class tkardex(QMainWindow, Ui_tkarded):
         sql = "SELECT * FROM tmaterial_distribution"
         act=self.datos.get_datos(sql)
         self.table_setdata(act)
-
-    def close_menu(self):
-        if(self.estado_btnreturn):
-            self.btn_delete_rmaterial.setText("IR A ELIMINAR")
-            self.estado_btnreturn=False
-            self.frame_hide.show()
-            self.frame_show_btn.show()
-            self.frame_delete.hide()
-            self.btn_confirm_delete.hide()
-        else:
-            self.btn_delete_rmaterial.setText("RETORNAR")
-            self.estado_btnreturn=True
-            self.frame_hide.hide()
-            self.frame_show_btn.hide()
-            self.frame_delete.show()
-            self.btn_confirm_delete.show()
 
     def change_header(self,table_properties):
         # Cahenged the size of contents of Qtablwidget to 12
@@ -217,6 +195,7 @@ class tkardex(QMainWindow, Ui_tkarded):
             for column in range(0,4):
                 item = QTableWidgetItem(str(datos[row][column]))
                 self.table_showinfo.setItem(row, column, item)
+                
     def show_tdtable(self):
         label_codemat=self.label_codemat.text()
         if(len(label_codemat)>0):
@@ -230,7 +209,6 @@ class tkardex(QMainWindow, Ui_tkarded):
             QMessageBox.information(self, "Ver detalles", "Seleccione un material.", QMessageBox.Ok)
 
     def table_qwk_new_data(self,datos):
-        self.frame_delete.hide()
         self.change_header(self.table_qwk_new)
         self.table_qwk_new.setRowCount(len(datos))
         self.table_qwk_new.setColumnCount(10)
